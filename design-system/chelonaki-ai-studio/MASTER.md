@@ -59,7 +59,7 @@ Gold is the only accent. It is never used for long body copy. All text/backgroun
 - Desktop container: max 1440px with fluid side gutters.
 - Breakpoints: 375, 768, 1024 and 1440px.
 - Desktop is asymmetric and editorial. Below 768px every composition becomes a deliberate single column.
-- Hero fits within `100dvh`, navigation stays at or below 80px and all primary actions remain visible.
+- Hero fits within `100dvh`, desktop navigation stays below 90px, mobile navigation stays at 72px and all primary actions remain visible.
 - Use at least four section layout families across the page.
 - Do not repeat the current generic split hero, equal four-card grid or eyebrow-plus-heading rhythm.
 - No section numbers, scroll cues, decorative weather/location strips or floating micro-copy.
@@ -73,6 +73,8 @@ Motion must communicate hierarchy and architectural depth.
 3. **Sticky focus:** on wide screens, the studio thesis remains fixed while each capability moves from blur into focus.
 4. **Section reveals:** restrained variants for copy, imagery and ruled lines, never one repeated fade on every element.
 5. **Feedback:** buttons and links respond within 150-250ms and remain usable while animating.
+
+Interface motion follows Emil Kowalski's restraint rules: no layout-property transitions, no hover motion on touch, `scale(0.97)` press feedback, custom ease-out curves and faster exits than entrances.
 
 Only transform, opacity, clip-path and bounded filter effects may animate. Respect `prefers-reduced-motion`; the static fallback must preserve the full composition and content.
 

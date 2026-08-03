@@ -84,7 +84,7 @@ components:
 
 Chelonaki presents technology through the visual language of architecture, material culture and disciplined editorial publishing. The system is quiet, precise and tactile: warm mineral paper opens the experience, monumental stone carries the focal imagery, and midnight navy gives later chapters weight.
 
-The composition favors asymmetric grids, visible rules and controlled scale changes over generic cards or glowing AI imagery. Motion is slow and architectural. The hero assembles as one material scene, and the capability chapter uses a single sticky focus sequence instead of repeating the same entrance on every component.
+The composition favors asymmetric grids, visible rules and controlled scale changes over generic cards or glowing AI imagery. Motion is slow and architectural in the story, crisp and nearly invisible in the interface. The hero assembles as one material scene, while buttons, links and the menu respond within 110–280ms.
 
 **Key Characteristics:**
 
@@ -146,7 +146,7 @@ The system is flat by default. Depth comes from photography, masked imagery, ton
 
 ### Shadow Vocabulary
 
-- **Header Float** (`0 18px 46px rgba(7, 29, 49, 0.08)`): separates the condensed fixed header from content.
+- **Header Float** (`0 10px 32px rgba(7, 29, 49, 0.06)`): quietly separates the stable fixed header from content.
 - **Dialog Depth** (`0 34px 90px rgba(0, 0, 0, 0.34)`): reserved for protected legal reading surfaces.
 
 **The Material-First Rule.** If depth matters, show it in a real image or a tonal layer before adding a shadow.
@@ -176,7 +176,14 @@ The system does not use generic cards. Work areas are composed as image-and-copy
 
 ### Navigation
 
-Desktop navigation uses small tracked labels and animated gold underlines. Below 1050px it becomes a full-height navy dialog with large serif links and a single gold action.
+Desktop navigation uses small tracked labels and transform-driven gold underlines. Below 880px it becomes a full-height navy drawer with large serif links, a single gold action and a faster exit than entrance.
+
+### Interaction Motion
+
+- Buttons compress to `scale(0.97)` on press and never use a generic hover lift.
+- Directional arrows move instead of changing layout gaps.
+- Hover-only movement is limited to fine pointers.
+- UI transitions stay below 300ms; longer durations are reserved for the first architectural reveal and scroll storytelling.
 
 ### Hero Folios
 

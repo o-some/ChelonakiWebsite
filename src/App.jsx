@@ -282,8 +282,19 @@ function MobileMenu({ open, onClose }) {
   useEffect(() => {
     const dialog = ref.current;
     if (!dialog) return;
-    if (open && !dialog.open) dialog.showModal();
-    if (!open && dialog.open) dialog.close();
+    let closeTimer;
+    if (open) {
+      dialog.classList.remove("is-closing");
+      if (!dialog.open) dialog.showModal();
+    }
+    if (!open && dialog.open) {
+      dialog.classList.add("is-closing");
+      closeTimer = window.setTimeout(() => {
+        dialog.close();
+        dialog.classList.remove("is-closing");
+      }, 180);
+    }
+    return () => window.clearTimeout(closeTimer);
   }, [open]);
 
   return (
@@ -292,6 +303,10 @@ function MobileMenu({ open, onClose }) {
       ref={ref}
       aria-label="Hauptnavigation"
       onClose={onClose}
+      onCancel={(event) => {
+        event.preventDefault();
+        onClose();
+      }}
       onClick={(event) => {
         if (event.target === ref.current) onClose();
       }}
