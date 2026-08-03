@@ -75,6 +75,10 @@
         "value": "1050px"
       },
       {
+        "name": "menu",
+        "value": "880px"
+      },
+      {
         "name": "mobile",
         "value": "767px"
       }
@@ -122,14 +126,15 @@
   ],
   "narrative": {
     "northStar": "The Sanctuary Ledger",
-    "overview": "A quiet architectural world where warm paper, monumental stone and editorial ledgers make AI feel considered, useful and human-led. Midnight navy chapters add authority while antique gold remains a scarce functional marker.",
+    "overview": "A quiet architectural world where warm paper, a real arch and Ionic column, physical strategy folios and a bronze turtle medallion make AI feel considered, useful and human-led. A sculpted threshold leads into midnight navy chapters while antique gold remains a scarce functional marker.",
     "keyCharacteristics": [
       "Monumental editorial serif",
       "Mineral ivory and midnight navy",
       "Real architectural material imagery",
       "Bronze turtle medallion inset into limestone",
       "Square controls and hairline rules",
-      "Asymmetric ledger compositions"
+      "Asymmetric editorial compositions",
+      "One sticky capability focus sequence"
     ],
     "rules": [
       {
@@ -149,9 +154,9 @@
       }
     ],
     "dos": [
-      "Preserve the statement, column and ledger as the first-screen memory.",
+      "Preserve the statement, arch, full column, folios and navy threshold as the first-screen memory.",
       "Use real architectural imagery with intentional crops.",
-      "Use the bronze turtle medallion once as a signature founder mark.",
+      "Use the bronze turtle medallion as a physical signature object.",
       "Keep legal and form states explicit and accessible."
     ],
     "donts": [

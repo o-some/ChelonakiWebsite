@@ -13,33 +13,33 @@ const capabilities = [
   {
     number: "01",
     title: "AI & Apps",
-    summary: "Strategie, Beratung und individuelle KI-Lösungen für Produkte und Prozesse.",
+    summary: "KI verstehen, priorisieren und als nützliches System in den Alltag bringen.",
     details:
-      "Von der sinnvollen Einsatzidee bis zum belastbaren Prototyp: Chelonaki verbindet wirtschaftliche Priorisierung, Produktdenken und Umsetzung.",
+      "Wir trennen Möglichkeiten von Moden. Aus einer sinnvollen Einsatzidee entsteht ein belastbarer Prototyp, der Menschen Arbeit abnimmt und Entscheidungen verbessert.",
     tags: ["AI Strategy", "Custom Apps", "Automation"],
   },
   {
     number: "02",
     title: "Brand & Web",
-    summary: "Markenaufbau, Positionierung und Web-Erlebnisse mit kultureller Tiefe.",
+    summary: "Identität, Website und digitale Präsenz aus einer klaren Idee entwickeln.",
     details:
-      "Identität, Website und digitale Systeme entstehen als eine zusammenhängende Architektur, die langfristig wiedererkennbar bleibt.",
+      "Positionierung, Sprache, Gestaltung und Website werden als eine zusammenhängende Architektur entwickelt. So entsteht eine Marke, die nicht auf Lautstärke angewiesen ist.",
     tags: ["Positioning", "Identity", "Webdesign"],
   },
   {
     number: "03",
     title: "Content & Growth",
-    summary: "KI-gestützte Inhalte, Marketing und Systeme für nachhaltige Sichtbarkeit.",
+    summary: "Eine echte Markenstimme in wiederholbare Inhalte und Kampagnen übersetzen.",
     details:
-      "Strategie wird in wiederholbare Content- und Kampagnenprozesse übersetzt, ohne die menschliche Stimme der Marke zu verlieren.",
+      "KI beschleunigt Recherche, Produktion und Distribution. Die Haltung bleibt menschlich. Daraus wachsen Content- und Marketing-Systeme, die konsistent und trotzdem lebendig sind.",
     tags: ["Social Content", "Campaigns", "Editorial"],
   },
   {
     number: "04",
     title: "Nutrition & Ventures",
-    summary: "Ernährungsinnovation und eigene Ventures für die Zukunft.",
+    summary: "Ernährungswissenschaft in glaubwürdige Produkte und neue Ventures überführen.",
     details:
-      "Die ernährungswissenschaftliche Ausbildung des Gründers schafft eine glaubwürdige Basis für Food-, Health- und Produktkonzepte.",
+      "Hier treffen ernährungswissenschaftliche Ausbildung, Markenaufbau und Produktdenken aufeinander. Die Basis für Food-, Health- und eigene Produktkonzepte mit Substanz.",
     tags: ["Nutrition Science", "Food Concepts", "Ventures"],
   },
 ];
@@ -365,25 +365,6 @@ function LegalDialog({ viewKey, onClose }) {
   );
 }
 
-function CapabilityLedger() {
-  return (
-    <div className="capability-ledger" aria-label="Fähigkeiten">
-      <div className="ledger-title">
-        <span>Fähigkeits-Ledger</span>
-        <i aria-hidden="true" />
-      </div>
-      {capabilities.map((item) => (
-        <a className="ledger-row" href={`#capability-${item.number}`} key={item.title}>
-          <span className="ledger-number">{item.number}</span>
-          <strong>{item.title}</strong>
-          <p>{item.summary}</p>
-          <ArrowRight size={19} aria-hidden="true" />
-        </a>
-      ))}
-    </div>
-  );
-}
-
 export function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [legalView, setLegalView] = useState(null);
@@ -519,20 +500,23 @@ export function App() {
 
       <main id="main">
         <section className="hero" id="top" aria-labelledby="hero-title">
-          <aside className="hero-rail" aria-hidden="true">
-            <span>MMXXVI</span>
-            <i />
-            <small>THE FUTURE NEEDS ROOTS.</small>
-          </aside>
-
-          <div className="hero-column" aria-hidden="true">
+          <div className="hero-scene" aria-hidden="true">
             <img
-              src="/assets/hero-column.webp"
+              className="hero-scene-image"
+              src="/assets/hero-architecture.png"
               alt=""
-              width="1024"
-              height="1536"
+              width="1536"
+              height="1024"
               fetchPriority="high"
             />
+            <figure className="hero-medallion">
+              <img
+                src="/assets/chelonaki-wall-medallion.webp"
+                alt=""
+                width="1200"
+                height="1500"
+              />
+            </figure>
           </div>
 
           <div className="hero-copy">
@@ -547,8 +531,9 @@ export function App() {
               <i />
             </div>
             <p>
-              Chelonaki verbindet Strategie, Technologie und Gestaltung für digitale
-              Produkte, Marken und Inhalte mit Substanz.
+              Chelonaki ist aus einer persönlichen Überzeugung entstanden:
+              Technologie wird wertvoll, wenn sie Menschen klarer entscheiden,
+              mutiger gestalten und gesünder leben lässt.
             </p>
             <div className="hero-actions">
               <a className="button button-navy" href="#contact">
@@ -562,7 +547,40 @@ export function App() {
             </div>
           </div>
 
-          <CapabilityLedger />
+          <div className="hero-folios" aria-label="Chelonakis Arbeitsweise">
+            <div className="hero-folio hero-folio-one">
+              <span>Klarheit</span>
+              <strong>Klar sehen, was zählt.</strong>
+            </div>
+            <div className="hero-folio hero-folio-two">
+              <span>System</span>
+              <strong>Ideen tragfähig ordnen.</strong>
+            </div>
+            <div className="hero-folio hero-folio-three">
+              <span>Wirkung</span>
+              <strong>Wert schaffen, der bleibt.</strong>
+            </div>
+          </div>
+
+          <div className="hero-capability-band">
+            <div className="hero-band-intro">
+              <p>
+                Eine Firma.
+                <br />
+                <em>Vier Wirkungsfelder.</em>
+              </p>
+              <span>Strategie, Gestaltung und Systeme aus einer Hand.</span>
+            </div>
+            <nav className="hero-band-grid" aria-label="Direkt zu den Arbeitsfeldern">
+              {capabilities.map((item) => (
+                <a href={`#capability-${item.number}`} key={item.title}>
+                  <span>{item.number}</span>
+                  <strong>{item.title}</strong>
+                  <small>{item.summary}</small>
+                </a>
+              ))}
+            </nav>
+          </div>
         </section>
 
         <section className="architecture" id="expertise" aria-labelledby="architecture-title">
@@ -570,8 +588,9 @@ export function App() {
             <span className="section-mark" aria-hidden="true" />
             <h2 id="architecture-title">Intelligenz braucht Architektur.</h2>
             <p>
-              Wir beginnen nicht mit Tools. Sondern mit den richtigen Fragen.
-              Strategie ist bei uns die erste Technologie.
+              Ich beginne nicht mit Tools, sondern mit dem Menschen, der am Ende
+              besser arbeiten, entscheiden oder leben soll. Erst dann bekommt
+              Technologie ihren Platz.
             </p>
             <a className="text-link text-link-light" href="#capabilities">
               Unser Ansatz
@@ -590,11 +609,15 @@ export function App() {
 
         <section className="capabilities-section" id="capabilities" aria-labelledby="capabilities-title">
           <div className="capabilities-heading" data-reveal>
-            <h2 id="capabilities-title">Ein Studio. Vier verbundene Felder.</h2>
+            <h2 id="capabilities-title">Vier Wege. Eine Haltung.</h2>
             <p>
-              Jede Disziplin steht für sich. Wirkung entsteht dort, wo Strategie,
-              Gestaltung und Umsetzung ineinandergreifen.
+              Jeder Weg beginnt mit einer anderen Frage. Alle folgen derselben
+              Überzeugung: Klarheit vor Tempo, Charakter vor Lautstärke und Nutzen
+              vor Neuheit.
             </p>
+            <blockquote>
+              „Nicht mehr KI. Mehr Urteilskraft in dem, was wir mit ihr bauen.“
+            </blockquote>
           </div>
           <div className="capability-index">
             {capabilities.map((item) => (
@@ -602,7 +625,7 @@ export function App() {
                 id={`capability-${item.number}`}
                 className="capability-entry"
                 key={item.title}
-                data-reveal
+                data-reveal="chapter"
               >
                 <span>{item.number}</span>
                 <h3>{item.title}</h3>
@@ -618,7 +641,7 @@ export function App() {
         </section>
 
         <section className="work-section" id="work" aria-labelledby="work-title">
-          <header className="work-heading" data-reveal>
+          <header className="work-heading" data-reveal="copy">
             <h2 id="work-title">Was daraus entstehen kann.</h2>
             <p>
               Keine künstlichen Fallstudien. Drei konkrete Arbeitsräume, in denen
@@ -626,7 +649,7 @@ export function App() {
             </p>
           </header>
 
-          <article className="work-feature" data-reveal>
+          <article className="work-feature" data-reveal="image">
             <figure>
               <img
                 src="/assets/project-digital-brand.png"
@@ -652,7 +675,7 @@ export function App() {
           </article>
 
           <div className="work-pair">
-            <article className="work-portrait" data-reveal>
+            <article className="work-portrait" data-reveal="image">
               <figure>
                 <img
                   src="/assets/hero-architecture.png"
@@ -671,7 +694,7 @@ export function App() {
               </div>
             </article>
 
-            <article className="work-nutrition" data-reveal>
+            <article className="work-nutrition" data-reveal="image">
               <div>
                 <h3>Neue Produktwelten mit wissenschaftlicher Substanz.</h3>
                 <p>
@@ -693,7 +716,7 @@ export function App() {
         </section>
 
         <section className="process-section" id="process" aria-labelledby="process-title">
-          <div className="process-intro" data-reveal>
+          <div className="process-intro" data-reveal="copy">
             <h2 id="process-title">Erst Klarheit. Dann Geschwindigkeit.</h2>
             <p>
               Der Prozess bleibt bewusst kompakt. Jede Entscheidung muss sich am
@@ -702,7 +725,7 @@ export function App() {
           </div>
           <ol className="method-rail">
             {method.map((item) => (
-              <li key={item.title} data-reveal>
+              <li key={item.title} data-reveal="line">
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
               </li>
@@ -711,7 +734,7 @@ export function App() {
         </section>
 
         <section className="studio-section" id="studio" aria-labelledby="studio-title">
-          <figure className="studio-medallion" data-reveal>
+          <figure className="studio-medallion" data-reveal="image">
             <img
               src="/assets/chelonaki-wall-medallion.webp"
               alt="Antikes bronzenes Chelonaki-Schildkrötenrelief, eingelassen in eine helle Kalksteinwand"
@@ -720,16 +743,22 @@ export function App() {
               loading="lazy"
             />
           </figure>
-          <div className="studio-copy" data-reveal>
+          <div className="studio-copy" data-reveal="copy">
             <h2 id="studio-title">
-              Technologie folgt.
+              Ich baue Chelonaki
               <br />
-              Urteilskraft führt.
+              für Ideen, die bleiben.
             </h2>
             <p>
-              Chelonaki ist bewusst founder-led. Strategie, kreative Richtung und
-              technische Entscheidung bleiben nah beieinander. Für Spezialdisziplinen
-              entsteht das passende Team um das Problem, nicht um eine Agenturstruktur.
+              Ich komme aus der Ernährungswissenschaft. Dort habe ich gelernt, dass
+              gute Entscheidungen Kontext, Evidenz und Verantwortung brauchen. Genau
+              so behandle ich KI: nicht als Show, sondern als Werkzeug, das eine
+              menschliche Idee präziser und wirksamer macht.
+            </p>
+            <p>
+              Deshalb bleiben Strategie, kreative Richtung und technische
+              Entscheidungen nah beieinander. Für Spezialdisziplinen entsteht das
+              passende Team um die Aufgabe, nicht um eine Agenturstruktur.
             </p>
             <div className="studio-principles">
               <span>Menschlich geführt</span>
@@ -740,12 +769,13 @@ export function App() {
         </section>
 
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
-          <div className="contact-copy" data-reveal>
+          <div className="contact-copy" data-reveal="copy">
             <span className="section-mark" aria-hidden="true" />
-            <h2 id="contact-title">Was soll durch KI besser werden?</h2>
+            <h2 id="contact-title">Erzählen Sie mir, was besser werden soll.</h2>
             <p>
-              Beschreiben Sie die Situation. Sie erhalten eine ehrliche Einschätzung,
-              ob und wie Chelonaki sinnvoll helfen kann.
+              Keine fertige Lösung nötig. Beschreiben Sie den Ausgangspunkt, die
+              Ambition oder auch nur das Problem. Sie erhalten eine ehrliche
+              Einschätzung, ob und wie Chelonaki helfen kann.
             </p>
             <div className="contact-promise">
               <LockKey size={22} aria-hidden="true" />
@@ -756,7 +786,7 @@ export function App() {
             </div>
           </div>
 
-          <div className="contact-panel" data-reveal>
+          <div className="contact-panel" data-reveal="image">
             {formState === "success" ? (
               <div className="form-result" role="status">
                 <Check size={36} weight="bold" aria-hidden="true" />

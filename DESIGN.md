@@ -16,7 +16,7 @@ colors:
 typography:
   display:
     fontFamily: "Cormorant Garamond, Georgia, serif"
-    fontSize: "clamp(63px, 5.35vw, 84px)"
+    fontSize: "clamp(56px, 5.1vw, 82px)"
     fontWeight: 500
     lineHeight: 0.94
     letterSpacing: "-0.036em"
@@ -84,7 +84,7 @@ components:
 
 Chelonaki presents technology through the visual language of architecture, material culture and disciplined editorial publishing. The system is quiet, precise and tactile: warm mineral paper opens the experience, monumental stone carries the focal imagery, and midnight navy gives later chapters weight.
 
-The composition favors asymmetric grids, visible rules and controlled scale changes over generic cards or glowing AI imagery. Motion is slow and architectural, used to reveal depth in the column and stone rather than to decorate every component.
+The composition favors asymmetric grids, visible rules and controlled scale changes over generic cards or glowing AI imagery. Motion is slow and architectural. The hero assembles as one material scene, and the capability chapter uses a single sticky focus sequence instead of repeating the same entrance on every component.
 
 **Key Characteristics:**
 
@@ -92,7 +92,7 @@ The composition favors asymmetric grids, visible rules and controlled scale chan
 - Mineral ivory, midnight navy and deliberately scarce antique gold
 - Square-edged controls, hairline rules and large spatial intervals
 - Real raster material imagery and a bronze wall medallion instead of simulated stone or AI gradients
-- Editorial ledgers and chapter changes instead of repeated card grids
+- Physical folio leaves, ruled chapters and sculpted thresholds instead of repeated card grids
 
 ## Colors
 
@@ -126,7 +126,7 @@ The palette moves between mineral paper and deep navy, with gold used as a preci
 
 ### Hierarchy
 
-- **Display** (500, `clamp(63px, 5.35vw, 84px)`, 0.94): hero statement only.
+- **Display** (500, `clamp(56px, 5.1vw, 82px)`, 0.94): hero statement only.
 - **Headline** (500, `clamp(47px, 4.9vw, 76px)`, 0.98): major chapter headings.
 - **Title** (500, `clamp(35px, 3.5vw, 54px)`, 1.02): work and capability titles.
 - **Body** (400, 15px, 1.72): explanatory copy, kept to a readable editorial measure.
@@ -136,9 +136,9 @@ The palette moves between mineral paper and deep navy, with gold used as a preci
 
 ## Layout
 
-The desktop hero is a three-part ledger: statement left, column centered and capability index right. Content uses a fluid gutter of `clamp(24px, 5.4vw, 86px)` and a 1440px content ceiling. Section spacing ranges from 100px to 176px, with smaller gaps reserved for elements that belong together.
+The desktop hero is one architectural stage: editorial statement left, arch and Ionic column right, three physical strategy leaves in depth and a compact four-field band at the base. A shallow limestone curve cuts into the navy band. Content uses a fluid gutter of `clamp(24px, 5.4vw, 86px)` and a 1440px content ceiling.
 
-At 1050px the navigation becomes a dialog menu and wide content grids simplify. At 767px major chapters stack, the column becomes the opening image, and ledger rows collapse to a compact three-column rhythm without horizontal overflow.
+At 1050px wide chapter grids simplify. At 880px the navigation becomes a dialog menu. At 767px the hero becomes a deliberate sequence of statement, architecture, folios and service band without horizontal overflow.
 
 ## Elevation & Depth
 
@@ -178,21 +178,25 @@ The system does not use generic cards. Work areas are composed as image-and-copy
 
 Desktop navigation uses small tracked labels and animated gold underlines. Below 1050px it becomes a full-height navy dialog with large serif links and a single gold action.
 
-### Capability Ledger
+### Hero Folios
 
-Number, title, explanation and arrow align on ruled rows. At mobile widths the explanation moves below the title while the arrow retains the action edge.
+Three overlapping material leaves carry the verbs Klarheit, System and Wirkung. They belong only in the architectural hero and move as one staged entrance.
+
+### Sticky Capability Chapter
+
+On wide screens the studio thesis remains fixed while each capability chapter moves through focus on the right. Below 1050px the same content returns to normal document flow.
 
 ### Studio Medallion
 
-The turtle mark is rendered as a tactile bronze-and-navy relief inset into warm limestone. It is used once as a signature founder mark and keeps generous wall space around the relief on every breakpoint.
+The turtle mark is rendered as a tactile bronze-and-navy relief inset into warm limestone. A cropped medallion anchors the hero wall, while the full limestone portrait returns in the founder chapter.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** preserve the statement, column and ledger as the first-screen memory.
+- **Do** preserve the statement, arch, full column, folios and navy threshold as the first-screen memory.
 - **Do** use real architectural or material imagery with intentional crops.
-- **Do** keep the bronze turtle medallion as a singular, high-value brand moment.
+- **Do** keep the bronze turtle medallion as a high-value physical brand object.
 - **Do** reserve gold for functional emphasis and measurement-like detail.
 - **Do** let typography and spacing create hierarchy before introducing containers.
 - **Do** keep legal and form states explicit, readable and keyboard-accessible.

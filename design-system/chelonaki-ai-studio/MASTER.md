@@ -5,7 +5,7 @@
 
 **Mode:** Persuade  
 **Redesign:** visual overhaul with product truth, logo, legal content, navigation and conversion path preserved  
-**Design dials:** Variance 8/10, Motion 6/10, Density 3/10
+**Design dials:** Variance 8/10, Motion 7/10, Density 3/10
 
 ## Design Read
 
@@ -68,10 +68,10 @@ Gold is the only accent. It is never used for long body copy. All text/backgroun
 
 Motion must communicate hierarchy and architectural depth.
 
-1. **Hero assembly:** logo, statement and column enter as one coordinated reveal. 500-750ms, exponential ease-out.
-2. **Column depth:** subtle 5-10% parallax on the column or its shadow only. Never move body copy.
-3. **Chapter transition:** one curtain-like or mask-based transition from the hero into the next chapter. This is the authored signature moment.
-4. **Section reveals:** restrained local reveals for major groups only, 350-500ms with small offsets.
+1. **Hero assembly:** statement, architectural stage, folios and wall medallion enter as one coordinated reveal.
+2. **Material threshold:** the shallow limestone curve reveals the navy service band as the first chapter change.
+3. **Sticky focus:** on wide screens, the studio thesis remains fixed while each capability moves from blur into focus.
+4. **Section reveals:** restrained variants for copy, imagery and ruled lines, never one repeated fade on every element.
 5. **Feedback:** buttons and links respond within 150-250ms and remain usable while animating.
 
 Only transform, opacity, clip-path and bounded filter effects may animate. Respect `prefers-reduced-motion`; the static fallback must preserve the full composition and content.
