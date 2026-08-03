@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-03T19:49:07Z",
+  "title": "Design System: Chelonaki AI Studio",
+  "extensions": {
+    "colorMeta": {
+      "midnight-ink": {
+        "role": "primary",
+        "displayName": "Midnight Ink",
+        "canonical": "#071d31",
+        "tonalRamp": ["#071d31", "#102a43", "#163650"]
+      },
+      "mineral-ivory": {
+        "role": "neutral",
+        "displayName": "Mineral Ivory",
+        "canonical": "#f1eadf",
+        "tonalRamp": ["#cfc3b0", "#f1eadf", "#fbf8f1"]
+      },
+      "antique-gold": {
+        "role": "secondary",
+        "displayName": "Antique Gold",
+        "canonical": "#87591a",
+        "tonalRamp": ["#6f4713", "#87591a", "#d1b475"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Monumental Display",
+        "purpose": "Hero statement only."
+      },
+      "headline": {
+        "displayName": "Chapter Headline",
+        "purpose": "Major page chapters."
+      },
+      "body": {
+        "displayName": "Editorial Body",
+        "purpose": "Service and process explanation."
+      },
+      "label": {
+        "displayName": "Ledger Label",
+        "purpose": "Navigation, actions and structured metadata."
+      }
+    },
+    "shadows": [
+      {
+        "name": "header-float",
+        "value": "0 18px 46px rgba(7, 29, 49, 0.08)",
+        "purpose": "Scrolled fixed header only."
+      },
+      {
+        "name": "dialog-depth",
+        "value": "0 34px 90px rgba(0, 0, 0, 0.34)",
+        "purpose": "Legal modal only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entrances, hover lifts and menu movement."
+      },
+      {
+        "name": "ease-soft",
+        "value": "cubic-bezier(0.22, 0.61, 0.36, 1)",
+        "purpose": "Slow material transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1260px"
+      },
+      {
+        "name": "tablet",
+        "value": "1050px"
+      },
+      {
+        "name": "mobile",
+        "value": "767px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary project action on light surfaces.",
+      "html": "<button class=\"ds-button-primary\">PROJEKT BESPRECHEN</button>",
+      "css": ".ds-button-primary { min-height: 48px; padding: 14px 24px; border: 1px solid transparent; border-radius: 0; background: var(--ink, #071d31); color: var(--paper-bright, #fbf8f1); font: 700 10px/1 Manrope, Arial, sans-serif; letter-spacing: .16em; text-transform: uppercase; transition: transform 220ms cubic-bezier(.16,1,.3,1), background-color 220ms cubic-bezier(.16,1,.3,1); } .ds-button-primary:hover { transform: translateY(-2px); background: var(--ink-raised, #163650); } .ds-button-primary:focus-visible { outline: 3px solid var(--gold-soft, #d1b475); outline-offset: 4px; } .ds-button-primary:active { transform: scale(.98); }"
+    },
+    {
+      "name": "Accent Button",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "Primary project action on navy surfaces.",
+      "html": "<button class=\"ds-button-accent\">ANFRAGE VORBEREITEN</button>",
+      "css": ".ds-button-accent { min-height: 48px; padding: 14px 24px; border: 1px solid transparent; border-radius: 0; background: var(--gold-soft, #d1b475); color: var(--ink, #071d31); font: 700 10px/1 Manrope, Arial, sans-serif; letter-spacing: .16em; text-transform: uppercase; transition: transform 220ms cubic-bezier(.16,1,.3,1), background-color 220ms cubic-bezier(.16,1,.3,1); } .ds-button-accent:hover { transform: translateY(-2px); background: #dfc991; } .ds-button-accent:focus-visible { outline: 3px solid var(--gold-soft, #d1b475); outline-offset: 4px; } .ds-button-accent:active { transform: scale(.98); }"
+    },
+    {
+      "name": "Contact Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Square field for the navy contact panel.",
+      "html": "<label class=\"ds-field\"><span>E-MAIL *</span><input type=\"email\" placeholder=\"name@firma.de\"></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 9px; color: #dfe3e4; font: 600 11px/1.4 Manrope, Arial, sans-serif; } .ds-field input { min-height: 50px; padding: 13px 14px; border: 1px solid rgba(241,234,223,.36); border-radius: 0; background: rgba(255,255,255,.045); color: var(--paper-bright, #fbf8f1); font: 400 15px/1.5 Manrope, Arial, sans-serif; } .ds-field input:hover { border-color: rgba(209,180,117,.72); } .ds-field input:focus { outline: none; border-color: var(--gold-soft, #d1b475); box-shadow: 0 0 0 3px rgba(209,180,117,.17); background: rgba(255,255,255,.075); }"
+    },
+    {
+      "name": "Capability Ledger Row",
+      "kind": "custom",
+      "description": "Ruled service row with number, title and explanation.",
+      "html": "<div class=\"ds-ledger-row\"><span>01</span><strong>AI &amp; APPS</strong><p>Strategie, Beratung und individuelle KI-Lösungen.</p><b>→</b></div>",
+      "css": ".ds-ledger-row { min-height: 92px; display: grid; grid-template-columns: 34px 120px 1fr 22px; gap: 10px; align-items: center; border-top: 1px solid rgba(7,29,49,.19); color: var(--ink, #071d31); font-family: Manrope, Arial, sans-serif; } .ds-ledger-row span { color: var(--gold, #87591a); font: 500 11px/1 'Cormorant Garamond', Georgia, serif; } .ds-ledger-row strong { font-size: 12px; } .ds-ledger-row p { color: #394b58; font-size: 9px; line-height: 1.4; } .ds-ledger-row b { color: var(--gold, #87591a); font-weight: 400; transition: transform 220ms cubic-bezier(.16,1,.3,1); } .ds-ledger-row:hover b { transform: translateX(4px); }"
+    },
+    {
+      "name": "Desktop Navigation",
+      "kind": "nav",
+      "description": "Tracked utility navigation with a measured gold underline.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#expertise\">EXPERTISE</a><a href=\"#work\">ARBEITSFELDER</a><a href=\"#studio\">STUDIO</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 38px; color: var(--ink, #071d31); font: 700 10px/1 Manrope, Arial, sans-serif; letter-spacing: .18em; } .ds-nav a { position: relative; padding: 20px 0; color: inherit; text-decoration: none; } .ds-nav a::after { content: ''; position: absolute; left: 0; right: 100%; bottom: 12px; height: 1px; background: var(--gold, #87591a); transition: right 240ms cubic-bezier(.16,1,.3,1); } .ds-nav a:hover::after, .ds-nav a:focus-visible::after { right: 0; } .ds-nav a:focus-visible { outline: 3px solid var(--gold-soft, #d1b475); outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Sanctuary Ledger",
+    "overview": "A quiet architectural world where warm paper, monumental stone and editorial ledgers make AI feel considered, useful and human-led. Midnight navy chapters add authority while antique gold remains a scarce functional marker.",
+    "keyCharacteristics": [
+      "Monumental editorial serif",
+      "Mineral ivory and midnight navy",
+      "Real architectural material imagery",
+      "Bronze turtle medallion inset into limestone",
+      "Square controls and hairline rules",
+      "Asymmetric ledger compositions"
+    ],
+    "rules": [
+      {
+        "name": "The Scarce Gold Rule",
+        "body": "Gold marks hierarchy, actions and measurement lines; it never becomes a decorative field.",
+        "section": "colors"
+      },
+      {
+        "name": "The Material-First Rule",
+        "body": "Show depth through real imagery or tonal layers before adding shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Two-Voice Rule",
+        "body": "Serif carries meaning and atmosphere; sans serif carries navigation, explanation and action.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Preserve the statement, column and ledger as the first-screen memory.",
+      "Use real architectural imagery with intentional crops.",
+      "Use the bronze turtle medallion once as a signature founder mark.",
+      "Keep legal and form states explicit and accessible."
+    ],
+    "donts": [
+      "Introduce glowing AI gradients or neon circuitry.",
+      "Turn capabilities into rounded icon-card grids.",
+      "Invent commercial proof or nutrition claims."
+    ]
+  }
+}
