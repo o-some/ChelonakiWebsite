@@ -1194,7 +1194,16 @@ export default {
     "Beispiel": "Example",
     "lab-how": "lab how",
     "Ansehen": "View",
-    "e sind": "e are"
+    "e sind": "e are",
+    "Das ist in Ihrer Auswahl enthalten. Darunter sehen Sie die anderen Pakete mit ihrem jeweiligen Umfang – ohne die Seite zu verlassen.": "This is included in your selection. Below you can see the other packages with their respective scope - without leaving the page.",
+    "Wählen Sie ein Paket. Direkt danach öffnet sich eine vollständige Übersicht mit enthaltenen Leistungen und allen Alternativen.": "Choose a package. Immediately afterwards, a complete overview opens with included services and all alternatives.",
+    "Gewähltes Paket und Vergleich": "Chosen package and comparison",
+    "Dieses Paket vergleichen": "Compare this package",
+    "package-comparison-grid": "package-comparison-grid",
+    "Vergleich schließen": "Close comparison",
+    "pricing-features": "pricing features",
+    "Vergleichspaket": "Comparison package",
+    "smooth": "smooth"
   },
   "el": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Το περιεχόμενο, τα προϊόντα, οι παραγγελίες και πολλές καθημερινές ρυθμίσεις διαχειρίζονται σε μια κεντρική διεπαφή. Η φιλοξενία, οι ενημερώσεις κεντρικής πλατφόρμας και τα πιστοποιητικά TLS για συνδεδεμένους τομείς μειώνουν τις τεχνικές εσωτερικές λειτουργίες - χωρίς να υπόσχονται απόλυτη ελευθερία από διακοπές.",
@@ -2390,7 +2399,16 @@ export default {
     "Beispiel": "Παράδειγμα",
     "lab-how": "εργαστήριο πώς",
     "Ansehen": "Προβολή",
-    "e sind": "ε είναι"
+    "e sind": "ε είναι",
+    "Das ist in Ihrer Auswahl enthalten. Darunter sehen Sie die anderen Pakete mit ihrem jeweiligen Umfang – ohne die Seite zu verlassen.": "Αυτό περιλαμβάνεται στην επιλογή σας. Παρακάτω μπορείτε να δείτε τα υπόλοιπα πακέτα με το αντίστοιχο εύρος τους - χωρίς να φύγετε από τη σελίδα.",
+    "Wählen Sie ein Paket. Direkt danach öffnet sich eine vollständige Übersicht mit enthaltenen Leistungen und allen Alternativen.": "Επιλέξτε ένα πακέτο. Αμέσως μετά, ανοίγει μια πλήρης επισκόπηση με τις υπηρεσίες που περιλαμβάνονται και όλες τις εναλλακτικές.",
+    "Gewähltes Paket und Vergleich": "Επιλεγμένο πακέτο και σύγκριση",
+    "Dieses Paket vergleichen": "Συγκρίνετε αυτό το πακέτο",
+    "package-comparison-grid": "πακέτο-σύγκριση-πλέγμα",
+    "Vergleich schließen": "Στενή σύγκριση",
+    "pricing-features": "χαρακτηριστικά τιμολόγησης",
+    "Vergleichspaket": "Πακέτο σύγκρισης",
+    "smooth": "ομαλή"
   },
   "fr": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Le contenu, les produits, les commandes et de nombreux paramètres du quotidien sont gérés dans une interface centrale. L'hébergement, les mises à jour de la plateforme centrale et les certificats TLS pour les domaines connectés réduisent les opérations techniques internes - sans promettre une liberté absolue contre les perturbations.",
@@ -3586,7 +3604,16 @@ export default {
     "Beispiel": "Exemple",
     "lab-how": "laboratoire comment",
     "Ansehen": "Voir",
-    "e sind": "nous sommes"
+    "e sind": "nous sommes",
+    "Das ist in Ihrer Auswahl enthalten. Darunter sehen Sie die anderen Pakete mit ihrem jeweiligen Umfang – ohne die Seite zu verlassen.": "Ceci est inclus dans votre sélection. Ci-dessous, vous pouvez voir les autres packages avec leur portée respective - sans quitter la page.",
+    "Wählen Sie ein Paket. Direkt danach öffnet sich eine vollständige Übersicht mit enthaltenen Leistungen und allen Alternativen.": "Choisissez un forfait. Immédiatement après, un aperçu complet s'ouvre avec les services inclus et toutes les alternatives.",
+    "Gewähltes Paket und Vergleich": "Forfait choisi et comparaison",
+    "Dieses Paket vergleichen": "Comparez ce forfait",
+    "package-comparison-grid": "grille de comparaison de packages",
+    "Vergleich schließen": "Comparaison étroite",
+    "pricing-features": "fonctionnalités de tarification",
+    "Vergleichspaket": "Forfait comparatif",
+    "smooth": "lisse"
   },
   "es": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "El contenido, los productos, los pedidos y muchas configuraciones cotidianas se gestionan en una interfaz central. El alojamiento, las actualizaciones de la plataforma central y los certificados TLS para dominios conectados reducen las operaciones técnicas internas, sin prometer una ausencia absoluta de interrupciones.",
@@ -4782,7 +4809,16 @@ export default {
     "Beispiel": "Ejemplo",
     "lab-how": "laboratorio como",
     "Ansehen": "Ver",
-    "e sind": "nosotros somos"
+    "e sind": "nosotros somos",
+    "Das ist in Ihrer Auswahl enthalten. Darunter sehen Sie die anderen Pakete mit ihrem jeweiligen Umfang – ohne die Seite zu verlassen.": "Esto está incluido en su selección. A continuación puede ver los demás paquetes con sus respectivos alcances, sin salir de la página.",
+    "Wählen Sie ein Paket. Direkt danach öffnet sich eine vollständige Übersicht mit enthaltenen Leistungen und allen Alternativen.": "Elija un paquete. Inmediatamente después, se abre una descripción completa con los servicios incluidos y todas las alternativas.",
+    "Gewähltes Paket und Vergleich": "Paquete elegido y comparación.",
+    "Dieses Paket vergleichen": "Compara este paquete",
+    "package-comparison-grid": "cuadrícula-de-comparación-de-paquetes",
+    "Vergleich schließen": "Cerrar comparación",
+    "pricing-features": "características de precios",
+    "Vergleichspaket": "Paquete de comparación",
+    "smooth": "suave"
   },
   "tr": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "İçerik, ürünler, siparişler ve birçok günlük ayar merkezi bir arayüzden yönetilir. Bağlantılı alanlara yönelik barındırma, merkezi platform güncellemeleri ve TLS sertifikaları, kesintiden mutlak bir özgürlük vaat etmeden, şirket içi teknik işlemleri azaltır.",
@@ -5978,7 +6014,16 @@ export default {
     "Beispiel": "Örnek",
     "lab-how": "laboratuvar nasıl",
     "Ansehen": "Görüntüle",
-    "e sind": "biz"
+    "e sind": "biz",
+    "Das ist in Ihrer Auswahl enthalten. Darunter sehen Sie die anderen Pakete mit ihrem jeweiligen Umfang – ohne die Seite zu verlassen.": "Bu seçiminize dahildir. Aşağıda diğer paketleri ilgili kapsamlarıyla birlikte sayfadan ayrılmadan görebilirsiniz.",
+    "Wählen Sie ein Paket. Direkt danach öffnet sich eine vollständige Übersicht mit enthaltenen Leistungen und allen Alternativen.": "Bir paket seçin. Hemen ardından, dahil edilen hizmetleri ve tüm alternatifleri içeren eksiksiz bir genel bakış açılır.",
+    "Gewähltes Paket und Vergleich": "Seçilen paket ve karşılaştırma",
+    "Dieses Paket vergleichen": "Bu paketi karşılaştırın",
+    "package-comparison-grid": "paket-karşılaştırma-ızgarası",
+    "Vergleich schließen": "Yakın karşılaştırma",
+    "pricing-features": "fiyatlandırma özellikleri",
+    "Vergleichspaket": "Karşılaştırma paketi",
+    "smooth": "pürüzsüz"
   },
   "pl": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Treścią, produktami, zamówieniami i wieloma codziennymi ustawieniami zarządza się w centralnym interfejsie. Hosting, aktualizacje platform centralnych i certyfikaty TLS dla podłączonych domen ograniczają wewnętrzne operacje techniczne – nie zapewniając przy tym całkowitej wolności od zakłóceń.",
@@ -7174,7 +7219,16 @@ export default {
     "Beispiel": "Przykład",
     "lab-how": "laboratorium jak",
     "Ansehen": "Zobacz",
-    "e sind": "jesteśmy"
+    "e sind": "jesteśmy",
+    "Das ist in Ihrer Auswahl enthalten. Darunter sehen Sie die anderen Pakete mit ihrem jeweiligen Umfang – ohne die Seite zu verlassen.": "Jest to uwzględnione w Twoim wyborze. Poniżej możesz zobaczyć pozostałe pakiety wraz z ich zakresem - bez konieczności opuszczania strony.",
+    "Wählen Sie ein Paket. Direkt danach öffnet sich eine vollständige Übersicht mit enthaltenen Leistungen und allen Alternativen.": "Wybierz pakiet. Zaraz potem otwiera się pełny przegląd z zawartymi usługami i wszystkimi alternatywami.",
+    "Gewähltes Paket und Vergleich": "Wybrany pakiet i porównanie",
+    "Dieses Paket vergleichen": "Porównaj ten pakiet",
+    "package-comparison-grid": "siatka-porównania pakietów",
+    "Vergleich schließen": "Bliskie porównanie",
+    "pricing-features": "funkcje cenowe",
+    "Vergleichspaket": "Pakiet porównawczy",
+    "smooth": "gładka"
   },
   "nl": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Inhoud, producten, bestellingen en veel dagelijkse instellingen worden beheerd in een centrale interface. Hosting, centrale platformupdates en TLS-certificaten voor verbonden domeinen verminderen de technische interne activiteiten - zonder absolute vrijheid van verstoring te beloven.",
@@ -8370,7 +8424,16 @@ export default {
     "Beispiel": "Voorbeeld",
     "lab-how": "laboratorium hoe",
     "Ansehen": "Bekijk",
-    "e sind": "e zijn"
+    "e sind": "e zijn",
+    "Das ist in Ihrer Auswahl enthalten. Darunter sehen Sie die anderen Pakete mit ihrem jeweiligen Umfang – ohne die Seite zu verlassen.": "Dit is inbegrepen in uw selectie. Hieronder kunt u de andere pakketten met hun respectieve omvang zien - zonder de pagina te verlaten.",
+    "Wählen Sie ein Paket. Direkt danach öffnet sich eine vollständige Übersicht mit enthaltenen Leistungen und allen Alternativen.": "Kies een pakket. Direct daarna opent een compleet overzicht met inbegrepen diensten en alle alternatieven.",
+    "Gewähltes Paket und Vergleich": "Gekozen pakket en vergelijking",
+    "Dieses Paket vergleichen": "Vergelijk dit pakket",
+    "package-comparison-grid": "pakketvergelijkingsraster",
+    "Vergleich schließen": "Nauwkeurige vergelijking",
+    "pricing-features": "prijskenmerken",
+    "Vergleichspaket": "Vergelijkingspakket",
+    "smooth": "glad"
   },
   "it": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Contenuti, prodotti, ordini e molte impostazioni quotidiane sono gestiti in un'interfaccia centrale. Hosting, aggiornamenti della piattaforma centrale e certificati TLS per i domini collegati riducono le operazioni tecniche interne, senza garantire l'assoluta libertà da interruzioni.",
@@ -9566,7 +9629,16 @@ export default {
     "Beispiel": "Esempio",
     "lab-how": "laboratorio come",
     "Ansehen": "Visualizza",
-    "e sind": "e siamo"
+    "e sind": "e siamo",
+    "Das ist in Ihrer Auswahl enthalten. Darunter sehen Sie die anderen Pakete mit ihrem jeweiligen Umfang – ohne die Seite zu verlassen.": "Questo è incluso nella tua selezione. Di seguito puoi vedere gli altri pacchetti con il rispettivo ambito - senza uscire dalla pagina.",
+    "Wählen Sie ein Paket. Direkt danach öffnet sich eine vollständige Übersicht mit enthaltenen Leistungen und allen Alternativen.": "Scegli un pacchetto. Subito dopo si apre una panoramica completa con i servizi inclusi e tutte le alternative.",
+    "Gewähltes Paket und Vergleich": "Pacchetto scelto e confronto",
+    "Dieses Paket vergleichen": "Confronta questo pacchetto",
+    "package-comparison-grid": "griglia di confronto dei pacchetti",
+    "Vergleich schließen": "Confronto ravvicinato",
+    "pricing-features": "caratteristiche dei prezzi",
+    "Vergleichspaket": "Pacchetto di confronto",
+    "smooth": "liscio"
   },
   "pt": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Conteúdo, produtos, pedidos e muitas configurações do dia a dia são gerenciados em uma interface central. A hospedagem, as atualizações da plataforma central e os certificados TLS para domínios conectados reduzem as operações técnicas internas - sem prometer liberdade absoluta contra interrupções.",
@@ -10762,7 +10834,16 @@ export default {
     "Beispiel": "Exemplo",
     "lab-how": "laboratório como",
     "Ansehen": "Ver",
-    "e sind": "nós somos"
+    "e sind": "nós somos",
+    "Das ist in Ihrer Auswahl enthalten. Darunter sehen Sie die anderen Pakete mit ihrem jeweiligen Umfang – ohne die Seite zu verlassen.": "Isso está incluído na sua seleção. Abaixo você confere os demais pacotes com seus respectivos escopos - sem sair da página.",
+    "Wählen Sie ein Paket. Direkt danach öffnet sich eine vollständige Übersicht mit enthaltenen Leistungen und allen Alternativen.": "Escolha um pacote. Imediatamente a seguir, abre-se uma visão geral completa com os serviços incluídos e todas as alternativas.",
+    "Gewähltes Paket und Vergleich": "Pacote escolhido e comparação",
+    "Dieses Paket vergleichen": "Compare este pacote",
+    "package-comparison-grid": "grade de comparação de pacotes",
+    "Vergleich schließen": "Comparação aproximada",
+    "pricing-features": "recursos de preços",
+    "Vergleichspaket": "Pacote de comparação",
+    "smooth": "suave"
   },
   "ru": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Контент, продукты, заказы и многие повседневные настройки управляются через центральный интерфейс. Хостинг, обновления центральной платформы и сертификаты TLS для подключенных доменов сокращают внутренние технические операции, не обещая при этом абсолютной свободы от сбоев.",
@@ -11957,7 +12038,16 @@ export default {
     "Beispiel": "Пример",
     "lab-how": "лаборатория как",
     "Ansehen": "Посмотреть",
-    "e sind": "мы"
+    "e sind": "мы",
+    "Das ist in Ihrer Auswahl enthalten. Darunter sehen Sie die anderen Pakete mit ihrem jeweiligen Umfang – ohne die Seite zu verlassen.": "Это включено в ваш выбор. Ниже вы можете увидеть другие пакеты с соответствующей областью применения, не покидая страницу.",
+    "Wählen Sie ein Paket. Direkt danach öffnet sich eine vollständige Übersicht mit enthaltenen Leistungen und allen Alternativen.": "Выберите пакет. Сразу после этого открывается полный обзор включенных услуг и всех альтернатив.",
+    "Gewähltes Paket und Vergleich": "Выбранный пакет и сравнение",
+    "Dieses Paket vergleichen": "Сравнить этот пакет",
+    "package-comparison-grid": "сетка сравнения пакетов",
+    "Vergleich schließen": "Близкое сравнение",
+    "pricing-features": "особенности ценообразования",
+    "Vergleichspaket": "Сравнительный пакет",
+    "smooth": "гладкий"
   },
   "ar": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "تتم إدارة المحتوى والمنتجات والأوامر والعديد من الإعدادات اليومية في واجهة مركزية. تعمل الاستضافة وتحديثات النظام الأساسي المركزي وشهادات TLS للنطاقات المتصلة على تقليل العمليات الفنية الداخلية - دون الوعد بالحرية المطلقة من الانقطاع.",
@@ -13153,6 +13243,15 @@ export default {
     "Beispiel": "مثال",
     "lab-how": "مختبر كيف",
     "Ansehen": "منظر",
-    "e sind": "ه"
+    "e sind": "ه",
+    "Das ist in Ihrer Auswahl enthalten. Darunter sehen Sie die anderen Pakete mit ihrem jeweiligen Umfang – ohne die Seite zu verlassen.": "يتم تضمين هذا في اختيارك. يمكنك أدناه رؤية الحزم الأخرى بنطاقها الخاص - دون مغادرة الصفحة.",
+    "Wählen Sie ein Paket. Direkt danach öffnet sich eine vollständige Übersicht mit enthaltenen Leistungen und allen Alternativen.": "اختر الحزمة. وبعد ذلك مباشرة، يتم فتح نظرة عامة كاملة على الخدمات المضمنة وجميع البدائل.",
+    "Gewähltes Paket und Vergleich": "الحزمة المختارة والمقارنة",
+    "Dieses Paket vergleichen": "قارن هذه الحزمة",
+    "package-comparison-grid": "شبكة مقارنة الحزم",
+    "Vergleich schließen": "مقارنة قريبة",
+    "pricing-features": "ميزات التسعير",
+    "Vergleichspaket": "حزمة المقارنة",
+    "smooth": "سلس"
   }
 };
