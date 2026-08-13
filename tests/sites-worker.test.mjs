@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 import worker from "../worker/index.js";
+import translations from "../src/translations.generated.js";
 
 test("serves existing static assets without a fallback", async () => {
   const calls = [];
@@ -20,6 +21,8 @@ test("serves existing static assets without a fallback", async () => {
   assert.equal(response.headers.get("x-frame-options"), "DENY");
   assert.match(response.headers.get("content-security-policy"), /frame-ancestors 'none'/);
   assert.match(response.headers.get("permissions-policy"), /camera=\(\)/);
+  assert.equal(response.headers.get("x-permitted-cross-domain-policies"), "none");
+  assert.equal(response.headers.get("origin-agent-cluster"), "?1");
 });
 
 test("falls back to index.html for an unknown app route", async () => {
@@ -80,7 +83,7 @@ test("chat validates requests and answers safely without a hosted API key", asyn
 
 test("chat refuses cross-origin requests", async () => {
   const response = await worker.fetch(new Request("https://example.test/api/chat", { method: "POST", headers: { "content-type": "application/json", origin: "https://attacker.test" }, body: JSON.stringify({ messages: [{ role: "user", content: "Hallo" }] }) }), {});
-  assert.equal(response.status, 429);
+  assert.equal(response.status, 403);
 });
 
 test("emits the files required by Sites packaging", async () => {
@@ -93,9 +96,29 @@ test("Astro emits the application shell and canonical direct routes", async () =
   const index = await readFile(new URL("../dist/client/index.html", import.meta.url), "utf8");
   assert.match(index, /<meta name="generator" content="Astro v/);
   assert.match(index, /<astro-island/);
+  assert.match(index, /Aus Ihrer Idee/);
+  assert.match(index, /<main id="main"/);
   await access(new URL("../dist/client/medien-ai/social-media/index.html", import.meta.url));
   await access(new URL("../dist/client/ki-beratung-weiterbildung/video-academy/index.html", import.meta.url));
   await access(new URL("../dist/client/originals/apps/chelonaki-reply/index.html", import.meta.url));
+});
+
+test("all supported languages contain complete, localized dictionaries", () => {
+  const languages = ["en", "el", "fr", "es", "tr", "pl", "nl", "it", "pt", "ru", "ar"];
+  assert.deepEqual(Object.keys(translations).sort(), languages.sort());
+  for (const language of languages) {
+    assert.ok(Object.keys(translations[language]).length >= 1379, `${language} dictionary is incomplete`);
+    assert.ok(Object.values(translations[language]).every((value) => typeof value === "string" && value.trim()), `${language} contains an empty translation`);
+  }
+  assert.equal(translations.el["Medien & KI"], "Μέσα & ΤΝ");
+  assert.equal(translations.tr["Medien & KI"], "Medya & YZ");
+  assert.equal(translations.ru["Medien & KI"], "Медиа и ИИ");
+  assert.match(translations.ar["Medien & KI"], /الذكاء الاصطناعي/);
+});
+
+test("the guided assistant has no external AI transport or secret dependency", async () => {
+  const source = await readFile(new URL("../worker/index.js", import.meta.url), "utf8");
+  assert.doesNotMatch(source, /api\.openai\.com|OPENAI_API_KEY|Authorization/);
 });
 
 test("every local image referenced by the application exists", async () => {

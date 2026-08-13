@@ -7,6 +7,7 @@ const legalViews = {
   impressum: { label: "Rechtliche Angaben", title: "Impressum", content: <><p className="legal-lead">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p><h3>Anbieter</h3><p><mark>[VOLLSTÄNDIGER NAME ODER FIRMA]</mark><br/><mark>[RECHTSFORM]</mark><br/><mark>[LADUNGSFÄHIGE ANSCHRIFT]</mark><br/>Deutschland</p><h3>Vertretung und Kontakt</h3><p>Vertreten durch: <mark>[VERTRETUNGSBERECHTIGTE PERSON]</mark><br/>Telefon: <mark>[TELEFONNUMMER]</mark><br/>E-Mail: <mark>[E-MAIL-ADRESSE]</mark></p><h3>Register und Steuern</h3><p>Registergericht und Registernummer: <mark>[FALLS ZUTREFFEND]</mark><br/>Umsatzsteuer-ID: <mark>[FALLS VORHANDEN]</mark></p><p className="legal-note">Die Betreiberangaben sind vor dem öffentlichen Geschäftsstart zu vervollständigen.</p></> },
   datenschutz: { label: "Datensparsame Vorschau", title: "Datenschutzerklärung", content: <><p className="legal-lead">Diese Vorschau setzt keine optionalen Analyse- oder Marketing-Cookies ein. Reale Datenflüsse und Anbieter müssen vor Veröffentlichung ergänzt und geprüft werden.</p><h3>Verantwortlicher</h3><p><mark>[NAME ODER FIRMA, ANSCHRIFT UND KONTAKTDATEN]</mark></p><h3>Hosting</h3><p>Beim Aufruf können technisch erforderliche Verbindungsdaten verarbeitet werden. Anbieter, Region, Auftragsverarbeitung und Löschfrist: <mark>[ERGÄNZEN]</mark>.</p><h3>Sprachversionen</h3><p>Die angebotenen Sprachfassungen werden direkt von der Website bereitgestellt. Beim Sprachwechsel werden keine Inhalte an einen externen Übersetzungsdienst übermittelt. Die deutsche Fassung bleibt die inhaltliche Ausgangsversion.</p><h3>Kontaktaufnahme</h3><p>Übermittelte Angaben werden ausschließlich zur Bearbeitung der Anfrage verarbeitet. Diese Vorschau versendet noch keine Formulardaten.</p><h3>Ihre Rechte</h3><p>Nach Maßgabe der DSGVO bestehen insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch.</p></> },
   cookies: { label: "Datenschutz-Einstellungen", title: "Cookies", content: <><p className="legal-lead">Aktuell sind keine optionalen Cookies oder Tracking-Dienste eingebunden.</p><div className="settings-row"><div><strong>Technisch notwendiger Betrieb</strong><p>Erforderlich für die sichere Auslieferung.</p></div><span><Check size={16}/> Aktiv</span></div><div className="settings-row is-muted"><div><strong>Analyse und Marketing</strong><p>Nicht eingebunden.</p></div><span>Inaktiv</span></div></> },
+  widerruf: { label: "Hinweise für Verbraucher", title: "Widerruf", content: <><p className="legal-lead">Verbrauchern steht bei einem gesetzlich widerrufbaren Fernabsatzvertrag grundsätzlich eine Widerrufsfrist von 14 Tagen zu. Maßgeblich ist die vollständige, zum konkreten Vertrag bereitgestellte Widerrufsbelehrung.</p><h3>Widerruf erklären</h3><p>Der Widerruf muss eindeutig gegenüber dem Anbieter erklärt werden; eine Begründung ist nicht erforderlich. Zur Fristwahrung genügt die rechtzeitige Absendung. Die verbindlichen Kontaktangaben werden mit dem konkreten Angebot und vor einem zahlungspflichtigen Vertragsschluss bereitgestellt.</p><h3>Leistungsbeginn vor Fristablauf</h3><p>Wenn Sie ausdrücklich verlangen, dass eine kostenpflichtige Dienstleistung bereits vor Ablauf der Widerrufsfrist beginnt, kann für den bis zum Widerruf erbrachten Anteil ein gesetzlich vorgesehener Wertersatz anfallen. Das Widerrufsrecht kann bei vollständiger Leistung unter den gesetzlichen Voraussetzungen vorzeitig erlöschen.</p><h3>Digitale Inhalte</h3><p>Für digitale Inhalte, die nicht auf einem körperlichen Datenträger bereitgestellt werden, gelten besondere Voraussetzungen. Ein vorzeitiges Erlöschen kommt nur nach den gesetzlich erforderlichen Zustimmungen, Bestätigungen und Informationen in Betracht.</p><h3>Musterformulierung</h3><p>„Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über die folgende Leistung: <mark>[LEISTUNG]</mark>. Bestellt am: <mark>[DATUM]</mark>. Name und Anschrift: <mark>[ANGABEN]</mark>. Datum: <mark>[DATUM]</mark>.“</p><p className="legal-note">Diese allgemeine Information ersetzt noch keine vertragsspezifische Widerrufsbelehrung. Vor der Aktivierung eines B2C-Verkaufs werden Anbieteranschrift, Kontaktweg, Fristbeginn, Ausnahmen und Musterformular rechtlich abschließend ergänzt.</p></> },
   barrierefreiheit: { label: "Zugängliche Gestaltung", title: "Barrierefreiheit", content: <><p className="legal-lead">Chelonaki soll unabhängig von Gerät und Eingabemethode gut nutzbar sein.</p><ul><li>Semantische Struktur und Tastaturbedienung</li><li>Sichtbare Fokuszustände und große Bedienflächen</li><li>Kontrastreiche Gestaltung und Bildalternativen</li><li>Reduzierte Bewegung bei Systemeinstellung</li><li>Responsive Darstellung ohne horizontales Scrollen</li></ul><p className="legal-note">Die konkrete BFSG-Anwendbarkeit wird vor einem B2C-Onlineshop gesondert geprüft.</p></> },
 };
 
@@ -64,14 +65,16 @@ const translatedTextNodes = new WeakMap();
 const translatedAttributeNodes = new WeakMap();
 
 function getSavedLanguage() {
+  if (typeof window === "undefined") return "de";
   const saved = window.localStorage.getItem("chelonaki-language");
   return languageOptions.some(([code]) => code === saved) ? saved : "de";
 }
 
 function LanguagePicker({ mobile = false }) {
-  const [language, setLanguage] = useState(() => getSavedLanguage());
+  const [language, setLanguage] = useState("de");
   const [open, setOpen] = useState(false);
   const pickerRef = useRef(null);
+  useEffect(() => setLanguage(getSavedLanguage()), []);
   useEffect(() => {
     const close = (event) => { if (!pickerRef.current?.contains(event.target)) setOpen(false); };
     document.addEventListener("pointerdown", close);
@@ -236,10 +239,21 @@ function Pricing({ data }) {
   useEffect(() => {
     if (!comparisonOpen) return undefined;
     const previous = document.body.style.overflow;
+    const previousFocus = document.activeElement;
     document.body.style.overflow = "hidden";
-    const closeOnEscape = (event) => { if (event.key === "Escape") setComparisonOpen(false); };
-    document.addEventListener("keydown", closeOnEscape);
-    return () => { document.body.style.overflow = previous; document.removeEventListener("keydown", closeOnEscape); };
+    const modal = document.querySelector(".package-modal");
+    const focusable = () => [...(modal?.querySelectorAll('a[href], button:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])') || [])].filter((node) => node.getClientRects().length);
+    requestAnimationFrame(() => focusable()[0]?.focus());
+    const handleKey = (event) => {
+      if (event.key === "Escape") { event.preventDefault(); setComparisonOpen(false); return; }
+      if (event.key !== "Tab") return;
+      const items = focusable(); if (!items.length) return;
+      const first = items[0]; const last = items.at(-1);
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => { document.body.style.overflow = previous; document.removeEventListener("keydown", handleKey); if (previousFocus instanceof HTMLElement) previousFocus.focus(); };
   }, [comparisonOpen]);
   useEffect(() => {
     if (!comparisonOpen || !selected) return;
@@ -289,7 +303,7 @@ function WebDesignPreview({ entry, compact = false }) {
 }
 
 function LabPage() {
-  const [saved, setSaved] = useState(() => { try { return JSON.parse(localStorage.getItem("chelonaki-lab") || "[]"); } catch { return []; } });
+  const [saved, setSaved] = useState([]);
   const [category, setCategory] = useState(null);
   const [bookCategory, setBookCategory] = useState("Alle");
   const [visible, setVisible] = useState(8);
@@ -298,6 +312,7 @@ function LabPage() {
   const [zoomLevel, setZoomLevel] = useState(1);
   const [bookPackage, setBookPackage] = useState("Authority Book · 3.000 €");
   const galleryRef = useRef(null);
+  useEffect(() => { try { setSaved(JSON.parse(localStorage.getItem("chelonaki-lab") || "[]")); } catch { setSaved([]); } }, []);
   const toggle = (title) => setSaved((current) => { const next = current.includes(title) ? current.filter((item) => item !== title) : [...current, title]; localStorage.setItem("chelonaki-lab", JSON.stringify(next)); return next; });
   const categories = [
     ["Bücher", "Buchdesigns", "Cover, Inhaltsseiten, Kapitel, Rezepte und Editorialsysteme"],
@@ -393,7 +408,7 @@ function AboutPage() {
 }
 
 function ContactPage() {
-  const [state, setState] = useState("idle"); const [errors, setErrors] = useState({}); const privacyId = useId(); const query = new URLSearchParams(window.location.search).get("bereich") || "";
+  const [state, setState] = useState("idle"); const [errors, setErrors] = useState({}); const privacyId = useId(); const query = typeof window === "undefined" ? "" : (new URLSearchParams(window.location.search).get("bereich") || "");
   const submit = (e) => { e.preventDefault(); const data = new FormData(e.currentTarget); const next = {}; if (!data.get("name")?.trim()) next.name = true; if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.get("email") || "")) next.email = true; if (!data.get("focus")) next.focus = true; if ((data.get("message") || "").trim().length < 20) next.message = true; if (!data.get("privacy")) next.privacy = true; setErrors(next); if (!Object.keys(next).length) setTimeout(() => setState("success"), 500); };
   return <main id="main"><section className="contact-page"><div className="contact-copy"><span>Projekt, Beratung oder Produktanfrage</span><h1>Was möchten Sie mit Chelonaki aufbauen?</h1><p>Wählen Sie den passenden Bereich. Danach fragen wir nur die Informationen ab, die für Ihr Vorhaben wirklich relevant sind.</p><SmartLink className="text-link text-link-light" href="/paketfinder">Erst die passende Lösung finden <ArrowRight size={18}/></SmartLink><div className="contact-promise"><LockKey size={22}/><span><strong>Qualifizierte Anfrage</strong>Eine Anfrage ist noch keine Auftragsannahme. Diese Vorschau versendet noch keine Daten.</span></div></div><div className="contact-panel">{state === "success" ? <div className="form-result"><Check size={36}/><h2>Die Anfrage ist vorbereitet.</h2><p>Der sichere Versand wird nach Ergänzung der finalen Unternehmens- und Datenschutzangaben angebunden.</p><button className="text-link text-link-light" onClick={() => setState("idle")}>Neue Anfrage <ArrowRight size={18}/></button></div> : <form noValidate onSubmit={submit}><div className="field-pair"><label><span>Name *</span><input name="name" autoComplete="name" aria-invalid={errors.name}/>{errors.name && <small className="field-error">Bitte Namen eingeben.</small>}</label><label><span>E-Mail *</span><input name="email" type="email" autoComplete="email" aria-invalid={errors.email}/>{errors.email && <small className="field-error">Bitte E-Mail prüfen.</small>}</label></div><div className="field-pair"><label><span>Unternehmen oder Projekt (optional)</span><input name="company" autoComplete="organization"/></label><label><span>Gewünschte Leistung *</span><select name="focus" defaultValue={query} aria-invalid={errors.focus}><option value="" disabled>Bitte wählen</option><option>Digitalprojekt</option><option>Bücher erstellen lassen & Ghostwriting</option><option>KI-Beratung für Unternehmen</option><option>KI-Schulungen & Workshops für Mitarbeiter</option><option>Chelonaki Video Academy</option><option>Partnerschaft oder Originals</option>{query && <option>{query}</option>}</select>{errors.focus && <small className="field-error">Bitte Bereich wählen.</small>}</label></div><div className="field-pair"><label><span>Budgetrahmen</span><select name="budget" defaultValue=""><option value="">Noch offen</option><option>bis 1.500 €</option><option>1.500–3.000 €</option><option>3.000–6.000 €</option><option>über 6.000 €</option></select></label><label><span>Gewünschter Start</span><select name="start" defaultValue=""><option value="">Noch offen</option><option>so bald wie möglich</option><option>in 1–3 Monaten</option><option>in 3–6 Monaten</option><option>später</option></select></label></div><label><span>Ziel und Ausgangslage *</span><textarea name="message" rows="5" aria-invalid={errors.message}/>{errors.message && <small className="field-error">Bitte mindestens 20 Zeichen schreiben.</small>}</label><label className="privacy-field" htmlFor={privacyId}><input id={privacyId} type="checkbox" name="privacy" aria-invalid={errors.privacy}/><span>Ich habe die Datenschutzhinweise zur Bearbeitung meiner Anfrage zur Kenntnis genommen. *</span></label>{errors.privacy && <small className="field-error">Bitte bestätigen.</small>}<button className="button button-gold submit-button" type="submit">Anfrage vorbereiten <ArrowUpRight size={18}/></button></form>}</div></section></main>;
 }
@@ -414,10 +429,11 @@ const chatSuggestions = [
 function ChatAssistant({ path, open, setOpen }) {
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
-  const [dismissed, setDismissed] = useState(() => localStorage.getItem("chelonaki-chat-launcher-dismissed") === "1");
+  const [dismissed, setDismissed] = useState(false);
   const [scrollHidden, setScrollHidden] = useState(false);
   const [messages, setMessages] = useState([{ role: "assistant", content: "Hallo, ich bin der Chelonaki Assistent. Ich helfe Ihnen bei Leistungen, Paketen, Preisen, Designbeispielen und der Wahl des passenden nächsten Schritts. Was möchten Sie aufbauen?" }]);
   const logRef = useRef(null);
+  useEffect(() => setDismissed(localStorage.getItem("chelonaki-chat-launcher-dismissed") === "1"), []);
 
   useEffect(() => {
     if (open) window.setTimeout(() => logRef.current?.scrollTo({ top: logRef.current.scrollHeight, behavior: "smooth" }), 40);
@@ -454,11 +470,11 @@ function ChatAssistant({ path, open, setOpen }) {
     } finally { setBusy(false); }
   };
 
-  return <aside className={`chat-assistant ${open ? "is-open" : ""} ${dismissed && !open ? "is-dismissed" : ""} ${scrollHidden && !open ? "is-scroll-hidden" : ""}`} aria-label="Chelonaki KI-Assistent">
+  return <aside className={`chat-assistant ${open ? "is-open" : ""} ${dismissed && !open ? "is-dismissed" : ""} ${scrollHidden && !open ? "is-scroll-hidden" : ""}`} aria-label="Chelonaki Assistent">
     {open && <section className="chat-panel" role="dialog" aria-modal="false" aria-labelledby="chat-title">
       <header className="chat-head">
         <span className="chat-avatar"><img src="/assets/chelonaki-turtle-transparent.png" alt=""/></span>
-        <span><strong id="chat-title">Chelonaki Assistent</strong><small><i/> Online · KI-gestützte Orientierung</small></span>
+        <span><strong id="chat-title">Chelonaki Assistent</strong><small><i/> Online · datensparsame Orientierung</small></span>
         <button type="button" onClick={() => setOpen(false)} aria-label="Chat schließen"><X size={22}/></button>
       </header>
       <div className="chat-log" ref={logRef} aria-live="polite">
@@ -494,8 +510,8 @@ function RouteView({ path }) {
   if (redirects[path]) return <RedirectPage to={redirects[path]}/>; if (path === "/") return <HomePage/>; if (path === "/web-apps-publikationen") return <HubPage type="web"/>; if (path === "/medien-ai") return <HubPage type="media"/>; if (path === "/ki-beratung-weiterbildung") return <HubPage type="advice"/>; if (path === "/originals") return <HubPage type="originals"/>; if (path === "/demowelten") return <LabPage/>; if (path === "/paketfinder") return <PackageFinderPage/>; if (path === "/qualitaet") return <QualityPage/>; if (services[path]) return <ServicePage data={services[path]}/>; if (path === "/ki-beratung-weiterbildung/video-academy" || path.startsWith("/ki-beratung-weiterbildung/video-academy/")) return <AcademyPage/>; if (path === "/originals/apps") return <OriginalAppsPage/>; if (path === "/originals/apps/evofit" || path === "/originals/apps/chelonaki-reply") return <OriginalAppPage app={path.split("/").pop()}/>; if (path.startsWith("/originals/")) return <OriginalDetail type={path.split("/").pop()}/>; if (path === "/ueber-uns") return <AboutPage/>; if (path === "/kontakt") return <ContactPage/>; return <NotFound/>;
 }
 
-export function App() {
-  const [path, setPath] = useState(window.location.pathname.replace(/\/$/, "") || "/"); const [menu, setMenu] = useState(false); const [legal, setLegal] = useState(null); const [chat, setChat] = useState(false);
+export function App({ initialPath = "/" }) {
+  const [path, setPath] = useState(() => typeof window === "undefined" ? initialPath : (window.location.pathname.replace(/\/$/, "") || "/")); const [menu, setMenu] = useState(false); const [legal, setLegal] = useState(null); const [chat, setChat] = useState(false);
   useEffect(() => { const update = () => setPath(window.location.pathname.replace(/\/$/, "") || "/"); window.addEventListener("popstate", update); return () => window.removeEventListener("popstate", update); }, []);
   useLayoutEffect(() => { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); }, [path]);
   useEffect(() => { document.title = path === "/" ? "Chelonaki | Wisdom wears a shell" : `Chelonaki | ${path.split("/").filter(Boolean).pop()?.replaceAll("-", " ") || "Studio"}`; }, [path]);

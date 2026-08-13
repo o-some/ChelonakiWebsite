@@ -14,7 +14,25 @@ import "@fontsource/noto-naskh-arabic/400.css";
 import "@fontsource/noto-naskh-arabic/500.css";
 import "@fontsource/noto-naskh-arabic/600.css";
 import { App } from "../App.jsx";
+import { services } from "../siteData.js";
 import "../styles.css";
+
+const { route = "/" } = Astro.props;
+const routeNames = {
+  "/": "KI-gestütztes Innovationsstudio",
+  "/web-apps-publikationen": "Web, Apps & Publikationen",
+  "/medien-ai": "Medien & KI",
+  "/ki-beratung-weiterbildung": "KI-Beratung & Weiterbildung",
+  "/originals": "Eigene Apps & Bücher",
+  "/demowelten": "Designbeispiele",
+  "/paketfinder": "Paketfinder",
+  "/qualitaet": "Qualitätsrahmen",
+  "/ueber-uns": "Über uns",
+  "/kontakt": "Kontakt",
+};
+const pageName = services[route]?.title || routeNames[route] || "Chelonaki Studio";
+const title = route === "/" ? "Chelonaki | Aus Ideen werden funktionierende Systeme" : `${pageName} | Chelonaki`;
+const description = services[route]?.intro || "Chelonaki entwickelt Websites, Apps, Bücher, KI-Content und tragfähige digitale Systeme – klar geplant, menschlich geprüft und verständlich übergeben.";
 ---
 
 <!doctype html>
@@ -24,16 +42,21 @@ import "../styles.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Chelonaki verbindet digitale Systeme, fachliche Expertise und eigene Ideenwelten – KI-gestützt, menschlich geprüft und verantwortungsvoll entwickelt."
+      content={description}
     />
     <meta name="theme-color" content="#f4ecdf" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="generator" content={Astro.generator} />
-    <title>Chelonaki | Wisdom wears a shell</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Chelonaki" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{title}</title>
   </head>
   <body>
     <div id="root">
-      <App client:only="react" />
+      <App initialPath={route} client:load />
     </div>
   </body>
 </html>

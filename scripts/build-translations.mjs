@@ -69,6 +69,7 @@ for (const language of languages) {
 
 const terminology = {
   en: {
+    "Widerruf": "Withdrawal",
     "Web, Apps & Publikationen": "Web, Apps & Publications",
     "Medien & KI": "Media & AI",
     "KI-Beratung & Weiterbildung": "AI Consulting & Training",
@@ -85,6 +86,7 @@ const terminology = {
     "Unsere eigenen Bücher": "Our own books"
   },
   el: {
+    "Widerruf": "Υπαναχώρηση",
     "Web, Apps & Publikationen": "Ιστός, Εφαρμογές & Εκδόσεις",
     "Medien & KI": "Μέσα & ΤΝ",
     "KI-Beratung & Weiterbildung": "Συμβουλευτική & Εκπαίδευση ΤΝ",
@@ -101,6 +103,7 @@ const terminology = {
     "Unsere eigenen Bücher": "Τα δικά μας βιβλία"
   },
   fr: {
+    "Widerruf": "Droit de rétractation",
     "Web, Apps & Publikationen": "Web, Apps & Publications",
     "Medien & KI": "Médias & IA",
     "KI-Beratung & Weiterbildung": "Conseil & Formation IA",
@@ -117,6 +120,7 @@ const terminology = {
     "Unsere eigenen Bücher": "Nos propres livres"
   },
   es: {
+    "Widerruf": "Derecho de desistimiento",
     "Web, Apps & Publikationen": "Web, Apps y Publicaciones",
     "Medien & KI": "Medios & IA",
     "KI-Beratung & Weiterbildung": "Consultoría & Formación en IA",
@@ -133,6 +137,7 @@ const terminology = {
     "Unsere eigenen Bücher": "Nuestros propios libros"
   },
   tr: {
+    "Widerruf": "Cayma hakkı",
     "Web, Apps & Publikationen": "Web, Uygulamalar & Yayınlar",
     "Medien & KI": "Medya & YZ",
     "KI-Beratung & Weiterbildung": "YZ Danışmanlığı & Eğitim",
@@ -149,6 +154,7 @@ const terminology = {
     "Unsere eigenen Bücher": "Kendi kitaplarımız"
   },
   pl: {
+    "Widerruf": "Prawo odstąpienia",
     "Web, Apps & Publikationen": "Web, Aplikacje i Publikacje",
     "Medien & KI": "Media i AI",
     "KI-Beratung & Weiterbildung": "Doradztwo i Szkolenia AI",
@@ -165,6 +171,7 @@ const terminology = {
     "Unsere eigenen Bücher": "Nasze własne książki"
   },
   nl: {
+    "Widerruf": "Herroepingsrecht",
     "Web, Apps & Publikationen": "Web, Apps & Publicaties",
     "Medien & KI": "Media & AI",
     "KI-Beratung & Weiterbildung": "AI-advies & Training",
@@ -181,6 +188,7 @@ const terminology = {
     "Unsere eigenen Bücher": "Onze eigen boeken"
   },
   it: {
+    "Widerruf": "Diritto di recesso",
     "Web, Apps & Publikationen": "Web, App & Pubblicazioni",
     "Medien & KI": "Media & IA",
     "KI-Beratung & Weiterbildung": "Consulenza & Formazione IA",
@@ -197,6 +205,7 @@ const terminology = {
     "Unsere eigenen Bücher": "I nostri libri"
   },
   pt: {
+    "Widerruf": "Direito de livre resolução",
     "Web, Apps & Publikationen": "Web, Apps e Publicações",
     "Medien & KI": "Media & IA",
     "KI-Beratung & Weiterbildung": "Consultoria & Formação em IA",
@@ -213,6 +222,7 @@ const terminology = {
     "Unsere eigenen Bücher": "Nossos próprios livros"
   },
   ru: {
+    "Widerruf": "Право на отказ от договора",
     "Web, Apps & Publikationen": "Сайты, приложения и издания",
     "Medien & KI": "Медиа и ИИ",
     "KI-Beratung & Weiterbildung": "Консалтинг и обучение по ИИ",
@@ -229,6 +239,7 @@ const terminology = {
     "Unsere eigenen Bücher": "Наши собственные книги"
   },
   ar: {
+    "Widerruf": "حق العدول عن العقد",
     "Web, Apps & Publikationen": "الويب والتطبيقات والنشر",
     "Medien & KI": "الإعلام والذكاء الاصطناعي",
     "KI-Beratung & Weiterbildung": "استشارات وتدريب الذكاء الاصطناعي",
