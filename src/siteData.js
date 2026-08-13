@@ -27,7 +27,7 @@ export const navigation = [
       ["Chelonaki Video Academy", "/ki-beratung-weiterbildung/video-academy"],
     ],
   },
-  { label: "Originals", href: "/originals", items: [["Eigene Apps", "/originals/apps"], ["Eigene Bücher", "/originals/buecher"], ["Digitale Produkte", "/originals/digitale-produkte"]] },
+  { label: "Originals", href: "/originals", items: [["Eigene Apps", "/originals/apps"], ["Eigene Bücher", "/originals/buecher"]] },
   { label: "Demowelten", href: "/demowelten", items: [] },
   { label: "Über uns", href: "/ueber-uns", items: [] },
 ];
@@ -63,7 +63,7 @@ export const worlds = [
     cta: "Bereich entdecken",
     tone: "expertise",
   },
-  { number: "04", eyebrow: "Eigene Produktwelten", title: "Originals", text: "Eigene Apps, Bücher und digitale Produkte aus dem Chelonaki-Ökosystem.", detail: "Eigene Apps · Bücher · digitale Produkte", href: "/originals", cta: "Originals entdecken", tone: "originals" },
+  { number: "04", eyebrow: "Eigene Produktwelten", title: "Originals", text: "Eigene Apps und Bücher aus dem Chelonaki-Ökosystem.", detail: "Eigene Apps · eigene Bücher", href: "/originals", cta: "Originals entdecken", tone: "originals" },
   { number: "05", eyebrow: "Erleben statt nur lesen", title: "Demowelten", text: "Demos, Prototypen und Experimente, die Ideen vor einer Entscheidung greifbar machen.", detail: "Demos · Prototypen · Experimente", href: "/demowelten", cta: "Demowelten öffnen", tone: "digital" },
   { number: "06", eyebrow: "Herkunft & Haltung", title: "Über uns", text: "Die Familiengeschichte, Kompetenz und Werte hinter Chelonaki.", detail: "Eleftherios · Familie · Qualität", href: "/ueber-uns", cta: "Geschichte kennenlernen", tone: "expertise" },
 ];
@@ -107,16 +107,15 @@ export const hubData = {
   originals: {
     label: "Chelonaki Original",
     title: "Eigene Ideen. Eigene Produkte. Eine gemeinsame Welt.",
-    intro: "Unter Originals entstehen eigene Bücher, Apps und digitale Produkte, die Ernährung, Gesundheit und alltagstaugliches Wissen sinnvoll verbinden.",
+    intro: "Unter Originals entstehen eigene Apps und Bücher, die Ernährung, Gesundheit und alltagstaugliches Wissen sinnvoll verbinden.",
     image: "/assets/project-nutrition-venture.png",
     cta: "Originals entdecken",
-    cards: navigation[2].items.map(([title, href], index) => ({
+    cards: navigation[3].items.map(([title, href], index) => ({
       title,
       href,
       text: [
-        "Fach- und Kinderbücher für Ernährung, Gesundheit und besondere Stoffwechselthemen.",
         "Eigene Ernährungs-, Fitness- und Alltagsanwendungen wie Chelonaki EvoFit.",
-        "Kurse, Assistenten und personalisierte Inhalte im Chelonaki-Ökosystem.",
+        "Fach- und Kinderbücher für Ernährung, Gesundheit und besondere Stoffwechselthemen.",
       ][index],
     })),
   },
