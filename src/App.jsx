@@ -67,6 +67,8 @@ function setTranslationCookie(language) {
 
 function LanguagePicker({ mobile = false }) {
   const [language, setLanguage] = useState(() => getSavedLanguage());
+  const [open, setOpen] = useState(false);
+  const pickerRef = useRef(null);
   useEffect(() => {
     document.documentElement.lang = language;
     if (language === "de") return;
@@ -80,17 +82,37 @@ function LanguagePicker({ mobile = false }) {
       script.id = "google-translate-script";
       script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
       script.async = true;
+      script.onload = () => window.setTimeout(() => window.googleTranslateElementInit?.(), 100);
       document.head.appendChild(script);
     }
   }, [language]);
-  const changeLanguage = (event) => {
-    const next = event.target.value;
+  useEffect(() => {
+    const close = (event) => { if (!pickerRef.current?.contains(event.target)) setOpen(false); };
+    document.addEventListener("pointerdown", close);
+    return () => document.removeEventListener("pointerdown", close);
+  }, []);
+  const changeLanguage = (next) => {
     window.localStorage.setItem("chelonaki-language", next);
     setTranslationCookie(next);
     setLanguage(next);
     window.location.reload();
   };
-  return <label className={`language-picker notranslate ${mobile ? "is-mobile" : ""}`} translate="no"><GlobeHemisphereWest size={17}/><span className="sr-only">Sprache auswählen</span><select value={language} onChange={changeLanguage} aria-label="Sprache auswählen">{languageOptions.map(([code, name, short]) => <option value={code} key={code}>{mobile ? name : short}</option>)}</select><CaretDown size={13}/></label>;
+  const current = languageOptions.find(([code]) => code === language) || languageOptions[0];
+  return <div ref={pickerRef} className={`language-picker notranslate ${mobile ? "is-mobile" : ""} ${open ? "is-open" : ""}`} translate="no"><button type="button" className="language-trigger" onClick={() => setOpen(!open)} aria-haspopup="listbox" aria-expanded={open} aria-label={`Sprache: ${current[1]}`}><GlobeHemisphereWest size={17}/><strong>{current[2]}</strong><CaretDown size={12}/></button>{open && <div className="language-options" role="listbox" aria-label="Sprache auswählen">{languageOptions.map(([code, name, short]) => <button type="button" role="option" aria-selected={language === code} className={language === code ? "is-active" : ""} onClick={() => changeLanguage(code)} key={code}><span>{name}</span><small>{short}</small>{language === code && <Check size={14}/>}</button>)}</div>}</div>;
+}
+
+function TranslationLoader() {
+  const language = getSavedLanguage();
+  const [visible, setVisible] = useState(language !== "de");
+  useEffect(() => {
+    if (language === "de") return;
+    const timer = window.setTimeout(() => setVisible(false), 7200);
+    return () => window.clearTimeout(timer);
+  }, [language]);
+  if (!visible) return null;
+  const messages = { en: ["English", "Translating the website…"], el: ["Ελληνικά", "Μετάφραση ιστοσελίδας…"], fr: ["Français", "Traduction du site…"], es: ["Español", "Traduciendo el sitio web…"] };
+  const [name, message] = messages[language] || messages.en;
+  return <div className="translation-loader notranslate" translate="no" role="status" aria-live="polite"><span><GlobeHemisphereWest size={22}/></span><strong>{name}</strong><p>{message}</p><i/></div>;
 }
 
 function SmartLink({ href, children, className = "", onNavigate, ...props }) {
@@ -263,5 +285,5 @@ export function App() {
     updateScroll(); window.addEventListener("scroll", updateScroll, { passive: true });
     return () => { observer.disconnect(); window.removeEventListener("scroll", updateScroll); cancelAnimationFrame(frame); };
   }, [path]);
-  return <><a className="skip-link" href="#main">Zum Inhalt</a><div id="top"/><Header path={path} openMenu={() => setMenu(true)}/><MobileMenu open={menu} onClose={() => setMenu(false)}/><RouteView path={path}/><Footer openLegal={setLegal}/><LegalDialog viewKey={legal} onClose={() => setLegal(null)}/></>;
+  return <><TranslationLoader/><a className="skip-link" href="#main">Zum Inhalt</a><div id="top"/><Header path={path} openMenu={() => setMenu(true)}/><MobileMenu open={menu} onClose={() => setMenu(false)}/><RouteView path={path}/><Footer openLegal={setLegal}/><LegalDialog viewKey={legal} onClose={() => setLegal(null)}/></>;
 }
