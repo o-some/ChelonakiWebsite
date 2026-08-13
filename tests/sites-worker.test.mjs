@@ -16,6 +16,10 @@ test("serves existing static assets without a fallback", async () => {
 
   assert.equal(response.status, 200);
   assert.deepEqual(calls, ["/assets/app.js"]);
+  assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  assert.equal(response.headers.get("x-frame-options"), "DENY");
+  assert.match(response.headers.get("content-security-policy"), /frame-ancestors 'none'/);
+  assert.match(response.headers.get("permissions-policy"), /camera=\(\)/);
 });
 
 test("falls back to index.html for an unknown app route", async () => {
@@ -39,6 +43,7 @@ test("falls back to index.html for an unknown app route", async () => {
 
   assert.equal(response.status, 200);
   assert.deepEqual(calls, ["/flow/step-two?source=share", "/index.html"]);
+  assert.equal(response.headers.get("strict-transport-security"), "max-age=31536000; includeSubDomains");
 });
 
 test("does not turn missing API or write requests into the app shell", async () => {

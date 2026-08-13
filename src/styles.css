@@ -1727,12 +1727,12 @@ img {
   to { opacity:1; transform:translateY(0) scale(1); filter:blur(0); }
 }
 @keyframes editorial-left-in {
-  from { opacity:.25; transform:translateX(-44px); }
-  to { opacity:1; transform:translateX(0); }
+  from { opacity:.25; transform:translateY(28px); }
+  to { opacity:1; transform:translateY(0); }
 }
 @keyframes editorial-right-in {
-  from { opacity:.25; transform:translateX(44px); }
-  to { opacity:1; transform:translateX(0); }
+  from { opacity:.25; transform:translateY(28px); }
+  to { opacity:1; transform:translateY(0); }
 }
 
 .site-header::before {
@@ -3189,6 +3189,95 @@ html[lang="ar"] .audience-label { letter-spacing:0; }
   .mobile-menu-shell { padding-inline:18px; }
   .mobile-menu nav .mobile-nav-group > div > a { font-size:clamp(24px,7.4vw,29px); }
   .language-picker.is-mobile .language-options { grid-template-columns:1fr; }
+}
+
+/* Conversion-Ebene: ausführliche, aber ruhige Entscheidungsführung. */
+.section-lead { max-width:760px; margin:18px 0 0; color:var(--copy); font-size:15px; line-height:1.75; }
+.service-index-card > small { display:block; margin-top:20px; color:var(--gold); font-size:9px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+.hero-assurances { display:flex; flex-wrap:wrap; gap:9px 18px; margin:22px 0 0; }
+.hero-assurances span { display:flex; align-items:center; gap:7px; color:var(--gold-soft); font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+
+.hub-decision { display:grid; grid-template-columns:.9fr 1.1fr; min-height:680px; background:var(--paper-bright); }
+.hub-decision figure { min-height:680px; margin:0; overflow:hidden; }
+.hub-decision figure img { width:100%; height:100%; object-fit:cover; }
+.hub-decision > div { align-self:center; padding:clamp(60px,8vw,120px); }
+.hub-decision > div > span, .conversion-bridge header > span, .deliverables-section > div:first-child > span, .mid-funnel-cta > div > span, .service-faq header > span { color:var(--gold); font-size:9px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+.hub-decision h2, .conversion-bridge h2, .deliverables-section h2, .mid-funnel-cta h2, .service-faq h2 { margin:20px 0; font-family:var(--serif); font-size:clamp(44px,4.6vw,68px); line-height:1; font-weight:500; }
+.hub-decision > div > p { max-width:650px; color:var(--copy); line-height:1.8; }
+.hub-decision ol { margin:34px 0; padding:0; list-style:none; border-top:1px solid var(--line); }
+.hub-decision li { display:grid; grid-template-columns:38px 1fr; gap:16px; padding:18px 0; border-bottom:1px solid var(--line); }
+.hub-decision li b { color:var(--gold); font-size:10px; }
+.hub-decision li span { color:var(--copy); line-height:1.55; }
+.hub-decision li strong { display:block; margin-bottom:4px; color:var(--ink); }
+
+.conversion-bridge { padding:clamp(80px,10vw,150px) var(--gutter); background:var(--paper); }
+.conversion-bridge header { display:grid; grid-template-columns:.7fr 1.3fr; gap:30px 70px; align-items:end; margin-bottom:55px; }
+.conversion-bridge header > span { grid-column:1/-1; }
+.conversion-bridge header h2 { margin:0; }
+.conversion-bridge header p { max-width:620px; margin:0 0 5px; color:var(--copy); line-height:1.75; }
+.conversion-bridge > div { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.conversion-bridge article { min-height:220px; padding:32px 28px; border-right:1px solid var(--line); }
+.conversion-bridge article:last-child { border-right:0; }
+.conversion-bridge article b { color:var(--gold); font-size:10px; letter-spacing:.14em; }
+.conversion-bridge article p { margin:48px 0 0; color:var(--ink); font-family:var(--serif); font-size:24px; line-height:1.15; }
+
+.deliverables-section { display:grid; grid-template-columns:.72fr 1.28fr; gap:70px; padding:clamp(80px,10vw,150px) var(--gutter); background:var(--paper-bright); }
+.deliverables-section > div:first-child { align-self:start; position:sticky; top:130px; }
+.deliverables-section > div:first-child p { max-width:520px; color:var(--copy); line-height:1.8; }
+.deliverables-grid { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line); }
+.deliverables-grid article { min-height:275px; padding:30px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+.deliverables-grid article:nth-child(2n) { border-right:0; }
+.deliverables-grid span { color:var(--gold); font-size:10px; font-weight:700; }
+.deliverables-grid h3 { margin:36px 0 16px; font-family:var(--serif); font-size:31px; line-height:1.08; font-weight:500; }
+.deliverables-grid p { color:var(--copy); font-size:13px; line-height:1.7; }
+
+.mid-funnel-cta { display:grid; grid-template-columns:1fr 1fr; min-height:690px; color:var(--paper-bright); background:var(--ink); }
+.mid-funnel-cta figure { min-height:690px; margin:0; overflow:hidden; }
+.mid-funnel-cta figure img { width:100%; height:100%; object-fit:cover; }
+.mid-funnel-cta > div { align-self:center; padding:clamp(55px,7vw,105px); }
+.mid-funnel-cta > div > p { max-width:620px; color:var(--copy-on-dark); line-height:1.8; }
+.mid-funnel-cta ul { margin:30px 0 38px; padding:0; list-style:none; }
+.mid-funnel-cta li { display:flex; gap:10px; padding:11px 0; border-bottom:1px solid rgba(209,180,117,.2); color:var(--paper-bright); font-size:13px; }
+.mid-funnel-cta li svg { flex:0 0 auto; color:var(--gold-soft); }
+
+.service-faq { display:grid; grid-template-columns:.72fr 1.28fr; gap:70px; padding:clamp(80px,10vw,150px) var(--gutter); background:var(--paper-bright); }
+.service-faq header { align-self:start; position:sticky; top:130px; }
+.service-faq header h2 { max-width:520px; }
+.service-faq details { border-top:1px solid var(--line); }
+.service-faq details:last-child { border-bottom:1px solid var(--line); }
+.service-faq summary { display:grid; grid-template-columns:35px 1fr 24px; gap:18px; align-items:center; padding:25px 0; color:var(--ink); font-weight:700; cursor:pointer; list-style:none; }
+.service-faq summary::-webkit-details-marker { display:none; }
+.service-faq summary span { color:var(--gold); font-size:10px; }
+.service-faq summary svg { transition:transform .25s ease; }
+.service-faq details[open] summary svg { transform:rotate(180deg); }
+.service-faq details p { max-width:760px; margin:0; padding:0 42px 26px 53px; color:var(--copy); line-height:1.75; }
+
+@media (max-width: 980px) {
+  .hub-decision, .mid-funnel-cta, .deliverables-section, .service-faq { grid-template-columns:1fr; }
+  .hub-decision figure, .mid-funnel-cta figure { min-height:420px; }
+  .deliverables-section > div:first-child, .service-faq header { position:static; }
+  .conversion-bridge header { grid-template-columns:1fr; }
+  .conversion-bridge > div { grid-template-columns:1fr 1fr; }
+  .conversion-bridge article:nth-child(2) { border-right:0; }
+  .conversion-bridge article:nth-child(-n+2) { border-bottom:1px solid var(--line); }
+}
+
+@media (max-width: 767px) {
+  .hero-assurances { gap:8px; }
+  .hero-assurances span { width:100%; }
+  .hub-decision figure, .mid-funnel-cta figure { min-height:300px; }
+  .hub-decision > div, .mid-funnel-cta > div { padding:58px 20px; }
+  .hub-decision h2, .conversion-bridge h2, .deliverables-section h2, .mid-funnel-cta h2, .service-faq h2 { font-size:42px; }
+  .conversion-bridge, .deliverables-section, .service-faq { padding:72px 20px; }
+  .conversion-bridge header { margin-bottom:36px; }
+  .conversion-bridge > div, .deliverables-grid { grid-template-columns:1fr; }
+  .conversion-bridge article, .conversion-bridge article:nth-child(2), .deliverables-grid article { min-height:0; border-right:0; border-bottom:1px solid var(--line); }
+  .conversion-bridge article p { margin-top:28px; font-size:22px; }
+  .deliverables-section { gap:45px; }
+  .deliverables-grid h3 { font-size:27px; }
+  .service-faq { gap:34px; }
+  .service-faq summary { grid-template-columns:28px 1fr 20px; gap:10px; padding:21px 0; font-size:14px; }
+  .service-faq details p { padding:0 30px 22px 38px; font-size:13px; }
 }
 
 /* Mobile Abschlusslayout: eigenständige, ruhige Komposition ohne Desktop-Offsets. */
