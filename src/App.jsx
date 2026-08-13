@@ -147,7 +147,7 @@ function SmartLink({ href, children, className = "", onNavigate, ...props }) {
 }
 
 function Brand({ inverse = false, compact = false }) {
-  return <SmartLink className={`brand ${inverse ? "is-inverse" : ""}`} href="/" aria-label="Chelonaki Startseite"><span className="brand-seal" aria-hidden="true"><img src="/assets/chelonaki-turtle-transparent.webp" alt="" width="760" height="760"/></span><span className="brand-name"><strong>CHELONAKI</strong>{!compact && <small>WISDOM WEARS A SHELL</small>}</span></SmartLink>;
+  return <SmartLink className={`brand ${inverse ? "is-inverse" : ""}`} href="/" aria-label="Chelonaki Startseite"><span className="brand-seal" aria-hidden="true"><img src="/assets/chelonaki-turtle-transparent.png" alt="" width="760" height="760"/></span><span className="brand-name"><strong>CHELONAKI</strong>{!compact && <small>WISDOM WEARS A SHELL</small>}</span></SmartLink>;
 }
 
 function Header({ openMenu, path }) {

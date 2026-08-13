@@ -80,3 +80,14 @@ test("Astro emits the application shell and canonical direct routes", async () =
   await access(new URL("../dist/client/ki-beratung-weiterbildung/video-academy/index.html", import.meta.url));
   await access(new URL("../dist/client/originals/apps/chelonaki-reply/index.html", import.meta.url));
 });
+
+test("every local image referenced by the application exists", async () => {
+  const sources = await Promise.all([
+    readFile(new URL("../src/App.jsx", import.meta.url), "utf8"),
+    readFile(new URL("../src/siteData.js", import.meta.url), "utf8"),
+    readFile(new URL("../src/styles.css", import.meta.url), "utf8"),
+  ]);
+  const references = [...new Set(sources.flatMap((source) => source.match(/\/assets\/[A-Za-z0-9_.-]+/g) || []))];
+  assert.ok(references.length > 0);
+  await Promise.all(references.map((reference) => access(new URL(`../public${reference}`, import.meta.url))));
+});
