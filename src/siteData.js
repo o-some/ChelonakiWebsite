@@ -35,9 +35,9 @@ export const navigation = [
 export const worlds = [
   {
     number: "01",
-    eyebrow: "Für Unternehmen",
+    eyebrow: "Für Unternehmen & eigene Projekte",
     title: "Chelonaki Digital",
-    text: "Digitale Systeme, die Unternehmen sichtbar, erreichbar und zukunftsfähig machen.",
+    text: "Digitale Lösungen für Unternehmen, künftige Gründer und Menschen mit einer eigenen Idee.",
     detail: "Websites, Bücher, Content, Telefonassistenten, Ads und Apps",
     href: "/digital",
     cta: "Explore Digital",
@@ -67,9 +67,9 @@ export const worlds = [
 
 export const hubData = {
   digital: {
-    label: "Chelonaki Digital · Für Unternehmen",
-    title: "Digitale Systeme, die für Ihr Unternehmen arbeiten.",
-    intro: "Von der ersten sichtbaren Idee bis zum belastbaren Betrieb verbinden wir Strategie, Gestaltung, Technik und kontrollierte Automatisierung.",
+    label: "Für Unternehmen & eigene Projekte",
+    title: "Digitale Lösungen, die aus Ihrer Idee etwas Greifbares machen.",
+    intro: "Für bestehende Unternehmen, künftige Gründungen und persönliche Vorhaben verbinden wir Strategie, Gestaltung, Technik und kontrollierte Automatisierung.",
     image: "/assets/project-digital-brand.png",
     cta: "Digitalprojekt anfragen",
     cards: navigation[0].items.map(([title, href], index) => ({
@@ -120,11 +120,11 @@ export const hubData = {
   },
 };
 
-const b2bNote = "Alle Preise verstehen sich netto zuzüglich der gesetzlichen Umsatzsteuer. Das Angebot richtet sich ausschließlich an Unternehmer im Sinne des § 14 BGB.";
+const b2bNote = "Die dargestellten Paketpreise verstehen sich netto zuzüglich der gesetzlichen Umsatzsteuer und richten sich an Unternehmer im Sinne des § 14 BGB. Private Projekte sind ausdrücklich willkommen und erhalten vor Beauftragung ein gesondertes Angebot mit korrekt ausgewiesenem Gesamtpreis.";
 
 export const services = {
   "/digital/websites-shopify": {
-    area: "Digital", label: "Für Unternehmen", title: "Websites, die nicht nur gut aussehen, sondern verkaufen.",
+    area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Websites, die nicht nur gut aussehen, sondern verkaufen.",
     intro: "Wir entwickeln Shopify-Websites und Shops von der Struktur über Design und Text bis zur responsiven Umsetzung und laufenden Optimierung.",
     problem: "Viele Websites erklären zu viel, führen zu wenig und werden nach dem Launch technisch nicht weitergedacht.",
     solution: ["Unternehmenswebsites und Shopify-Shops", "Landingpages und Conversion-Struktur", "Responsive Umsetzung und Basis-SEO", "Formulare, Newsletter, Termine und Integrationen"],
@@ -138,7 +138,7 @@ export const services = {
     cta: "Website-Projekt besprechen",
   },
   "/digital/content-social-media": {
-    area: "Digital", label: "Für Unternehmen", title: "Ein Content-System statt täglicher Improvisation.",
+    area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Ein Content-System statt täglicher Improvisation.",
     intro: "Wir planen, produzieren, prüfen und veröffentlichen Inhalte in einer eigenen Markenwelt – vollständig KI-gestützt, aber nicht ungeprüft.",
     problem: "Unregelmäßige Inhalte, wechselnde Bildsprachen und fehlende Prozesse kosten Reichweite und vor allem Zeit.",
     solution: ["KI-Videos und Karussells", "Marken-, Themen- und Stilkonzept", "Captions, Redaktionsplanung und Veröffentlichung", "Reporting und laufende Optimierung"],
@@ -152,7 +152,7 @@ export const services = {
     cta: "Content-System anfragen",
   },
   "/digital/telefonassistenten": {
-    area: "Digital", label: "Für Unternehmen", title: "Erreichbar bleiben, ohne jeden Anruf selbst anzunehmen.",
+    area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Erreichbar bleiben, ohne jeden Anruf selbst anzunehmen.",
     intro: "Der KI-Telefonassistent beantwortet wiederkehrende Fragen, nimmt Anliegen auf und koordiniert je nach Paket Termine, Leads oder Bestellungen.",
     problem: "Verpasste Anrufe bedeuten verpasste Kunden – gleichzeitig dürfen Datenschutz, Transparenz und Eskalation nicht dem Zufall überlassen werden.",
     solution: ["Eingehende Anrufe im vereinbarten Fair-Use-Rahmen", "FAQ, Nachrichten und Gesprächszusammenfassungen", "Termin- und Leadlogik", "CRM-, Shopify- oder API-Anbindung im Pro-Paket"],
@@ -166,7 +166,7 @@ export const services = {
     cta: "Telefonassistent konfigurieren",
   },
   "/digital/ads": {
-    area: "Digital", label: "Für Unternehmen", title: "Werbung, die Angebot, Creative und Zielseite zusammen denkt.",
+    area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Werbung, die Angebot, Creative und Zielseite zusammen denkt.",
     intro: "Chelonaki entwickelt und optimiert Meta- und Google-Kampagnen mit nachvollziehbarem Tracking und verständlichen Handlungsempfehlungen.",
     problem: "Einzelne Anzeigen ohne klare Botschaft, passende Landingpage und saubere Messung verbrennen Budget.",
     solution: ["Strategie und Zielgruppenanalyse", "Anzeigentexte, Bild- und Video-Creatives", "A/B-Tests, Remarketing und Tracking", "Budgetüberwachung, Reporting und Optimierung"],
@@ -180,7 +180,7 @@ export const services = {
     cta: "Werbekampagne besprechen",
   },
   "/digital/apps-software": {
-    area: "Digital", label: "Für Unternehmen", title: "Digitale Produkte, die mit Ihrem Unternehmen wachsen können.",
+    area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Digitale Produkte, die mit Ihrer Idee wachsen können.",
     intro: "Wir entwickeln modulare Web-Apps, mobile Anwendungen, Portale, Dashboards und KI-Assistenten mit klaren Rollen und prüfbaren Prozessen.",
     problem: "Ein schneller KI-Prototyp ist noch kein belastbares Unternehmenssystem.",
     solution: ["Web-, Mobile- und interne Apps", "Portale, Dashboards und Workflows", "Rollenbasierte Rechte und geschützte Schnittstellen", "Projektabhängige Tests, Monitoring und Datenschutz"],
@@ -204,7 +204,7 @@ export const services = {
     cta: "KI-Erstgespräch buchen",
   },
   "/digital/buchproduktion-ghostwriting": {
-    area: "Digital", label: "Für Unternehmen und professionelle Personenmarken", title: "Ihr Buch – geschrieben, gestaltet, veröffentlichungsfertig.",
+    area: "Digital", label: "Für Unternehmen & eigene Buchprojekte", title: "Ihr Buch – geschrieben, gestaltet, veröffentlichungsfertig.",
     intro: "Wir übernehmen die komplette Buchproduktion: Konzept, Recherche, Ghostwriting, Cover, Layout sowie die fertigen Dateien für Print und E-Book.",
     problem: "Fachwissen ist vorhanden, aber Struktur, Zeit, Recherche und hochwertige Umsetzung fehlen.",
     solution: ["Buchkonzept, Positionierung und Kapitelstruktur", "Ghostwriting, Recherche und Quellen", "Cover, Buchsatz, Layout und Bildentwicklung", "Veröffentlichungsfertige PDF- und E-Book-Dateien"],

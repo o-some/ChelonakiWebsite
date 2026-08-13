@@ -57,7 +57,7 @@ function ServicePage({ data }) {
 }
 
 function Pricing({ data }) {
-  return <section className="pricing-section"><header><span>Für Unternehmen</span><h2>Ein klarer Einstieg.<br/>Ein passender Projektumfang.</h2></header><div className={`pricing-grid ${data.pricing.length === 1 ? "is-single" : ""}`}>{data.pricing.map((tier) => <article className={tier.featured ? "featured" : ""} key={tier.name}>{tier.featured && <b>Häufig gewählt</b>}<h3>{tier.name}</h3><strong>{tier.price}</strong><p>{tier.meta}</p><SmartLink href={`/kontakt?bereich=${encodeURIComponent(tier.name)}`}>Angebot anfragen <ArrowRight size={17}/></SmartLink></article>)}</div><p className="pricing-note">{data.note}</p></section>;
+  return <section className="pricing-section"><header><span>Paketpreise für Unternehmen</span><h2>Ein klarer Einstieg.<br/>Ein passender Projektumfang.</h2></header><div className={`pricing-grid ${data.pricing.length === 1 ? "is-single" : ""}`}>{data.pricing.map((tier) => <article className={tier.featured ? "featured" : ""} key={tier.name}>{tier.featured && <b>Häufig gewählt</b>}<h3>{tier.name}</h3><strong>{tier.price}</strong><p>{tier.meta}</p><SmartLink href={`/kontakt?bereich=${encodeURIComponent(tier.name)}`}>Angebot anfragen <ArrowRight size={17}/></SmartLink></article>)}</div><p className="pricing-note">{data.note}</p></section>;
 }
 
 function Process({ items = ["Ziel und Ausgangslage klären", "Frühen funktionierenden Stand zeigen", "Prüfen, freigeben und absichern", "Sauber übergeben und weiterentwickeln"] }) {
