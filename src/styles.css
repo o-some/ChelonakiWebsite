@@ -3527,6 +3527,19 @@ html[lang="ar"] .audience-label { letter-spacing:0; }
 @keyframes chatPulse { 0%,70%,100%{opacity:.3;transform:translateY(0)}35%{opacity:1;transform:translateY(-3px)} }
 
 @media (max-width: 767px) {
+  .lab-grid { gap:34px; border-top:0; background:var(--paper); }
+  .lab-grid article,
+  .lab-grid article:nth-child(even) { min-height:0; margin:0; padding:12px 12px 24px; overflow:hidden; border:1px solid rgba(7,38,58,.14); background:var(--paper-bright); box-shadow:0 14px 34px rgba(7,38,58,.07); }
+  .lab-grid article::before { content:"Designvorlage"; display:block; margin:2px 4px 11px; color:var(--gold); font-size:8px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
+  .lab-grid .lab-image-button { width:100%; margin:0 0 22px; border:1px solid rgba(7,38,58,.12) !important; }
+  .lab-card-meta { gap:14px; align-items:flex-start; margin:0 5px; padding:0 0 15px; border-bottom:1px solid rgba(7,38,58,.12); line-height:1.45; }
+  .lab-card-meta span,.lab-card-meta small { max-width:48%; }
+  .lab-card-meta small { text-align:right; }
+  .lab-grid h3 { margin:22px 5px 13px; font-size:clamp(38px,11vw,48px); line-height:.96; }
+  .lab-grid p { min-height:0; margin:0 5px; font-size:13px; line-height:1.65; }
+  .lab-grid article > div:last-child { margin:25px 5px 0; padding-top:17px; }
+  .lab-grid article + article { position:relative; }
+  .lab-grid article + article::after { content:""; position:absolute; top:-18px; left:15%; right:15%; height:1px; background:rgba(152,105,36,.38); }
   .chat-assistant { right:12px; bottom:max(12px,env(safe-area-inset-bottom)); }
   .chat-launcher-shell { padding-right:20px; }
   .chat-launcher { min-height:48px; padding:5px 13px 5px 6px; }
