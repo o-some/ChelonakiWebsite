@@ -1253,7 +1253,14 @@ export default {
     "cta-full": "cta full",
     "nearest": "nearest",
     "center": "center",
-    "Zurück": "Back"
+    "Zurück": "Back",
+    "Persönliches Briefing mit Ziel- und Prioritätenklärung": "Personal briefing with clarification of goals and priorities",
+    "Erweiterte menschliche Qualitätsprüfung und Freigabe": "Advanced human quality review and approval",
+    "package-inclusion-group is-premium": "package-inclusion-group is-premium",
+    "Ab dieser Stufe zusätzlich": "From this level additionally",
+    "dock-short": "dock short",
+    "dock-full": "dock full",
+    "Vergleich": "Comparison"
   },
   "el": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Το περιεχόμενο, τα προϊόντα, οι παραγγελίες και πολλές καθημερινές ρυθμίσεις διαχειρίζονται σε μια κεντρική διεπαφή. Η φιλοξενία, οι ενημερώσεις κεντρικής πλατφόρμας και τα πιστοποιητικά TLS για συνδεδεμένους τομείς μειώνουν τις τεχνικές εσωτερικές λειτουργίες - χωρίς να υπόσχονται απόλυτη ελευθερία από διακοπές.",
@@ -2508,7 +2515,14 @@ export default {
     "cta-full": "cta γεμάτο",
     "nearest": "πλησιέστερη",
     "center": "κέντρο",
-    "Zurück": "Πίσω"
+    "Zurück": "Πίσω",
+    "Persönliches Briefing mit Ziel- und Prioritätenklärung": "Προσωπική ενημέρωση με αποσαφήνιση στόχων και προτεραιοτήτων",
+    "Erweiterte menschliche Qualitätsprüfung und Freigabe": "Προηγμένη αξιολόγηση και έγκριση ανθρώπινης ποιότητας",
+    "package-inclusion-group is-premium": "πακέτο-ένταξη-ομάδα είναι-premium",
+    "Ab dieser Stufe zusätzlich": "Από αυτό το επίπεδο επιπλέον",
+    "dock-short": "αποβάθρα κοντή",
+    "dock-full": "αποβάθρα γεμάτη",
+    "Vergleich": "Σύγκριση"
   },
   "fr": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Le contenu, les produits, les commandes et de nombreux paramètres du quotidien sont gérés dans une interface centrale. L'hébergement, les mises à jour de la plateforme centrale et les certificats TLS pour les domaines connectés réduisent les opérations techniques internes - sans promettre une liberté absolue contre les perturbations.",
@@ -3763,7 +3777,14 @@ export default {
     "cta-full": "cta complet",
     "nearest": "le plus proche",
     "center": "centre",
-    "Zurück": "Retour"
+    "Zurück": "Retour",
+    "Persönliches Briefing mit Ziel- und Prioritätenklärung": "Briefing personnel avec clarification des objectifs et des priorités",
+    "Erweiterte menschliche Qualitätsprüfung und Freigabe": "Examen et approbation avancés de la qualité humaine",
+    "package-inclusion-group is-premium": "package-inclusion-group est-premium",
+    "Ab dieser Stufe zusätzlich": "De ce niveau en plus",
+    "dock-short": "quai court",
+    "dock-full": "quai plein",
+    "Vergleich": "Comparaison"
   },
   "es": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "El contenido, los productos, los pedidos y muchas configuraciones cotidianas se gestionan en una interfaz central. El alojamiento, las actualizaciones de la plataforma central y los certificados TLS para dominios conectados reducen las operaciones técnicas internas, sin prometer una ausencia absoluta de interrupciones.",
@@ -5018,7 +5039,14 @@ export default {
     "cta-full": "contacto completo",
     "nearest": "más cercano",
     "center": "centro",
-    "Zurück": "Atrás"
+    "Zurück": "Atrás",
+    "Persönliches Briefing mit Ziel- und Prioritätenklärung": "Briefing personal con aclaración de objetivos y prioridades.",
+    "Erweiterte menschliche Qualitätsprüfung und Freigabe": "Revisión y aprobación avanzada de calidad humana.",
+    "package-inclusion-group is-premium": "grupo-de-inclusión-de-paquetes-es-premium",
+    "Ab dieser Stufe zusätzlich": "Desde este nivel además",
+    "dock-short": "muelle corto",
+    "dock-full": "muelle lleno",
+    "Vergleich": "Comparación"
   },
   "tr": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "İçerik, ürünler, siparişler ve birçok günlük ayar merkezi bir arayüzden yönetilir. Bağlantılı alanlara yönelik barındırma, merkezi platform güncellemeleri ve TLS sertifikaları, kesintiden mutlak bir özgürlük vaat etmeden, şirket içi teknik işlemleri azaltır.",
@@ -6273,7 +6301,14 @@ export default {
     "cta-full": "cta dolu",
     "nearest": "en yakın",
     "center": "merkez",
-    "Zurück": "Geri"
+    "Zurück": "Geri",
+    "Persönliches Briefing mit Ziel- und Prioritätenklärung": "Hedeflerin ve önceliklerin açıklandığı kişisel brifing",
+    "Erweiterte menschliche Qualitätsprüfung und Freigabe": "Gelişmiş insan kalitesi incelemesi ve onayı",
+    "package-inclusion-group is-premium": "paket dahil etme grubu premiumdur",
+    "Ab dieser Stufe zusätzlich": "Bu seviyeden ayrıca",
+    "dock-short": "kısa iskele",
+    "dock-full": "iskele dolu",
+    "Vergleich": "Karşılaştırma"
   },
   "pl": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Treścią, produktami, zamówieniami i wieloma codziennymi ustawieniami zarządza się w centralnym interfejsie. Hosting, aktualizacje platform centralnych i certyfikaty TLS dla podłączonych domen ograniczają wewnętrzne operacje techniczne – nie zapewniając przy tym całkowitej wolności od zakłóceń.",
@@ -7528,7 +7563,14 @@ export default {
     "cta-full": "cta pełne",
     "nearest": "najbliższy",
     "center": "centrum",
-    "Zurück": "Powrót"
+    "Zurück": "Powrót",
+    "Persönliches Briefing mit Ziel- und Prioritätenklärung": "Odprawa osobista z wyjaśnieniem celów i priorytetów",
+    "Erweiterte menschliche Qualitätsprüfung und Freigabe": "Zaawansowany przegląd i zatwierdzenie jakości ludzkiej",
+    "package-inclusion-group is-premium": "grupa-włączania pakietów jest-premium",
+    "Ab dieser Stufe zusätzlich": "Z tego poziomu dodatkowo",
+    "dock-short": "dok krótki",
+    "dock-full": "dok pełny",
+    "Vergleich": "Porównanie"
   },
   "nl": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Inhoud, producten, bestellingen en veel dagelijkse instellingen worden beheerd in een centrale interface. Hosting, centrale platformupdates en TLS-certificaten voor verbonden domeinen verminderen de technische interne activiteiten - zonder absolute vrijheid van verstoring te beloven.",
@@ -8783,7 +8825,14 @@ export default {
     "cta-full": "ct vol",
     "nearest": "dichtstbijzijnde",
     "center": "centrum",
-    "Zurück": "Terug"
+    "Zurück": "Terug",
+    "Persönliches Briefing mit Ziel- und Prioritätenklärung": "Persoonlijke briefing met verduidelijking van doelstellingen en prioriteiten",
+    "Erweiterte menschliche Qualitätsprüfung und Freigabe": "Geavanceerde menselijke kwaliteitsbeoordeling en goedkeuring",
+    "package-inclusion-group is-premium": "pakket-inclusie-groep is-premium",
+    "Ab dieser Stufe zusätzlich": "Vanaf dit niveau bovendien",
+    "dock-short": "dok kort",
+    "dock-full": "dok vol",
+    "Vergleich": "Vergelijking"
   },
   "it": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Contenuti, prodotti, ordini e molte impostazioni quotidiane sono gestiti in un'interfaccia centrale. Hosting, aggiornamenti della piattaforma centrale e certificati TLS per i domini collegati riducono le operazioni tecniche interne, senza garantire l'assoluta libertà da interruzioni.",
@@ -10038,7 +10087,14 @@ export default {
     "cta-full": "cta pieno",
     "nearest": "più vicino",
     "center": "centro",
-    "Zurück": "Indietro"
+    "Zurück": "Indietro",
+    "Persönliches Briefing mit Ziel- und Prioritätenklärung": "Briefing personale con chiarimento di obiettivi e priorità",
+    "Erweiterte menschliche Qualitätsprüfung und Freigabe": "Revisione e approvazione avanzate della qualità umana",
+    "package-inclusion-group is-premium": "il gruppo-di-inclusione-del-pacchetto è-premium",
+    "Ab dieser Stufe zusätzlich": "Da questo livello inoltre",
+    "dock-short": "attracco corto",
+    "dock-full": "banchina piena",
+    "Vergleich": "Confronto"
   },
   "pt": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Conteúdo, produtos, pedidos e muitas configurações do dia a dia são gerenciados em uma interface central. A hospedagem, as atualizações da plataforma central e os certificados TLS para domínios conectados reduzem as operações técnicas internas - sem prometer liberdade absoluta contra interrupções.",
@@ -11293,7 +11349,14 @@ export default {
     "cta-full": "cta completo",
     "nearest": "mais próximo",
     "center": "centro",
-    "Zurück": "Voltar"
+    "Zurück": "Voltar",
+    "Persönliches Briefing mit Ziel- und Prioritätenklärung": "Briefing pessoal com esclarecimento de objetivos e prioridades",
+    "Erweiterte menschliche Qualitätsprüfung und Freigabe": "Revisão e aprovação avançada da qualidade humana",
+    "package-inclusion-group is-premium": "grupo de inclusão de pacote é premium",
+    "Ab dieser Stufe zusätzlich": "A partir deste nível adicionalmente",
+    "dock-short": "atracar curto",
+    "dock-full": "doca cheia",
+    "Vergleich": "Comparação"
   },
   "ru": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Контент, продукты, заказы и многие повседневные настройки управляются через центральный интерфейс. Хостинг, обновления центральной платформы и сертификаты TLS для подключенных доменов сокращают внутренние технические операции, не обещая при этом абсолютной свободы от сбоев.",
@@ -12547,7 +12610,14 @@ export default {
     "cta-full": "призыв полный",
     "nearest": "ближайший",
     "center": "центр",
-    "Zurück": "Назад"
+    "Zurück": "Назад",
+    "Persönliches Briefing mit Ziel- und Prioritätenklärung": "Персональный брифинг с уточнением целей и приоритетов",
+    "Erweiterte menschliche Qualitätsprüfung und Freigabe": "Расширенная проверка и утверждение качества персонала",
+    "package-inclusion-group is-premium": "группа включения пакета is-premium",
+    "Ab dieser Stufe zusätzlich": "С этого уровня дополнительно",
+    "dock-short": "док короткий",
+    "dock-full": "док полный",
+    "Vergleich": "Сравнение"
   },
   "ar": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "تتم إدارة المحتوى والمنتجات والأوامر والعديد من الإعدادات اليومية في واجهة مركزية. تعمل الاستضافة وتحديثات النظام الأساسي المركزي وشهادات TLS للنطاقات المتصلة على تقليل العمليات الفنية الداخلية - دون الوعد بالحرية المطلقة من الانقطاع.",
@@ -13802,6 +13872,13 @@ export default {
     "cta-full": "CTA ممتلئ",
     "nearest": "الأقرب",
     "center": "مركز",
-    "Zurück": "خلف"
+    "Zurück": "خلف",
+    "Persönliches Briefing mit Ziel- und Prioritätenklärung": "إحاطة شخصية مع توضيح الأهداف والأولويات",
+    "Erweiterte menschliche Qualitätsprüfung und Freigabe": "مراجعة الجودة البشرية المتقدمة والموافقة عليها",
+    "package-inclusion-group is-premium": "مجموعة تضمين الحزمة ممتازة",
+    "Ab dieser Stufe zusätzlich": "من هذا المستوى بالإضافة إلى ذلك",
+    "dock-short": "قفص الاتهام قصير",
+    "dock-full": "قفص الاتهام الكامل",
+    "Vergleich": "مقارنة"
   }
 };
