@@ -3,11 +3,11 @@ export const navigation = [
     label: "Digital",
     href: "/digital",
     items: [
-      ["Websites & Shopify", "/digital/websites-shopify"],
+      ["Websites erstellen lassen", "/digital/websites-erstellen-lassen"],
       ["Buchproduktion & Ghostwriting", "/digital/buchproduktion-ghostwriting"],
-      ["Content & Social Media", "/digital/content-social-media"],
-      ["Telefonassistenten", "/digital/telefonassistenten"],
-      ["Meta & Google Ads", "/digital/ads"],
+      ["Content & Social-Media-Beiträge", "/digital/social-media-content"],
+      ["KI-Telefonassistenten", "/digital/ki-telefonassistenten"],
+      ["KI-Werbung für Meta & Google", "/digital/ki-werbung-meta-google"],
       ["Apps & Software", "/digital/apps-software"],
     ],
   },
@@ -15,8 +15,8 @@ export const navigation = [
     label: "Expertise",
     href: "/expertise",
     items: [
-      ["KI-Consulting", "/expertise/ki-consulting"],
-      ["Chelonaki Academy", "/expertise/video-akademie"],
+      ["KI-Schulungen & Consulting", "/expertise/ki-schulungen-consulting"],
+      ["Chelonaki Academy", "/expertise/academy"],
       ["Ernährungsberatung", "/expertise/ernaehrungsberatung"],
     ],
   },
@@ -26,8 +26,7 @@ export const navigation = [
     items: [
       ["Eigene Bücher", "/originals/buecher"],
       ["Eigene Apps", "/originals/apps"],
-      ["Spiele & Lernwelten", "/originals/spiele"],
-      ["Digitale Produkte", "/originals/digitale-produkte"],
+      ["Weitere digitale Produkte", "/originals/digitale-produkte"],
     ],
   },
 ];
@@ -40,7 +39,7 @@ export const worlds = [
     text: "Digitale Lösungen für Unternehmen, künftige Gründer und Menschen mit einer eigenen Idee.",
     detail: "Websites, Bücher, Content, Telefonassistenten, Ads und Apps",
     href: "/digital",
-    cta: "Explore Digital",
+    cta: "Digital entdecken",
     tone: "digital",
   },
   {
@@ -48,19 +47,19 @@ export const worlds = [
     eyebrow: "Wissen in Anwendung",
     title: "Chelonaki Expertise",
     text: "Künstliche Intelligenz trifft auf Beratung, Ernährungswissenschaft und echte Praxiserfahrung.",
-    detail: "KI-Consulting, Academy und Ernährungsberatung",
+    detail: "KI-Schulungen, Consulting, Academy und Ernährungsberatung",
     href: "/expertise",
-    cta: "Discover Expertise",
+    cta: "Expertise entdecken",
     tone: "expertise",
   },
   {
     number: "03",
     eyebrow: "Eigene Ideenwelten",
     title: "Chelonaki Originals",
-    text: "Eigene Bücher, Apps, Spiele und digitale Produkte mit Haltung, Gestaltung und langfristiger Vision.",
-    detail: "Bücher, Apps, Spiele und digitale Welten",
+    text: "Eigene Bücher, Apps und digitale Produkte mit Haltung, Gestaltung und langfristiger Vision.",
+    detail: "Bücher, Apps und weitere digitale Produkte",
     href: "/originals",
-    cta: "Enter Originals",
+    cta: "Originals entdecken",
     tone: "originals",
   },
 ];
@@ -104,7 +103,7 @@ export const hubData = {
   originals: {
     label: "Chelonaki Original",
     title: "Eigene Ideen. Eigene Produkte. Eine gemeinsame Welt.",
-    intro: "Unter Originals entstehen Bücher, Apps und Lernwelten, die Ernährung, Gesundheit, Bildung und spielerische Motivation sinnvoll verbinden.",
+    intro: "Unter Originals entstehen eigene Bücher, Apps und digitale Produkte, die Ernährung, Gesundheit und alltagstaugliches Wissen sinnvoll verbinden.",
     image: "/assets/project-nutrition-venture.png",
     cta: "Originals entdecken",
     cards: navigation[2].items.map(([title, href], index) => ({
@@ -113,7 +112,6 @@ export const hubData = {
       text: [
         "Fach- und Kinderbücher für Ernährung, Gesundheit und besondere Stoffwechselthemen.",
         "Eigene Ernährungs-, Fitness- und Alltagsanwendungen wie Chelonaki EvoFit.",
-        "Altersgerechte Abenteuer, Übungen und spielerische Gesundheitsbildung.",
         "Kurse, Assistenten und personalisierte Inhalte im Chelonaki-Ökosystem.",
       ][index],
     })),
@@ -123,7 +121,7 @@ export const hubData = {
 const b2bNote = "Die dargestellten Paketpreise verstehen sich netto zuzüglich der gesetzlichen Umsatzsteuer und richten sich an Unternehmer im Sinne des § 14 BGB. Private Projekte sind ausdrücklich willkommen und erhalten vor Beauftragung ein gesondertes Angebot mit korrekt ausgewiesenem Gesamtpreis.";
 
 export const services = {
-  "/digital/websites-shopify": {
+  "/digital/websites-erstellen-lassen": {
     area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Websites, die nicht nur gut aussehen, sondern verkaufen.",
     intro: "Wir entwickeln Shopify-Websites und Shops von der Struktur über Design und Text bis zur responsiven Umsetzung und laufenden Optimierung.",
     problem: "Viele Websites erklären zu viel, führen zu wenig und werden nach dem Launch technisch nicht weitergedacht.",
@@ -131,13 +129,22 @@ export const services = {
     steps: ["Ziel und Designrichtung festlegen", "Struktur und Inhalte entwickeln", "Shopify responsiv umsetzen", "Prüfen, freigeben und übergeben"],
     pricing: [
       { name: "Website Starter", price: "1.000 €", meta: "bis 5 Seiten · 2 Korrekturrunden" },
+      { name: "Website Business", price: "1.750 €", meta: "bis 10 Seiten · Branding · Tracking-Grundsetup" },
       { name: "Website Pro", price: "2.500 €", meta: "bis 15 Seiten · Conversion · Blog · Newsletter", featured: true },
       { name: "Website Individual", price: "ab 2.900 €", meta: "individuelle UX/UI und Funktionen" },
     ],
     note: `${b2bNote} Shopify-Tarife, kostenpflichtige Apps und weitere Fremdkosten sind nicht enthalten.`,
     cta: "Website-Projekt besprechen",
+    bookingCta: "Paket auswählen & Website buchen",
+    inquiryCta: "Individuelle Website anfragen",
+    insight: {
+      label: "Warum Shopify",
+      title: "Einfacher pflegen. Planbarer weiterentwickeln.",
+      text: "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.",
+      points: ["Zentrale Pflege statt verteilter Systeme", "Weniger selbst betriebene Basiskomponenten", "Direkt für Leistungen und Produkte erweiterbar", "Saubere Übergabe nach persönlicher Einweisung"],
+    },
   },
-  "/digital/content-social-media": {
+  "/digital/social-media-content": {
     area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Ein Content-System statt täglicher Improvisation.",
     intro: "Wir planen, produzieren, prüfen und veröffentlichen Inhalte in einer eigenen Markenwelt – vollständig KI-gestützt, aber nicht ungeprüft.",
     problem: "Unregelmäßige Inhalte, wechselnde Bildsprachen und fehlende Prozesse kosten Reichweite und vor allem Zeit.",
@@ -150,8 +157,10 @@ export const services = {
     ],
     note: `${b2bNote} Drehs, Darsteller, Studios, Sonderlizenzen und externe Produktionskosten sind nicht enthalten.`,
     cta: "Content-System anfragen",
+    bookingCta: "Content-Paket auswählen & buchen",
+    inquiryCta: "Individuelles Content-System anfragen",
   },
-  "/digital/telefonassistenten": {
+  "/digital/ki-telefonassistenten": {
     area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Erreichbar bleiben, ohne jeden Anruf selbst anzunehmen.",
     intro: "Der KI-Telefonassistent beantwortet wiederkehrende Fragen, nimmt Anliegen auf und koordiniert je nach Paket Termine, Leads oder Bestellungen.",
     problem: "Verpasste Anrufe bedeuten verpasste Kunden – gleichzeitig dürfen Datenschutz, Transparenz und Eskalation nicht dem Zufall überlassen werden.",
@@ -164,8 +173,10 @@ export const services = {
     ],
     note: `${b2bNote} Monatlich kündbar ab 99 €/Monat zuzüglich 149 € Einrichtung. Ab drei Monaten Mindestlaufzeit entfällt die Einrichtungspauschale. Ausgehende Anrufe werden ab 0,12–0,19 €/Minute berechnet und erfolgen nur im rechtlich zulässigen Rahmen.`,
     cta: "Telefonassistent konfigurieren",
+    bookingCta: "KI-Telefonassistent auswählen & buchen",
+    inquiryCta: "Individuelle Integration anfragen",
   },
-  "/digital/ads": {
+  "/digital/ki-werbung-meta-google": {
     area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Werbung, die Angebot, Creative und Zielseite zusammen denkt.",
     intro: "Chelonaki entwickelt und optimiert Meta- und Google-Kampagnen mit nachvollziehbarem Tracking und verständlichen Handlungsempfehlungen.",
     problem: "Einzelne Anzeigen ohne klare Botschaft, passende Landingpage und saubere Messung verbrennen Budget.",
@@ -178,6 +189,8 @@ export const services = {
     ],
     note: `${b2bNote} Das Werbebudget und externe Tools sind nicht enthalten und werden direkt vom Kunden getragen.`,
     cta: "Werbekampagne besprechen",
+    bookingCta: "Werbepaket auswählen & buchen",
+    inquiryCta: "Individuelle Kampagne anfragen",
   },
   "/digital/apps-software": {
     area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Digitale Produkte, die mit Ihrer Idee wachsen können.",
@@ -189,19 +202,23 @@ export const services = {
     note: `${b2bNote} Der konkrete Standard ergibt sich aus dem vereinbarten Sicherheits- und Leistungskatalog.`,
     cta: "App-Idee prüfen lassen",
   },
-  "/expertise/ki-consulting": {
-    area: "Expertise", label: "Für Unternehmen", title: "Die richtigen KI-Systeme. Nicht möglichst viele Tools.",
+  "/expertise/ki-schulungen-consulting": {
+    area: "Expertise", label: "Für Unternehmen", title: "KI-Schulungen & Consulting für konkrete Arbeitsabläufe.",
     intro: "Wir analysieren, wo künstliche Intelligenz Zeit spart, Qualität verbessert oder neue Angebote ermöglicht – und übersetzen das in einen konkreten Umsetzungsweg.",
     problem: "Tool-Sammlungen ohne Prioritäten führen selten zu besseren Prozessen.",
     solution: ["KI-Strategie und Prozessanalyse", "Automatisierung wiederkehrender Aufgaben", "Werkzeugauswahl und eigene Assistenten", "Schulungen, Datenschutz und verantwortungsvoller Einsatz"],
     steps: ["Ist-Zustand verstehen", "Anwendungsfälle priorisieren", "Roadmap und Prototyp entwickeln", "Team befähigen und Einführung begleiten"],
     pricing: [
       { name: "Strategieberatung", price: "ab 149 €/Std.", meta: "fokussierte Einzelberatung" },
+      { name: "KI-Schulung", price: "1.290 €", meta: "1 Tag · verständlich und praxisnah" },
+      { name: "KI-Consulting", price: "1.490 €", meta: "1 Tag · Prozesse und Umsetzung" },
       { name: "KI-Intensivworkshop", price: "2.290 €", meta: "2 Tage · Analyse · Übungen · Fahrplan", featured: true },
       { name: "AI Transformation Sprint", price: "ab 3.990 €", meta: "Strategie, Prioritäten und Umsetzungsplan" },
     ],
     note: b2bNote,
     cta: "KI-Erstgespräch buchen",
+    bookingCta: "KI-Schulung oder Beratung auswählen",
+    inquiryCta: "KI-Erstgespräch buchen",
   },
   "/digital/buchproduktion-ghostwriting": {
     area: "Digital", label: "Für Unternehmen & eigene Buchprojekte", title: "Ihr Buch – geschrieben, gestaltet, veröffentlichungsfertig.",
@@ -211,11 +228,15 @@ export const services = {
     steps: ["Idee und Material prüfen", "Konzept und Inhaltsverzeichnis freigeben", "Kapitelweise produzieren", "Lektorat, Layout und finale Freigabe"],
     pricing: [
       { name: "Kinderbuch", price: "ab 500 €", meta: "klar begrenzter Einstieg bis 24 Seiten" },
+      { name: "Book Starter", price: "ab 1.000 €", meta: "bis ca. 80 Seiten · Basisdesign · Cover" },
       { name: "Authority Book", price: "3.000 €", meta: "ca. 80–150 Seiten · Konzept · Ghostwriting · Layout", featured: true },
       { name: "Premium Research Book", price: "6.000 €", meta: "Recherche · Quellen · Lektorat · hochwertiges Design" },
+      { name: "Individuelles Buchprojekt", price: "auf Anfrage", meta: "Fachbücher, Sonderformate und größere Umfänge" },
     ],
     note: `${b2bNote} Druck, ISBN, Plattformgebühren, Sonderlizenzen und nicht ausdrücklich genannte Fremdleistungen sind nicht enthalten.`,
     cta: "Buchprojekt anfragen",
+    bookingCta: "Buchpaket auswählen & Projekt starten",
+    inquiryCta: "Individuelles Buchprojekt anfragen",
   },
 };
 
