@@ -4,6 +4,7 @@ export const navigation = [
     href: "/digital",
     items: [
       ["Websites & Shopify", "/digital/websites-shopify"],
+      ["Buchproduktion & Ghostwriting", "/digital/buchproduktion-ghostwriting"],
       ["Content & Social Media", "/digital/content-social-media"],
       ["Telefonassistenten", "/digital/telefonassistenten"],
       ["Meta & Google Ads", "/digital/ads"],
@@ -17,7 +18,6 @@ export const navigation = [
       ["KI-Consulting", "/expertise/ki-consulting"],
       ["Chelonaki Academy", "/expertise/video-akademie"],
       ["Ernährungsberatung", "/expertise/ernaehrungsberatung"],
-      ["Buchproduktion", "/expertise/buchproduktion"],
     ],
   },
   {
@@ -38,7 +38,7 @@ export const worlds = [
     eyebrow: "Für Unternehmen",
     title: "Chelonaki Digital",
     text: "Digitale Systeme, die Unternehmen sichtbar, erreichbar und zukunftsfähig machen.",
-    detail: "Websites, Content, Telefonassistenten, Ads und Apps",
+    detail: "Websites, Bücher, Content, Telefonassistenten, Ads und Apps",
     href: "/digital",
     cta: "Explore Digital",
     tone: "digital",
@@ -47,8 +47,8 @@ export const worlds = [
     number: "02",
     eyebrow: "Wissen in Anwendung",
     title: "Chelonaki Expertise",
-    text: "Künstliche Intelligenz trifft auf Beratung, Ernährungswissenschaft, Praxiserfahrung und Buchproduktion.",
-    detail: "KI-Consulting, Academy, Ernährung und Bücher",
+    text: "Künstliche Intelligenz trifft auf Beratung, Ernährungswissenschaft und echte Praxiserfahrung.",
+    detail: "KI-Consulting, Academy und Ernährungsberatung",
     href: "/expertise",
     cta: "Discover Expertise",
     tone: "expertise",
@@ -77,6 +77,7 @@ export const hubData = {
       href,
       text: [
         "Hochwertige Auftritte und Shops mit klarer Conversion-Struktur.",
+        "Komplette Bücher: Konzept, Ghostwriting, Recherche, Design und veröffentlichungsfähige Dateien.",
         "Planbare Inhalte mit eigener Tonalität, Bildwelt und Qualitätskontrolle.",
         "Erreichbar bleiben, Anfragen strukturieren und Termine koordinieren.",
         "Kampagnen, Creatives, Tracking und Optimierung als zusammenhängendes System.",
@@ -87,7 +88,7 @@ export const hubData = {
   expertise: {
     label: "Chelonaki Expertise",
     title: "Wissen wird erst wertvoll, wenn es anwendbar wird.",
-    intro: "Wir übersetzen künstliche Intelligenz, Ernährungswissenschaft und Praxiserfahrung in klare Entscheidungen, Lernangebote und veröffentlichungsfähige Inhalte.",
+    intro: "Wir übersetzen künstliche Intelligenz, Ernährungswissenschaft und Praxiserfahrung in klare Entscheidungen, wirksame Beratung und strukturierte Lernangebote.",
     image: "/assets/chapter-architecture.webp",
     cta: "Erstgespräch buchen",
     cards: navigation[1].items.map(([title, href], index) => ({
@@ -97,7 +98,6 @@ export const hubData = {
         "Prozesse verstehen, sinnvolle Anwendungsfälle priorisieren und umsetzen.",
         "Strukturierte Video-Lernwelten für KI und Ernährung.",
         "Wissenschaftlich fundierte Beratung für Unternehmen und Privatpersonen.",
-        "Von der Buchidee bis zur veröffentlichungsfähigen Datei.",
       ][index],
     })),
   },
@@ -203,11 +203,11 @@ export const services = {
     note: b2bNote,
     cta: "KI-Erstgespräch buchen",
   },
-  "/expertise/buchproduktion": {
-    area: "Expertise", label: "Für Unternehmen und professionelle Personenmarken", title: "Aus Ihrem Wissen wird ein professionelles Buch.",
-    intro: "Konzept, Recherche, Ghostwriting, Gestaltung und veröffentlichungsfähige Dateien entstehen in einem abgestimmten Produktionsprozess.",
+  "/digital/buchproduktion-ghostwriting": {
+    area: "Digital", label: "Für Unternehmen und professionelle Personenmarken", title: "Ihr Buch – geschrieben, gestaltet, veröffentlichungsfertig.",
+    intro: "Wir übernehmen die komplette Buchproduktion: Konzept, Recherche, Ghostwriting, Cover, Layout sowie die fertigen Dateien für Print und E-Book.",
     problem: "Fachwissen ist vorhanden, aber Struktur, Zeit, Recherche und hochwertige Umsetzung fehlen.",
-    solution: ["Positionierung, Zielgruppe und Inhaltskonzept", "Ghostwriting, Recherche und Quellen", "Cover, Buchsatz und Bildentwicklung", "Druckfähige PDF und E-Book-Version"],
+    solution: ["Buchkonzept, Positionierung und Kapitelstruktur", "Ghostwriting, Recherche und Quellen", "Cover, Buchsatz, Layout und Bildentwicklung", "Veröffentlichungsfertige PDF- und E-Book-Dateien"],
     steps: ["Idee und Material prüfen", "Konzept und Inhaltsverzeichnis freigeben", "Kapitelweise produzieren", "Lektorat, Layout und finale Freigabe"],
     pricing: [
       { name: "Kinderbuch", price: "ab 500 €", meta: "klar begrenzter Einstieg bis 24 Seiten" },
