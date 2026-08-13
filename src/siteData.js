@@ -15,7 +15,6 @@ export const navigation = [
       ["Social Media & Content", "/medien-ai/social-media"],
       ["Ads für Meta & Google", "/medien-ai/ads"],
       ["KI-Telefonassistenten", "/medien-ai/ki-telefon"],
-      ["KI-Automatisierungen", "/medien-ai/automatisierungen"],
       ["KI-Antworten für Social Media", "/medien-ai/chelonaki-reply"],
     ],
   },
@@ -49,7 +48,7 @@ export const worlds = [
     eyebrow: "Wissen in Anwendung",
     title: "Medien & AI",
     text: "Künstliche Intelligenz trifft auf Beratung, Ernährungswissenschaft und echte Praxiserfahrung.",
-    detail: "Social Media · Ads · KI-Telefon · Automatisierungen · Reply",
+    detail: "Social Media · Ads · KI-Telefon · Reply",
     href: "/medien-ai",
     cta: "Bereich entdecken",
     tone: "expertise",
@@ -134,10 +133,10 @@ hubData.web = {
 };
 hubData.media = {
   label: "Für Unternehmen",
-  title: "Medien und AI, die Sichtbarkeit und Abläufe planbarer machen.",
-  intro: "Content, Werbung, Telefonie und Automatisierungen werden als zusammenhängende Systeme entwickelt – mit transparenten Grenzen und Freigaben.",
+  title: "Medien und AI, die Sichtbarkeit und Kommunikation planbarer machen.",
+  intro: "Content, Werbung, Telefonie und intelligente Antwortvorschläge werden als zusammenhängende Kommunikationsbausteine entwickelt – mit transparenten Grenzen und Freigaben.",
   image: "/assets/hero-architecture.png", cta: "Medien- oder AI-Projekt anfragen",
-  cards: navigation[1].items.map(([title, href], index) => ({ title, href, text: ["Planbare Inhalte in einer konsistenten Markenwelt.", "Kampagnen, Creatives, Tracking und Optimierung.", "Anfragen aufnehmen, Fragen beantworten und Termine koordinieren.", "Wiederkehrende Abläufe verbinden und kontrolliert automatisieren.", "Drei passende Antwortvorschläge für LinkedIn, Instagram und E-Mail – Sie wählen und bearbeiten."][index] })),
+  cards: navigation[1].items.map(([title, href], index) => ({ title, href, text: ["Planbare Inhalte in einer konsistenten Markenwelt.", "Kampagnen, Creatives, Tracking und Optimierung.", "Anfragen aufnehmen, Fragen beantworten und Termine koordinieren.", "Drei passende Antwortvorschläge für LinkedIn, Instagram und E-Mail – Sie wählen und bearbeiten."][index] })),
 };
 hubData.advice = {
   label: "Für Unternehmen",
