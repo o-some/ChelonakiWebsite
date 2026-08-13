@@ -12,8 +12,8 @@ export const navigation = [
     label: "Medien & KI",
     href: "/medien-ai",
     items: [
-      ["KI Content & Social Media", "/medien-ai/social-media"],
-      ["KI Ads für Meta & Google", "/medien-ai/ads"],
+      ["KI-Content & Social Media", "/medien-ai/social-media"],
+      ["KI-Ads für Meta & Google", "/medien-ai/ads"],
       ["KI-Telefonassistenten", "/medien-ai/ki-telefon"],
       ["KI-Antworten für Social Media", "/medien-ai/chelonaki-reply"],
     ],
@@ -27,7 +27,7 @@ export const navigation = [
       ["Chelonaki Video Academy", "/ki-beratung-weiterbildung/video-academy"],
     ],
   },
-  { label: "Originals", href: "/originals", items: [["Eigene Apps", "/originals/apps"], ["Eigene Bücher", "/originals/buecher"]] },
+  { label: "Originals", href: "/originals", items: [["Von Eleftherios entwickelte Apps", "/originals/apps"], ["Von Eleftherios geschriebene Bücher", "/originals/buecher"]] },
   { label: "Demowelten", href: "/demowelten", items: [] },
   { label: "Über uns", href: "/ueber-uns", items: [] },
 ];
@@ -63,7 +63,7 @@ export const worlds = [
     cta: "Bereich entdecken",
     tone: "expertise",
   },
-  { number: "04", eyebrow: "Eigene Produktwelten", title: "Originals", text: "Eigene Apps und Bücher aus dem Chelonaki-Ökosystem.", detail: "Eigene Apps · eigene Bücher", href: "/originals", cta: "Originals entdecken", tone: "originals" },
+  { number: "04", eyebrow: "Persönlich entwickelt & geschrieben", title: "Originals", text: "Apps, die Eleftherios selbst entwickelt, und Bücher, die er selbst geschrieben hat.", detail: "Eigene App-Entwicklung · eigene Bücher", href: "/originals", cta: "Originals entdecken", tone: "originals" },
   { number: "05", eyebrow: "Erleben statt nur lesen", title: "Demowelten", text: "Demos, Prototypen und Experimente, die Ideen vor einer Entscheidung greifbar machen.", detail: "Demos · Prototypen · Experimente", href: "/demowelten", cta: "Demowelten öffnen", tone: "digital" },
   { number: "06", eyebrow: "Herkunft & Haltung", title: "Über uns", text: "Die Familiengeschichte, Kompetenz und Werte hinter Chelonaki.", detail: "Eleftherios · Familie · Qualität", href: "/ueber-uns", cta: "Geschichte kennenlernen", tone: "expertise" },
 ];
@@ -106,16 +106,16 @@ export const hubData = {
   },
   originals: {
     label: "Chelonaki Original",
-    title: "Eigene Ideen. Eigene Produkte. Eine gemeinsame Welt.",
-    intro: "Unter Originals entstehen eigene Apps und Bücher, die Ernährung, Gesundheit und alltagstaugliches Wissen sinnvoll verbinden.",
+    title: "Von Eleftherios entwickelt. Von Eleftherios geschrieben.",
+    intro: "Originals versammelt keine Kundenprojekte: Hier zeigt Eleftherios seine selbst entwickelten Apps und seine eigenen Bücher. Jedes Produkt trägt seine fachliche und kreative Handschrift.",
     image: "/assets/project-nutrition-venture.png",
     cta: "Originals entdecken",
     cards: navigation[3].items.map(([title, href], index) => ({
       title,
       href,
       text: [
-        "Eigene Ernährungs-, Fitness- und Alltagsanwendungen wie Chelonaki EvoFit.",
-        "Fach- und Kinderbücher für Ernährung, Gesundheit und besondere Stoffwechselthemen.",
+        "Von Eleftherios konzipierte und entwickelte Ernährungs-, Fitness- und Alltagsanwendungen wie Chelonaki EvoFit.",
+        "Von Eleftherios geschriebene Fach-, Koch- und Kinderbücher zu Ernährung, Gesundheit und besonderen Stoffwechselthemen.",
       ][index],
     })),
   },
