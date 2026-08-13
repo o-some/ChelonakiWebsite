@@ -80,7 +80,9 @@ const terminology = {
     "Demowelten": "Demo Worlds",
     "Über uns": "About Us",
     "Von Eleftherios entwickelte Apps": "Apps developed by Eleftherios",
-    "Von Eleftherios geschriebene Bücher": "Books written by Eleftherios"
+    "Von Eleftherios geschriebene Bücher": "Books written by Eleftherios",
+    "Unsere eigenen Apps": "Our own apps",
+    "Unsere eigenen Bücher": "Our own books"
   },
   el: {
     "Web, Apps & Publikationen": "Ιστός, Εφαρμογές & Εκδόσεις",
@@ -94,7 +96,9 @@ const terminology = {
     "Demowelten": "Κόσμοι Επίδειξης",
     "Über uns": "Σχετικά με εμάς",
     "Von Eleftherios entwickelte Apps": "Εφαρμογές που ανέπτυξε ο Ελευθέριος",
-    "Von Eleftherios geschriebene Bücher": "Βιβλία που έγραψε ο Ελευθέριος"
+    "Von Eleftherios geschriebene Bücher": "Βιβλία που έγραψε ο Ελευθέριος",
+    "Unsere eigenen Apps": "Οι δικές μας εφαρμογές",
+    "Unsere eigenen Bücher": "Τα δικά μας βιβλία"
   },
   fr: {
     "Web, Apps & Publikationen": "Web, Apps & Publications",
@@ -108,7 +112,9 @@ const terminology = {
     "Demowelten": "Univers Démo",
     "Über uns": "À propos",
     "Von Eleftherios entwickelte Apps": "Applications développées par Eleftherios",
-    "Von Eleftherios geschriebene Bücher": "Livres écrits par Eleftherios"
+    "Von Eleftherios geschriebene Bücher": "Livres écrits par Eleftherios",
+    "Unsere eigenen Apps": "Nos propres applications",
+    "Unsere eigenen Bücher": "Nos propres livres"
   },
   es: {
     "Web, Apps & Publikationen": "Web, Apps y Publicaciones",
@@ -122,7 +128,9 @@ const terminology = {
     "Demowelten": "Mundos Demo",
     "Über uns": "Sobre nosotros",
     "Von Eleftherios entwickelte Apps": "Aplicaciones desarrolladas por Eleftherios",
-    "Von Eleftherios geschriebene Bücher": "Libros escritos por Eleftherios"
+    "Von Eleftherios geschriebene Bücher": "Libros escritos por Eleftherios",
+    "Unsere eigenen Apps": "Nuestras propias aplicaciones",
+    "Unsere eigenen Bücher": "Nuestros propios libros"
   },
   tr: {
     "Web, Apps & Publikationen": "Web, Uygulamalar & Yayınlar",
@@ -136,7 +144,9 @@ const terminology = {
     "Demowelten": "Demo Dünyaları",
     "Über uns": "Hakkımızda",
     "Von Eleftherios entwickelte Apps": "Eleftherios tarafından geliştirilen uygulamalar",
-    "Von Eleftherios geschriebene Bücher": "Eleftherios'un yazdığı kitaplar"
+    "Von Eleftherios geschriebene Bücher": "Eleftherios'un yazdığı kitaplar",
+    "Unsere eigenen Apps": "Kendi uygulamalarımız",
+    "Unsere eigenen Bücher": "Kendi kitaplarımız"
   },
   pl: {
     "Web, Apps & Publikationen": "Web, Aplikacje i Publikacje",
@@ -150,7 +160,9 @@ const terminology = {
     "Demowelten": "Strefy Demo",
     "Über uns": "O nas",
     "Von Eleftherios entwickelte Apps": "Aplikacje stworzone przez Eleftheriosa",
-    "Von Eleftherios geschriebene Bücher": "Książki napisane przez Eleftheriosa"
+    "Von Eleftherios geschriebene Bücher": "Książki napisane przez Eleftheriosa",
+    "Unsere eigenen Apps": "Nasze własne aplikacje",
+    "Unsere eigenen Bücher": "Nasze własne książki"
   },
   nl: {
     "Web, Apps & Publikationen": "Web, Apps & Publicaties",
@@ -164,7 +176,9 @@ const terminology = {
     "Demowelten": "Demo’s",
     "Über uns": "Over ons",
     "Von Eleftherios entwickelte Apps": "Apps ontwikkeld door Eleftherios",
-    "Von Eleftherios geschriebene Bücher": "Boeken geschreven door Eleftherios"
+    "Von Eleftherios geschriebene Bücher": "Boeken geschreven door Eleftherios",
+    "Unsere eigenen Apps": "Onze eigen apps",
+    "Unsere eigenen Bücher": "Onze eigen boeken"
   },
   it: {
     "Web, Apps & Publikationen": "Web, App & Pubblicazioni",
@@ -178,7 +192,9 @@ const terminology = {
     "Demowelten": "Mondi Demo",
     "Über uns": "Chi siamo",
     "Von Eleftherios entwickelte Apps": "App sviluppate da Eleftherios",
-    "Von Eleftherios geschriebene Bücher": "Libri scritti da Eleftherios"
+    "Von Eleftherios geschriebene Bücher": "Libri scritti da Eleftherios",
+    "Unsere eigenen Apps": "Le nostre app",
+    "Unsere eigenen Bücher": "I nostri libri"
   },
   pt: {
     "Web, Apps & Publikationen": "Web, Apps e Publicações",
@@ -192,7 +208,9 @@ const terminology = {
     "Demowelten": "Demonstrações",
     "Über uns": "Sobre nós",
     "Von Eleftherios entwickelte Apps": "Aplicações desenvolvidas por Eleftherios",
-    "Von Eleftherios geschriebene Bücher": "Livros escritos por Eleftherios"
+    "Von Eleftherios geschriebene Bücher": "Livros escritos por Eleftherios",
+    "Unsere eigenen Apps": "Nossos próprios aplicativos",
+    "Unsere eigenen Bücher": "Nossos próprios livros"
   },
   ru: {
     "Web, Apps & Publikationen": "Сайты, приложения и издания",
@@ -206,7 +224,9 @@ const terminology = {
     "Demowelten": "Демо-миры",
     "Über uns": "О нас",
     "Von Eleftherios entwickelte Apps": "Приложения, разработанные Элефтериосом",
-    "Von Eleftherios geschriebene Bücher": "Книги, написанные Элефтериосом"
+    "Von Eleftherios geschriebene Bücher": "Книги, написанные Элефтериосом",
+    "Unsere eigenen Apps": "Наши собственные приложения",
+    "Unsere eigenen Bücher": "Наши собственные книги"
   },
   ar: {
     "Web, Apps & Publikationen": "الويب والتطبيقات والنشر",
@@ -220,7 +240,9 @@ const terminology = {
     "Demowelten": "نماذج تجريبية",
     "Über uns": "من نحن",
     "Von Eleftherios entwickelte Apps": "تطبيقات طوّرها إليفثيريوس",
-    "Von Eleftherios geschriebene Bücher": "كتب ألّفها إليفثيريوس"
+    "Von Eleftherios geschriebene Bücher": "كتب ألّفها إليفثيريوس",
+    "Unsere eigenen Apps": "تطبيقاتنا الخاصة",
+    "Unsere eigenen Bücher": "كتبنا الخاصة"
   }
 };
 

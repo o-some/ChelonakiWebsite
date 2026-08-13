@@ -27,7 +27,7 @@ export const navigation = [
       ["Chelonaki Video Academy", "/ki-beratung-weiterbildung/video-academy"],
     ],
   },
-  { label: "Originals", href: "/originals", items: [["Von Eleftherios entwickelte Apps", "/originals/apps"], ["Von Eleftherios geschriebene Bücher", "/originals/buecher"]] },
+  { label: "Originals", href: "/originals", items: [["Unsere eigenen Apps", "/originals/apps"], ["Unsere eigenen Bücher", "/originals/buecher"]] },
   { label: "Demowelten", href: "/demowelten", items: [] },
   { label: "Über uns", href: "/ueber-uns", items: [] },
 ];

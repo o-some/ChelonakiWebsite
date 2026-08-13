@@ -1046,7 +1046,9 @@ export default {
     "KI-Content & Social Media": "AI Content & Social Media",
     "KI-Ads für Meta & Google": "AI Ads for Meta & Google",
     "Eigene App · Prototyp": "Own app · Prototype",
-    "Eigene Fachbücher": "Own specialist books"
+    "Eigene Fachbücher": "Own specialist books",
+    "Unsere eigenen Bücher": "Our own books",
+    "Unsere eigenen Apps": "Our own apps"
   },
   "el": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Το περιεχόμενο, τα προϊόντα, οι παραγγελίες και πολλές καθημερινές ρυθμίσεις διαχειρίζονται σε μια κεντρική διεπαφή. Η φιλοξενία, οι ενημερώσεις κεντρικής πλατφόρμας και τα πιστοποιητικά TLS για συνδεδεμένους τομείς μειώνουν τις τεχνικές εσωτερικές λειτουργίες - χωρίς να υπόσχονται απόλυτη ελευθερία από διακοπές.",
@@ -2094,7 +2096,9 @@ export default {
     "KI-Content & Social Media": "Περιεχόμενο ΤΝ & Κοινωνικά Δίκτυα",
     "KI-Ads für Meta & Google": "Διαφημίσεις ΤΝ για Meta & Google",
     "Eigene App · Prototyp": "Ίδια εφαρμογή · Πρωτότυπο",
-    "Eigene Fachbücher": "Διαθέτετε εξειδικευμένα βιβλία"
+    "Eigene Fachbücher": "Διαθέτετε εξειδικευμένα βιβλία",
+    "Unsere eigenen Bücher": "Τα δικά μας βιβλία",
+    "Unsere eigenen Apps": "Οι δικές μας εφαρμογές"
   },
   "fr": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Le contenu, les produits, les commandes et de nombreux paramètres du quotidien sont gérés dans une interface centrale. L'hébergement, les mises à jour de la plateforme centrale et les certificats TLS pour les domaines connectés réduisent les opérations techniques internes - sans promettre une liberté absolue contre les perturbations.",
@@ -3142,7 +3146,9 @@ export default {
     "KI-Content & Social Media": "Contenu IA & Réseaux sociaux",
     "KI-Ads für Meta & Google": "Publicités IA pour Meta & Google",
     "Eigene App · Prototyp": "Propre application · Prototype",
-    "Eigene Fachbücher": "Posséder des livres spécialisés"
+    "Eigene Fachbücher": "Posséder des livres spécialisés",
+    "Unsere eigenen Bücher": "Nos propres livres",
+    "Unsere eigenen Apps": "Nos propres applications"
   },
   "es": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "El contenido, los productos, los pedidos y muchas configuraciones cotidianas se gestionan en una interfaz central. El alojamiento, las actualizaciones de la plataforma central y los certificados TLS para dominios conectados reducen las operaciones técnicas internas, sin prometer una ausencia absoluta de interrupciones.",
@@ -4190,7 +4196,9 @@ export default {
     "KI-Content & Social Media": "Contenido con IA & Redes sociales",
     "KI-Ads für Meta & Google": "Anuncios con IA para Meta y Google",
     "Eigene App · Prototyp": "App propia · Prototipo",
-    "Eigene Fachbücher": "Libros propios especializados."
+    "Eigene Fachbücher": "Libros propios especializados.",
+    "Unsere eigenen Bücher": "Nuestros propios libros",
+    "Unsere eigenen Apps": "Nuestras propias aplicaciones"
   },
   "tr": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "İçerik, ürünler, siparişler ve birçok günlük ayar merkezi bir arayüzden yönetilir. Bağlantılı alanlara yönelik barındırma, merkezi platform güncellemeleri ve TLS sertifikaları, kesintiden mutlak bir özgürlük vaat etmeden, şirket içi teknik işlemleri azaltır.",
@@ -5238,7 +5246,9 @@ export default {
     "KI-Content & Social Media": "YZ İçerik & Sosyal Medya",
     "KI-Ads für Meta & Google": "Meta & Google için YZ Reklamları",
     "Eigene App · Prototyp": "Kendi uygulaması · Prototip",
-    "Eigene Fachbücher": "Kendi uzman kitapları"
+    "Eigene Fachbücher": "Kendi uzman kitapları",
+    "Unsere eigenen Bücher": "Kendi kitaplarımız",
+    "Unsere eigenen Apps": "Kendi uygulamalarımız"
   },
   "pl": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Treścią, produktami, zamówieniami i wieloma codziennymi ustawieniami zarządza się w centralnym interfejsie. Hosting, aktualizacje platform centralnych i certyfikaty TLS dla podłączonych domen ograniczają wewnętrzne operacje techniczne – nie zapewniając przy tym całkowitej wolności od zakłóceń.",
@@ -6286,7 +6296,9 @@ export default {
     "KI-Content & Social Media": "Treści AI & Social Media",
     "KI-Ads für Meta & Google": "Reklamy AI dla Meta i Google",
     "Eigene App · Prototyp": "Własna aplikacja · Prototyp",
-    "Eigene Fachbücher": "Własne książki specjalistyczne"
+    "Eigene Fachbücher": "Własne książki specjalistyczne",
+    "Unsere eigenen Bücher": "Nasze własne książki",
+    "Unsere eigenen Apps": "Nasze własne aplikacje"
   },
   "nl": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Inhoud, producten, bestellingen en veel dagelijkse instellingen worden beheerd in een centrale interface. Hosting, centrale platformupdates en TLS-certificaten voor verbonden domeinen verminderen de technische interne activiteiten - zonder absolute vrijheid van verstoring te beloven.",
@@ -7334,7 +7346,9 @@ export default {
     "KI-Content & Social Media": "AI-content & Social Media",
     "KI-Ads für Meta & Google": "AI-advertenties voor Meta & Google",
     "Eigene App · Prototyp": "Eigen app · Prototype",
-    "Eigene Fachbücher": "Eigen specialistische boeken"
+    "Eigene Fachbücher": "Eigen specialistische boeken",
+    "Unsere eigenen Bücher": "Onze eigen boeken",
+    "Unsere eigenen Apps": "Onze eigen apps"
   },
   "it": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Contenuti, prodotti, ordini e molte impostazioni quotidiane sono gestiti in un'interfaccia centrale. Hosting, aggiornamenti della piattaforma centrale e certificati TLS per i domini collegati riducono le operazioni tecniche interne, senza garantire l'assoluta libertà da interruzioni.",
@@ -8382,7 +8396,9 @@ export default {
     "KI-Content & Social Media": "Contenuti IA & Social Media",
     "KI-Ads für Meta & Google": "Annunci IA per Meta & Google",
     "Eigene App · Prototyp": "Propria app · Prototipo",
-    "Eigene Fachbücher": "Possedere libri specialistici"
+    "Eigene Fachbücher": "Possedere libri specialistici",
+    "Unsere eigenen Bücher": "I nostri libri",
+    "Unsere eigenen Apps": "Le nostre app"
   },
   "pt": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Conteúdo, produtos, pedidos e muitas configurações do dia a dia são gerenciados em uma interface central. A hospedagem, as atualizações da plataforma central e os certificados TLS para domínios conectados reduzem as operações técnicas internas - sem prometer liberdade absoluta contra interrupções.",
@@ -9430,7 +9446,9 @@ export default {
     "KI-Content & Social Media": "Conteúdo com IA & Redes Sociais",
     "KI-Ads für Meta & Google": "Anúncios com IA para Meta e Google",
     "Eigene App · Prototyp": "Aplicativo próprio · Protótipo",
-    "Eigene Fachbücher": "Livros especializados próprios"
+    "Eigene Fachbücher": "Livros especializados próprios",
+    "Unsere eigenen Bücher": "Nossos próprios livros",
+    "Unsere eigenen Apps": "Nossos próprios aplicativos"
   },
   "ru": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Контент, продукты, заказы и многие повседневные настройки управляются через центральный интерфейс. Хостинг, обновления центральной платформы и сертификаты TLS для подключенных доменов сокращают внутренние технические операции, не обещая при этом абсолютной свободы от сбоев.",
@@ -10477,7 +10495,9 @@ export default {
     "KI-Content & Social Media": "ИИ-контент и социальные сети",
     "KI-Ads für Meta & Google": "ИИ-реклама для Meta и Google",
     "Eigene App · Prototyp": "Собственное приложение · Прототип",
-    "Eigene Fachbücher": "Собственные специализированные книги"
+    "Eigene Fachbücher": "Собственные специализированные книги",
+    "Unsere eigenen Bücher": "Наши собственные книги",
+    "Unsere eigenen Apps": "Наши собственные приложения"
   },
   "ar": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "تتم إدارة المحتوى والمنتجات والأوامر والعديد من الإعدادات اليومية في واجهة مركزية. تعمل الاستضافة وتحديثات النظام الأساسي المركزي وشهادات TLS للنطاقات المتصلة على تقليل العمليات الفنية الداخلية - دون الوعد بالحرية المطلقة من الانقطاع.",
@@ -11525,6 +11545,8 @@ export default {
     "KI-Content & Social Media": "محتوى ذكي ووسائل التواصل",
     "KI-Ads für Meta & Google": "إعلانات ذكية لـ Meta وGoogle",
     "Eigene App · Prototyp": "التطبيق الخاص · النموذج الأولي",
-    "Eigene Fachbücher": "الكتب المتخصصة الخاصة"
+    "Eigene Fachbücher": "الكتب المتخصصة الخاصة",
+    "Unsere eigenen Bücher": "كتبنا الخاصة",
+    "Unsere eigenen Apps": "تطبيقاتنا الخاصة"
   }
 };
