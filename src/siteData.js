@@ -12,8 +12,8 @@ export const navigation = [
     label: "Medien & KI",
     href: "/medien-ai",
     items: [
-      ["Social Media & Content", "/medien-ai/social-media"],
-      ["Ads für Meta & Google", "/medien-ai/ads"],
+      ["KI Content & Social Media", "/medien-ai/social-media"],
+      ["KI Ads für Meta & Google", "/medien-ai/ads"],
       ["KI-Telefonassistenten", "/medien-ai/ki-telefon"],
       ["KI-Antworten für Social Media", "/medien-ai/chelonaki-reply"],
     ],
