@@ -160,11 +160,11 @@ function Header({ openMenu, path }) {
   return <header className={`site-header ${solid ? "is-solid" : ""}`}><Brand/><nav className="desktop-nav" aria-label="Hauptnavigation">{navigation.map((group) => <div className={`nav-group ${group.items.length ? "" : "is-direct"} ${active(group) ? "is-active" : ""} ${openGroup === group.label ? "is-open" : ""}`} key={group.label} onMouseEnter={() => setOpenGroup(group.label)} onMouseLeave={() => setOpenGroup(null)} onFocus={() => setOpenGroup(group.label)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setOpenGroup(null); }}><SmartLink href={group.href} aria-current={active(group) ? "page" : undefined} aria-expanded={group.items.length ? openGroup === group.label : undefined} onNavigate={() => setOpenGroup(null)}>{group.label}</SmartLink>{group.items.length > 0 && <div className="nav-panel"><SmartLink href={group.href} className="nav-overview" onNavigate={() => setOpenGroup(null)}>{group.label} entdecken <ArrowUpRight size={16}/></SmartLink>{group.items.map(([label, href]) => <SmartLink href={href} key={href} onNavigate={() => setOpenGroup(null)}>{label}</SmartLink>)}</div>}</div>)}<LanguagePicker/></nav><SmartLink className="button button-navy header-cta" href="/paketfinder">Passende Lösung finden <ArrowRight size={18}/></SmartLink><button className="menu-trigger" type="button" aria-label="Menü öffnen" onClick={openMenu}><List size={25}/></button></header>;
 }
 
-function MobileMenu({ open, onClose, path }) {
+function MobileMenu({ open, onClose, path, onOpenChat }) {
   const ref = useRef(null); const [expanded, setExpanded] = useState(null);
   useEffect(() => { if (!ref.current) return; if (open && !ref.current.open) ref.current.showModal(); if (!open && ref.current.open) ref.current.close(); }, [open]);
   const active = (href) => path === href || path.startsWith(`${href}/`);
-  return <dialog ref={ref} className="mobile-menu" onClose={onClose} onCancel={(e) => { e.preventDefault(); onClose(); }}><div className="mobile-menu-shell"><div className="mobile-menu-head"><Brand inverse compact/><button type="button" onClick={onClose} aria-label="Menü schließen"><X size={24}/></button></div><nav aria-label="Mobile Navigation">{navigation.map((group) => <div className={`mobile-nav-group ${active(group.href) ? "is-active" : ""}`} key={group.label}><div><SmartLink href={group.href} aria-current={active(group.href) ? "page" : undefined} onNavigate={onClose}>{group.label}</SmartLink>{group.items.length > 0 && <button type="button" aria-label={`${group.label} Untermenü`} aria-expanded={expanded === group.label} onClick={() => setExpanded(expanded === group.label ? null : group.label)}><CaretDown size={20}/></button>}</div>{expanded === group.label && group.items.length > 0 && <div className="mobile-subnav">{group.items.map(([label, href]) => <SmartLink href={href} className={active(href) ? "is-active" : ""} aria-current={active(href) ? "page" : undefined} key={href} onNavigate={onClose}>{label}</SmartLink>)}</div>}</div>)}<LanguagePicker mobile/><SmartLink className={`mobile-about ${active("/qualitaet") ? "is-active" : ""}`} href="/qualitaet" onNavigate={onClose}>Qualität</SmartLink></nav><SmartLink className="button button-gold" href="/paketfinder" onNavigate={onClose}>Passende Lösung finden <ArrowRight size={18}/></SmartLink></div></dialog>;
+  return <dialog ref={ref} className="mobile-menu" onClose={onClose} onCancel={(e) => { e.preventDefault(); onClose(); }}><div className="mobile-menu-shell"><div className="mobile-menu-head"><Brand inverse compact/><button type="button" onClick={onClose} aria-label="Menü schließen"><X size={24}/></button></div><nav aria-label="Mobile Navigation">{navigation.map((group) => <div className={`mobile-nav-group ${active(group.href) ? "is-active" : ""}`} key={group.label}><div><SmartLink href={group.href} aria-current={active(group.href) ? "page" : undefined} onNavigate={onClose}>{group.label}</SmartLink>{group.items.length > 0 && <button type="button" aria-label={`${group.label} Untermenü`} aria-expanded={expanded === group.label} onClick={() => setExpanded(expanded === group.label ? null : group.label)}><CaretDown size={20}/></button>}</div>{expanded === group.label && group.items.length > 0 && <div className="mobile-subnav">{group.items.map(([label, href]) => <SmartLink href={href} className={active(href) ? "is-active" : ""} aria-current={active(href) ? "page" : undefined} key={href} onNavigate={onClose}>{label}</SmartLink>)}</div>}</div>)}<LanguagePicker mobile/><SmartLink className={`mobile-about ${active("/qualitaet") ? "is-active" : ""}`} href="/qualitaet" onNavigate={onClose}>Qualität</SmartLink></nav><button className="mobile-chat-entry" type="button" onClick={onOpenChat}><span><img src="/assets/chelonaki-turtle-transparent.png" alt=""/></span><span><small>Fragen zu Leistungen und Preisen</small><strong>Chelonaki Assistent öffnen</strong></span><ChatCircleDots size={22}/></button><SmartLink className="button button-gold" href="/paketfinder" onNavigate={onClose}>Passende Lösung finden <ArrowRight size={18}/></SmartLink></div></dialog>;
 }
 
 function LegalDialog({ viewKey, onClose }) {
@@ -394,16 +394,29 @@ const chatSuggestions = [
   "Zeig mir passende Designbeispiele.",
 ];
 
-function ChatAssistant({ path }) {
-  const [open, setOpen] = useState(false);
+function ChatAssistant({ path, open, setOpen }) {
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
+  const [dismissed, setDismissed] = useState(() => localStorage.getItem("chelonaki-chat-launcher-dismissed") === "1");
+  const [scrollHidden, setScrollHidden] = useState(false);
   const [messages, setMessages] = useState([{ role: "assistant", content: "Hallo, ich bin der Chelonaki Assistent. Ich helfe Ihnen bei Leistungen, Paketen, Preisen, Designbeispielen und der Wahl des passenden nächsten Schritts. Was möchten Sie aufbauen?" }]);
   const logRef = useRef(null);
 
   useEffect(() => {
     if (open) window.setTimeout(() => logRef.current?.scrollTo({ top: logRef.current.scrollHeight, behavior: "smooth" }), 40);
   }, [messages, open, busy]);
+  useEffect(() => {
+    let previous = window.scrollY;
+    const onScroll = () => {
+      if (window.innerWidth > 767 || open) return setScrollHidden(false);
+      const current = window.scrollY;
+      setScrollHidden(current > previous && current > 180);
+      previous = current;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [open]);
+  const dismissLauncher = () => { localStorage.setItem("chelonaki-chat-launcher-dismissed", "1"); setDismissed(true); };
 
   const submit = async (suggestion) => {
     const content = (suggestion || input).trim();
@@ -424,7 +437,7 @@ function ChatAssistant({ path }) {
     } finally { setBusy(false); }
   };
 
-  return <aside className={`chat-assistant ${open ? "is-open" : ""}`} aria-label="Chelonaki KI-Assistent">
+  return <aside className={`chat-assistant ${open ? "is-open" : ""} ${dismissed && !open ? "is-dismissed" : ""} ${scrollHidden && !open ? "is-scroll-hidden" : ""}`} aria-label="Chelonaki KI-Assistent">
     {open && <section className="chat-panel" role="dialog" aria-modal="false" aria-labelledby="chat-title">
       <header className="chat-head">
         <span className="chat-avatar"><img src="/assets/chelonaki-turtle-transparent.png" alt=""/></span>
@@ -442,11 +455,7 @@ function ChatAssistant({ path }) {
       </form>
       <footer>KI kann Fehler machen. Verbindliche Leistungen und Preise bestätigen wir im persönlichen Angebot.</footer>
     </section>}
-    <button className="chat-launcher" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={open ? "Chat schließen" : "Chelonaki Assistent öffnen"}>
-      <span><img src="/assets/chelonaki-turtle-transparent.png" alt=""/></span>
-      <strong>Fragen Sie Chelonaki</strong>
-      {open ? <X size={20}/> : <ChatCircleDots size={21}/>}
-    </button>
+    <div className="chat-launcher-shell"><button className="chat-launcher" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={open ? "Chat schließen" : "Chelonaki Assistent öffnen"}><span><img src="/assets/chelonaki-turtle-transparent.png" alt=""/></span><strong>Fragen Sie Chelonaki</strong>{open ? <X size={20}/> : <ChatCircleDots size={21}/>}</button>{!open && <button className="chat-launcher-dismiss" type="button" onClick={dismissLauncher} aria-label="Chat-Hinweis ausblenden"><X size={15}/></button>}</div>
   </aside>;
 }
 
@@ -469,7 +478,7 @@ function RouteView({ path }) {
 }
 
 export function App() {
-  const [path, setPath] = useState(window.location.pathname.replace(/\/$/, "") || "/"); const [menu, setMenu] = useState(false); const [legal, setLegal] = useState(null);
+  const [path, setPath] = useState(window.location.pathname.replace(/\/$/, "") || "/"); const [menu, setMenu] = useState(false); const [legal, setLegal] = useState(null); const [chat, setChat] = useState(false);
   useEffect(() => { const update = () => setPath(window.location.pathname.replace(/\/$/, "") || "/"); window.addEventListener("popstate", update); return () => window.removeEventListener("popstate", update); }, []);
   useLayoutEffect(() => { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); }, [path]);
   useEffect(() => { document.title = path === "/" ? "Chelonaki | Wisdom wears a shell" : `Chelonaki | ${path.split("/").filter(Boolean).pop()?.replaceAll("-", " ") || "Studio"}`; }, [path]);
@@ -486,5 +495,5 @@ export function App() {
     updateScroll(); window.addEventListener("scroll", updateScroll, { passive: true });
     return () => { observer.disconnect(); window.removeEventListener("scroll", updateScroll); cancelAnimationFrame(frame); };
   }, [path]);
-  return <><LocalTranslator path={path}/><a className="skip-link" href="#main">Zum Inhalt</a><div id="top"/><Header path={path} openMenu={() => setMenu(true)}/><MobileMenu open={menu} path={path} onClose={() => setMenu(false)}/><RouteView path={path}/><Footer openLegal={setLegal}/><ChatAssistant path={path}/><LegalDialog viewKey={legal} onClose={() => setLegal(null)}/></>;
+  return <><LocalTranslator path={path}/><a className="skip-link" href="#main">Zum Inhalt</a><div id="top"/><Header path={path} openMenu={() => setMenu(true)}/><MobileMenu open={menu} path={path} onClose={() => setMenu(false)} onOpenChat={() => { setMenu(false); setChat(true); }}/><RouteView path={path}/><Footer openLegal={setLegal}/><ChatAssistant path={path} open={chat} setOpen={setChat}/><LegalDialog viewKey={legal} onClose={() => setLegal(null)}/></>;
 }

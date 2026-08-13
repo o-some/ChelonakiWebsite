@@ -1466,7 +1466,14 @@ export default {
     "Design": "design",
     "olive": "olive",
     "about": "about",
-    "offer": "offer"
+    "offer": "offer",
+    "chelonaki-chat-launcher-dismissed": "chelonaki-chat-launcher-dismissed",
+    "Fragen zu Leistungen und Preisen": "Questions about services and prices",
+    "Chat-Hinweis ausblenden": "Hide chat notice",
+    "chat-launcher-dismiss": "chat-launcher-dismiss",
+    "chat-launcher-shell": "chat launcher shell",
+    "mobile-chat-entry": "mobile chat entry",
+    "is-scroll-hidden": "is-scroll-hidden"
   },
   "el": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Το περιεχόμενο, τα προϊόντα, οι παραγγελίες και πολλές καθημερινές ρυθμίσεις διαχειρίζονται σε μια κεντρική διεπαφή. Η φιλοξενία, οι ενημερώσεις κεντρικής πλατφόρμας και τα πιστοποιητικά TLS για συνδεδεμένους τομείς μειώνουν τις τεχνικές εσωτερικές λειτουργίες - χωρίς να υπόσχονται απόλυτη ελευθερία από διακοπές.",
@@ -2934,7 +2941,14 @@ export default {
     "Design": "σχεδιασμός",
     "olive": "ελιά",
     "about": "περίπου",
-    "offer": "προσφορά"
+    "offer": "προσφορά",
+    "chelonaki-chat-launcher-dismissed": "chelonaki-chat-εκτοξευτή-απαιρέθηκε",
+    "Fragen zu Leistungen und Preisen": "Ερωτήσεις σχετικά με τις υπηρεσίες και τις τιμές",
+    "Chat-Hinweis ausblenden": "Απόκρυψη ειδοποίησης συνομιλίας",
+    "chat-launcher-dismiss": "chat-launcher-dismiss",
+    "chat-launcher-shell": "κέλυφος εκκίνησης συνομιλίας",
+    "mobile-chat-entry": "είσοδος συνομιλίας για κινητά",
+    "is-scroll-hidden": "is-scroll-hidden"
   },
   "fr": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Le contenu, les produits, les commandes et de nombreux paramètres du quotidien sont gérés dans une interface centrale. L'hébergement, les mises à jour de la plateforme centrale et les certificats TLS pour les domaines connectés réduisent les opérations techniques internes - sans promettre une liberté absolue contre les perturbations.",
@@ -4402,7 +4416,14 @@ export default {
     "Design": "conception",
     "olive": "olive",
     "about": "à propos",
-    "offer": "offre"
+    "offer": "offre",
+    "chelonaki-chat-launcher-dismissed": "chelonaki-chat-lanceur-rejeté",
+    "Fragen zu Leistungen und Preisen": "Questions sur les services et les prix",
+    "Chat-Hinweis ausblenden": "Masquer l'avis de discussion",
+    "chat-launcher-dismiss": "chat-lanceur-rejeter",
+    "chat-launcher-shell": "shell du lanceur de chat",
+    "mobile-chat-entry": "entrée de chat mobile",
+    "is-scroll-hidden": "est-le-défilement-caché"
   },
   "es": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "El contenido, los productos, los pedidos y muchas configuraciones cotidianas se gestionan en una interfaz central. El alojamiento, las actualizaciones de la plataforma central y los certificados TLS para dominios conectados reducen las operaciones técnicas internas, sin prometer una ausencia absoluta de interrupciones.",
@@ -5870,7 +5891,14 @@ export default {
     "Design": "diseño",
     "olive": "oliva",
     "about": "acerca de",
-    "offer": "oferta"
+    "offer": "oferta",
+    "chelonaki-chat-launcher-dismissed": "chelonaki-chat-launcher-descartado",
+    "Fragen zu Leistungen und Preisen": "Preguntas sobre servicios y precios.",
+    "Chat-Hinweis ausblenden": "Ocultar aviso de chat",
+    "chat-launcher-dismiss": "iniciador de chat-descartar",
+    "chat-launcher-shell": "shell del iniciador de chat",
+    "mobile-chat-entry": "entrada de chat móvil",
+    "is-scroll-hidden": "está-desplazado-oculto"
   },
   "tr": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "İçerik, ürünler, siparişler ve birçok günlük ayar merkezi bir arayüzden yönetilir. Bağlantılı alanlara yönelik barındırma, merkezi platform güncellemeleri ve TLS sertifikaları, kesintiden mutlak bir özgürlük vaat etmeden, şirket içi teknik işlemleri azaltır.",
@@ -7338,7 +7366,14 @@ export default {
     "Design": "tasarım",
     "olive": "zeytin",
     "about": "hakkında",
-    "offer": "teklif"
+    "offer": "teklif",
+    "chelonaki-chat-launcher-dismissed": "chelonaki-sohbet-başlatıcı-reddedildi",
+    "Fragen zu Leistungen und Preisen": "Hizmetler ve fiyatlar hakkında sorular",
+    "Chat-Hinweis ausblenden": "Sohbet bildirimini gizle",
+    "chat-launcher-dismiss": "sohbet başlatıcı-kapat",
+    "chat-launcher-shell": "sohbet başlatıcısı kabuğu",
+    "mobile-chat-entry": "mobil sohbet girişi",
+    "is-scroll-hidden": "kaydırma gizlidir"
   },
   "pl": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Treścią, produktami, zamówieniami i wieloma codziennymi ustawieniami zarządza się w centralnym interfejsie. Hosting, aktualizacje platform centralnych i certyfikaty TLS dla podłączonych domen ograniczają wewnętrzne operacje techniczne – nie zapewniając przy tym całkowitej wolności od zakłóceń.",
@@ -8806,7 +8841,14 @@ export default {
     "Design": "projekt",
     "olive": "oliwka",
     "about": "o",
-    "offer": "oferta"
+    "offer": "oferta",
+    "chelonaki-chat-launcher-dismissed": "chelonaki-program uruchamiający-czat-odrzucony",
+    "Fragen zu Leistungen und Preisen": "Pytania dotyczące usług i cen",
+    "Chat-Hinweis ausblenden": "Ukryj powiadomienie o czacie",
+    "chat-launcher-dismiss": "odrzucenie programu uruchamiającego czat",
+    "chat-launcher-shell": "powłoka programu uruchamiającego czat",
+    "mobile-chat-entry": "wpis na czacie mobilnym",
+    "is-scroll-hidden": "jest ukryte przy przewijaniu"
   },
   "nl": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Inhoud, producten, bestellingen en veel dagelijkse instellingen worden beheerd in een centrale interface. Hosting, centrale platformupdates en TLS-certificaten voor verbonden domeinen verminderen de technische interne activiteiten - zonder absolute vrijheid van verstoring te beloven.",
@@ -10274,7 +10316,14 @@ export default {
     "Design": "ontwerp",
     "olive": "olijf",
     "about": "over",
-    "offer": "aanbod"
+    "offer": "aanbod",
+    "chelonaki-chat-launcher-dismissed": "chelonaki-chat-launcher-afgewezen",
+    "Fragen zu Leistungen und Preisen": "Vragen over diensten en prijzen",
+    "Chat-Hinweis ausblenden": "Chatmelding verbergen",
+    "chat-launcher-dismiss": "chat-launcher-afsluiten",
+    "chat-launcher-shell": "chat launcher-shell",
+    "mobile-chat-entry": "mobiel chatbericht",
+    "is-scroll-hidden": "is-scroll-verborgen"
   },
   "it": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Contenuti, prodotti, ordini e molte impostazioni quotidiane sono gestiti in un'interfaccia centrale. Hosting, aggiornamenti della piattaforma centrale e certificati TLS per i domini collegati riducono le operazioni tecniche interne, senza garantire l'assoluta libertà da interruzioni.",
@@ -11742,7 +11791,14 @@ export default {
     "Design": "progettazione",
     "olive": "oliva",
     "about": "circa",
-    "offer": "offerta"
+    "offer": "offerta",
+    "chelonaki-chat-launcher-dismissed": "chelonaki-chat-launcher-dismesso",
+    "Fragen zu Leistungen und Preisen": "Domande su servizi e prezzi",
+    "Chat-Hinweis ausblenden": "Nascondi avviso di chat",
+    "chat-launcher-dismiss": "chat-launcher-ignora",
+    "chat-launcher-shell": "shell di avvio della chat",
+    "mobile-chat-entry": "voce nella chat mobile",
+    "is-scroll-hidden": "è nascosto dallo scorrimento"
   },
   "pt": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Conteúdo, produtos, pedidos e muitas configurações do dia a dia são gerenciados em uma interface central. A hospedagem, as atualizações da plataforma central e os certificados TLS para domínios conectados reduzem as operações técnicas internas - sem prometer liberdade absoluta contra interrupções.",
@@ -13210,7 +13266,14 @@ export default {
     "Design": "projeto",
     "olive": "azeitona",
     "about": "sobre",
-    "offer": "oferta"
+    "offer": "oferta",
+    "chelonaki-chat-launcher-dismissed": "chelonaki-chat-launcher-dispensado",
+    "Fragen zu Leistungen und Preisen": "Dúvidas sobre serviços e preços",
+    "Chat-Hinweis ausblenden": "Ocultar aviso de bate-papo",
+    "chat-launcher-dismiss": "iniciar chat-dispensar",
+    "chat-launcher-shell": "shell do iniciador de bate-papo",
+    "mobile-chat-entry": "entrada de bate-papo móvel",
+    "is-scroll-hidden": "está oculto na rolagem"
   },
   "ru": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "Контент, продукты, заказы и многие повседневные настройки управляются через центральный интерфейс. Хостинг, обновления центральной платформы и сертификаты TLS для подключенных доменов сокращают внутренние технические операции, не обещая при этом абсолютной свободы от сбоев.",
@@ -14677,7 +14740,14 @@ export default {
     "Design": "дизайн",
     "olive": "оливковый",
     "about": "о",
-    "offer": "предложение"
+    "offer": "предложение",
+    "chelonaki-chat-launcher-dismissed": "chelonaki-chat-launcher-уволен",
+    "Fragen zu Leistungen und Preisen": "Вопросы по услугам и ценам",
+    "Chat-Hinweis ausblenden": "Скрыть уведомление о чате",
+    "chat-launcher-dismiss": "чат-пусковая установка-отклонить",
+    "chat-launcher-shell": "оболочка запуска чата",
+    "mobile-chat-entry": "запись в мобильный чат",
+    "is-scroll-hidden": "скрыта прокрутка"
   },
   "ar": {
     "Inhalte, Produkte, Bestellungen und viele alltägliche Einstellungen werden in einer zentralen Oberfläche verwaltet. Hosting, zentrale Plattformupdates und TLS-Zertifikate für verbundene Domains reduzieren den technischen Eigenbetrieb – ohne eine absolute Störungsfreiheit zu versprechen.": "تتم إدارة المحتوى والمنتجات والأوامر والعديد من الإعدادات اليومية في واجهة مركزية. تعمل الاستضافة وتحديثات النظام الأساسي المركزي وشهادات TLS للنطاقات المتصلة على تقليل العمليات الفنية الداخلية - دون الوعد بالحرية المطلقة من الانقطاع.",
@@ -16145,6 +16215,13 @@ export default {
     "Design": "تصميم",
     "olive": "زيتون",
     "about": "عن",
-    "offer": "يعرض"
+    "offer": "يعرض",
+    "chelonaki-chat-launcher-dismissed": "تم رفض مشغل الدردشة chelonaki",
+    "Fragen zu Leistungen und Preisen": "أسئلة حول الخدمات والأسعار",
+    "Chat-Hinweis ausblenden": "إخفاء إشعار الدردشة",
+    "chat-launcher-dismiss": "دردشة قاذفة استبعاد",
+    "chat-launcher-shell": "قذيفة قاذفة الدردشة",
+    "mobile-chat-entry": "دخول الدردشة المتنقلة",
+    "is-scroll-hidden": "مخفي التمرير"
   }
 };
