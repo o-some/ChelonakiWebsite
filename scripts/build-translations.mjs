@@ -70,6 +70,9 @@ for (const language of languages) {
 const terminology = {
   en: {
     "Widerruf": "Withdrawal",
+    "Aus Ihrer Idee": "From your idea",
+    "wird ein System,": "comes a system,",
+    "das funktioniert.": "that works.",
     "Web, Apps & Publikationen": "Web, Apps & Publications",
     "Medien & KI": "Media & AI",
     "KI-Beratung & Weiterbildung": "AI Consulting & Training",
@@ -87,6 +90,9 @@ const terminology = {
   },
   el: {
     "Widerruf": "Υπαναχώρηση",
+    "Aus Ihrer Idee": "Από την ιδέα σας",
+    "wird ein System,": "γεννιέται ένα σύστημα,",
+    "das funktioniert.": "που λειτουργεί.",
     "Web, Apps & Publikationen": "Ιστός, Εφαρμογές & Εκδόσεις",
     "Medien & KI": "Μέσα & ΤΝ",
     "KI-Beratung & Weiterbildung": "Συμβουλευτική & Εκπαίδευση ΤΝ",
@@ -104,6 +110,9 @@ const terminology = {
   },
   fr: {
     "Widerruf": "Droit de rétractation",
+    "Aus Ihrer Idee": "De votre idée",
+    "wird ein System,": "naît un système,",
+    "das funktioniert.": "qui fonctionne.",
     "Web, Apps & Publikationen": "Web, Apps & Publications",
     "Medien & KI": "Médias & IA",
     "KI-Beratung & Weiterbildung": "Conseil & Formation IA",
@@ -121,6 +130,9 @@ const terminology = {
   },
   es: {
     "Widerruf": "Derecho de desistimiento",
+    "Aus Ihrer Idee": "De su idea",
+    "wird ein System,": "nace un sistema,",
+    "das funktioniert.": "que funciona.",
     "Web, Apps & Publikationen": "Web, Apps y Publicaciones",
     "Medien & KI": "Medios & IA",
     "KI-Beratung & Weiterbildung": "Consultoría & Formación en IA",
@@ -138,6 +150,9 @@ const terminology = {
   },
   tr: {
     "Widerruf": "Cayma hakkı",
+    "Aus Ihrer Idee": "Fikrinizden",
+    "wird ein System,": "bir sistem doğar,",
+    "das funktioniert.": "ve gerçekten çalışır.",
     "Web, Apps & Publikationen": "Web, Uygulamalar & Yayınlar",
     "Medien & KI": "Medya & YZ",
     "KI-Beratung & Weiterbildung": "YZ Danışmanlığı & Eğitim",
@@ -155,6 +170,9 @@ const terminology = {
   },
   pl: {
     "Widerruf": "Prawo odstąpienia",
+    "Aus Ihrer Idee": "Z Państwa pomysłu",
+    "wird ein System,": "powstaje system,",
+    "das funktioniert.": "który działa.",
     "Web, Apps & Publikationen": "Web, Aplikacje i Publikacje",
     "Medien & KI": "Media i AI",
     "KI-Beratung & Weiterbildung": "Doradztwo i Szkolenia AI",
@@ -172,6 +190,9 @@ const terminology = {
   },
   nl: {
     "Widerruf": "Herroepingsrecht",
+    "Aus Ihrer Idee": "Van uw idee",
+    "wird ein System,": "naar een systeem,",
+    "das funktioniert.": "dat werkt.",
     "Web, Apps & Publikationen": "Web, Apps & Publicaties",
     "Medien & KI": "Media & AI",
     "KI-Beratung & Weiterbildung": "AI-advies & Training",
@@ -189,6 +210,9 @@ const terminology = {
   },
   it: {
     "Widerruf": "Diritto di recesso",
+    "Aus Ihrer Idee": "Dalla vostra idea",
+    "wird ein System,": "nasce un sistema,",
+    "das funktioniert.": "che funziona.",
     "Web, Apps & Publikationen": "Web, App & Pubblicazioni",
     "Medien & KI": "Media & IA",
     "KI-Beratung & Weiterbildung": "Consulenza & Formazione IA",
@@ -206,6 +230,9 @@ const terminology = {
   },
   pt: {
     "Widerruf": "Direito de livre resolução",
+    "Aus Ihrer Idee": "Da sua ideia",
+    "wird ein System,": "nasce um sistema,",
+    "das funktioniert.": "que funciona.",
     "Web, Apps & Publikationen": "Web, Apps e Publicações",
     "Medien & KI": "Media & IA",
     "KI-Beratung & Weiterbildung": "Consultoria & Formação em IA",
@@ -223,6 +250,9 @@ const terminology = {
   },
   ru: {
     "Widerruf": "Право на отказ от договора",
+    "Aus Ihrer Idee": "Из вашей идеи",
+    "wird ein System,": "рождается система,",
+    "das funktioniert.": "которая работает.",
     "Web, Apps & Publikationen": "Сайты, приложения и издания",
     "Medien & KI": "Медиа и ИИ",
     "KI-Beratung & Weiterbildung": "Консалтинг и обучение по ИИ",
@@ -240,6 +270,9 @@ const terminology = {
   },
   ar: {
     "Widerruf": "حق العدول عن العقد",
+    "Aus Ihrer Idee": "من فكرتكم",
+    "wird ein System,": "يولد نظام،",
+    "das funktioniert.": "يعمل بكفاءة.",
     "Web, Apps & Publikationen": "الويب والتطبيقات والنشر",
     "Medien & KI": "الإعلام والذكاء الاصطناعي",
     "KI-Beratung & Weiterbildung": "استشارات وتدريب الذكاء الاصطناعي",

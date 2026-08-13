@@ -514,7 +514,11 @@ export function App({ initialPath = "/" }) {
   const [path, setPath] = useState(() => typeof window === "undefined" ? initialPath : (window.location.pathname.replace(/\/$/, "") || "/")); const [menu, setMenu] = useState(false); const [legal, setLegal] = useState(null); const [chat, setChat] = useState(false);
   useEffect(() => { const update = () => setPath(window.location.pathname.replace(/\/$/, "") || "/"); window.addEventListener("popstate", update); return () => window.removeEventListener("popstate", update); }, []);
   useLayoutEffect(() => { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); }, [path]);
-  useEffect(() => { document.title = path === "/" ? "Chelonaki | Wisdom wears a shell" : `Chelonaki | ${path.split("/").filter(Boolean).pop()?.replaceAll("-", " ") || "Studio"}`; }, [path]);
+  useEffect(() => {
+    const routeNames = { "/": "Aus Ideen werden funktionierende Systeme", "/web-apps-publikationen": "Web, Apps & Publikationen", "/medien-ai": "Medien & KI", "/ki-beratung-weiterbildung": "KI-Beratung & Weiterbildung", "/originals": "Eigene Apps & Bücher", "/demowelten": "Designbeispiele", "/paketfinder": "Paketfinder", "/qualitaet": "Qualitätsrahmen", "/ueber-uns": "Über uns", "/kontakt": "Kontakt" };
+    const name = services[path]?.title || routeNames[path] || "Chelonaki Studio";
+    document.title = `Chelonaki | ${name}`;
+  }, [path]);
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const autoReveal = [".service-index-card", ".problem-solution > div", ".platform-section > *", ".method-rail > li", ".pricing-grid > article", ".principle-grid > article", ".credentials > *", ".quality-grid > article", ".lab-grid > article", ".product-features article"];
