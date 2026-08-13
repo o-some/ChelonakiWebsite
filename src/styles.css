@@ -2521,39 +2521,38 @@ img {
   .package-comparison-actions { align-items:stretch; flex-direction:column; }
 }
 
-/* Gut lesbare, zweistufige Desktop-Navigation */
+/* Gut lesbare Desktop-Navigation in einer gemeinsamen Kopfzeile */
 @media (min-width: 1021px) {
-  html { scroll-padding-top: 128px; }
+  html { scroll-padding-top: 92px; }
   .site-header,
   .site-header.is-solid {
-    height: 128px;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 82px 46px;
-    gap: 0 28px;
-    padding-top: 0;
-    padding-bottom: 0;
+    height: 92px;
+    grid-template-columns: minmax(210px,.75fr) minmax(640px,1.7fr) auto;
+    grid-template-rows: 1fr;
+    gap: clamp(18px,2vw,38px);
   }
   .site-header .brand { grid-column: 1; grid-row: 1; }
-  .site-header .header-cta { grid-column: 2; grid-row: 1; }
+  .site-header .header-cta { grid-column: 3; grid-row: 1; }
   .desktop-nav {
-    position: absolute;
-    left: var(--gutter);
-    right: var(--gutter);
-    bottom: 0;
-    height: 46px;
+    position: static;
+    grid-column: 2;
+    grid-row: 1;
+    height: 100%;
     display: flex;
     justify-content: center;
-    gap: clamp(26px, 3vw, 58px);
-    border-top: 1px solid rgba(7,29,49,.08);
+    gap: clamp(18px,1.9vw,36px);
+    border: 0;
   }
   .desktop-nav a {
-    padding: 16px 0;
-    font-size: 12px;
-    letter-spacing: .08em;
+    padding: 36px 0 30px;
+    font-size: 11px;
+    letter-spacing: .055em;
   }
-  .desktop-nav a::after { bottom: 8px; }
+  .desktop-nav a::after { bottom: 22px; height: 2px; }
+  .desktop-nav .nav-group.is-active > a { color: var(--gold); }
+  .desktop-nav .nav-group.is-active > a::after { transform: scaleX(1); }
   .nav-panel {
-    top: 44px;
+    top: 82px;
     width: 350px;
     padding: 18px;
   }
@@ -2570,8 +2569,20 @@ img {
   }
   .page-hero,
   .service-hero,
-  .story-page-hero { padding-top: 128px; }
-  .home-hero .hero-copy { top: clamp(190px,23vh,245px); }
+  .story-page-hero { padding-top: 92px; }
+  .home-hero .hero-copy { top: clamp(160px,20vh,215px); }
+}
+
+@media (min-width:1021px) and (max-width:1280px) {
+  .site-header,
+  .site-header.is-solid { grid-template-columns: 185px minmax(590px,1fr) 190px; gap:14px; padding-left:24px; padding-right:24px; }
+  .brand-name small { display:none; }
+  .desktop-nav { gap:16px; }
+  .desktop-nav a { font-size:10px; letter-spacing:.025em; }
+  .header-cta { padding-left:16px; padding-right:16px; gap:12px; font-size:9px; }
+}
+@media (min-width:1021px) and (max-width:1450px) {
+  .site-header .brand-name small { display:none; }
 }
 .pricing-note { max-width: var(--content); margin: 38px auto 0; color: var(--copy-muted); font-size: 11px; line-height: 1.7; }
 

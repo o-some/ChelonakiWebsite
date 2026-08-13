@@ -16,7 +16,7 @@ export const navigation = [
       ["Ads für Meta & Google", "/medien-ai/ads"],
       ["KI-Telefonassistenten", "/medien-ai/ki-telefon"],
       ["KI-Automatisierungen", "/medien-ai/automatisierungen"],
-      ["Chelonaki Reply", "/medien-ai/chelonaki-reply"],
+      ["KI-Antworten für Social Media", "/medien-ai/chelonaki-reply"],
     ],
   },
   {
