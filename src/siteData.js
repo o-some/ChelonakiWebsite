@@ -266,6 +266,7 @@ export const services = {
     },
   },
   "/expertise/ki-schulungen-consulting": {
+    nonCumulative: true,
     area: "Expertise", label: "Für Unternehmen", title: "KI-Schulungen & Consulting für konkrete Arbeitsabläufe.",
     image: "/assets/service-consulting-v2.webp", imageAlt: "Nahbare KI-Strategieberatung an einem gemeinsamen Arbeitstisch",
     intro: "Wir analysieren, wo künstliche Intelligenz Zeit spart, Qualität verbessert oder neue Angebote ermöglicht – und übersetzen das in einen konkreten Umsetzungsweg.",
@@ -292,8 +293,8 @@ export const services = {
     solution: ["Buchkonzept, Positionierung und Kapitelstruktur", "Ghostwriting, Recherche und Quellen", "Cover, Buchsatz, Layout und Bildentwicklung", "Veröffentlichungsfertige PDF- und E-Book-Dateien"],
     steps: ["Idee und Material prüfen", "Konzept und Inhaltsverzeichnis freigeben", "Kapitelweise produzieren", "Lektorat, Layout und finale Freigabe"],
     pricing: [
-      { name: "Kinderbuch", price: "ab 500 €", meta: "klar begrenzter Einstieg bis 24 Seiten" },
-      { name: "Book Starter", price: "ab 1.000 €", meta: "bis ca. 80 Seiten · Basisdesign · Cover" },
+      { name: "Kinderbuch", price: "ab 500 €", meta: "klar begrenzter Einstieg bis 24 Seiten", standalone: true },
+      { name: "Book Starter", price: "ab 1.000 €", meta: "bis ca. 80 Seiten · Basisdesign · Cover", resetInheritance: true },
       { name: "Authority Book", price: "3.000 €", meta: "ca. 80–150 Seiten · Konzept · Ghostwriting · Layout", featured: true },
       { name: "Premium Research Book", price: "6.000 €", meta: "Recherche · Quellen · Lektorat · hochwertiges Design" },
       { name: "Individuelles Buchprojekt", price: "auf Anfrage", meta: "Fachbücher, Sonderformate und größere Umfänge" },
@@ -311,7 +312,7 @@ services["/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting"] = serv
 services["/medien-ai/social-media"] = services["/digital/social-media-content"];
 services["/medien-ai/ads"] = services["/digital/ki-werbung-meta-google"];
 services["/medien-ai/ki-telefon"] = services["/digital/ki-telefonassistenten"];
-services["/medien-ai/automatisierungen"] = { ...services["/digital/apps-software"], title: "KI-Automatisierungen für wiederkehrende Abläufe.", intro: "Wir verbinden Formulare, E-Mail, CRM, Shopify und interne Werkzeuge zu kontrollierten Workflows mit klaren Freigaben.", problem: "Manuelle Übergaben, doppelte Datenpflege und verstreute Werkzeuge kosten Zeit und erzeugen Fehler.", solution: ["Prozessaufnahme und Automations-Check", "Trigger, Aktionen und menschliche Freigaben", "API-, CRM-, Shopify- und Formular-Verbindungen", "Tests, Fehlerwege, Dokumentation und Übergabe"], pricing: [{ name: "Automations-Check", price: "ab 149 €", meta: "Prozess prüfen · Potenzial und Risiken einordnen", featured: true }, { name: "Individueller Workflow", price: "auf Anfrage", meta: "Umfang nach Systemen, Daten und Schnittstellen" }], bookingCta: "Automatisierungsweg auswählen" };
+services["/medien-ai/automatisierungen"] = { ...services["/digital/apps-software"], nonCumulative: true, title: "KI-Automatisierungen für wiederkehrende Abläufe.", intro: "Wir verbinden Formulare, E-Mail, CRM, Shopify und interne Werkzeuge zu kontrollierten Workflows mit klaren Freigaben.", problem: "Manuelle Übergaben, doppelte Datenpflege und verstreute Werkzeuge kosten Zeit und erzeugen Fehler.", solution: ["Prozessaufnahme und Automations-Check", "Trigger, Aktionen und menschliche Freigaben", "API-, CRM-, Shopify- und Formular-Verbindungen", "Tests, Fehlerwege, Dokumentation und Übergabe"], pricing: [{ name: "Automations-Check", price: "ab 149 €", meta: "Prozess prüfen · Potenzial und Risiken einordnen", featured: true }, { name: "Individueller Workflow", price: "auf Anfrage", meta: "Umfang nach Systemen, Daten und Schnittstellen" }], bookingCta: "Automatisierungsweg auswählen" };
 services["/medien-ai/chelonaki-reply"] = {
   area: "Medien & KI", label: "Für Selbstständige, Teams & Marken", title: "Drei passende Antworten. Sie wählen die richtige.",
   image: "/assets/service-content-v2.webp", imageAlt: "Warmer Kommunikationsarbeitsplatz mit Smartphone und sorgfältig geplanten Inhaltsvarianten",
