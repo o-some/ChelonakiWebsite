@@ -5,8 +5,7 @@ export const navigation = [
     items: [
       ["Websites erstellen lassen", "/web-apps-publikationen/websites-erstellen-lassen"],
       ["Apps entwickeln lassen", "/web-apps-publikationen/apps-entwickeln-lassen"],
-      ["Bücher erstellen lassen", "/web-apps-publikationen/buecher-erstellen-lassen"],
-      ["Ghostwriting", "/web-apps-publikationen/ghostwriting"],
+      ["Bücher erstellen lassen & Ghostwriting", "/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting"],
     ],
   },
   {
@@ -17,6 +16,7 @@ export const navigation = [
       ["Ads für Meta & Google", "/medien-ai/ads"],
       ["KI-Telefonassistenten", "/medien-ai/ki-telefon"],
       ["KI-Automatisierungen", "/medien-ai/automatisierungen"],
+      ["Chelonaki Reply", "/medien-ai/chelonaki-reply"],
     ],
   },
   {
@@ -41,7 +41,7 @@ export const worlds = [
     eyebrow: "Für Unternehmen & eigene Projekte",
     title: "Web, Apps & Publikationen",
     text: "Digitale Lösungen für Unternehmen, künftige Gründer und Menschen mit einer eigenen Idee.",
-    detail: "Websites · Apps · Bücher · Ghostwriting",
+    detail: "Websites · Apps · Bücher & Ghostwriting",
     href: "/web-apps-publikationen",
     cta: "Bereich entdecken",
     tone: "digital",
@@ -51,7 +51,7 @@ export const worlds = [
     eyebrow: "Wissen in Anwendung",
     title: "Medien & AI",
     text: "Künstliche Intelligenz trifft auf Beratung, Ernährungswissenschaft und echte Praxiserfahrung.",
-    detail: "Social Media · Ads · KI-Telefon · Automatisierungen",
+    detail: "Social Media · Ads · KI-Telefon · Automatisierungen · Reply",
     href: "/medien-ai",
     cta: "Bereich entdecken",
     tone: "expertise",
@@ -139,7 +139,7 @@ hubData.media = {
   title: "Medien und AI, die Sichtbarkeit und Abläufe planbarer machen.",
   intro: "Content, Werbung, Telefonie und Automatisierungen werden als zusammenhängende Systeme entwickelt – mit transparenten Grenzen und Freigaben.",
   image: "/assets/hero-architecture.png", cta: "Medien- oder AI-Projekt anfragen",
-  cards: navigation[1].items.map(([title, href], index) => ({ title, href, text: ["Planbare Inhalte in einer konsistenten Markenwelt.", "Kampagnen, Creatives, Tracking und Optimierung.", "Anfragen aufnehmen, Fragen beantworten und Termine koordinieren.", "Wiederkehrende Abläufe verbinden und kontrolliert automatisieren."][index] })),
+  cards: navigation[1].items.map(([title, href], index) => ({ title, href, text: ["Planbare Inhalte in einer konsistenten Markenwelt.", "Kampagnen, Creatives, Tracking und Optimierung.", "Anfragen aufnehmen, Fragen beantworten und Termine koordinieren.", "Wiederkehrende Abläufe verbinden und kontrolliert automatisieren.", "Drei passende Antwortvorschläge für LinkedIn, Instagram und E-Mail – Sie wählen und bearbeiten."][index] })),
 };
 hubData.advice = {
   label: "Für Unternehmen",
@@ -285,12 +285,27 @@ export const services = {
 
 services["/web-apps-publikationen/websites-erstellen-lassen"] = services["/digital/websites-erstellen-lassen"];
 services["/web-apps-publikationen/apps-entwickeln-lassen"] = services["/digital/apps-software"];
-services["/web-apps-publikationen/buecher-erstellen-lassen"] = services["/digital/buchproduktion-ghostwriting"];
-services["/web-apps-publikationen/ghostwriting"] = { ...services["/digital/buchproduktion-ghostwriting"], title: "Ghostwriting, das Ihr Wissen nach Ihnen klingen lässt.", intro: "Wir entwickeln Positionierung, Struktur und Manuskript in enger Abstimmung – diskret, nachvollziehbar und veröffentlichungsfertig." };
+services["/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting"] = services["/digital/buchproduktion-ghostwriting"];
 services["/medien-ai/social-media"] = services["/digital/social-media-content"];
 services["/medien-ai/ads"] = services["/digital/ki-werbung-meta-google"];
 services["/medien-ai/ki-telefon"] = services["/digital/ki-telefonassistenten"];
 services["/medien-ai/automatisierungen"] = { ...services["/digital/apps-software"], title: "KI-Automatisierungen für wiederkehrende Abläufe.", intro: "Wir verbinden Formulare, E-Mail, CRM, Shopify und interne Werkzeuge zu kontrollierten Workflows mit klaren Freigaben.", problem: "Manuelle Übergaben, doppelte Datenpflege und verstreute Werkzeuge kosten Zeit und erzeugen Fehler.", solution: ["Prozessaufnahme und Automations-Check", "Trigger, Aktionen und menschliche Freigaben", "API-, CRM-, Shopify- und Formular-Verbindungen", "Tests, Fehlerwege, Dokumentation und Übergabe"], pricing: [{ name: "Automations-Check", price: "ab 149 €", meta: "Prozess prüfen · Potenzial und Risiken einordnen", featured: true }, { name: "Individueller Workflow", price: "auf Anfrage", meta: "Umfang nach Systemen, Daten und Schnittstellen" }], bookingCta: "Automatisierungsweg auswählen" };
+services["/medien-ai/chelonaki-reply"] = {
+  area: "Medien & AI", label: "Für Selbstständige, Teams & Marken", title: "Drei passende Antworten. Sie wählen die richtige.",
+  intro: "Chelonaki Reply erstellt für eingehende Nachrichten drei unterscheidbare Antwortvorschläge für LinkedIn, Instagram und E-Mail – passend zu Ton, Ziel und Gesprächssituation.",
+  problem: "Professionelle Nachrichten bleiben liegen, weil im Alltag Zeit, Formulierungssicherheit oder eine einheitliche Markenstimme fehlen.",
+  solution: ["Drei klar unterschiedliche Antwortvorschläge", "Tonarten wie kurz, herzlich, professionell oder vertriebsorientiert", "Eigene Markenbegriffe und No-Go-Aussagen", "Bearbeiten und kopieren vor dem Senden", "Keine unbeaufsichtigten Nachrichten im MVP"],
+  steps: ["Kanal und Gesprächskontext wählen", "Ziel und gewünschte Tonalität festlegen", "Drei Vorschläge erzeugen", "Prüfen, bearbeiten und selbst versenden"],
+  pricing: [
+    { name: "Reply Starter", price: "kostenlos", meta: "begrenzte Antworten · 1 Tonprofil · zum Kennenlernen" },
+    { name: "Reply Core", price: "19 €/Monat", meta: "bei jährlicher Zahlung · mehr Antworten · eigene Tonalität", featured: true },
+    { name: "Reply Pro", price: "89 €/Monat", meta: "bei jährlicher Zahlung · Teams · Markenprofile · Priorität" },
+    { name: "Reply Enterprise", price: "auf Anfrage", meta: "individuelle Limits · Rollen · Datenschutz- und Integrationsrahmen" },
+  ],
+  note: "Die Tariflogik orientiert sich an Replits Staffelung aus kostenlosem Einstieg, Core, Pro und individueller Enterprise-Lösung. Monatliche Zahlung, Nutzungslimits, Integrationen und mögliche Fremdkosten werden vor dem öffentlichen Produktstart final festgelegt. Preise für Unternehmen netto zzgl. USt.",
+  cta: "Zugang vormerken", bookingCta: "Reply-Tarif auswählen", inquiryCta: "Chelonaki Reply testen",
+  insight: { label: "Mensch bleibt am Steuer", title: "Schneller antworten, ohne Kontrolle abzugeben.", text: "Reply schlägt Formulierungen vor, trifft aber keine autonome Kommunikationsentscheidung. Im MVP prüfen, bearbeiten und versenden Sie jede Nachricht selbst.", points: ["Kein automatisches Senden", "Vorschläge bleiben editierbar", "Markenstimme als Leitplanke", "Transparente Entwicklungsstufe"] },
+};
 services["/beratung-schulung/ki-consulting"] = services["/expertise/ki-schulungen-consulting"];
 services["/beratung-schulung/ki-schulungen"] = { ...services["/expertise/ki-schulungen-consulting"], title: "KI-Schulungen, die Teams wirklich anwenden können.", intro: "Praxisnahe Formate für reale Arbeitsabläufe – verständlich, sicher und ohne Tool-Show." };
 services["/beratung-schulung/workshops"] = { ...services["/expertise/ki-schulungen-consulting"], title: "Workshops für KI, Automatisierung und Ernährung.", intro: "Gemeinsam bearbeiten wir konkrete Fragestellungen und enden mit einem nutzbaren Ergebnis statt einer allgemeinen Präsentation." };

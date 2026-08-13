@@ -2520,6 +2520,59 @@ img {
   .package-comparison > div:not(.package-comparison-actions) { grid-template-columns:1fr; }
   .package-comparison-actions { align-items:stretch; flex-direction:column; }
 }
+
+/* Gut lesbare, zweistufige Desktop-Navigation */
+@media (min-width: 1021px) {
+  html { scroll-padding-top: 128px; }
+  .site-header,
+  .site-header.is-solid {
+    height: 128px;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 82px 46px;
+    gap: 0 28px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .site-header .brand { grid-column: 1; grid-row: 1; }
+  .site-header .header-cta { grid-column: 2; grid-row: 1; }
+  .desktop-nav {
+    position: absolute;
+    left: var(--gutter);
+    right: var(--gutter);
+    bottom: 0;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    gap: clamp(26px, 3vw, 58px);
+    border-top: 1px solid rgba(7,29,49,.08);
+  }
+  .desktop-nav a {
+    padding: 16px 0;
+    font-size: 12px;
+    letter-spacing: .08em;
+  }
+  .desktop-nav a::after { bottom: 8px; }
+  .nav-panel {
+    top: 44px;
+    width: 350px;
+    padding: 18px;
+  }
+  .desktop-nav .nav-panel a {
+    min-height: 48px;
+    padding: 14px 14px;
+    font-size: 14px;
+    line-height: 1.35;
+    letter-spacing: .01em;
+  }
+  .desktop-nav .nav-panel .nav-overview {
+    font-size: 12px;
+    letter-spacing: .1em;
+  }
+  .page-hero,
+  .service-hero,
+  .story-page-hero { padding-top: 128px; }
+  .home-hero .hero-copy { top: clamp(190px,23vh,245px); }
+}
 .pricing-note { max-width: var(--content); margin: 38px auto 0; color: var(--copy-muted); font-size: 11px; line-height: 1.7; }
 
 .credentials { display: grid; grid-template-columns: .9fr 1.1fr; color: var(--ink); background: #e8dfd1; }
