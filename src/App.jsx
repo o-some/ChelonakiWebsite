@@ -1,977 +1,112 @@
 import { useEffect, useId, useRef, useState } from "react";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  Check,
-  EnvelopeSimple,
-  List,
-  LockKey,
-  X,
-} from "@phosphor-icons/react";
-
-const capabilities = [
-  {
-    number: "01",
-    title: "Chelonaki Digital",
-    summary: "Websites, Bücher, Content, Telefon, Ads und Apps.",
-    details:
-      "Chelonaki entwickelt Shopify-Websites, produziert Bücher, baut Content- und Ads-Workflows, richtet Telefonassistenten ein und entwickelt Apps. Kritische Schritte bleiben prüfbar und werden nicht ungefragt automatisiert.",
-    tags: ["Shopify-Websites", "Buchproduktion", "Social Automation", "Telefonassistenten", "Meta & Google Ads", "Apps & Automationen"],
-  },
-  {
-    number: "02",
-    title: "Chelonaki Expertise",
-    summary: "KI-Consulting und Ernährungsberatung aus erster Hand.",
-    details:
-      "Eleftherios Samouladas berät Unternehmen beim sinnvollen Einsatz von KI und Menschen bei Ernährungsfragen. Die Ernährungsberatung kann je nach persönlicher Voraussetzung teilweise über Krankenkassen bezuschusst werden.",
-    tags: ["KI-Strategie", "Prozessanalyse", "Ernährungsberatung", "Lebensmittel & Qualität"],
-  },
-  {
-    number: "03",
-    title: "Chelonaki Originals",
-    summary: "Eigene Fachbücher, Ernährungsapps und Spiele.",
-    details:
-      "Hier entstehen eigene Bücher für Erwachsene und Kinder, darunter verständliche Angebote zu Diabetes, Phenylketonurie und hereditärer Fructoseintoleranz, sowie eigene Ernährungsapps und Spiele.",
-    tags: ["Fachbücher", "Kinderbücher", "Stoffwechselerkrankungen", "Ernährungsapps", "Spiele"],
-  },
-];
-
-const method = [
-  {
-    title: "Auftrag klären",
-    body: "Ziel, Nutzer, vorhandene Systeme und klare Grenzen werden gemeinsam festgelegt.",
-  },
-  {
-    title: "Prototyp zeigen",
-    body: "Sie sehen früh eine funktionierende Seite, einen Ablauf oder ein echtes Buchkapitel.",
-  },
-  {
-    title: "Prüfen & absichern",
-    body: "Mobile Nutzung, Datenflüsse, Rechte, Fehlerfälle und kritische Freigaben werden geprüft.",
-  },
-  {
-    title: "Übergeben",
-    body: "Sie erhalten Dokumentation, Einweisung und einen klaren Plan für die nächsten Schritte.",
-  },
-];
+import { ArrowRight, ArrowUpRight, Buildings, CaretDown, Check, EnvelopeSimple, List, LockKey, Person, X } from "@phosphor-icons/react";
+import { hubData, navigation, services, worlds } from "./siteData.js";
 
 const legalViews = {
-  impressum: {
-    label: "Rechtliche Angaben",
-    title: "Impressum",
-    content: (
-      <>
-        <p className="legal-lead">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p>
-
-        <h3>Anbieter</h3>
-        <p>
-          <mark>[VOLLSTÄNDIGER NAME ODER FIRMA]</mark>
-          <br />
-          <mark>[RECHTSFORM, FALLS ZUTREFFEND]</mark>
-          <br />
-          <mark>[LADUNGSFÄHIGE STRASSE UND HAUSNUMMER]</mark>
-          <br />
-          <mark>[PLZ UND ORT]</mark>
-          <br />
-          Deutschland
-        </p>
-
-        <h3>Vertretung und Kontakt</h3>
-        <p>
-          Vertreten durch: <mark>[VERTRETUNGSBERECHTIGTE PERSON]</mark>
-          <br />
-          Telefon: <mark>[TELEFONNUMMER]</mark>
-          <br />
-          E-Mail: <mark>[E-MAIL-ADRESSE]</mark>
-        </p>
-
-        <h3>Register und Steuern</h3>
-        <p>
-          Registergericht: <mark>[FALLS ZUTREFFEND]</mark>
-          <br />
-          Registernummer: <mark>[FALLS ZUTREFFEND]</mark>
-          <br />
-          Umsatzsteuer-ID oder Wirtschafts-ID: <mark>[FALLS VORHANDEN]</mark>
-        </p>
-
-        <h3>Redaktionelle Verantwortung</h3>
-        <p>
-          Nur falls journalistisch-redaktionelle Inhalte angeboten werden:
-          <br />
-          <mark>[NAME UND ANSCHRIFT GEMÄSS § 18 ABS. 2 MSTV]</mark>
-        </p>
-
-        <h3>Verbraucherstreitbeilegung</h3>
-        <p>
-          <mark>
-            [VOR VERÖFFENTLICHUNG TEILNAHME, NICHTTEILNAHME ODER AUSNAHME NACH § 36
-            VSBG FESTLEGEN]
-          </mark>
-        </p>
-        <p className="legal-note">
-          Die frühere EU-Plattform zur Online-Streitbeilegung wurde 2025
-          eingestellt und wird daher nicht verlinkt.
-        </p>
-      </>
-    ),
-  },
-  datenschutz: {
-    label: "Stand: 3. August 2026",
-    title: "Datenschutzerklärung",
-    content: (
-      <>
-        <p className="legal-lead">
-          Diese Vorschau ist datensparsam konzipiert. Die Angaben zu Hosting,
-          Kontaktweg und realen Dienstleistern müssen vor Veröffentlichung ergänzt
-          und rechtlich geprüft werden.
-        </p>
-
-        <h3>1. Verantwortlicher</h3>
-        <p>
-          <mark>[NAME ODER FIRMA, ANSCHRIFT UND KONTAKTDATEN]</mark>
-        </p>
-
-        <h3>2. Hosting und Server-Protokolle</h3>
-        <p>
-          Beim Aufruf der Website verarbeitet der Hosting-Anbieter technisch
-          erforderliche Verbindungsdaten. Dazu können IP-Adresse, Zeitpunkt,
-          angeforderte Ressource, Referrer, Browser und Betriebssystem gehören. Die
-          Verarbeitung dient der sicheren und stabilen Bereitstellung auf Grundlage
-          von Art. 6 Abs. 1 lit. f DSGVO.
-        </p>
-        <p>
-          Hosting-Anbieter, Serverregion und Speicherdauer:
-          <br />
-          <mark>[ANBIETER, REGION, AV-VERTRAG UND LÖSCHFRIST]</mark>
-        </p>
-
-        <h3>3. Kontaktaufnahme</h3>
-        <p>
-          Bei einer Kontaktaufnahme verarbeiten wir die übermittelten Angaben zur
-          Bearbeitung der Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei
-          vorvertraglicher Kommunikation. In anderen Fällen kann Art. 6 Abs. 1 lit. f
-          DSGVO einschlägig sein. Die Angaben werden gelöscht, sobald die Anfrage
-          erledigt ist und keine gesetzlichen Pflichten entgegenstehen.
-        </p>
-        <p>
-          Empfänger, Übermittlungsweg und konkrete Löschfrist:
-          <br />
-          <mark>[FORMULAR- ODER E-MAIL-DIENST, EMPFÄNGER UND FRIST]</mark>
-        </p>
-
-        <h3>4. Cookies und externe Dienste</h3>
-        <p>
-          Die vorliegende Fassung setzt keine Analyse-, Marketing- oder
-          Personalisierungs-Cookies ein. Sie lädt keine externen Schriftarten,
-          Karten, Videos oder Social-Media-Widgets. Nicht notwendige Dienste dürfen
-          später erst nach wirksamer Einwilligung aktiviert werden.
-        </p>
-
-        <h3>5. Ihre Rechte</h3>
-        <p>
-          Betroffene Personen haben nach Maßgabe der DSGVO Rechte auf Auskunft,
-          Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch.
-          Außerdem besteht ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde.
-        </p>
-        <p>
-          Zuständige Aufsichtsbehörde:
-          <br />
-          <mark>[NACH UNTERNEHMENSSITZ EINTRAGEN]</mark>
-        </p>
-
-        <h3>6. Datensicherheit und Aktualisierung</h3>
-        <p>
-          Die Live-Website wird verschlüsselt per HTTPS ausgeliefert und nach dem
-          Prinzip der Datenminimierung betrieben. Diese Erklärung ist anzupassen,
-          sobald Hosting, Formulare, Analyse, Newsletter oder eingebettete Dienste
-          hinzukommen.
-        </p>
-      </>
-    ),
-  },
-  cookies: {
-    label: "Datensparsame Voreinstellung",
-    title: "Datenschutz-Einstellungen",
-    content: (
-      <>
-        <p className="legal-lead">
-          In dieser Website-Vorschau sind keine optionalen Cookies oder
-          Tracking-Dienste aktiviert.
-        </p>
-        <div className="settings-row">
-          <div>
-            <strong>Technisch notwendiger Betrieb</strong>
-            <p>Erforderlich für die sichere Auslieferung der Website.</p>
-          </div>
-          <span>
-            <Check size={16} weight="bold" aria-hidden="true" />
-            Aktiv
-          </span>
-        </div>
-        <div className="settings-row is-muted">
-          <div>
-            <strong>Analyse und Marketing</strong>
-            <p>Nicht eingebunden und nicht aktiv.</p>
-          </div>
-          <span>Inaktiv</span>
-        </div>
-        <p className="legal-note">
-          Ein Einwilligungsdialog wird erst ergänzt, wenn technisch nicht notwendige
-          Speicherungen oder Zugriffe tatsächlich eingesetzt werden.
-        </p>
-      </>
-    ),
-  },
-  barrierefreiheit: {
-    label: "Zugängliche Gestaltung",
-    title: "Barrierefreiheit",
-    content: (
-      <>
-        <p className="legal-lead">
-          Chelonaki soll unabhängig von Gerät, Eingabemethode oder individuellen
-          Einschränkungen gut nutzbar sein.
-        </p>
-        <h3>Umgesetzte Grundsätze</h3>
-        <ul>
-          <li>Semantische Struktur und nachvollziehbare Inhaltsreihenfolge</li>
-          <li>Tastaturbedienbare Navigation, Dialoge und Formulare</li>
-          <li>Sichtbare Fokuszustände und ausreichend große Bedienflächen</li>
-          <li>Kontrastreiche Farbgebung und Textalternativen für Bilder</li>
-          <li>Reduzierte Bewegung bei entsprechender Systemeinstellung</li>
-          <li>Responsive Darstellung ohne horizontale Pflichtbewegung</li>
-        </ul>
-        <p className="legal-note">
-          Die Anwendbarkeit des BFSG hängt vom späteren konkreten Verbraucherangebot
-          und der Unternehmensgröße ab. Vor einem B2C-Onlineshop ist eine gesonderte
-          Prüfung erforderlich.
-        </p>
-      </>
-    ),
-  },
+  impressum: { label: "Rechtliche Angaben", title: "Impressum", content: <><p className="legal-lead">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p><h3>Anbieter</h3><p><mark>[VOLLSTÄNDIGER NAME ODER FIRMA]</mark><br/><mark>[RECHTSFORM]</mark><br/><mark>[LADUNGSFÄHIGE ANSCHRIFT]</mark><br/>Deutschland</p><h3>Vertretung und Kontakt</h3><p>Vertreten durch: <mark>[VERTRETUNGSBERECHTIGTE PERSON]</mark><br/>Telefon: <mark>[TELEFONNUMMER]</mark><br/>E-Mail: <mark>[E-MAIL-ADRESSE]</mark></p><h3>Register und Steuern</h3><p>Registergericht und Registernummer: <mark>[FALLS ZUTREFFEND]</mark><br/>Umsatzsteuer-ID: <mark>[FALLS VORHANDEN]</mark></p><p className="legal-note">Die Betreiberangaben sind vor dem öffentlichen Geschäftsstart zu vervollständigen.</p></> },
+  datenschutz: { label: "Datensparsame Vorschau", title: "Datenschutzerklärung", content: <><p className="legal-lead">Diese Vorschau setzt keine optionalen Analyse- oder Marketing-Cookies ein. Reale Datenflüsse und Anbieter müssen vor Veröffentlichung ergänzt und geprüft werden.</p><h3>Verantwortlicher</h3><p><mark>[NAME ODER FIRMA, ANSCHRIFT UND KONTAKTDATEN]</mark></p><h3>Hosting</h3><p>Beim Aufruf können technisch erforderliche Verbindungsdaten verarbeitet werden. Anbieter, Region, Auftragsverarbeitung und Löschfrist: <mark>[ERGÄNZEN]</mark>.</p><h3>Kontaktaufnahme</h3><p>Übermittelte Angaben werden ausschließlich zur Bearbeitung der Anfrage verarbeitet. Diese Vorschau versendet noch keine Formulardaten.</p><h3>Ihre Rechte</h3><p>Nach Maßgabe der DSGVO bestehen insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch.</p></> },
+  cookies: { label: "Datenschutz-Einstellungen", title: "Cookies", content: <><p className="legal-lead">Aktuell sind keine optionalen Cookies oder Tracking-Dienste eingebunden.</p><div className="settings-row"><div><strong>Technisch notwendiger Betrieb</strong><p>Erforderlich für die sichere Auslieferung.</p></div><span><Check size={16}/> Aktiv</span></div><div className="settings-row is-muted"><div><strong>Analyse und Marketing</strong><p>Nicht eingebunden.</p></div><span>Inaktiv</span></div></> },
+  barrierefreiheit: { label: "Zugängliche Gestaltung", title: "Barrierefreiheit", content: <><p className="legal-lead">Chelonaki soll unabhängig von Gerät und Eingabemethode gut nutzbar sein.</p><ul><li>Semantische Struktur und Tastaturbedienung</li><li>Sichtbare Fokuszustände und große Bedienflächen</li><li>Kontrastreiche Gestaltung und Bildalternativen</li><li>Reduzierte Bewegung bei Systemeinstellung</li><li>Responsive Darstellung ohne horizontales Scrollen</li></ul><p className="legal-note">Die konkrete BFSG-Anwendbarkeit wird vor einem B2C-Onlineshop gesondert geprüft.</p></> },
 };
 
+function SmartLink({ href, children, className = "", onNavigate, ...props }) {
+  const internal = href?.startsWith("/");
+  return <a href={href} className={className} {...props} onClick={(event) => {
+    if (internal && !event.metaKey && !event.ctrlKey && !event.shiftKey) {
+      event.preventDefault(); window.history.pushState({}, "", href); window.dispatchEvent(new PopStateEvent("popstate")); window.scrollTo({ top: 0, behavior: "instant" }); onNavigate?.();
+    }
+  }}>{children}</a>;
+}
+
 function Brand({ inverse = false, compact = false }) {
-  return (
-    <a
-      className={`brand ${inverse ? "is-inverse" : ""}`}
-      href="#top"
-      aria-label="Chelonaki Startseite"
-    >
-      <span className="brand-seal" aria-hidden="true">
-        <img src="/assets/chelonaki-turtle-transparent.png" alt="" width="760" height="760" />
-      </span>
-      <span className="brand-name">
-        <strong>CHELONAKI</strong>
-        {!compact && <small>AI STUDIO</small>}
-      </span>
-    </a>
-  );
+  return <SmartLink className={`brand ${inverse ? "is-inverse" : ""}`} href="/" aria-label="Chelonaki Startseite"><span className="brand-seal" aria-hidden="true"><img src="/assets/chelonaki-turtle-transparent.png" alt="" width="760" height="760"/></span><span className="brand-name"><strong>CHELONAKI</strong>{!compact && <small>WISDOM WEARS A SHELL</small>}</span></SmartLink>;
+}
+
+function Header({ openMenu }) {
+  const [solid, setSolid] = useState(false);
+  useEffect(() => { const onScroll = () => setSolid(window.scrollY > 24); onScroll(); window.addEventListener("scroll", onScroll, { passive: true }); return () => window.removeEventListener("scroll", onScroll); }, []);
+  return <header className={`site-header ${solid ? "is-solid" : ""}`}><Brand/><nav className="desktop-nav" aria-label="Hauptnavigation">{navigation.map((group) => <div className="nav-group" key={group.label}><SmartLink href={group.href}>{group.label}</SmartLink><div className="nav-panel"><SmartLink href={group.href} className="nav-overview">{group.label} entdecken <ArrowUpRight size={16}/></SmartLink>{group.items.map(([label, href]) => <SmartLink href={href} key={href}>{label}</SmartLink>)}</div></div>)}</nav><SmartLink className="button button-navy header-cta" href="/kontakt">Projekt besprechen <ArrowRight size={18}/></SmartLink><button className="menu-trigger" type="button" aria-label="Menü öffnen" onClick={openMenu}><List size={25}/></button></header>;
 }
 
 function MobileMenu({ open, onClose }) {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const dialog = ref.current;
-    if (!dialog) return;
-    let closeTimer;
-    if (open) {
-      dialog.classList.remove("is-closing");
-      if (!dialog.open) dialog.showModal();
-    }
-    if (!open && dialog.open) {
-      dialog.classList.add("is-closing");
-      closeTimer = window.setTimeout(() => {
-        dialog.close();
-        dialog.classList.remove("is-closing");
-      }, 180);
-    }
-    return () => window.clearTimeout(closeTimer);
-  }, [open]);
-
-  return (
-    <dialog
-      className="mobile-menu"
-      ref={ref}
-      aria-label="Hauptnavigation"
-      onClose={onClose}
-      onCancel={(event) => {
-        event.preventDefault();
-        onClose();
-      }}
-      onClick={(event) => {
-        if (event.target === ref.current) onClose();
-      }}
-    >
-      <div className="mobile-menu-shell">
-        <div className="mobile-menu-head">
-          <Brand inverse compact />
-          <button type="button" onClick={onClose} aria-label="Menü schließen">
-            <X size={24} aria-hidden="true" />
-          </button>
-        </div>
-        <nav aria-label="Mobile Navigation">
-          <a href="#expertise" onClick={onClose}>
-            Grundsätze
-          </a>
-          <a href="#work" onClick={onClose}>
-            Leistungen
-          </a>
-          <a href="#studio" onClick={onClose}>
-            Studio
-          </a>
-          <a href="#process" onClick={onClose}>
-            Ablauf
-          </a>
-        </nav>
-        <a className="button button-gold" href="#contact" onClick={onClose}>
-          Projekt besprechen
-          <ArrowRight size={18} aria-hidden="true" />
-        </a>
-      </div>
-    </dialog>
-  );
+  const ref = useRef(null); const [expanded, setExpanded] = useState(null);
+  useEffect(() => { if (!ref.current) return; if (open && !ref.current.open) ref.current.showModal(); if (!open && ref.current.open) ref.current.close(); }, [open]);
+  return <dialog ref={ref} className="mobile-menu" onClose={onClose} onCancel={(e) => { e.preventDefault(); onClose(); }}><div className="mobile-menu-shell"><div className="mobile-menu-head"><Brand inverse compact/><button type="button" onClick={onClose} aria-label="Menü schließen"><X size={24}/></button></div><nav aria-label="Mobile Navigation">{navigation.map((group) => <div className="mobile-nav-group" key={group.label}><div><SmartLink href={group.href} onNavigate={onClose}>{group.label}</SmartLink><button type="button" aria-label={`${group.label} Untermenü`} aria-expanded={expanded === group.label} onClick={() => setExpanded(expanded === group.label ? null : group.label)}><CaretDown size={20}/></button></div>{expanded === group.label && <div className="mobile-subnav">{group.items.map(([label, href]) => <SmartLink href={href} key={href} onNavigate={onClose}>{label}</SmartLink>)}</div>}</div>)}</nav><SmartLink className="button button-gold" href="/kontakt" onNavigate={onClose}>Projekt besprechen <ArrowRight size={18}/></SmartLink></div></dialog>;
 }
 
 function LegalDialog({ viewKey, onClose }) {
-  const ref = useRef(null);
-  const view = viewKey ? legalViews[viewKey] : null;
+  const ref = useRef(null); const view = viewKey ? legalViews[viewKey] : null;
+  useEffect(() => { if (!ref.current) return; if (view && !ref.current.open) ref.current.showModal(); if (!view && ref.current.open) ref.current.close(); }, [view]);
+  return <dialog className="legal-dialog" ref={ref} onClose={onClose} onClick={(e) => { if (e.target === ref.current) onClose(); }}>{view && <div className="legal-shell"><header><div><span>{view.label}</span><h2>{view.title}</h2></div><button type="button" onClick={onClose} aria-label="Schließen"><X size={24}/></button></header><div className="legal-content">{view.content}</div></div>}</dialog>;
+}
 
-  useEffect(() => {
-    const dialog = ref.current;
-    if (!dialog) return;
-    if (view && !dialog.open) dialog.showModal();
-    if (!view && dialog.open) dialog.close();
-  }, [view]);
+function HomePage() {
+  return <main id="main"><section className="hero home-hero" aria-labelledby="hero-title"><div className="hero-scene" aria-hidden="true"><img className="hero-scene-image" src="/assets/hero-architecture.png" alt="" width="1536" height="1024"/><figure className="hero-medallion"><img src="/assets/chelonaki-wall-medallion.webp" alt="" width="1200" height="1500"/></figure></div><div className="hero-copy"><span className="hero-kicker">CHELONAKI</span><h1 id="hero-title">Wisdom<br/>wears a shell.</h1><div className="hero-rule"><i/></div><p>Digitale Systeme, fachliche Expertise und eigene Ideenwelten – entwickelt mit künstlicher Intelligenz, menschlichem Wissen und echter Verantwortung.</p><div className="hero-actions"><a className="button button-navy" href="#worlds">Discover Chelonaki <ArrowRight size={18}/></a><SmartLink className="text-link" href="/kontakt">Projekt besprechen <ArrowRight size={18}/></SmartLink></div></div><div className="hero-signature">Digitale Systeme. Starke Inhalte. Echtes Wissen.</div></section>
+  <section className="worlds-section" id="worlds" aria-labelledby="worlds-title"><header className="worlds-heading" data-reveal><span>One name. Three worlds.</span><h2 id="worlds-title">Drei klar getrennte Wege.<br/><em>Ein gemeinsamer Anspruch.</em></h2></header><div className="world-grid">{worlds.map((world) => <article className={`world-card ${world.tone}`} key={world.title} data-reveal><div className="world-number">{world.number}</div><span className="audience-label"><Buildings size={15}/>{world.eyebrow}</span><h3>{world.title}</h3><p>{world.text}</p><small>{world.detail}</small><SmartLink className="world-link" href={world.href}>{world.cta}<ArrowRight size={18}/></SmartLink></article>)}</div></section>
+  <section className="story-teaser"><figure data-reveal><img src="/assets/chelonaki-wall-medallion.webp" alt="Bronzenes Chelonaki-Schildkrötenrelief in einer hellen Steinwand" width="1200" height="1500"/></figure><div data-reveal><span className="section-eyebrow">A name carried through generations.</span><h2>Die kleinen Schildkröten von Georgios.</h2><p>Als unser Großvater Georgios mit meinem Bruder und mir durch sein Dorf ging, sagten die Menschen liebevoll: „Da ist er ja – der Georgios mit seinen kleinen Schildkröten.“ Aus diesem Spitznamen wurde unser Familienwappen. Viele Jahre später wurde daraus Chelonaki.</p><blockquote>Wahre Intelligenz muss nicht laut sein. Sie braucht Erfahrung, Schutz, Verantwortung und ein stabiles Fundament.</blockquote><SmartLink className="text-link" href="/our-story">Read our story <ArrowRight size={18}/></SmartLink></div></section>
+  <section className="principles-section"><div className="principles-intro"><span>Our standard</span><h2>Fortschritt braucht Haltung.</h2></div><div className="principle-grid">{[["Human responsibility", "KI unterstützt. Der Mensch entscheidet und verantwortet das Ergebnis."], ["Built to last", "Durchdachte Systeme und Inhalte statt kurzfristiger KI-Spielereien."], ["Knowledge in practice", "Wissenschaft, Erfahrung und Technologie werden konkret nutzbar."]].map(([title, text], i) => <article key={title}><span>0{i+1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section><FinalCta/></main>;
+}
 
-  return (
-    <dialog
-      className="legal-dialog"
-      ref={ref}
-      aria-labelledby="legal-title"
-      onClose={onClose}
-      onClick={(event) => {
-        if (event.target === ref.current) onClose();
-      }}
-    >
-      {view && (
-        <div className="legal-shell">
-          <header>
-            <div>
-              <span>{view.label}</span>
-              <h2 id="legal-title">{view.title}</h2>
-            </div>
-            <button type="button" onClick={onClose} aria-label={`${view.title} schließen`}>
-              <X size={24} aria-hidden="true" />
-            </button>
-          </header>
-          <div className="legal-content">{view.content}</div>
-        </div>
-      )}
-    </dialog>
-  );
+function HubPage({ type }) {
+  const data = hubData[type];
+  return <main id="main"><section className={`page-hero page-hero-${type}`}><div><span className="audience-label"><Buildings size={15}/>{data.label}</span><h1>{data.title}</h1><p>{data.intro}</p><SmartLink className="button button-gold" href={`/kontakt?bereich=${type}`}>{data.cta}<ArrowRight size={18}/></SmartLink></div><figure><img src={data.image} alt="Chelonaki Markenwelt"/></figure></section><section className="service-index"><header><span>Entdecken</span><h2>Womit möchten Sie beginnen?</h2></header><div>{data.cards.map((card, i) => <SmartLink className="service-index-card" href={card.href} key={card.href}><span>0{i+1}</span><h3>{card.title}</h3><p>{card.text}</p><ArrowUpRight size={21}/></SmartLink>)}</div></section>{type === "expertise" && <Credentials/>}<Process/><FinalCta label={data.cta}/></main>;
+}
+
+function ServicePage({ data }) {
+  return <main id="main"><section className="service-hero"><div className="service-hero-copy"><span className="audience-label"><Buildings size={15}/>{data.label}</span><small>{data.area}</small><h1>{data.title}</h1><p>{data.intro}</p><SmartLink className="button button-gold" href={`/kontakt?bereich=${encodeURIComponent(data.cta)}`}>{data.cta}<ArrowRight size={18}/></SmartLink></div><figure><img src={data.area === "Digital" ? "/assets/project-digital-brand.png" : "/assets/chapter-architecture.webp"} alt="Chelonaki Projektansicht"/></figure></section><section className="problem-solution"><div><span>Ausgangssituation</span><h2>{data.problem}</h2></div><div><span>Die Lösung</span><ul>{data.solution.map((item) => <li key={item}><Check size={18}/>{item}</li>)}</ul></div></section><Process items={data.steps}/><Pricing data={data}/><FinalCta label={data.cta}/></main>;
+}
+
+function Pricing({ data }) {
+  return <section className="pricing-section"><header><span>Für Unternehmen</span><h2>Ein klarer Einstieg.<br/>Ein passender Projektumfang.</h2></header><div className={`pricing-grid ${data.pricing.length === 1 ? "is-single" : ""}`}>{data.pricing.map((tier) => <article className={tier.featured ? "featured" : ""} key={tier.name}>{tier.featured && <b>Häufig gewählt</b>}<h3>{tier.name}</h3><strong>{tier.price}</strong><p>{tier.meta}</p><SmartLink href={`/kontakt?bereich=${encodeURIComponent(tier.name)}`}>Angebot anfragen <ArrowRight size={17}/></SmartLink></article>)}</div><p className="pricing-note">{data.note}</p></section>;
+}
+
+function Process({ items = ["Ziel und Ausgangslage klären", "Frühen funktionierenden Stand zeigen", "Prüfen, freigeben und absichern", "Sauber übergeben und weiterentwickeln"] }) {
+  return <section className="process-section"><div className="process-intro"><span>Arbeitsweise</span><h2>Von der Idee zur belastbaren Umsetzung.</h2></div><ol className="method-rail">{items.map((item, i) => <li key={item}><span>0{i+1}</span><h3>{item}</h3></li>)}</ol></section>;
+}
+
+function Credentials() {
+  return <section className="credentials"><figure><img src="/assets/project-nutrition-venture.png" alt="Mediterrane Zutaten, Notizbuch und Produktkonzept"/></figure><div><span>Die fachliche Grundlage</span><h2>Wissenschaft, Küche und unternehmerische Praxis.</h2><p>Hinter Chelonaki steht Eleftherios Samouladas: gelernter Koch, studierter Ernährungswissenschaftler, zertifizierter Qualitätsmanagementbeauftragter und fachkundig im Lebensmittelrecht.</p><p>Als Mietkoch arbeitete er in mehr als 500 Küchen in ganz Deutschland – vom klassischen Gastronomiebetrieb bis zur Sternegastronomie.</p><ul><li>500+ Küchen</li><li>Ernährungswissenschaft</li><li>Qualitätsmanagement</li><li>Lebensmittelrecht</li></ul></div></section>;
+}
+
+function AcademyPage() {
+  return <main id="main"><section className="service-hero"><div className="service-hero-copy"><span className="audience-label"><Buildings size={15}/>Chelonaki Expertise</span><small>Academy</small><h1>Wissen, das Schritt für Schritt anwendbar wird.</h1><p>Zwei klar getrennte Lernwelten für künstliche Intelligenz und Ernährung – mit Modulen, Vorlagen und praxisnaher Umsetzung.</p></div><figure><img src="/assets/chapter-architecture.webp" alt="Architektonische Lernstruktur"/></figure></section><section className="choice-grid"><SmartLink href="/expertise/video-akademie/ki"><span>Für Unternehmen</span><h2>KI-Videoschulung</h2><p>Werkzeuge auswählen, wirksam prompten, Prozesse automatisieren und verantwortungsvoll freigeben.</p><ArrowRight size={20}/></SmartLink><SmartLink href="/expertise/video-akademie/ernaehrung"><span>Für Unternehmen oder Privatpersonen</span><h2>Ernährungs-Videoschulung</h2><p>Lebensmittel verstehen, Mahlzeiten planen und Ernährung alltagstauglich umsetzen.</p><ArrowRight size={20}/></SmartLink></section><section className="release-note"><strong>In Vorbereitung</strong><p>Verkauf, Zertifikate, Lernkontrollen und Ratenmodelle werden erst nach der erforderlichen FernUSG-/ZFU- sowie Verbraucherprüfung freigeschaltet.</p></section><FinalCta label="Academy vormerken"/></main>;
+}
+
+function NutritionPage({ audience }) {
+  if (!audience) return <main id="main"><section className="service-hero"><div className="service-hero-copy"><span className="audience-label"><Person size={15}/>Chelonaki Expertise</span><small>Ernährungsberatung</small><h1>Wissenschaft trifft echte Küchenerfahrung.</h1><p>Wählen Sie zuerst, ob es um ein Angebot für ein Unternehmen oder um eine persönliche Beratung geht. Die Preise und Buchungswege bleiben sauber getrennt.</p></div><figure><img src="/assets/project-nutrition-venture.png" alt="Mediterrane Lebensmittel und Ernährungsplanung"/></figure></section><section className="choice-grid"><SmartLink href="/expertise/ernaehrungsberatung/unternehmen"><span>Für Unternehmen</span><h2>Vorträge, Workshops & Gesundheitstage</h2><p>Für Unternehmen, Einrichtungen, Praxen, Bildungsträger und professionelle Teams.</p><ArrowRight size={20}/></SmartLink><SmartLink className="private-choice" href="/expertise/ernaehrungsberatung/privat"><span>Für Privatpersonen</span><h2>Individuelle Ernährungsberatung</h2><p>Persönliche Beratung, Spezialthemen und begleitende Programme.</p><ArrowRight size={20}/></SmartLink></section></main>;
+  const business = audience === "unternehmen"; const tiers = business ? [["Ernährungsvortrag · 60–90 Min.", "490–690 €"], ["Halbtages-Workshop", "790 €"], ["Ganztages-Workshop", "1.290 €"], ["Betrieblicher Gesundheitstag", "ab 1.490 €"]] : [["Erstberatung · 60 Min.", "99 €"], ["Folgeberatung · 45 Min.", "69 €"], ["3er-Paket", "249 €"], ["8-Wochen-Begleitung", "499 €"]];
+  return <main id="main"><section className={`service-hero ${business ? "" : "private-page"}`}><div className="service-hero-copy"><span className="audience-label">{business ? <Buildings size={15}/> : <Person size={15}/>}Für {business ? "Unternehmen" : "Privatpersonen"}</span><small>Ernährungsberatung</small><h1>{business ? "Ernährungswissen, das Teams im Alltag nutzen können." : "Persönliche Begleitung, die zu Ihrem Alltag passt."}</h1><p>{business ? "Vorträge, Workshops, Gesundheitstage und langfristige Konzepte für Unternehmen und Einrichtungen." : "Von der Analyse bis zu konkreten Plänen und alltagstauglichen Veränderungen – fundiert, verständlich und ohne pauschale Erfolgsversprechen."}</p></div><figure><img src="/assets/project-nutrition-venture.png" alt="Ernährungsplanung mit mediterranen Lebensmitteln"/></figure></section><section className={`simple-price-section ${business ? "" : "private-prices"}`}><header><span>Für {business ? "Unternehmen" : "Privatpersonen"}</span><h2>{business ? "Formate und Einstiegspreise" : "Beratungen und Begleitung"}</h2></header><div>{tiers.map(([name, price]) => <article key={name}><h3>{name}</h3><strong>{price}{business && " netto"}</strong></article>)}</div><p>{business ? "Alle Preise netto zuzüglich gesetzlicher Umsatzsteuer. Inhalte, Teilnehmerzahl, Anreise und Unterlagen werden im Angebot festgelegt." : "Arbeits- und Zielpreise. Endpreisdarstellung und Umsatzsteuerbehandlung werden vor Veröffentlichung abschließend bestätigt. Die Beratung ersetzt keine ärztliche Diagnose oder Behandlung. Eine Bezuschussung durch die Krankenkasse kann im Einzelfall möglich sein; eine Erstattung wird nicht garantiert."}</p></section><FinalCta label={business ? "Ernährungsangebot anfragen" : "Beratung vormerken"}/></main>;
+}
+
+function OriginalDetail({ type }) {
+  const map = { buecher: ["Eigene Fach- und Kinderbücher", "Bücher zu Ernährung, Gesundheit und besonderen Stoffwechselerkrankungen – altersgerecht für Erwachsene, Eltern, kleine Kinder, Schulkinder und Jugendliche.", ["Illustrierte Kinderbücher", "Comics und Lernabenteuer", "Koch- und Rezeptbücher", "Begleitbücher für Eltern"]], apps: ["Eigene Apps", "Digitale Werkzeuge, die Training, Ernährung, Rezepte, Planung und Motivation sinnvoll miteinander verbinden.", ["Chelonaki EvoFit", "Ernährungs- und Fitness-Apps", "KI-gestützte Alltagsassistenten", "Personalisierte Inhalte"]], spiele: ["Spiele & Lernwelten", "Wissen wird spielerisch zugänglich – mit altersgerechten Geschichten, Übungen, Challenges und Rätseln.", ["Kinder- und Familienspiele", "Interaktive Lernabenteuer", "Gesundheitswissen ohne erhobenen Zeigefinger", "Digitale Erweiterungen"]], "digitale-produkte": ["Digitale Produkte", "Kurse, Vorlagen und Assistenten, die das Chelonaki-Ökosystem aus Büchern, Apps und Beratung ergänzen.", ["Digitale Kurse", "Vorlagen und Checklisten", "Personalisierte Inhalte", "Vernetzte Produktwelten"]] }; const data = map[type];
+  return <main id="main"><section className="original-hero"><span className="audience-label">Chelonaki Original</span><h1>{data[0]}</h1><p>{data[1]}</p><div>{data[2].map((item) => <span key={item}>{item}</span>)}</div><SmartLink className="button button-gold" href={`/kontakt?bereich=${encodeURIComponent(data[0])}`}>Warteliste & Partnerschaft <ArrowRight size={18}/></SmartLink></section><section className="release-note"><strong>In Entwicklung</strong><p>Originals zeigt veröffentlichte, geplante und kommende Produkte. Medizinische und ernährungsbezogene Inhalte werden quellenbasiert erstellt und vor Veröffentlichung fachlich geprüft.</p></section></main>;
+}
+
+function StoryPage() {
+  return <main id="main"><section className="story-page-hero"><figure><img src="/assets/chelonaki-wall-medallion.webp" alt="Chelonaki Familienwappen als Schildkrötenrelief"/></figure><div><span>A name carried through generations.</span><h1>Wisdom wears a shell.</h1><p>Chelonaki ist mehr als ein Name. Die Schildkröte ist das Symbol unserer Familie und Teil unserer persönlichen Geschichte.</p></div></section><article className="story-article"><p className="story-lead">Als unser Großvater Georgios gemeinsam mit meinem Bruder und mir durch sein Dorf ging, sagten die Menschen liebevoll: „Da ist er ja – der Georgios mit seinen kleinen Schildkröten.“</p><p>Aus diesem Spitznamen wurde unser Familienwappen. Aus dem Familienwappen wurde viele Jahre später Chelonaki.</p><p>Die Schildkröte steht für uns nicht für Langsamkeit. Sie verkörpert Weisheit, Langlebigkeit, Schutz, Beständigkeit und die Fähigkeit, den eigenen Weg mit Ruhe und Überzeugung zu gehen. Sie trägt ihr Zuhause bei sich und bleibt mit ihrer Herkunft verbunden, während sie sich stetig vorwärtsbewegt.</p><blockquote>Wahre Intelligenz muss nicht laut sein.</blockquote><p>Diese Haltung prägt unsere Arbeit. Wir verbinden moderne Technologie und künstliche Intelligenz mit menschlicher Erfahrung, wissenschaftlichem Wissen und verantwortungsvollen Entscheidungen.</p></article><Credentials/><FinalCta/></main>;
+}
+
+function ContactPage() {
+  const [state, setState] = useState("idle"); const [errors, setErrors] = useState({}); const privacyId = useId(); const query = new URLSearchParams(window.location.search).get("bereich") || "";
+  const submit = (e) => { e.preventDefault(); const data = new FormData(e.currentTarget); const next = {}; if (!data.get("name")?.trim()) next.name = true; if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.get("email") || "")) next.email = true; if (!data.get("focus")) next.focus = true; if ((data.get("message") || "").trim().length < 20) next.message = true; if (!data.get("privacy")) next.privacy = true; setErrors(next); if (!Object.keys(next).length) setTimeout(() => setState("success"), 500); };
+  return <main id="main"><section className="contact-page"><div className="contact-copy"><span>Projekt besprechen</span><h1>Was sollten wir gemeinsam bauen?</h1><p>Wählen Sie den passenden Bereich und geben Sie uns genug Kontext für eine fundierte erste Einschätzung.</p><div className="contact-promise"><LockKey size={22}/><span><strong>Qualifizierte Anfrage</strong>Ihre Angaben werden nicht automatisch bewertet. Diese Vorschau versendet noch keine Daten.</span></div></div><div className="contact-panel">{state === "success" ? <div className="form-result"><Check size={36}/><h2>Die Anfrage ist vorbereitet.</h2><p>Der sichere Versand wird nach Ergänzung der finalen Unternehmens- und Datenschutzangaben angebunden.</p><button className="text-link text-link-light" onClick={() => setState("idle")}>Neue Anfrage <ArrowRight size={18}/></button></div> : <form noValidate onSubmit={submit}><div className="field-pair"><label><span>Name *</span><input name="name" autoComplete="name" aria-invalid={errors.name}/>{errors.name && <small className="field-error">Bitte Namen eingeben.</small>}</label><label><span>Geschäftliche E-Mail *</span><input name="email" type="email" autoComplete="email" aria-invalid={errors.email}/>{errors.email && <small className="field-error">Bitte E-Mail prüfen.</small>}</label></div><div className="field-pair"><label><span>Unternehmen *</span><input name="company" autoComplete="organization"/></label><label><span>Gewünschte Leistung *</span><select name="focus" defaultValue={query} aria-invalid={errors.focus}><option value="" disabled>Bitte wählen</option><option>Digitalprojekt</option><option>KI-Consulting oder Schulung</option><option>Academy</option><option>Ernährung für Unternehmen</option><option>Buchprojekt</option><option>Partnerschaft oder Originals</option>{query && <option>{query}</option>}</select>{errors.focus && <small className="field-error">Bitte Bereich wählen.</small>}</label></div><div className="field-pair"><label><span>Budgetrahmen</span><select name="budget" defaultValue=""><option value="">Noch offen</option><option>bis 1.500 €</option><option>1.500–3.000 €</option><option>3.000–6.000 €</option><option>über 6.000 €</option></select></label><label><span>Gewünschter Start</span><select name="start" defaultValue=""><option value="">Noch offen</option><option>so bald wie möglich</option><option>in 1–3 Monaten</option><option>in 3–6 Monaten</option><option>später</option></select></label></div><label><span>Worum geht es? *</span><textarea name="message" rows="5" aria-invalid={errors.message}/>{errors.message && <small className="field-error">Bitte mindestens 20 Zeichen schreiben.</small>}</label><label className="privacy-field" htmlFor={privacyId}><input id={privacyId} type="checkbox" name="privacy" aria-invalid={errors.privacy}/><span>Ich habe die Datenschutzhinweise zur Bearbeitung meiner Anfrage zur Kenntnis genommen. *</span></label>{errors.privacy && <small className="field-error">Bitte bestätigen.</small>}<button className="button button-gold submit-button" type="submit">Anfrage vorbereiten <ArrowUpRight size={18}/></button></form>}</div></section></main>;
+}
+
+function FinalCta({ label = "Projekt besprechen" }) { return <section className="final-cta"><span>What should we build together?</span><h2>Ob digitales System, fachliches Projekt oder neue Produktidee – wir entwickeln den passenden Weg.</h2><SmartLink className="button button-gold" href="/kontakt">{label}<ArrowRight size={18}/></SmartLink></section>; }
+
+function Footer({ openLegal }) {
+  return <footer className="site-footer"><div className="footer-main"><div className="footer-brand"><Brand inverse/><p>Digitale Systeme. Starke Inhalte. Echtes Wissen.</p><SmartLink href="/our-story">Unsere Geschichte <ArrowRight size={16}/></SmartLink></div><div className="footer-navigation">{navigation.map((group) => <div key={group.label}><span>{group.label}</span><SmartLink href={group.href}>Übersicht</SmartLink>{group.items.slice(0,3).map(([label, href]) => <SmartLink href={href} key={href}>{label}</SmartLink>)}</div>)}</div><SmartLink className="footer-contact" href="/kontakt"><EnvelopeSimple size={24}/><span><small>Ein Projekt im Kopf?</small><strong>Projekt besprechen</strong></span><ArrowUpRight size={22}/></SmartLink></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Chelonaki</span><div>{Object.entries(legalViews).map(([key, view]) => <button key={key} type="button" onClick={() => openLegal(key)}>{view.title}</button>)}</div><a href="#top">Nach oben <ArrowUpRight size={16}/></a></div></footer>;
+}
+
+function RouteView({ path }) {
+  if (path === "/") return <HomePage/>; if (path === "/digital") return <HubPage type="digital"/>; if (path === "/expertise") return <HubPage type="expertise"/>; if (path === "/originals") return <HubPage type="originals"/>; if (services[path]) return <ServicePage data={services[path]}/>; if (path === "/expertise/video-akademie" || path.startsWith("/expertise/video-akademie/")) return <AcademyPage/>; if (path === "/expertise/ernaehrungsberatung") return <NutritionPage/>; if (path === "/expertise/ernaehrungsberatung/unternehmen") return <NutritionPage audience="unternehmen"/>; if (path === "/expertise/ernaehrungsberatung/privat") return <NutritionPage audience="privat"/>; if (path.startsWith("/originals/")) return <OriginalDetail type={path.split("/").pop()}/>; if (path === "/our-story") return <StoryPage/>; if (path === "/kontakt") return <ContactPage/>; return <main id="main"><section className="not-found"><span>404</span><h1>Diese Seite trägt ihre Idee noch im Panzer.</h1><SmartLink className="button button-gold" href="/">Zur Startseite</SmartLink></section></main>;
 }
 
 export function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [legalView, setLegalView] = useState(null);
-  const [headerSolid, setHeaderSolid] = useState(false);
-  const [formState, setFormState] = useState("idle");
-  const [formErrors, setFormErrors] = useState({});
-  const privacyId = useId();
-
-  useEffect(() => {
-    const updateLegalFromHash = () => {
-      const key = window.location.hash.replace("#", "");
-      setLegalView(legalViews[key] ? key : null);
-    };
-    updateLegalFromHash();
-    window.addEventListener("hashchange", updateLegalFromHash);
-    return () => window.removeEventListener("hashchange", updateLegalFromHash);
-  }, []);
-
-  useEffect(() => {
-    const sentinel = document.querySelector("[data-header-sentinel]");
-    if (!sentinel) return undefined;
-    const observer = new IntersectionObserver(
-      ([entry]) => setHeaderSolid(!entry.isIntersecting),
-      { threshold: 0 },
-    );
-    observer.observe(sentinel);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const elements = [...document.querySelectorAll("[data-reveal]")];
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion || !("IntersectionObserver" in window)) {
-      elements.forEach((element) => element.classList.add("is-visible"));
-      return undefined;
-    }
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.14, rootMargin: "0px 0px -7% 0px" },
-    );
-    elements.forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
-  }, []);
-
-  const openLegal = (key) => {
-    window.location.hash = key;
-    setLegalView(key);
-  };
-
-  const closeLegal = () => {
-    setLegalView(null);
-    if (legalViews[window.location.hash.replace("#", "")]) {
-      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#footer`);
-    }
-  };
-
-  const validateForm = (form) => {
-    const data = new FormData(form);
-    const nextErrors = {};
-    if (!String(data.get("name") || "").trim()) nextErrors.name = "Bitte geben Sie Ihren Namen ein.";
-    const email = String(data.get("email") || "").trim();
-    if (!email) nextErrors.email = "Bitte geben Sie Ihre E-Mail-Adresse ein.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-      nextErrors.email = "Bitte prüfen Sie die E-Mail-Adresse.";
-    if (!data.get("focus")) nextErrors.focus = "Bitte wählen Sie einen Schwerpunkt.";
-    if (String(data.get("message") || "").trim().length < 20)
-      nextErrors.message = "Bitte beschreiben Sie das Vorhaben in mindestens 20 Zeichen.";
-    if (!data.get("privacy")) nextErrors.privacy = "Bitte bestätigen Sie die Datenschutzhinweise.";
-    setFormErrors(nextErrors);
-    return Object.keys(nextErrors).length === 0;
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    if (!validateForm(form)) {
-      window.requestAnimationFrame(() => {
-        form.querySelector("[aria-invalid='true']")?.focus();
-      });
-      return;
-    }
-    setFormState("submitting");
-    window.setTimeout(() => {
-      setFormState(navigator.onLine === false ? "error" : "success");
-    }, 650);
-  };
-
-  const fieldError = (name) =>
-    formErrors[name] ? (
-      <span className="field-error" id={`${name}-error`} role="alert">
-        {formErrors[name]}
-      </span>
-    ) : null;
-
-  return (
-    <>
-      <a className="skip-link" href="#main">
-        Zum Inhalt
-      </a>
-      <div className="header-sentinel" data-header-sentinel aria-hidden="true" />
-
-      <header className={`site-header ${headerSolid ? "is-solid" : ""}`}>
-        <Brand />
-        <nav className="desktop-nav" aria-label="Hauptnavigation">
-          <a href="#expertise">Grundsätze</a>
-          <a href="#work">Leistungen</a>
-          <a href="#studio">Studio</a>
-          <a href="#process">Ablauf</a>
-        </nav>
-        <a className="button button-navy header-cta" href="#contact">
-          Projekt besprechen
-          <ArrowRight size={18} aria-hidden="true" />
-        </a>
-        <button
-          className="menu-trigger"
-          type="button"
-          aria-label="Menü öffnen"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(true)}
-        >
-          <List size={24} aria-hidden="true" />
-        </button>
-      </header>
-
-      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
-
-      <main id="main">
-        <section className="hero" id="top" aria-labelledby="hero-title">
-          <div className="hero-scene" aria-hidden="true">
-            <img
-              className="hero-scene-image"
-              src="/assets/hero-architecture.png"
-              alt=""
-              width="1536"
-              height="1024"
-              fetchPriority="high"
-            />
-            <figure className="hero-medallion">
-              <img
-                src="/assets/chelonaki-wall-medallion.webp"
-                alt=""
-                width="1200"
-                height="1500"
-              />
-            </figure>
-          </div>
-
-          <div className="hero-copy">
-            <h1 id="hero-title">
-              Websites.
-              <br />
-              Bücher. Apps.
-              <br />
-              Automationen.
-            </h1>
-            <div className="hero-rule" aria-hidden="true">
-              <i />
-            </div>
-            <p>
-              Chelonaki entwickelt Websites und Shopify-Shops, produziert Bücher,
-              automatisiert Content und Kampagnen, richtet Telefonassistenten ein
-              und baut Apps – KI-gestützt, menschlich geprüft und für den echten
-              Betrieb gedacht.
-            </p>
-            <div className="hero-actions">
-              <a className="button button-navy" href="#contact">
-                Projekt besprechen
-                <ArrowRight size={18} aria-hidden="true" />
-              </a>
-              <a className="text-link" href="#expertise">
-                Arbeitsweise ansehen
-                <ArrowRight size={18} aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-
-          <div className="hero-capability-band">
-            <div className="hero-band-intro">
-              <p>
-                Drei Bereiche.
-                <br />
-                <em>Klar getrennt.</em>
-              </p>
-              <span>Digital. Expertise. Originals.</span>
-            </div>
-            <nav className="hero-band-grid" aria-label="Direkt zu den Arbeitsfeldern">
-              {capabilities.map((item) => (
-                <a href={`#capability-${item.number}`} key={item.title}>
-                  <span>{item.number}</span>
-                  <strong>{item.title}</strong>
-                  <small>{item.summary}</small>
-                </a>
-              ))}
-            </nav>
-          </div>
-        </section>
-
-        <section className="architecture" id="expertise" aria-labelledby="architecture-title">
-          <div className="architecture-copy">
-            <span className="section-mark" aria-hidden="true" />
-            <h2 id="architecture-title">KI ist das Werkzeug. Verantwortung bleibt menschlich.</h2>
-            <p>
-              Keine ungeprüften Veröffentlichungen, keine offenen Schnittstellen
-              und kein Black-Box-Autopilot. Wir planen Rollen, Tests, Freigaben und
-              Datenschutz dort ein, wo Fehler echten Schaden verursachen könnten.
-            </p>
-            <a className="text-link text-link-light" href="#capabilities">
-              Die drei Bereiche
-              <ArrowRight size={18} aria-hidden="true" />
-            </a>
-          </div>
-          <figure className="architecture-figure" data-reveal>
-            <img
-              src="/assets/chapter-architecture.webp"
-              alt="Rauer heller Stein mit eingravierten architektonischen Proportionslinien"
-              width="1672"
-              height="941"
-            />
-          </figure>
-        </section>
-
-        <section className="capabilities-section" id="capabilities" aria-labelledby="capabilities-title">
-          <div className="capabilities-heading" data-reveal>
-            <h2 id="capabilities-title">Was Chelonaki konkret anbietet.</h2>
-            <p>
-              Keine vage „KI-Lösung für alles“. Leistungen, Beratung und eigene
-              Produkte sind klar getrennt, damit sofort verständlich ist, was Sie
-              beauftragen oder nutzen können.
-            </p>
-          </div>
-          <div className="capability-index">
-            {capabilities.map((item) => (
-              <article
-                id={`capability-${item.number}`}
-                className="capability-entry"
-                key={item.title}
-                data-reveal="chapter"
-              >
-                <span>{item.number}</span>
-                <h3>{item.title}</h3>
-                <p>{item.details}</p>
-                <ul aria-label={`${item.title} Leistungen`}>
-                  {item.tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="work-section" id="work" aria-labelledby="work-title">
-          <header className="work-heading" data-reveal="copy">
-            <h2 id="work-title">Drei typische Startpunkte.</h2>
-            <p>
-              Ein Auftrag muss nicht als riesiges Transformationsprojekt beginnen.
-              Diese drei Einstiege führen schnell zu einem Ergebnis, das Sie prüfen
-              und weiterentwickeln können.
-            </p>
-          </header>
-
-          <article className="work-feature" data-reveal="image">
-            <figure>
-              <img
-                src="/assets/project-digital-brand.png"
-                alt="Tablet mit einem präzisen dunkelblauen Markensystem auf einem hellen Materialtisch"
-                width="1408"
-                height="1024"
-                loading="lazy"
-              />
-            </figure>
-            <div>
-              <span>Website & Shopify</span>
-              <h3>Vom Angebot bis zum funktionierenden Shop.</h3>
-              <p>
-                Positionierung, Seitenstruktur, Texte, Design und technische
-                Umsetzung entstehen in einem Prozess – auf Wunsch inklusive
-                Shopify, Automationen und sauberer Übergabe.
-              </p>
-              <ul>
-                <li>Landingpages und Unternehmensseiten</li>
-                <li>Shopify-Shops und Produktseiten</li>
-                <li>Designsystem, mobile Prüfung und Übergabe</li>
-              </ul>
-            </div>
-          </article>
-
-          <div className="work-pair">
-            <article className="work-portrait" data-reveal="image">
-              <figure>
-                <img
-                  src="/assets/hero-architecture.png"
-                  alt="Helle architektonische Szene mit Säule, Bögen und abstrakten Materialflächen"
-                  width="1536"
-                  height="1024"
-                  loading="lazy"
-                />
-              </figure>
-              <div>
-                <span>Buchproduktion</span>
-                <h3>Aus Fachwissen wird ein druckfertiges Buch.</h3>
-                <p>
-                  Interview, Gliederung, Ghostwriting, Recherche, Lektorat, Layout
-                  und Vorbereitung für Print, E-Book oder KDP.
-                </p>
-              </div>
-            </article>
-
-            <article className="work-nutrition" data-reveal="image">
-              <div>
-                <span>KI im Betrieb</span>
-                <h3>Content, Anrufe und Kampagnen mit klarer Kontrolle.</h3>
-                <p>
-                  Social-Media-Produktion, Telefonassistenz, Meta- und Google-Ads
-                  sowie interne Apps werden so aufgebaut, dass Entwürfe und
-                  kritische Aktionen vor der Ausführung freigegeben werden können.
-                </p>
-              </div>
-              <figure>
-                <img
-                  src="/assets/project-nutrition-venture.png"
-                  alt="Mediterrane Lebensmittel, Notizbuch und eine minimalistische Produktverpackung"
-                  width="1408"
-                  height="1024"
-                  loading="lazy"
-                />
-              </figure>
-            </article>
-          </div>
-        </section>
-
-        <section className="process-section" id="process" aria-labelledby="process-title">
-          <div className="process-intro" data-reveal="copy">
-            <h2 id="process-title">So läuft ein Projekt ab.</h2>
-            <p>
-              Sie sehen früh einen funktionierenden Stand. Erst nach Ihrem Feedback
-              wird ausgebaut, geprüft und sauber übergeben.
-            </p>
-          </div>
-          <ol className="method-rail">
-            {method.map((item) => (
-              <li key={item.title} data-reveal="line">
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        <section className="studio-section" id="studio" aria-labelledby="studio-title">
-          <figure className="studio-medallion" data-reveal="image">
-            <img
-              src="/assets/chelonaki-wall-medallion.webp"
-              alt="Antikes bronzenes Chelonaki-Schildkrötenrelief, eingelassen in eine helle Kalksteinwand"
-              width="1200"
-              height="1500"
-              loading="lazy"
-            />
-          </figure>
-          <div className="studio-copy" data-reveal="copy">
-            <h2 id="studio-title">
-              Eleftherios Samouladas.
-              <br />
-              Gründer von Chelonaki.
-            </h2>
-            <p>
-              Gelernter Koch, studierter Ernährungswissenschaftler, zertifizierter
-              Qualitätsmanagementbeauftragter und fachkundig im Lebensmittelrecht.
-              Als Mietkoch habe ich in mehr als 500 Küchen in ganz Deutschland
-              gearbeitet – vom Schnitzelbetrieb bis zum Sternerestaurant.
-            </p>
-            <p>
-              Chelonaki verbindet diese Praxiserfahrung mit Produktentwicklung,
-              Lebensmittelproduktion, Unterricht, Digitalisierung und Markenaufbau.
-              Bei jedem Projekt bleibt klar, wer entscheidet und wer die Qualität
-              verantwortet.
-            </p>
-            <div className="studio-principles">
-              <span>500+ Küchen erlebt</span>
-              <span>Ernährungswissenschaft</span>
-              <span>Qualitätsmanagement</span>
-            </div>
-          </div>
-        </section>
-
-        <section className="contact-section" id="contact" aria-labelledby="contact-title">
-          <div className="contact-copy" data-reveal="copy">
-            <span className="section-mark" aria-hidden="true" />
-            <h2 id="contact-title">Was möchten Sie konkret bauen?</h2>
-            <p>
-              Wählen Sie den passenden Bereich und beschreiben Sie kurz den
-              Ausgangspunkt. Sie erhalten eine direkte Einschätzung, welcher erste
-              Schritt sinnvoll ist.
-            </p>
-            <div className="contact-promise">
-              <LockKey size={22} aria-hidden="true" />
-              <span>
-                <strong>Antwort von Eleftherios</strong>
-                Vertraulich und ohne automatische Bewertung Ihrer Anfrage.
-              </span>
-            </div>
-          </div>
-
-          <div className="contact-panel" data-reveal="image">
-            {formState === "success" ? (
-              <div className="form-result" role="status">
-                <Check size={36} weight="bold" aria-hidden="true" />
-                <h3>Die Anfrage ist vorbereitet.</h3>
-                <p>
-                  Diese Vorschau versendet noch keine Daten. Vor dem Livegang wird der
-                  sichere Versand an die bestätigte Kontaktadresse angebunden.
-                </p>
-                <button
-                  className="text-link text-link-light"
-                  type="button"
-                  onClick={() => setFormState("idle")}
-                >
-                  Neue Anfrage
-                  <ArrowRight size={18} aria-hidden="true" />
-                </button>
-              </div>
-            ) : (
-              <form noValidate onSubmit={handleSubmit}>
-                {formState === "error" && (
-                  <div className="form-global-error" role="alert">
-                    Die Anfrage konnte nicht vorbereitet werden. Bitte prüfen Sie
-                    Ihre Verbindung und versuchen Sie es erneut.
-                  </div>
-                )}
-
-                <div className="field-pair">
-                  <label>
-                    <span>Name *</span>
-                    <input
-                      type="text"
-                      name="name"
-                      autoComplete="name"
-                      aria-invalid={Boolean(formErrors.name)}
-                      aria-describedby={formErrors.name ? "name-error" : undefined}
-                      onBlur={(event) => {
-                        if (event.currentTarget.value.trim())
-                          setFormErrors((current) => ({ ...current, name: undefined }));
-                      }}
-                    />
-                    {fieldError("name")}
-                  </label>
-                  <label>
-                    <span>E-Mail *</span>
-                    <input
-                      type="email"
-                      name="email"
-                      autoComplete="email"
-                      aria-invalid={Boolean(formErrors.email)}
-                      aria-describedby={formErrors.email ? "email-error" : undefined}
-                    />
-                    {fieldError("email")}
-                  </label>
-                </div>
-
-                <div className="field-pair">
-                  <label>
-                    <span>Unternehmen</span>
-                    <input type="text" name="company" autoComplete="organization" />
-                  </label>
-                  <label>
-                    <span>Schwerpunkt *</span>
-                    <select
-                      name="focus"
-                      defaultValue=""
-                      aria-invalid={Boolean(formErrors.focus)}
-                      aria-describedby={formErrors.focus ? "focus-error" : undefined}
-                    >
-                      <option value="" disabled>
-                        Bitte wählen
-                      </option>
-                      <option>Website oder Shopify-Shop</option>
-                      <option>Buch oder Publishing</option>
-                      <option>Social Content und Automatisierung</option>
-                      <option>Telefonassistent</option>
-                      <option>Meta- oder Google-Ads</option>
-                      <option>App oder Unternehmensautomation</option>
-                      <option>KI-Consulting</option>
-                      <option>Ernährungsberatung</option>
-                      <option>Noch offen</option>
-                    </select>
-                    {fieldError("focus")}
-                  </label>
-                </div>
-
-                <label>
-                  <span>Worum geht es? *</span>
-                  <textarea
-                    name="message"
-                    rows="5"
-                    aria-invalid={Boolean(formErrors.message)}
-                    aria-describedby={formErrors.message ? "message-error" : undefined}
-                  />
-                  {fieldError("message")}
-                </label>
-
-                <label className="privacy-field" htmlFor={privacyId}>
-                  <input
-                    id={privacyId}
-                    type="checkbox"
-                    name="privacy"
-                    aria-invalid={Boolean(formErrors.privacy)}
-                    aria-describedby={formErrors.privacy ? "privacy-error" : undefined}
-                  />
-                  <span>
-                    Ich habe die{" "}
-                    <a href="#datenschutz" onClick={(event) => {
-                      event.preventDefault();
-                      openLegal("datenschutz");
-                    }}>
-                      Datenschutzhinweise
-                    </a>{" "}
-                    zur Verarbeitung meiner Anfrage zur Kenntnis genommen. *
-                  </span>
-                </label>
-                {fieldError("privacy")}
-
-                <button
-                  className="button button-gold submit-button"
-                  type="submit"
-                  disabled={formState === "submitting"}
-                >
-                  {formState === "submitting" ? "Wird vorbereitet" : "Anfrage vorbereiten"}
-                  <ArrowUpRight size={19} aria-hidden="true" />
-                </button>
-                <p className="form-note">
-                  Vorschau: Es werden noch keine Daten übertragen. Pflichtfelder sind
-                  mit * gekennzeichnet.
-                </p>
-              </form>
-            )}
-          </div>
-        </section>
-      </main>
-
-      <footer className="site-footer" id="footer">
-        <div className="footer-main">
-          <div className="footer-brand">
-            <Brand inverse />
-            <p>
-              Websites, Bücher, Automationen und Beratung.
-              <br />
-              Gegründet von Eleftherios Samouladas.
-            </p>
-          </div>
-          <div className="footer-navigation">
-            <div>
-              <span>Entdecken</span>
-              <a href="#expertise">Grundsätze</a>
-              <a href="#work">Leistungen</a>
-              <a href="#process">Ablauf</a>
-              <a href="#studio">Studio</a>
-            </div>
-            <div>
-              <span>Rechtliches</span>
-              {Object.entries(legalViews).map(([key, view]) => (
-                <a
-                  href={`#${key}`}
-                  key={key}
-                  onClick={(event) => {
-                    event.preventDefault();
-                    openLegal(key);
-                  }}
-                >
-                  {view.title}
-                </a>
-              ))}
-            </div>
-          </div>
-          <a className="footer-contact" href="#contact">
-            <EnvelopeSimple size={24} aria-hidden="true" />
-            <span>
-              <small>Ein Projekt im Kopf?</small>
-              <strong>Projekt besprechen</strong>
-            </span>
-            <ArrowUpRight size={22} aria-hidden="true" />
-          </a>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Chelonaki</span>
-          <span>AI Studio aus Deutschland</span>
-          <a href="#top">
-            Nach oben
-            <ArrowUpRight size={16} aria-hidden="true" />
-          </a>
-        </div>
-      </footer>
-
-      <LegalDialog viewKey={legalView} onClose={closeLegal} />
-    </>
-  );
+  const [path, setPath] = useState(window.location.pathname.replace(/\/$/, "") || "/"); const [menu, setMenu] = useState(false); const [legal, setLegal] = useState(null);
+  useEffect(() => { const update = () => setPath(window.location.pathname.replace(/\/$/, "") || "/"); window.addEventListener("popstate", update); return () => window.removeEventListener("popstate", update); }, []);
+  useEffect(() => { document.title = path === "/" ? "Chelonaki | Wisdom wears a shell" : `Chelonaki | ${path.split("/").filter(Boolean).pop()?.replaceAll("-", " ") || "Studio"}`; }, [path]);
+  useEffect(() => { const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; const nodes = [...document.querySelectorAll("[data-reveal]")]; if (reduce || !("IntersectionObserver" in window)) { nodes.forEach(n => n.classList.add("is-visible")); return; } const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-visible"); observer.unobserve(e.target); } }), { threshold: .12 }); nodes.forEach(n => observer.observe(n)); return () => observer.disconnect(); }, [path]);
+  return <><a className="skip-link" href="#main">Zum Inhalt</a><div id="top"/><Header openMenu={() => setMenu(true)}/><MobileMenu open={menu} onClose={() => setMenu(false)}/><RouteView path={path}/><Footer openLegal={setLegal}/><LegalDialog viewKey={legal} onClose={() => setLegal(null)}/></>;
 }
