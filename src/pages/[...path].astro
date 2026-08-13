@@ -1,0 +1,12 @@
+---
+import SiteShell from "../layouts/SiteShell.astro";
+import { astroRoutes } from "../astroRoutes.js";
+
+export function getStaticPaths() {
+  return astroRoutes.map((route) => ({
+    params: { path: route.slice(1) },
+  }));
+}
+---
+
+<SiteShell />

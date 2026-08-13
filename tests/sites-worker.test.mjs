@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { access } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 import worker from "../worker/index.js";
 
@@ -65,4 +65,13 @@ test("emits the files required by Sites packaging", async () => {
   await access(new URL("../dist/client/index.html", import.meta.url));
   await access(new URL("../dist/server/index.js", import.meta.url));
   await access(new URL("../dist/.openai/hosting.json", import.meta.url));
+});
+
+test("Astro emits the application shell and canonical direct routes", async () => {
+  const index = await readFile(new URL("../dist/client/index.html", import.meta.url), "utf8");
+  assert.match(index, /<meta name="generator" content="Astro v/);
+  assert.match(index, /<astro-island/);
+  await access(new URL("../dist/client/medien-ai/social-media/index.html", import.meta.url));
+  await access(new URL("../dist/client/ki-beratung-weiterbildung/video-academy/index.html", import.meta.url));
+  await access(new URL("../dist/client/originals/apps/chelonaki-reply/index.html", import.meta.url));
 });
