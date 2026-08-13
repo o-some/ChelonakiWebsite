@@ -1,10 +1,11 @@
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { ArrowRight, ArrowUpRight, Buildings, CaretDown, Check, EnvelopeSimple, GlobeHemisphereWest, List, LockKey, X } from "@phosphor-icons/react";
 import { hubData, navigation, services, worlds } from "./siteData.js";
+import translations from "./translations.generated.js";
 
 const legalViews = {
   impressum: { label: "Rechtliche Angaben", title: "Impressum", content: <><p className="legal-lead">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p><h3>Anbieter</h3><p><mark>[VOLLSTÄNDIGER NAME ODER FIRMA]</mark><br/><mark>[RECHTSFORM]</mark><br/><mark>[LADUNGSFÄHIGE ANSCHRIFT]</mark><br/>Deutschland</p><h3>Vertretung und Kontakt</h3><p>Vertreten durch: <mark>[VERTRETUNGSBERECHTIGTE PERSON]</mark><br/>Telefon: <mark>[TELEFONNUMMER]</mark><br/>E-Mail: <mark>[E-MAIL-ADRESSE]</mark></p><h3>Register und Steuern</h3><p>Registergericht und Registernummer: <mark>[FALLS ZUTREFFEND]</mark><br/>Umsatzsteuer-ID: <mark>[FALLS VORHANDEN]</mark></p><p className="legal-note">Die Betreiberangaben sind vor dem öffentlichen Geschäftsstart zu vervollständigen.</p></> },
-  datenschutz: { label: "Datensparsame Vorschau", title: "Datenschutzerklärung", content: <><p className="legal-lead">Diese Vorschau setzt keine optionalen Analyse- oder Marketing-Cookies ein. Reale Datenflüsse und Anbieter müssen vor Veröffentlichung ergänzt und geprüft werden.</p><h3>Verantwortlicher</h3><p><mark>[NAME ODER FIRMA, ANSCHRIFT UND KONTAKTDATEN]</mark></p><h3>Hosting</h3><p>Beim Aufruf können technisch erforderliche Verbindungsdaten verarbeitet werden. Anbieter, Region, Auftragsverarbeitung und Löschfrist: <mark>[ERGÄNZEN]</mark>.</p><h3>Sprachübersetzung</h3><p>Wenn eine andere Sprache ausgewählt wird, lädt die Website den Übersetzungsdienst Google Translate. Dabei können technisch erforderliche Verbindungsdaten und eine Spracheinstellung verarbeitet werden. Die deutsche Fassung bleibt die inhaltliche Ausgangsversion.</p><h3>Kontaktaufnahme</h3><p>Übermittelte Angaben werden ausschließlich zur Bearbeitung der Anfrage verarbeitet. Diese Vorschau versendet noch keine Formulardaten.</p><h3>Ihre Rechte</h3><p>Nach Maßgabe der DSGVO bestehen insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch.</p></> },
+  datenschutz: { label: "Datensparsame Vorschau", title: "Datenschutzerklärung", content: <><p className="legal-lead">Diese Vorschau setzt keine optionalen Analyse- oder Marketing-Cookies ein. Reale Datenflüsse und Anbieter müssen vor Veröffentlichung ergänzt und geprüft werden.</p><h3>Verantwortlicher</h3><p><mark>[NAME ODER FIRMA, ANSCHRIFT UND KONTAKTDATEN]</mark></p><h3>Hosting</h3><p>Beim Aufruf können technisch erforderliche Verbindungsdaten verarbeitet werden. Anbieter, Region, Auftragsverarbeitung und Löschfrist: <mark>[ERGÄNZEN]</mark>.</p><h3>Sprachversionen</h3><p>Die angebotenen Sprachfassungen werden direkt von der Website bereitgestellt. Beim Sprachwechsel werden keine Inhalte an einen externen Übersetzungsdienst übermittelt. Die deutsche Fassung bleibt die inhaltliche Ausgangsversion.</p><h3>Kontaktaufnahme</h3><p>Übermittelte Angaben werden ausschließlich zur Bearbeitung der Anfrage verarbeitet. Diese Vorschau versendet noch keine Formulardaten.</p><h3>Ihre Rechte</h3><p>Nach Maßgabe der DSGVO bestehen insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch.</p></> },
   cookies: { label: "Datenschutz-Einstellungen", title: "Cookies", content: <><p className="legal-lead">Aktuell sind keine optionalen Cookies oder Tracking-Dienste eingebunden.</p><div className="settings-row"><div><strong>Technisch notwendiger Betrieb</strong><p>Erforderlich für die sichere Auslieferung.</p></div><span><Check size={16}/> Aktiv</span></div><div className="settings-row is-muted"><div><strong>Analyse und Marketing</strong><p>Nicht eingebunden.</p></div><span>Inaktiv</span></div></> },
   barrierefreiheit: { label: "Zugängliche Gestaltung", title: "Barrierefreiheit", content: <><p className="legal-lead">Chelonaki soll unabhängig von Gerät und Eingabemethode gut nutzbar sein.</p><ul><li>Semantische Struktur und Tastaturbedienung</li><li>Sichtbare Fokuszustände und große Bedienflächen</li><li>Kontrastreiche Gestaltung und Bildalternativen</li><li>Reduzierte Bewegung bei Systemeinstellung</li><li>Responsive Darstellung ohne horizontales Scrollen</li></ul><p className="legal-note">Die konkrete BFSG-Anwendbarkeit wird vor einem B2C-Onlineshop gesondert geprüft.</p></> },
 };
@@ -51,18 +52,12 @@ const finderGoals = [
 const languageOptions = [
   ["de", "Deutsch", "DE"], ["en", "English", "EN"], ["el", "Ελληνικά", "ΕΛ"], ["fr", "Français", "FR"], ["es", "Español", "ES"],
 ];
+const translatedTextNodes = new WeakMap();
+const translatedAttributeNodes = new WeakMap();
 
 function getSavedLanguage() {
   const saved = window.localStorage.getItem("chelonaki-language");
   return languageOptions.some(([code]) => code === saved) ? saved : "de";
-}
-
-function setTranslationCookie(language) {
-  const host = window.location.hostname;
-  const remove = (domain = "") => { document.cookie = `googtrans=; Max-Age=0; path=/; ${domain ? `domain=${domain};` : ""} SameSite=Lax`; };
-  remove();
-  if (host.includes(".")) remove(`.${host}`);
-  if (language !== "de") document.cookie = `googtrans=/de/${language}; path=/; SameSite=Lax`;
 }
 
 function LanguagePicker({ mobile = false }) {
@@ -70,30 +65,12 @@ function LanguagePicker({ mobile = false }) {
   const [open, setOpen] = useState(false);
   const pickerRef = useRef(null);
   useEffect(() => {
-    document.documentElement.lang = language;
-    if (language === "de") return;
-    window.googleTranslateElementInit = () => {
-      if (!window.google?.translate?.TranslateElement || document.querySelector("#google_translate_element .goog-te-gadget")) return;
-      new window.google.translate.TranslateElement({ pageLanguage: "de", includedLanguages: "en,el,fr,es", autoDisplay: false }, "google_translate_element");
-    };
-    if (window.google?.translate?.TranslateElement) window.googleTranslateElementInit();
-    else if (!document.getElementById("google-translate-script")) {
-      const script = document.createElement("script");
-      script.id = "google-translate-script";
-      script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-      script.async = true;
-      script.onload = () => window.setTimeout(() => window.googleTranslateElementInit?.(), 100);
-      document.head.appendChild(script);
-    }
-  }, [language]);
-  useEffect(() => {
     const close = (event) => { if (!pickerRef.current?.contains(event.target)) setOpen(false); };
     document.addEventListener("pointerdown", close);
     return () => document.removeEventListener("pointerdown", close);
   }, []);
   const changeLanguage = (next) => {
     window.localStorage.setItem("chelonaki-language", next);
-    setTranslationCookie(next);
     setLanguage(next);
     window.location.reload();
   };
@@ -101,25 +78,61 @@ function LanguagePicker({ mobile = false }) {
   return <div ref={pickerRef} className={`language-picker notranslate ${mobile ? "is-mobile" : ""} ${open ? "is-open" : ""}`} translate="no"><button type="button" className="language-trigger" onClick={() => setOpen(!open)} aria-haspopup="listbox" aria-expanded={open} aria-label={`Sprache: ${current[1]}`}><GlobeHemisphereWest size={17}/><strong>{current[2]}</strong><CaretDown size={12}/></button>{open && <div className="language-options" role="listbox" aria-label="Sprache auswählen">{languageOptions.map(([code, name, short]) => <button type="button" role="option" aria-selected={language === code} className={language === code ? "is-active" : ""} onClick={() => changeLanguage(code)} key={code}><span>{name}</span><small>{short}</small>{language === code && <Check size={14}/>}</button>)}</div>}</div>;
 }
 
-function TranslationLoader() {
-  const language = getSavedLanguage();
-  const [visible, setVisible] = useState(language !== "de");
-  useEffect(() => {
-    if (language === "de") return;
-    const timer = window.setTimeout(() => setVisible(false), 7200);
-    return () => window.clearTimeout(timer);
-  }, [language]);
-  if (!visible) return null;
-  const messages = { en: ["English", "Translating the website…"], el: ["Ελληνικά", "Μετάφραση ιστοσελίδας…"], fr: ["Français", "Traduction du site…"], es: ["Español", "Traduciendo el sitio web…"] };
-  const [name, message] = messages[language] || messages.en;
-  return <div className="translation-loader notranslate" translate="no" role="status" aria-live="polite"><span><GlobeHemisphereWest size={22}/></span><strong>{name}</strong><p>{message}</p><i/></div>;
+function LocalTranslator({ path }) {
+  useLayoutEffect(() => {
+    const language = getSavedLanguage();
+    document.documentElement.lang = language;
+    if (language === "de") return undefined;
+    const dictionary = translations[language] || {};
+    const entries = Object.entries(dictionary).filter(([key, value]) => key !== value && key.length > 2).sort((a, b) => b[0].length - a[0].length);
+    const translate = (value) => {
+      if (!value?.trim()) return value;
+      const leading = value.match(/^\s*/)?.[0] || "";
+      const trailing = value.match(/\s*$/)?.[0] || "";
+      const core = value.trim();
+      if (dictionary[core]) return `${leading}${dictionary[core]}${trailing}`;
+      let next = core;
+      for (const [source, target] of entries) if (next.includes(source)) next = next.split(source).join(target);
+      return `${leading}${next}${trailing}`;
+    };
+    const translateNode = (node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        if (node.parentElement?.closest(".notranslate, script, style, noscript")) return;
+        const previous = translatedTextNodes.get(node);
+        if (previous?.language === language && previous.value === node.nodeValue) return;
+        const next = translate(node.nodeValue);
+        if (next !== node.nodeValue) node.nodeValue = next;
+        translatedTextNodes.set(node, { language, value: next });
+        return;
+      }
+      if (node.nodeType !== Node.ELEMENT_NODE || node.matches(".notranslate, script, style, noscript") || node.closest(".notranslate")) return;
+      const previousAttributes = translatedAttributeNodes.get(node);
+      for (const attribute of ["placeholder", "title", "aria-label"]) if (node.hasAttribute(attribute)) {
+        const current = node.getAttribute(attribute);
+        if (previousAttributes?.language === language && previousAttributes.values?.[attribute] === current) continue;
+        const next = translate(current);
+        node.setAttribute(attribute, next);
+        const record = translatedAttributeNodes.get(node) || { language, values: {} };
+        record.language = language; record.values[attribute] = next; translatedAttributeNodes.set(node, record);
+      }
+      [...node.childNodes].forEach(translateNode);
+    };
+    const root = document.getElementById("root");
+    translateNode(root);
+    const observer = new MutationObserver((mutations) => mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach(translateNode);
+      if (mutation.type === "characterData") translateNode(mutation.target);
+    }));
+    observer.observe(root, { subtree: true, childList: true, characterData: true });
+    return () => observer.disconnect();
+  }, [path]);
+  return null;
 }
 
 function SmartLink({ href, children, className = "", onNavigate, ...props }) {
   const internal = href?.startsWith("/");
   return <a href={href} className={className} {...props} onClick={(event) => {
     if (internal && !event.metaKey && !event.ctrlKey && !event.shiftKey) {
-      if (getSavedLanguage() !== "de") { onNavigate?.(); return; }
       event.preventDefault(); window.history.pushState({}, "", href); window.dispatchEvent(new PopStateEvent("popstate")); window.scrollTo({ top: 0, behavior: "instant" }); onNavigate?.();
     }
   }}>{children}</a>;
@@ -135,7 +148,7 @@ function Header({ openMenu, path }) {
   useEffect(() => { const onScroll = () => setSolid(window.scrollY > 24); onScroll(); window.addEventListener("scroll", onScroll, { passive: true }); return () => window.removeEventListener("scroll", onScroll); }, []);
   const active = (group) => path === group.href || path.startsWith(`${group.href}/`);
   const closeGroup = (label) => setDismissedGroup(label);
-  return <header className={`site-header ${solid ? "is-solid" : ""}`}><Brand/><nav className="desktop-nav" aria-label="Hauptnavigation">{navigation.map((group) => <div className={`nav-group ${group.items.length ? "" : "is-direct"} ${active(group) ? "is-active" : ""} ${dismissedGroup === group.label ? "is-dismissed" : ""}`} key={group.label}><SmartLink href={group.href} aria-current={active(group) ? "page" : undefined} onMouseEnter={() => setDismissedGroup(null)} onNavigate={() => closeGroup(group.label)}>{group.label}</SmartLink>{group.items.length > 0 && <div className="nav-panel"><SmartLink href={group.href} className="nav-overview" onNavigate={() => closeGroup(group.label)}>{group.label} entdecken <ArrowUpRight size={16}/></SmartLink>{group.items.map(([label, href]) => <SmartLink href={href} key={href} onNavigate={() => closeGroup(group.label)}>{label}</SmartLink>)}</div>}</div>)}<LanguagePicker/></nav><SmartLink className="button button-navy header-cta" href="/paketfinder">Passende Lösung finden <ArrowRight size={18}/></SmartLink><button className="menu-trigger" type="button" aria-label="Menü öffnen" onClick={openMenu}><List size={25}/></button><div id="google_translate_element" aria-hidden="true"/></header>;
+  return <header className={`site-header ${solid ? "is-solid" : ""}`}><Brand/><nav className="desktop-nav" aria-label="Hauptnavigation">{navigation.map((group) => <div className={`nav-group ${group.items.length ? "" : "is-direct"} ${active(group) ? "is-active" : ""} ${dismissedGroup === group.label ? "is-dismissed" : ""}`} key={group.label}><SmartLink href={group.href} aria-current={active(group) ? "page" : undefined} onMouseEnter={() => setDismissedGroup(null)} onNavigate={() => closeGroup(group.label)}>{group.label}</SmartLink>{group.items.length > 0 && <div className="nav-panel"><SmartLink href={group.href} className="nav-overview" onNavigate={() => closeGroup(group.label)}>{group.label} entdecken <ArrowUpRight size={16}/></SmartLink>{group.items.map(([label, href]) => <SmartLink href={href} key={href} onNavigate={() => closeGroup(group.label)}>{label}</SmartLink>)}</div>}</div>)}<LanguagePicker/></nav><SmartLink className="button button-navy header-cta" href="/paketfinder">Passende Lösung finden <ArrowRight size={18}/></SmartLink><button className="menu-trigger" type="button" aria-label="Menü öffnen" onClick={openMenu}><List size={25}/></button></header>;
 }
 
 function MobileMenu({ open, onClose }) {
@@ -285,5 +298,5 @@ export function App() {
     updateScroll(); window.addEventListener("scroll", updateScroll, { passive: true });
     return () => { observer.disconnect(); window.removeEventListener("scroll", updateScroll); cancelAnimationFrame(frame); };
   }, [path]);
-  return <><TranslationLoader/><a className="skip-link" href="#main">Zum Inhalt</a><div id="top"/><Header path={path} openMenu={() => setMenu(true)}/><MobileMenu open={menu} onClose={() => setMenu(false)}/><RouteView path={path}/><Footer openLegal={setLegal}/><LegalDialog viewKey={legal} onClose={() => setLegal(null)}/></>;
+  return <><LocalTranslator path={path}/><a className="skip-link" href="#main">Zum Inhalt</a><div id="top"/><Header path={path} openMenu={() => setMenu(true)}/><MobileMenu open={menu} onClose={() => setMenu(false)}/><RouteView path={path}/><Footer openLegal={setLegal}/><LegalDialog viewKey={legal} onClose={() => setLegal(null)}/></>;
 }
