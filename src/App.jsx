@@ -1,5 +1,5 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
-import { ArrowRight, ArrowUpRight, Buildings, CaretDown, Check, EnvelopeSimple, GlobeHemisphereWest, List, LockKey, X } from "@phosphor-icons/react";
+import { ArrowRight, ArrowUpRight, Buildings, CaretDown, Check, ChatCircleDots, EnvelopeSimple, GlobeHemisphereWest, List, LockKey, PaperPlaneTilt, Sparkle, X } from "@phosphor-icons/react";
 import { hubData, navigation, services, worlds } from "./siteData.js";
 import translations from "./translations.generated.js";
 
@@ -371,6 +371,69 @@ function Footer({ openLegal }) {
   return <footer className="site-footer"><div className="footer-main"><div className="footer-brand"><Brand inverse/><p>Digitale Systeme. Starke Inhalte. Echtes Wissen.</p><SmartLink href="/ueber-uns">Über uns & unsere Geschichte <ArrowRight size={16}/></SmartLink><SmartLink href="/demowelten">Designbeispiele <ArrowRight size={16}/></SmartLink><SmartLink href="/qualitaet">Qualitätsrahmen <ArrowRight size={16}/></SmartLink></div><div className="footer-navigation">{navigation.slice(0,4).map((group) => <div key={group.label}><span>{group.label}</span><SmartLink href={group.href}>Übersicht</SmartLink>{group.items.slice(0,3).map(([label, href]) => <SmartLink href={href} key={href}>{label}</SmartLink>)}</div>)}</div><SmartLink className="footer-contact" href="/paketfinder"><EnvelopeSimple size={24}/><span><small>Noch unsicher?</small><strong>Passende Lösung finden</strong></span><ArrowUpRight size={22}/></SmartLink></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Chelonaki</span><div>{Object.entries(legalViews).map(([key, view]) => <button key={key} type="button" onClick={() => openLegal(key)}>{view.title}</button>)}</div><a href="#top">Nach oben <ArrowUpRight size={16}/></a></div></footer>;
 }
 
+const chatSuggestions = [
+  "Welche Leistung passt zu meinem Projekt?",
+  "Was kostet eine professionelle Website?",
+  "Welche Buchpakete gibt es?",
+  "Zeig mir passende Designbeispiele.",
+];
+
+function ChatAssistant({ path }) {
+  const [open, setOpen] = useState(false);
+  const [input, setInput] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [messages, setMessages] = useState([{ role: "assistant", content: "Hallo, ich bin der Chelonaki Assistent. Ich helfe Ihnen bei Leistungen, Paketen, Preisen, Designbeispielen und der Wahl des passenden nächsten Schritts. Was möchten Sie aufbauen?" }]);
+  const logRef = useRef(null);
+
+  useEffect(() => {
+    if (open) window.setTimeout(() => logRef.current?.scrollTo({ top: logRef.current.scrollHeight, behavior: "smooth" }), 40);
+  }, [messages, open, busy]);
+
+  const submit = async (suggestion) => {
+    const content = (suggestion || input).trim();
+    if (!content || busy) return;
+    const next = [...messages, { role: "user", content }];
+    setMessages(next); setInput(""); setBusy(true);
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: next.slice(-10), language: document.documentElement.lang || "de", path }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.error || "Der Assistent ist gerade nicht erreichbar.");
+      setMessages((current) => [...current, { role: "assistant", content: data.answer }]);
+    } catch (error) {
+      setMessages((current) => [...current, { role: "assistant", content: `${error.message} Sie können alternativ direkt den Paketfinder öffnen oder eine Anfrage senden.` }]);
+    } finally { setBusy(false); }
+  };
+
+  return <aside className={`chat-assistant ${open ? "is-open" : ""}`} aria-label="Chelonaki KI-Assistent">
+    {open && <section className="chat-panel" role="dialog" aria-modal="false" aria-labelledby="chat-title">
+      <header className="chat-head">
+        <span className="chat-avatar"><img src="/assets/chelonaki-turtle-transparent.png" alt=""/></span>
+        <span><strong id="chat-title">Chelonaki Assistent</strong><small><i/> Online · KI-gestützte Orientierung</small></span>
+        <button type="button" onClick={() => setOpen(false)} aria-label="Chat schließen"><X size={22}/></button>
+      </header>
+      <div className="chat-log" ref={logRef} aria-live="polite">
+        {messages.map((message, index) => <div className={`chat-message is-${message.role}`} key={`${message.role}-${index}`}><span>{message.role === "assistant" && <Sparkle size={14}/>}</span><p>{message.content}</p></div>)}
+        {busy && <div className="chat-message is-assistant is-typing"><span><Sparkle size={14}/></span><p><i/><i/><i/></p></div>}
+      </div>
+      {messages.length === 1 && <div className="chat-suggestions">{chatSuggestions.map((label) => <button type="button" onClick={() => submit(label)} key={label}>{label}<ArrowRight size={14}/></button>)}</div>}
+      <form className="chat-compose" onSubmit={(event) => { event.preventDefault(); submit(); }}>
+        <label><span className="sr-only">Ihre Frage</span><textarea value={input} onChange={(event) => setInput(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); submit(); } }} rows="1" maxLength="1500" placeholder="Frage zu Leistungen, Preisen oder Ihrem Projekt …"/></label>
+        <button type="submit" disabled={!input.trim() || busy} aria-label="Nachricht senden"><PaperPlaneTilt size={20}/></button>
+      </form>
+      <footer>KI kann Fehler machen. Verbindliche Leistungen und Preise bestätigen wir im persönlichen Angebot.</footer>
+    </section>}
+    <button className="chat-launcher" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={open ? "Chat schließen" : "Chelonaki Assistent öffnen"}>
+      <span><img src="/assets/chelonaki-turtle-transparent.png" alt=""/></span>
+      <strong>Fragen Sie Chelonaki</strong>
+      {open ? <X size={20}/> : <ChatCircleDots size={21}/>}
+    </button>
+  </aside>;
+}
+
 function RedirectPage({ to }) {
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -407,5 +470,5 @@ export function App() {
     updateScroll(); window.addEventListener("scroll", updateScroll, { passive: true });
     return () => { observer.disconnect(); window.removeEventListener("scroll", updateScroll); cancelAnimationFrame(frame); };
   }, [path]);
-  return <><LocalTranslator path={path}/><a className="skip-link" href="#main">Zum Inhalt</a><div id="top"/><Header path={path} openMenu={() => setMenu(true)}/><MobileMenu open={menu} path={path} onClose={() => setMenu(false)}/><RouteView path={path}/><Footer openLegal={setLegal}/><LegalDialog viewKey={legal} onClose={() => setLegal(null)}/></>;
+  return <><LocalTranslator path={path}/><a className="skip-link" href="#main">Zum Inhalt</a><div id="top"/><Header path={path} openMenu={() => setMenu(true)}/><MobileMenu open={menu} path={path} onClose={() => setMenu(false)}/><RouteView path={path}/><Footer openLegal={setLegal}/><ChatAssistant path={path}/><LegalDialog viewKey={legal} onClose={() => setLegal(null)}/></>;
 }

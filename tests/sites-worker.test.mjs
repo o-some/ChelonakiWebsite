@@ -66,6 +66,23 @@ test("does not turn missing API or write requests into the app shell", async () 
   }
 });
 
+test("chat validates requests and answers safely without a hosted API key", async () => {
+  const invalid = await worker.fetch(new Request("https://example.test/api/chat", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ messages: [] }) }), {});
+  assert.equal(invalid.status, 400);
+
+  const response = await worker.fetch(new Request("https://example.test/api/chat", { method: "POST", headers: { "content-type": "application/json", origin: "https://example.test" }, body: JSON.stringify({ messages: [{ role: "user", content: "Was kostet eine Website?" }], language: "de", path: "/" }) }), {});
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type"), /application\/json/);
+  const payload = await response.json();
+  assert.equal(payload.mode, "guided");
+  assert.match(payload.answer, /1\.000/);
+});
+
+test("chat refuses cross-origin requests", async () => {
+  const response = await worker.fetch(new Request("https://example.test/api/chat", { method: "POST", headers: { "content-type": "application/json", origin: "https://attacker.test" }, body: JSON.stringify({ messages: [{ role: "user", content: "Hallo" }] }) }), {});
+  assert.equal(response.status, 429);
+});
+
 test("emits the files required by Sites packaging", async () => {
   await access(new URL("../dist/client/index.html", import.meta.url));
   await access(new URL("../dist/server/index.js", import.meta.url));
