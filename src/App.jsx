@@ -271,23 +271,45 @@ function AcademyPage() {
 
 function LabPage() {
   const [saved, setSaved] = useState(() => { try { return JSON.parse(localStorage.getItem("chelonaki-lab") || "[]"); } catch { return []; } });
-  const [category, setCategory] = useState("Alle");
+  const [category, setCategory] = useState(null);
   const [visible, setVisible] = useState(8);
   const [detail, setDetail] = useState(null);
   const [bookPackage, setBookPackage] = useState("Authority Book · 3.000 €");
+  const galleryRef = useRef(null);
   const toggle = (title) => setSaved((current) => { const next = current.includes(title) ? current.filter((item) => item !== title) : [...current, title]; localStorage.setItem("chelonaki-lab", JSON.stringify(next)); return next; });
-  const categories = ["Alle", "Bücher", "Webseiten", "Apps", "Content", "Lernwelten", "Systeme", "Originals"];
-  const filtered = category === "Alle" ? labEntries : labEntries.filter((entry) => entry.category === category);
+  const categories = [
+    ["Bücher", "Buchdesigns", "Cover, Inhaltsseiten, Kapitel, Rezepte und Editorialsysteme"],
+    ["Webseiten", "Webseitendesigns", "Aufbau, Bildsprache, Typografie und Nutzerführung"],
+    ["Apps", "App-Designs", "Navigation, Dashboards und digitale Produktoberflächen"],
+    ["Content", "Content-Designs", "Social Media, Karussells, Kurzvideos und Anzeigen"],
+    ["Lernwelten", "Lernwelten", "Kurse, Module, Fortschritt und Arbeitsmaterialien"],
+    ["Systeme", "Ablaufdesigns", "Telefonassistenten, Beratung und Prozessdarstellung"],
+    ["Originals", "Originals-Präsentationen", "Eigene Apps, Bücher und Produktwelten"],
+  ];
+  const filtered = category ? labEntries.filter((entry) => entry.category === category) : [];
   const shown = filtered.slice(0, visible);
-  const chooseCategory = (next) => { setCategory(next); setVisible(8); };
+  const chooseCategory = (next) => {
+    setCategory(next);
+    setVisible(8);
+    requestAnimationFrame(() => requestAnimationFrame(() => galleryRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })));
+  };
+  useEffect(() => {
+    if (!detail) return undefined;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const close = (event) => { if (event.key === "Escape") setDetail(null); };
+    document.addEventListener("keydown", close);
+    return () => { document.body.style.overflow = previous; document.removeEventListener("keydown", close); };
+  }, [detail]);
   return <main id="main">
-    <section className="lab-hero"><div><span>Chelonaki Designbibliothek</span><h1>Eine Richtung wählen.<br/>Etwas Eigenes daraus machen.</h1><p>Entdecken Sie zuerst Buchdesigns und danach Vorlagen für Websites, Apps, Content und digitale Systeme. Sie wählen die Richtung – wir entwickeln daraus ein eigenständiges Ergebnis für Ihr Thema und Ihre Marke.</p><div className="page-hero-actions"><a className="button button-gold" href="#lab-demos">Designvorlagen ansehen <ArrowRight size={18}/></a><SmartLink className="text-link text-link-light" href="/paketfinder">Passende Leistung finden <ArrowRight size={18}/></SmartLink></div></div><div className="lab-hero-side"><figure><img src="/assets/book-designs/design-3.png" alt="Mediterrane Buchdesignvorlage Olive und Coal mit Cover, Rezept- und Inhaltsseiten" width="1536" height="1024"/></figure><aside><strong>{String(saved.length).padStart(2, "0")}</strong><span>Vorlagen in Ihrer Auswahl</span><p>Merken Sie mehrere Richtungen. Im Gespräch verbinden wir die passenden Merkmale zu Ihrem individuellen Design.</p></aside></div></section>
+    <section className="lab-hero is-simple"><div><span>Chelonaki Designbibliothek</span><h1>Design entdecken.<br/>Eigenständig weiterentwickeln.</h1><p>Wählen Sie zuerst den Bereich, für den Sie eine visuelle Richtung suchen. Danach können Sie einzelne Vorlagen öffnen, vergleichen und für Ihr Projekt merken.</p><div className="page-hero-actions"><a className="button button-gold" href="#lab-demos">Bereich auswählen <ArrowRight size={18}/></a><SmartLink className="text-link text-link-light" href="/paketfinder">Passende Leistung finden <ArrowRight size={18}/></SmartLink></div></div></section>
     <section className="lab-how"><header><span>So funktioniert die Auswahl</span><h2>Inspiration ohne Baukasten-Look.</h2></header><ol><li><strong>01</strong><h3>Filtern & ansehen</h3><p>Vergleichen Sie Stile nach Buch, Website, App oder Anwendungsbereich.</p></li><li><strong>02</strong><h3>Details & Preis</h3><p>Öffnen Sie eine Vorlage, wählen Sie den gewünschten Projektumfang und merken Sie Ihren Favoriten.</p></li><li><strong>03</strong><h3>Individualisieren</h3><p>Farben, Texte, Inhalte und Details werden für Ihr Projekt eigenständig entwickelt.</p></li></ol></section>
-    <section className="lab-grid-section" id="lab-demos"><header><span>Kuratierte Designvorlagen</span><h2>Bücher zuerst. Danach alles Weitere.</h2><p>Die ersten fünf Buchwelten stammen aus unserer aktuellen Designbibliothek. Jede Vorlage zeigt eine mögliche Richtung – Ihr fertiges Buch erhält eigene Texte, Bilder, Farben und Inhalte.</p></header>
-      <nav className="lab-filters" aria-label="Designvorlagen filtern">{categories.map((item) => <button type="button" aria-pressed={category === item} onClick={() => chooseCategory(item)} key={item}>{item}</button>)}</nav>
-      <div className="lab-results-head"><span>{shown.length} von {filtered.length} Vorlagen</span><small>Weitere Vorlagen werden beim Nachladen ergänzt.</small></div>
-      <div className="lab-grid">{shown.map((entry, i) => <article key={entry.title}><button className="lab-image-button" type="button" onClick={() => setDetail(entry)} aria-label={`Details zu ${entry.title} öffnen`}><img src={entry.image} alt={entry.category === "Bücher" ? `Mehrseitige Buchdesignvorlage ${entry.title}` : ""} loading="lazy" width="1536" height="1024"/><span>Design ansehen <ArrowUpRight size={16}/></span></button><div className="lab-card-meta"><span>{entry.status}</span><small>{entry.area}</small></div><strong>{String(i + 1).padStart(2, "0")}</strong><h3>{entry.title}</h3><p>{entry.text}</p><div><button type="button" className="lab-detail-link" onClick={() => setDetail(entry)}>Mehr erfahren <ArrowUpRight size={17}/></button><button type="button" aria-pressed={saved.includes(entry.title)} onClick={() => toggle(entry.title)}>{saved.includes(entry.title) ? "Ausgewählt" : "Als Vorlage merken"}</button></div></article>)}</div>
-      {visible < filtered.length && <div className="lab-load-more"><button type="button" onClick={() => setVisible((value) => value + 6)}>Weitere Designs anzeigen <ArrowRight size={17}/></button><span>Noch {filtered.length - visible} verfügbar</span></div>}
+    <section className="lab-grid-section" id="lab-demos"><header><span>Kuratierte Designvorlagen</span><h2>Welchen Bereich möchten Sie gestalten?</h2><p>Öffnen Sie eine Kategorie, um die verfügbaren Designrichtungen zu sehen. Jede Vorlage dient als Ausgangspunkt und wird für Ihr Projekt individuell angepasst.</p></header>
+      <div className="design-category-grid">{categories.map(([value, label, description]) => <button type="button" className={category === value ? "is-active" : ""} aria-pressed={category === value} onClick={() => chooseCategory(value)} key={value}><span>{label}</span><p>{description}</p><small>{labEntries.filter((entry) => entry.category === value).length} {labEntries.filter((entry) => entry.category === value).length === 1 ? "Vorlage" : "Vorlagen"}</small><ArrowRight size={19}/></button>)}</div>
+      {category && <div className="lab-gallery" ref={galleryRef}><div className="lab-gallery-head"><div><span>Ausgewählter Bereich</span><h3>{categories.find(([value]) => value === category)?.[1]}</h3></div><button type="button" onClick={() => setCategory(null)}>Andere Kategorie wählen</button></div>
+      <div className="lab-results-head"><span>{shown.length} von {filtered.length} Vorlagen sichtbar</span><small>Neue Vorlagen können laufend ergänzt werden.</small></div>
+      <div className="lab-grid">{shown.map((entry) => <article key={entry.title}><button className="lab-image-button" type="button" onClick={() => setDetail(entry)} aria-label={`Details zu ${entry.title} öffnen`}><img src={entry.image} alt={entry.category === "Bücher" ? `Mehrseitige Buchdesignvorlage ${entry.title}` : ""} loading="lazy" width="1536" height="1024"/><span>Design ansehen <ArrowUpRight size={16}/></span></button><div className="lab-card-meta"><span>{entry.status}</span><small>{entry.area}</small></div><h3>{entry.title}</h3><p>{entry.text}</p><div><button type="button" className="lab-detail-link" onClick={() => setDetail(entry)}>Mehr erfahren <ArrowUpRight size={17}/></button><button type="button" aria-pressed={saved.includes(entry.title)} onClick={() => toggle(entry.title)}>{saved.includes(entry.title) ? "Ausgewählt" : "Als Vorlage merken"}</button></div></article>)}</div>
+      {visible < filtered.length && <div className="lab-load-more"><button type="button" onClick={() => setVisible((value) => value + 6)}>Weitere Designs anzeigen <ArrowRight size={17}/></button><span>Noch {filtered.length - visible} verfügbar</span></div>}</div>}
     </section>
     <section className="lab-transfer"><div><span>Ihre Designauswahl</span><h2>Welche Richtung passt zu Ihrer Idee?</h2><p>{saved.length ? `${saved.length} Beispiel${saved.length === 1 ? " ist" : "e sind"} ausgewählt. Nutzen Sie den Paketfinder oder nennen Sie uns Ihre Auswahl im Erstgespräch.` : "Merken Sie passende Beispiele. Danach können Sie die richtige Leistung finden oder Ihre bevorzugte Richtung direkt mit uns besprechen."}</p></div><SmartLink className="button button-gold" href="/paketfinder">Mit Auswahl weiter <ArrowRight size={18}/></SmartLink></section>
     {detail && <div className="design-detail-backdrop" role="presentation" onMouseDown={() => setDetail(null)}><section className="design-detail" role="dialog" aria-modal="true" aria-labelledby="design-detail-title" onMouseDown={(event) => event.stopPropagation()}><button className="design-detail-close" type="button" onClick={() => setDetail(null)} aria-label="Detailansicht schließen"><X size={22}/></button><figure><img src={detail.image} alt={`Designansicht ${detail.title}`} width="1536" height="1024"/></figure><div className="design-detail-copy"><span>{detail.area}</span><h2 id="design-detail-title">{detail.title}</h2><p>{detail.details || detail.text}</p>{detail.category === "Bücher" ? <><div className="design-package-choice"><label htmlFor="book-package">Gewünschter Buchumfang</label><select id="book-package" value={bookPackage} onChange={(event) => setBookPackage(event.target.value)}><option>Book Starter · ab 1.000 €</option><option>Authority Book · 3.000 €</option><option>Premium Research Book · 6.000 €</option><option>Individuelles Buchprojekt · auf Anfrage</option></select><small>Die Vorlage bestimmt die Designrichtung. Seitenzahl, Recherche, Ghostwriting, Lektorat, Bilder und Druck richten sich nach dem gewählten Paket und dem verbindlichen Angebot.</small></div><SmartLink className="button button-gold" href={`/kontakt?bereich=${encodeURIComponent(`${detail.title} · ${bookPackage}`)}`}>Design & Paket anfragen <ArrowRight size={18}/></SmartLink></> : <SmartLink className="button button-gold" href={detail.href}>Passenden Bereich öffnen <ArrowRight size={18}/></SmartLink>}<button type="button" className="design-save" aria-pressed={saved.includes(detail.title)} onClick={() => toggle(detail.title)}>{saved.includes(detail.title) ? "Aus Auswahl entfernen" : "Als Vorlage merken"}</button></div></section></div>}
@@ -370,6 +392,7 @@ function RouteView({ path }) {
 export function App() {
   const [path, setPath] = useState(window.location.pathname.replace(/\/$/, "") || "/"); const [menu, setMenu] = useState(false); const [legal, setLegal] = useState(null);
   useEffect(() => { const update = () => setPath(window.location.pathname.replace(/\/$/, "") || "/"); window.addEventListener("popstate", update); return () => window.removeEventListener("popstate", update); }, []);
+  useLayoutEffect(() => { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); }, [path]);
   useEffect(() => { document.title = path === "/" ? "Chelonaki | Wisdom wears a shell" : `Chelonaki | ${path.split("/").filter(Boolean).pop()?.replaceAll("-", " ") || "Studio"}`; }, [path]);
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
