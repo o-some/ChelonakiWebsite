@@ -51,11 +51,11 @@ const finderGoals = [
 
 const languageOptions = [
   ["de", "Deutsch", "DE"], ["en", "English", "EN"], ["el", "Ελληνικά", "ΕΛ"], ["fr", "Français", "FR"], ["es", "Español", "ES"],
-  ["tr", "Türkçe", "TR"], ["pl", "Polski", "PL"], ["nl", "Nederlands", "NL"], ["it", "Italiano", "IT"], ["pt", "Português", "PT"], ["ar", "العربية", "AR"],
+  ["tr", "Türkçe", "TR"], ["pl", "Polski", "PL"], ["nl", "Nederlands", "NL"], ["it", "Italiano", "IT"], ["pt", "Português", "PT"], ["ru", "Русский", "RU"], ["ar", "العربية", "AR"],
 ];
 const languageUi = {
   de: ["Sprache", "Sprache auswählen"], en: ["Language", "Choose language"], el: ["Γλώσσα", "Επιλογή γλώσσας"], fr: ["Langue", "Choisir la langue"], es: ["Idioma", "Elegir idioma"],
-  tr: ["Dil", "Dil seçin"], pl: ["Język", "Wybierz język"], nl: ["Taal", "Kies taal"], it: ["Lingua", "Scegli la lingua"], pt: ["Idioma", "Escolher idioma"], ar: ["اللغة", "اختر اللغة"],
+  tr: ["Dil", "Dil seçin"], pl: ["Język", "Wybierz język"], nl: ["Taal", "Kies taal"], it: ["Lingua", "Scegli la lingua"], pt: ["Idioma", "Escolher idioma"], ru: ["Язык", "Выберите язык"], ar: ["اللغة", "اختر اللغة"],
 };
 const translatedTextNodes = new WeakMap();
 const translatedAttributeNodes = new WeakMap();

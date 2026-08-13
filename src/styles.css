@@ -2660,6 +2660,7 @@ img {
   html[lang="nl"] .language-options::before { content:"Kies taal"; }
   html[lang="it"] .language-options::before { content:"Scegli la lingua"; }
   html[lang="pt"] .language-options::before { content:"Escolher idioma"; }
+  html[lang="ru"] .language-options::before { content:"Выберите язык"; }
   html[lang="ar"] .language-options::before { content:"اختر اللغة"; }
   .language-options button { width:100%; min-height:46px; padding:0 12px; display:grid; grid-template-columns:1fr auto 16px; align-items:center; gap:10px; border:0; border-top:1px solid rgba(15,35,52,.09); color:var(--ink); background:transparent; text-align:left; cursor:pointer; }
   .language-options button:hover,.language-options button.is-active { color:#8c5e1e; background:rgba(196,151,76,.09); }

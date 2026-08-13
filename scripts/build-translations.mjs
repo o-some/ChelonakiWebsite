@@ -28,7 +28,7 @@ for (const file of sourceFiles) {
 }
 
 const originals = [...values].sort((a, b) => b.length - a.length);
-const languages = ["en", "el", "fr", "es", "tr", "pl", "nl", "it", "pt", "ar"];
+const languages = ["en", "el", "fr", "es", "tr", "pl", "nl", "it", "pt", "ru", "ar"];
 const dictionaries = {};
 const sentinel = "__CHELONAKI_SPLIT_7F3A__";
 let existingDictionaries = {};
@@ -176,6 +176,18 @@ const terminology = {
     "Demowelten": "Demonstrações",
     "Über uns": "Sobre nós"
   },
+  ru: {
+    "Web, Apps & Publikationen": "Сайты, приложения и издания",
+    "Medien & KI": "Медиа и ИИ",
+    "KI-Beratung & Weiterbildung": "Консалтинг и обучение по ИИ",
+    "KI Content & Social Media": "ИИ-контент и социальные сети",
+    "KI Ads für Meta & Google": "ИИ-реклама для Meta и Google",
+    "KI-Telefonassistenten": "Телефонные ИИ-ассистенты",
+    "KI-Antworten für Social Media": "ИИ-ответы для социальных сетей",
+    "KI-GESTÜTZTES INNOVATIONSSTUDIO": "ИННОВАЦИОННАЯ СТУДИЯ НА БАЗЕ ИИ",
+    "Demowelten": "Демо-миры",
+    "Über uns": "О нас"
+  },
   ar: {
     "Web, Apps & Publikationen": "الويب والتطبيقات والنشر",
     "Medien & KI": "الإعلام والذكاء الاصطناعي",
@@ -191,7 +203,7 @@ const terminology = {
 };
 
 for (const language of languages) {
-  const abbreviation = { el: "ΤΝ", fr: "IA", es: "IA", tr: "YZ", it: "IA", pt: "IA", ar: "الذكاء الاصطناعي" }[language];
+  const abbreviation = { el: "ΤΝ", fr: "IA", es: "IA", tr: "YZ", it: "IA", pt: "IA", ru: "ИИ", ar: "الذكاء الاصطناعي" }[language];
   if (abbreviation) {
     for (const [source, translated] of Object.entries(dictionaries[language])) {
       dictionaries[language][source] = translated.replace(/\bAI\b/g, abbreviation);
