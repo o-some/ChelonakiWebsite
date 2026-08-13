@@ -1,67 +1,74 @@
 export const navigation = [
   {
-    label: "Digital",
-    href: "/digital",
+    label: "Web, Apps & Publikationen",
+    href: "/web-apps-publikationen",
     items: [
-      ["Websites erstellen lassen", "/digital/websites-erstellen-lassen"],
-      ["Buchproduktion & Ghostwriting", "/digital/buchproduktion-ghostwriting"],
-      ["Content & Social-Media-Beiträge", "/digital/social-media-content"],
-      ["KI-Telefonassistenten", "/digital/ki-telefonassistenten"],
-      ["KI-Werbung für Meta & Google", "/digital/ki-werbung-meta-google"],
-      ["Apps & Software", "/digital/apps-software"],
+      ["Websites erstellen lassen", "/web-apps-publikationen/websites-erstellen-lassen"],
+      ["Apps entwickeln lassen", "/web-apps-publikationen/apps-entwickeln-lassen"],
+      ["Bücher erstellen lassen", "/web-apps-publikationen/buecher-erstellen-lassen"],
+      ["Ghostwriting", "/web-apps-publikationen/ghostwriting"],
     ],
   },
   {
-    label: "Expertise",
-    href: "/expertise",
+    label: "Medien & AI",
+    href: "/medien-ai",
     items: [
-      ["KI-Schulungen & Consulting", "/expertise/ki-schulungen-consulting"],
-      ["Chelonaki Academy", "/expertise/academy"],
-      ["Ernährungsberatung", "/expertise/ernaehrungsberatung"],
+      ["Social Media & Content", "/medien-ai/social-media"],
+      ["Ads für Meta & Google", "/medien-ai/ads"],
+      ["KI-Telefonassistenten", "/medien-ai/ki-telefon"],
+      ["KI-Automatisierungen", "/medien-ai/automatisierungen"],
     ],
   },
   {
-    label: "Originals",
-    href: "/originals",
+    label: "Beratung & Schulung",
+    href: "/beratung-schulung",
     items: [
-      ["Eigene Bücher", "/originals/buecher"],
-      ["Eigene Apps", "/originals/apps"],
-      ["Weitere digitale Produkte", "/originals/digitale-produkte"],
+      ["KI-Consulting", "/beratung-schulung/ki-consulting"],
+      ["KI-Schulungen", "/beratung-schulung/ki-schulungen"],
+      ["Ernährungsberatung", "/beratung-schulung/ernaehrungsberatung"],
+      ["Workshops", "/beratung-schulung/workshops"],
+      ["Chelonaki Academy", "/beratung-schulung/academy"],
     ],
   },
+  { label: "Originals", href: "/originals", items: [["Eigene Apps", "/originals/apps"], ["Eigene Bücher", "/originals/buecher"], ["Digitale Produkte", "/originals/digitale-produkte"]] },
+  { label: "Demowelten", href: "/demowelten", items: [] },
+  { label: "Über uns", href: "/ueber-uns", items: [] },
 ];
 
 export const worlds = [
   {
     number: "01",
     eyebrow: "Für Unternehmen & eigene Projekte",
-    title: "Chelonaki Digital",
+    title: "Web, Apps & Publikationen",
     text: "Digitale Lösungen für Unternehmen, künftige Gründer und Menschen mit einer eigenen Idee.",
-    detail: "Websites, Bücher, Content, Telefonassistenten, Ads und Apps",
-    href: "/digital",
-    cta: "Digital entdecken",
+    detail: "Websites · Apps · Bücher · Ghostwriting",
+    href: "/web-apps-publikationen",
+    cta: "Bereich entdecken",
     tone: "digital",
   },
   {
     number: "02",
     eyebrow: "Wissen in Anwendung",
-    title: "Chelonaki Expertise",
+    title: "Medien & AI",
     text: "Künstliche Intelligenz trifft auf Beratung, Ernährungswissenschaft und echte Praxiserfahrung.",
-    detail: "KI-Schulungen, Consulting, Academy und Ernährungsberatung",
-    href: "/expertise",
-    cta: "Expertise entdecken",
+    detail: "Social Media · Ads · KI-Telefon · Automatisierungen",
+    href: "/medien-ai",
+    cta: "Bereich entdecken",
     tone: "expertise",
   },
   {
     number: "03",
     eyebrow: "Eigene Ideenwelten",
-    title: "Chelonaki Originals",
-    text: "Eigene Bücher, Apps und digitale Produkte mit Haltung, Gestaltung und langfristiger Vision.",
-    detail: "Bücher, Apps und weitere digitale Produkte",
-    href: "/originals",
-    cta: "Originals entdecken",
-    tone: "originals",
+    title: "Beratung & Schulung",
+    text: "Fachwissen, das Teams und Menschen konkret in die Anwendung bringt.",
+    detail: "KI-Consulting · Schulungen · Ernährung · Workshops",
+    href: "/beratung-schulung",
+    cta: "Bereich entdecken",
+    tone: "expertise",
   },
+  { number: "04", eyebrow: "Eigene Produktwelten", title: "Originals", text: "Eigene Apps, Bücher und digitale Produkte aus dem Chelonaki-Ökosystem.", detail: "Eigene Apps · Bücher · digitale Produkte", href: "/originals", cta: "Originals entdecken", tone: "originals" },
+  { number: "05", eyebrow: "Erleben statt nur lesen", title: "Demowelten", text: "Demos, Prototypen und Experimente, die Ideen vor einer Entscheidung greifbar machen.", detail: "Demos · Prototypen · Experimente", href: "/demowelten", cta: "Demowelten öffnen", tone: "digital" },
+  { number: "06", eyebrow: "Herkunft & Haltung", title: "Über uns", text: "Die Familiengeschichte, Kompetenz und Werte hinter Chelonaki.", detail: "Eleftherios · Familie · Qualität", href: "/ueber-uns", cta: "Geschichte kennenlernen", tone: "expertise" },
 ];
 
 export const hubData = {
@@ -119,6 +126,28 @@ export const hubData = {
 };
 
 const b2bNote = "Die dargestellten Paketpreise verstehen sich netto zuzüglich der gesetzlichen Umsatzsteuer und richten sich an Unternehmer im Sinne des § 14 BGB. Private Projekte sind ausdrücklich willkommen und erhalten vor Beauftragung ein gesondertes Angebot mit korrekt ausgewiesenem Gesamtpreis.";
+
+hubData.web = {
+  label: "Für Unternehmen",
+  title: "Websites, Apps und Publikationen, die ein klares Ergebnis liefern.",
+  intro: "Von der ersten Struktur bis zur veröffentlichungsfähigen Lösung verbinden wir Strategie, Gestaltung, Technik und kontrollierte KI-Unterstützung.",
+  image: "/assets/project-digital-brand.png", cta: "Projekt anfragen",
+  cards: navigation[0].items.map(([title, href], index) => ({ title, href, text: ["Shopify-Websites und Shops mit klarer Nutzerführung.", "Apps für iOS, Android und Web aus einer belastbaren Basis.", "Konzept, Text, Design und veröffentlichungsfähige Buchdateien.", "Professionelles Ghostwriting mit klarer Stimme und menschlicher Freigabe."][index] })),
+};
+hubData.media = {
+  label: "Für Unternehmen",
+  title: "Medien und AI, die Sichtbarkeit und Abläufe planbarer machen.",
+  intro: "Content, Werbung, Telefonie und Automatisierungen werden als zusammenhängende Systeme entwickelt – mit transparenten Grenzen und Freigaben.",
+  image: "/assets/hero-architecture.png", cta: "Medien- oder AI-Projekt anfragen",
+  cards: navigation[1].items.map(([title, href], index) => ({ title, href, text: ["Planbare Inhalte in einer konsistenten Markenwelt.", "Kampagnen, Creatives, Tracking und Optimierung.", "Anfragen aufnehmen, Fragen beantworten und Termine koordinieren.", "Wiederkehrende Abläufe verbinden und kontrolliert automatisieren."][index] })),
+};
+hubData.advice = {
+  label: "Für Unternehmen",
+  title: "Beratung und Schulung, die Wissen in sichere Anwendung übersetzt.",
+  intro: "KI-Kompetenz, Ernährungswissenschaft und Praxiserfahrung werden zu verständlichen Entscheidungen, Formaten und Lernwegen.",
+  image: "/assets/chapter-architecture.webp", cta: "Erstgespräch buchen",
+  cards: navigation[2].items.map(([title, href], index) => ({ title, href, text: ["Anwendungsfälle priorisieren und eine realistische Roadmap entwickeln.", "Teams verständlich, praxisnah und verantwortungsvoll befähigen.", "Getrennte Angebote für Unternehmen und Privatpersonen.", "Konkrete Arbeitsformate für KI, Prozesse und Ernährung.", "Strukturierte digitale Lernangebote für KI und Ernährung."][index] })),
+};
 
 export const services = {
   "/digital/websites-erstellen-lassen": {
@@ -253,5 +282,17 @@ export const services = {
     inquiryCta: "Individuelles Buchprojekt anfragen",
   },
 };
+
+services["/web-apps-publikationen/websites-erstellen-lassen"] = services["/digital/websites-erstellen-lassen"];
+services["/web-apps-publikationen/apps-entwickeln-lassen"] = services["/digital/apps-software"];
+services["/web-apps-publikationen/buecher-erstellen-lassen"] = services["/digital/buchproduktion-ghostwriting"];
+services["/web-apps-publikationen/ghostwriting"] = { ...services["/digital/buchproduktion-ghostwriting"], title: "Ghostwriting, das Ihr Wissen nach Ihnen klingen lässt.", intro: "Wir entwickeln Positionierung, Struktur und Manuskript in enger Abstimmung – diskret, nachvollziehbar und veröffentlichungsfertig." };
+services["/medien-ai/social-media"] = services["/digital/social-media-content"];
+services["/medien-ai/ads"] = services["/digital/ki-werbung-meta-google"];
+services["/medien-ai/ki-telefon"] = services["/digital/ki-telefonassistenten"];
+services["/medien-ai/automatisierungen"] = { ...services["/digital/apps-software"], title: "KI-Automatisierungen für wiederkehrende Abläufe.", intro: "Wir verbinden Formulare, E-Mail, CRM, Shopify und interne Werkzeuge zu kontrollierten Workflows mit klaren Freigaben.", problem: "Manuelle Übergaben, doppelte Datenpflege und verstreute Werkzeuge kosten Zeit und erzeugen Fehler.", solution: ["Prozessaufnahme und Automations-Check", "Trigger, Aktionen und menschliche Freigaben", "API-, CRM-, Shopify- und Formular-Verbindungen", "Tests, Fehlerwege, Dokumentation und Übergabe"], pricing: [{ name: "Automations-Check", price: "ab 149 €", meta: "Prozess prüfen · Potenzial und Risiken einordnen", featured: true }, { name: "Individueller Workflow", price: "auf Anfrage", meta: "Umfang nach Systemen, Daten und Schnittstellen" }], bookingCta: "Automatisierungsweg auswählen" };
+services["/beratung-schulung/ki-consulting"] = services["/expertise/ki-schulungen-consulting"];
+services["/beratung-schulung/ki-schulungen"] = { ...services["/expertise/ki-schulungen-consulting"], title: "KI-Schulungen, die Teams wirklich anwenden können.", intro: "Praxisnahe Formate für reale Arbeitsabläufe – verständlich, sicher und ohne Tool-Show." };
+services["/beratung-schulung/workshops"] = { ...services["/expertise/ki-schulungen-consulting"], title: "Workshops für KI, Automatisierung und Ernährung.", intro: "Gemeinsam bearbeiten wir konkrete Fragestellungen und enden mit einem nutzbaren Ergebnis statt einer allgemeinen Präsentation." };
 
 export { b2bNote };
