@@ -20,14 +20,12 @@ export const navigation = [
     ],
   },
   {
-    label: "Beratung & Schulung",
-    href: "/beratung-schulung",
+    label: "KI-Beratung & Weiterbildung",
+    href: "/ki-beratung-weiterbildung",
     items: [
-      ["KI-Consulting", "/beratung-schulung/ki-consulting"],
-      ["KI-Schulungen", "/beratung-schulung/ki-schulungen"],
-      ["Ernährungsberatung", "/beratung-schulung/ernaehrungsberatung"],
-      ["Workshops", "/beratung-schulung/workshops"],
-      ["Chelonaki Academy", "/beratung-schulung/academy"],
+      ["KI-Beratung für Unternehmen", "/ki-beratung-weiterbildung/ki-beratung-unternehmen"],
+      ["KI-Schulungen & Workshops für Mitarbeiter", "/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter"],
+      ["Chelonaki Video Academy", "/ki-beratung-weiterbildung/video-academy"],
     ],
   },
   { label: "Originals", href: "/originals", items: [["Eigene Apps", "/originals/apps"], ["Eigene Bücher", "/originals/buecher"], ["Digitale Produkte", "/originals/digitale-produkte"]] },
@@ -59,10 +57,10 @@ export const worlds = [
   {
     number: "03",
     eyebrow: "Eigene Ideenwelten",
-    title: "Beratung & Schulung",
-    text: "Fachwissen, das Teams und Menschen konkret in die Anwendung bringt.",
-    detail: "KI-Consulting · Schulungen · Ernährung · Workshops",
-    href: "/beratung-schulung",
+    title: "KI-Beratung & Weiterbildung",
+    text: "Strategie für Unternehmen, praxisnahe Qualifizierung für Mitarbeiter und flexible Videokurse.",
+    detail: "KI-Beratung · Mitarbeiterschulungen · Video Academy",
+    href: "/ki-beratung-weiterbildung",
     cta: "Bereich entdecken",
     tone: "expertise",
   },
@@ -143,10 +141,10 @@ hubData.media = {
 };
 hubData.advice = {
   label: "Für Unternehmen",
-  title: "Beratung und Schulung, die Wissen in sichere Anwendung übersetzt.",
-  intro: "KI-Kompetenz, Ernährungswissenschaft und Praxiserfahrung werden zu verständlichen Entscheidungen, Formaten und Lernwegen.",
+  title: "Der passende Weg von der KI-Strategie zur sicheren Anwendung.",
+  intro: "Wir beraten Entscheider, qualifizieren Mitarbeiter in realen Arbeitsabläufen und stellen Wissen über die Chelonaki Video Academy flexibel bereit.",
   image: "/assets/chapter-architecture.webp", cta: "Erstgespräch buchen",
-  cards: navigation[2].items.map(([title, href], index) => ({ title, href, text: ["Anwendungsfälle priorisieren und eine realistische Roadmap entwickeln.", "Teams verständlich, praxisnah und verantwortungsvoll befähigen.", "Getrennte Angebote für Unternehmen und Privatpersonen.", "Konkrete Arbeitsformate für KI, Prozesse und Ernährung.", "Strukturierte digitale Lernangebote für KI und Ernährung."][index] })),
+  cards: navigation[2].items.map(([title, href], index) => ({ title, href, text: ["Geschäftsprozesse analysieren, Anwendungsfälle priorisieren und eine realistische Roadmap entwickeln.", "Mitarbeiter in praxisnahen Schulungen und Workshops für ihre konkreten Aufgaben befähigen.", "KI-Wissen flexibel über strukturierte Videokurse und Arbeitsmaterialien aufbauen."][index] })),
 };
 
 export const services = {
@@ -306,8 +304,7 @@ services["/medien-ai/chelonaki-reply"] = {
   cta: "Zugang vormerken", bookingCta: "Reply-Tarif auswählen", inquiryCta: "Chelonaki Reply testen",
   insight: { label: "Mensch bleibt am Steuer", title: "Schneller antworten, ohne Kontrolle abzugeben.", text: "Reply schlägt Formulierungen vor, trifft aber keine autonome Kommunikationsentscheidung. Im MVP prüfen, bearbeiten und versenden Sie jede Nachricht selbst.", points: ["Kein automatisches Senden", "Vorschläge bleiben editierbar", "Markenstimme als Leitplanke", "Transparente Entwicklungsstufe"] },
 };
-services["/beratung-schulung/ki-consulting"] = services["/expertise/ki-schulungen-consulting"];
-services["/beratung-schulung/ki-schulungen"] = { ...services["/expertise/ki-schulungen-consulting"], title: "KI-Schulungen, die Teams wirklich anwenden können.", intro: "Praxisnahe Formate für reale Arbeitsabläufe – verständlich, sicher und ohne Tool-Show." };
-services["/beratung-schulung/workshops"] = { ...services["/expertise/ki-schulungen-consulting"], title: "Workshops für KI, Automatisierung und Ernährung.", intro: "Gemeinsam bearbeiten wir konkrete Fragestellungen und enden mit einem nutzbaren Ergebnis statt einer allgemeinen Präsentation." };
+services["/ki-beratung-weiterbildung/ki-beratung-unternehmen"] = { ...services["/expertise/ki-schulungen-consulting"], area: "KI-Beratung & Weiterbildung", title: "KI-Beratung für Unternehmen – vom Potenzial zur klaren Roadmap.", intro: "Wir analysieren Prozesse, bewerten sinnvolle KI-Anwendungsfälle und entwickeln einen realistischen Umsetzungsplan für Ihr Unternehmen.", problem: "Viele Unternehmen testen einzelne KI-Werkzeuge, ohne Prioritäten, Verantwortlichkeiten und einen belastbaren Einführungsplan festzulegen.", solution: ["Prozess- und Potenzialanalyse", "Priorisierte KI-Anwendungsfälle", "Werkzeug-, Daten- und Risikobewertung", "Roadmap mit nächsten Umsetzungsschritten"], pricing: [{ name: "Strategieberatung", price: "ab 149 €/Std.", meta: "fokussierte Fragestellung und Handlungsempfehlung" }, { name: "KI-Consulting-Tag", price: "1.490 €", meta: "Prozessanalyse · Priorisierung · Umsetzungsplan", featured: true }, { name: "AI Transformation Sprint", price: "ab 3.990 €", meta: "vertiefte Analyse · Roadmap · Umsetzungsbegleitung" }], bookingCta: "Beratungsformat auswählen", cta: "KI-Beratung anfragen", inquiryCta: "Unternehmensberatung besprechen" };
+services["/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter"] = { ...services["/expertise/ki-schulungen-consulting"], area: "KI-Beratung & Weiterbildung", title: "KI-Schulungen & Workshops für Mitarbeiter.", intro: "Wir befähigen Teams, KI in ihren konkreten Arbeitsabläufen sicher, effizient und verantwortungsvoll einzusetzen.", problem: "Allgemeine Tool-Vorträge verändern den Arbeitsalltag nicht. Mitarbeiter brauchen verständliche Übungen, klare Regeln und Beispiele aus ihren eigenen Aufgaben.", solution: ["Praxisnahe KI-Grundlagen", "Übungen mit realen Arbeitsabläufen", "Prompting, Qualitätskontrolle und Datenschutz", "Gemeinsam entwickelte Vorlagen und Workflows"], pricing: [{ name: "KI-Schulung", price: "1.290 €", meta: "1 Tag · Grundlagen · Übungen · Transfer" }, { name: "KI-Intensivworkshop", price: "2.290 €", meta: "2 Tage · Prozesse · Übungen · gemeinsamer Fahrplan", featured: true }, { name: "Individuelles Teamprogramm", price: "auf Anfrage", meta: "mehrere Teams · Module · begleiteter Praxistransfer" }], bookingCta: "Mitarbeiterformat auswählen", cta: "Mitarbeiterschulung anfragen", inquiryCta: "Schulung für Ihr Team planen" };
 
 export { b2bNote };
