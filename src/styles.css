@@ -3345,3 +3345,129 @@ html[lang="ar"] .audience-label { letter-spacing:0; }
   html:not([lang="de"]) .home-hero .hero-copy h1,
   html[lang="el"] .home-hero .hero-copy h1 { font-size: 42px; }
 }
+
+/* Verbindliche Mobile-Navigation: kompakt, sprachfest und klar hierarchisiert. */
+@media (max-width: 767px) {
+  .mobile-menu-shell {
+    padding: max(22px, env(safe-area-inset-top)) 22px max(28px, env(safe-area-inset-bottom));
+    gap: 18px;
+  }
+
+  .mobile-menu-head {
+    min-height: 54px;
+    padding-bottom: 4px;
+  }
+
+  .mobile-menu nav {
+    gap: 0;
+  }
+
+  .mobile-nav-group {
+    border-bottom-color: rgba(203, 181, 126, .22);
+  }
+
+  .mobile-nav-group > div:first-child {
+    grid-template-columns: minmax(0, 1fr) 44px;
+    align-items: center;
+    min-height: 66px;
+  }
+
+  .mobile-menu nav .mobile-nav-group > div:first-child > a {
+    min-width: 0;
+    padding: 17px 12px 17px 0;
+    font-family: var(--serif);
+    font-size: clamp(25px, 7vw, 31px) !important;
+    font-weight: 400;
+    line-height: 1.08 !important;
+    letter-spacing: -.015em;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: auto;
+  }
+
+  .mobile-nav-group > div:first-child > button {
+    width: 44px;
+    height: 44px;
+    justify-self: end;
+  }
+
+  .mobile-subnav {
+    display: grid !important;
+    gap: 0 !important;
+    margin: 0 0 16px 2px;
+    padding: 2px 0 2px 14px !important;
+    border-left: 1px solid rgba(185, 137, 54, .55);
+  }
+
+  .mobile-menu nav .mobile-subnav > a {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    min-height: 47px;
+    margin: 0;
+    padding: 11px 34px 11px 12px !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(203, 181, 126, .14) !important;
+    color: rgba(247, 243, 235, .86);
+    font-family: var(--sans) !important;
+    font-size: clamp(13px, 3.6vw, 15px) !important;
+    font-weight: 500;
+    line-height: 1.35 !important;
+    letter-spacing: .005em !important;
+    text-transform: none !important;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .mobile-menu nav .mobile-subnav > a::after {
+    content: "\2192";
+    position: absolute;
+    right: 9px;
+    color: var(--gold-light);
+    font-size: 15px;
+    opacity: .7;
+  }
+
+  .mobile-menu nav .mobile-subnav > a:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .mobile-menu nav .mobile-subnav > a:hover,
+  .mobile-menu nav .mobile-subnav > a:focus-visible,
+  .mobile-menu nav .mobile-subnav > a.is-active {
+    background: rgba(185, 137, 54, .1);
+    color: #fffaf0;
+  }
+
+  html[dir="rtl"] .mobile-menu nav .mobile-nav-group > div:first-child > a {
+    padding: 17px 0 17px 12px;
+  }
+
+  html[dir="rtl"] .mobile-subnav {
+    margin: 0 2px 16px 0;
+    padding: 2px 14px 2px 0 !important;
+    border-left: 0;
+    border-right: 1px solid rgba(185, 137, 54, .55);
+  }
+
+  html[dir="rtl"] .mobile-menu nav .mobile-subnav > a {
+    padding: 11px 12px 11px 34px !important;
+  }
+
+  html[dir="rtl"] .mobile-menu nav .mobile-subnav > a::after {
+    content: "\2190";
+    right: auto;
+    left: 9px;
+  }
+}
+
+@media (max-width: 390px) {
+  .mobile-menu-shell { padding-inline: 18px; }
+  .mobile-menu nav .mobile-nav-group > div:first-child > a {
+    font-size: clamp(23px, 6.9vw, 28px) !important;
+  }
+  .mobile-menu nav .mobile-subnav > a {
+    font-size: 13px !important;
+  }
+}
