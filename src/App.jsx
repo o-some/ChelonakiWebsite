@@ -1,22 +1,22 @@
 import { useEffect, useId, useRef, useState } from "react";
-import { ArrowRight, ArrowUpRight, Buildings, CaretDown, Check, EnvelopeSimple, List, LockKey, X } from "@phosphor-icons/react";
+import { ArrowRight, ArrowUpRight, Buildings, CaretDown, Check, EnvelopeSimple, GlobeHemisphereWest, List, LockKey, X } from "@phosphor-icons/react";
 import { hubData, navigation, services, worlds } from "./siteData.js";
 
 const legalViews = {
   impressum: { label: "Rechtliche Angaben", title: "Impressum", content: <><p className="legal-lead">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p><h3>Anbieter</h3><p><mark>[VOLLSTÄNDIGER NAME ODER FIRMA]</mark><br/><mark>[RECHTSFORM]</mark><br/><mark>[LADUNGSFÄHIGE ANSCHRIFT]</mark><br/>Deutschland</p><h3>Vertretung und Kontakt</h3><p>Vertreten durch: <mark>[VERTRETUNGSBERECHTIGTE PERSON]</mark><br/>Telefon: <mark>[TELEFONNUMMER]</mark><br/>E-Mail: <mark>[E-MAIL-ADRESSE]</mark></p><h3>Register und Steuern</h3><p>Registergericht und Registernummer: <mark>[FALLS ZUTREFFEND]</mark><br/>Umsatzsteuer-ID: <mark>[FALLS VORHANDEN]</mark></p><p className="legal-note">Die Betreiberangaben sind vor dem öffentlichen Geschäftsstart zu vervollständigen.</p></> },
-  datenschutz: { label: "Datensparsame Vorschau", title: "Datenschutzerklärung", content: <><p className="legal-lead">Diese Vorschau setzt keine optionalen Analyse- oder Marketing-Cookies ein. Reale Datenflüsse und Anbieter müssen vor Veröffentlichung ergänzt und geprüft werden.</p><h3>Verantwortlicher</h3><p><mark>[NAME ODER FIRMA, ANSCHRIFT UND KONTAKTDATEN]</mark></p><h3>Hosting</h3><p>Beim Aufruf können technisch erforderliche Verbindungsdaten verarbeitet werden. Anbieter, Region, Auftragsverarbeitung und Löschfrist: <mark>[ERGÄNZEN]</mark>.</p><h3>Kontaktaufnahme</h3><p>Übermittelte Angaben werden ausschließlich zur Bearbeitung der Anfrage verarbeitet. Diese Vorschau versendet noch keine Formulardaten.</p><h3>Ihre Rechte</h3><p>Nach Maßgabe der DSGVO bestehen insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch.</p></> },
+  datenschutz: { label: "Datensparsame Vorschau", title: "Datenschutzerklärung", content: <><p className="legal-lead">Diese Vorschau setzt keine optionalen Analyse- oder Marketing-Cookies ein. Reale Datenflüsse und Anbieter müssen vor Veröffentlichung ergänzt und geprüft werden.</p><h3>Verantwortlicher</h3><p><mark>[NAME ODER FIRMA, ANSCHRIFT UND KONTAKTDATEN]</mark></p><h3>Hosting</h3><p>Beim Aufruf können technisch erforderliche Verbindungsdaten verarbeitet werden. Anbieter, Region, Auftragsverarbeitung und Löschfrist: <mark>[ERGÄNZEN]</mark>.</p><h3>Sprachübersetzung</h3><p>Wenn eine andere Sprache ausgewählt wird, lädt die Website den Übersetzungsdienst Google Translate. Dabei können technisch erforderliche Verbindungsdaten und eine Spracheinstellung verarbeitet werden. Die deutsche Fassung bleibt die inhaltliche Ausgangsversion.</p><h3>Kontaktaufnahme</h3><p>Übermittelte Angaben werden ausschließlich zur Bearbeitung der Anfrage verarbeitet. Diese Vorschau versendet noch keine Formulardaten.</p><h3>Ihre Rechte</h3><p>Nach Maßgabe der DSGVO bestehen insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch.</p></> },
   cookies: { label: "Datenschutz-Einstellungen", title: "Cookies", content: <><p className="legal-lead">Aktuell sind keine optionalen Cookies oder Tracking-Dienste eingebunden.</p><div className="settings-row"><div><strong>Technisch notwendiger Betrieb</strong><p>Erforderlich für die sichere Auslieferung.</p></div><span><Check size={16}/> Aktiv</span></div><div className="settings-row is-muted"><div><strong>Analyse und Marketing</strong><p>Nicht eingebunden.</p></div><span>Inaktiv</span></div></> },
   barrierefreiheit: { label: "Zugängliche Gestaltung", title: "Barrierefreiheit", content: <><p className="legal-lead">Chelonaki soll unabhängig von Gerät und Eingabemethode gut nutzbar sein.</p><ul><li>Semantische Struktur und Tastaturbedienung</li><li>Sichtbare Fokuszustände und große Bedienflächen</li><li>Kontrastreiche Gestaltung und Bildalternativen</li><li>Reduzierte Bewegung bei Systemeinstellung</li><li>Responsive Darstellung ohne horizontales Scrollen</li></ul><p className="legal-note">Die konkrete BFSG-Anwendbarkeit wird vor einem B2C-Onlineshop gesondert geprüft.</p></> },
 };
 
 const labEntries = [
   { title: "Website Studio", status: "Konzept", area: "Web, Apps & Publikationen", text: "Kuratierte Designwelten, Desktop-/Mobilansichten und passende Shopify-Pakete.", href: "/web-apps-publikationen/websites-erstellen-lassen" },
-  { title: "Content Studio", status: "Konzept", area: "Medien & AI", text: "Karussells, Kurzvideos, Captions und unterschiedliche Markentonalitäten.", href: "/medien-ai/social-media" },
-  { title: "Ads Studio", status: "Konzept", area: "Medien & AI", text: "Creative-Vergleiche, Anzeigenvarianten und nachvollziehbare Testlogik.", href: "/medien-ai/ads" },
-  { title: "Voice Lab", status: "In Vorbereitung", area: "Medien & AI", text: "Gesprächslogik, Terminübergabe und transparenter Einsatz eines KI-Assistenten.", href: "/medien-ai/ki-telefon" },
+  { title: "Content Studio", status: "Konzept", area: "Medien & KI", text: "Karussells, Kurzvideos, Captions und unterschiedliche Markentonalitäten.", href: "/medien-ai/social-media" },
+  { title: "Ads Studio", status: "Konzept", area: "Medien & KI", text: "Creative-Vergleiche, Anzeigenvarianten und nachvollziehbare Testlogik.", href: "/medien-ai/ads" },
+  { title: "Voice Lab", status: "In Vorbereitung", area: "Medien & KI", text: "Gesprächslogik, Terminübergabe und transparenter Einsatz eines KI-Assistenten.", href: "/medien-ai/ki-telefon" },
   { title: "App Lab", status: "Prototyp", area: "Web, Apps & Publikationen", text: "Klickbare Nutzerwege, Dashboards und Funktionsbausteine für neue Apps.", href: "/web-apps-publikationen/apps-entwickeln-lassen" },
   { title: "Book Lab", status: "Konzept", area: "Web, Apps & Publikationen", text: "Coverwelten, Ghostwriting, Probeseiten, Illustrationsstile und hochwertiger Buchsatz.", href: "/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting" },
-  { title: "Reply Lab", status: "In Entwicklung", area: "Medien & AI", text: "Drei editierbare Antwortvorschläge für LinkedIn, Instagram und E-Mail.", href: "/medien-ai/chelonaki-reply" },
+  { title: "Reply Lab", status: "In Entwicklung", area: "Medien & KI", text: "Drei editierbare Antwortvorschläge für LinkedIn, Instagram und E-Mail.", href: "/medien-ai/chelonaki-reply" },
   { title: "Video Academy Preview", status: "In Vorbereitung", area: "KI-Beratung & Weiterbildung", text: "KI-Videokurse, Lernmodule und begleitende Arbeitsmaterialien.", href: "/ki-beratung-weiterbildung/video-academy" },
   { title: "Originals Lab", status: "Prototyp", area: "Originals", text: "EvoFit, Chelonaki Reply und weitere Produkte mit offenem Entwicklungsstatus.", href: "/originals/apps" },
 ];
@@ -48,10 +48,56 @@ const finderGoals = [
   ["system", "Mehrere Leistungen verbinden", "System-Workshop", "individuelles Angebot", "nach kurzer Qualifizierung", "/kontakt?bereich=Mehrere+Leistungen"],
 ];
 
+const languageOptions = [
+  ["de", "Deutsch", "DE"], ["en", "English", "EN"], ["el", "Ελληνικά", "ΕΛ"], ["fr", "Français", "FR"], ["es", "Español", "ES"],
+];
+
+function getSavedLanguage() {
+  const saved = window.localStorage.getItem("chelonaki-language");
+  return languageOptions.some(([code]) => code === saved) ? saved : "de";
+}
+
+function setTranslationCookie(language) {
+  const host = window.location.hostname;
+  const remove = (domain = "") => { document.cookie = `googtrans=; Max-Age=0; path=/; ${domain ? `domain=${domain};` : ""} SameSite=Lax`; };
+  remove();
+  if (host.includes(".")) remove(`.${host}`);
+  if (language !== "de") document.cookie = `googtrans=/de/${language}; path=/; SameSite=Lax`;
+}
+
+function LanguagePicker({ mobile = false }) {
+  const [language, setLanguage] = useState(() => getSavedLanguage());
+  useEffect(() => {
+    document.documentElement.lang = language;
+    if (language === "de") return;
+    window.googleTranslateElementInit = () => {
+      if (!window.google?.translate?.TranslateElement || document.querySelector("#google_translate_element .goog-te-gadget")) return;
+      new window.google.translate.TranslateElement({ pageLanguage: "de", includedLanguages: "en,el,fr,es", autoDisplay: false }, "google_translate_element");
+    };
+    if (window.google?.translate?.TranslateElement) window.googleTranslateElementInit();
+    else if (!document.getElementById("google-translate-script")) {
+      const script = document.createElement("script");
+      script.id = "google-translate-script";
+      script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
+      document.head.appendChild(script);
+    }
+  }, [language]);
+  const changeLanguage = (event) => {
+    const next = event.target.value;
+    window.localStorage.setItem("chelonaki-language", next);
+    setTranslationCookie(next);
+    setLanguage(next);
+    window.location.reload();
+  };
+  return <label className={`language-picker notranslate ${mobile ? "is-mobile" : ""}`} translate="no"><GlobeHemisphereWest size={17}/><span className="sr-only">Sprache auswählen</span><select value={language} onChange={changeLanguage} aria-label="Sprache auswählen">{languageOptions.map(([code, name, short]) => <option value={code} key={code}>{mobile ? name : short}</option>)}</select><CaretDown size={13}/></label>;
+}
+
 function SmartLink({ href, children, className = "", onNavigate, ...props }) {
   const internal = href?.startsWith("/");
   return <a href={href} className={className} {...props} onClick={(event) => {
     if (internal && !event.metaKey && !event.ctrlKey && !event.shiftKey) {
+      if (getSavedLanguage() !== "de") { onNavigate?.(); return; }
       event.preventDefault(); window.history.pushState({}, "", href); window.dispatchEvent(new PopStateEvent("popstate")); window.scrollTo({ top: 0, behavior: "instant" }); onNavigate?.();
     }
   }}>{children}</a>;
@@ -67,13 +113,13 @@ function Header({ openMenu, path }) {
   useEffect(() => { const onScroll = () => setSolid(window.scrollY > 24); onScroll(); window.addEventListener("scroll", onScroll, { passive: true }); return () => window.removeEventListener("scroll", onScroll); }, []);
   const active = (group) => path === group.href || path.startsWith(`${group.href}/`);
   const closeGroup = (label) => setDismissedGroup(label);
-  return <header className={`site-header ${solid ? "is-solid" : ""}`}><Brand/><nav className="desktop-nav" aria-label="Hauptnavigation">{navigation.map((group) => <div className={`nav-group ${group.items.length ? "" : "is-direct"} ${active(group) ? "is-active" : ""} ${dismissedGroup === group.label ? "is-dismissed" : ""}`} key={group.label}><SmartLink href={group.href} aria-current={active(group) ? "page" : undefined} onMouseEnter={() => setDismissedGroup(null)} onNavigate={() => closeGroup(group.label)}>{group.label}</SmartLink>{group.items.length > 0 && <div className="nav-panel"><SmartLink href={group.href} className="nav-overview" onNavigate={() => closeGroup(group.label)}>{group.label} entdecken <ArrowUpRight size={16}/></SmartLink>{group.items.map(([label, href]) => <SmartLink href={href} key={href} onNavigate={() => closeGroup(group.label)}>{label}</SmartLink>)}</div>}</div>)}</nav><SmartLink className="button button-navy header-cta" href="/paketfinder">Passende Lösung finden <ArrowRight size={18}/></SmartLink><button className="menu-trigger" type="button" aria-label="Menü öffnen" onClick={openMenu}><List size={25}/></button></header>;
+  return <header className={`site-header ${solid ? "is-solid" : ""}`}><Brand/><nav className="desktop-nav" aria-label="Hauptnavigation">{navigation.map((group) => <div className={`nav-group ${group.items.length ? "" : "is-direct"} ${active(group) ? "is-active" : ""} ${dismissedGroup === group.label ? "is-dismissed" : ""}`} key={group.label}><SmartLink href={group.href} aria-current={active(group) ? "page" : undefined} onMouseEnter={() => setDismissedGroup(null)} onNavigate={() => closeGroup(group.label)}>{group.label}</SmartLink>{group.items.length > 0 && <div className="nav-panel"><SmartLink href={group.href} className="nav-overview" onNavigate={() => closeGroup(group.label)}>{group.label} entdecken <ArrowUpRight size={16}/></SmartLink>{group.items.map(([label, href]) => <SmartLink href={href} key={href} onNavigate={() => closeGroup(group.label)}>{label}</SmartLink>)}</div>}</div>)}<LanguagePicker/></nav><SmartLink className="button button-navy header-cta" href="/paketfinder">Passende Lösung finden <ArrowRight size={18}/></SmartLink><button className="menu-trigger" type="button" aria-label="Menü öffnen" onClick={openMenu}><List size={25}/></button><div id="google_translate_element" aria-hidden="true"/></header>;
 }
 
 function MobileMenu({ open, onClose }) {
   const ref = useRef(null); const [expanded, setExpanded] = useState(null);
   useEffect(() => { if (!ref.current) return; if (open && !ref.current.open) ref.current.showModal(); if (!open && ref.current.open) ref.current.close(); }, [open]);
-  return <dialog ref={ref} className="mobile-menu" onClose={onClose} onCancel={(e) => { e.preventDefault(); onClose(); }}><div className="mobile-menu-shell"><div className="mobile-menu-head"><Brand inverse compact/><button type="button" onClick={onClose} aria-label="Menü schließen"><X size={24}/></button></div><nav aria-label="Mobile Navigation">{navigation.map((group) => <div className="mobile-nav-group" key={group.label}><div><SmartLink href={group.href} onNavigate={onClose}>{group.label}</SmartLink>{group.items.length > 0 && <button type="button" aria-label={`${group.label} Untermenü`} aria-expanded={expanded === group.label} onClick={() => setExpanded(expanded === group.label ? null : group.label)}><CaretDown size={20}/></button>}</div>{expanded === group.label && group.items.length > 0 && <div className="mobile-subnav">{group.items.map(([label, href]) => <SmartLink href={href} key={href} onNavigate={onClose}>{label}</SmartLink>)}</div>}</div>)}<SmartLink className="mobile-about" href="/qualitaet" onNavigate={onClose}>Qualität</SmartLink></nav><SmartLink className="button button-gold" href="/paketfinder" onNavigate={onClose}>Passende Lösung finden <ArrowRight size={18}/></SmartLink></div></dialog>;
+  return <dialog ref={ref} className="mobile-menu" onClose={onClose} onCancel={(e) => { e.preventDefault(); onClose(); }}><div className="mobile-menu-shell"><div className="mobile-menu-head"><Brand inverse compact/><button type="button" onClick={onClose} aria-label="Menü schließen"><X size={24}/></button></div><nav aria-label="Mobile Navigation">{navigation.map((group) => <div className="mobile-nav-group" key={group.label}><div><SmartLink href={group.href} onNavigate={onClose}>{group.label}</SmartLink>{group.items.length > 0 && <button type="button" aria-label={`${group.label} Untermenü`} aria-expanded={expanded === group.label} onClick={() => setExpanded(expanded === group.label ? null : group.label)}><CaretDown size={20}/></button>}</div>{expanded === group.label && group.items.length > 0 && <div className="mobile-subnav">{group.items.map(([label, href]) => <SmartLink href={href} key={href} onNavigate={onClose}>{label}</SmartLink>)}</div>}</div>)}<LanguagePicker mobile/><SmartLink className="mobile-about" href="/qualitaet" onNavigate={onClose}>Qualität</SmartLink></nav><SmartLink className="button button-gold" href="/paketfinder" onNavigate={onClose}>Passende Lösung finden <ArrowRight size={18}/></SmartLink></div></dialog>;
 }
 
 function LegalDialog({ viewKey, onClose }) {
@@ -84,7 +130,7 @@ function LegalDialog({ viewKey, onClose }) {
 
 function HomePage() {
   return <main id="main"><section className="hero home-hero" aria-labelledby="hero-title"><div className="hero-scene" aria-hidden="true"><img className="hero-scene-image" src="/assets/hero-architecture.png" alt="" width="1536" height="1024"/><figure className="hero-medallion"><img src="/assets/chelonaki-wall-medallion.webp" alt="" width="1200" height="1500"/></figure></div><div className="hero-copy"><span className="hero-kicker">KI-GESTÜTZTES INNOVATIONSSTUDIO</span><h1 id="hero-title">Aus Ihrer Idee<br/>wird ein System,<br/><em>das funktioniert.</em></h1><div className="hero-rule"><i/></div><p>Wir entwickeln Websites, Apps, Bücher, Content und intelligente Automatisierungen – von der klaren Strategie bis zum nutzbaren Ergebnis.</p><div className="hero-actions"><SmartLink className="button button-navy" href="/paketfinder">Passende Lösung finden <ArrowRight size={18}/></SmartLink><a className="text-link" href="#worlds">Leistungen entdecken <ArrowRight size={18}/></a></div></div><div className="hero-signature">Strategie · Gestaltung · Technologie · menschlich geprüft</div></section>
-  <section className="home-proof" aria-label="Was Chelonaki entwickelt"><span>Websites & Shops</span><span>Apps & Software</span><span>Bücher & Ghostwriting</span><span>Medien & AI</span><span>KI-Beratung & Weiterbildung</span></section>
+  <section className="home-proof" aria-label="Was Chelonaki entwickelt"><span>Websites & Shops</span><span>Apps & Software</span><span>Bücher & Ghostwriting</span><span>Medien & KI</span><span>KI-Beratung & Weiterbildung</span></section>
   <section className="worlds-section" id="worlds" aria-labelledby="worlds-title"><header className="worlds-heading" data-reveal><span>Ein Studio. Sechs klare Bereiche.</span><h2 id="worlds-title">Schneller verstehen,<br/><em>wo Ihr Projekt hingehört.</em></h2></header><div className="world-grid">{worlds.map((world) => <article className={`world-card ${world.tone}`} key={world.title} data-reveal><div className="world-number">{world.number}</div><span className="audience-label"><Buildings size={15}/>{world.eyebrow}</span><h3>{world.title}</h3><p>{world.text}</p><small>{world.detail}</small><SmartLink className="world-link" href={world.href}>{world.cta}<ArrowRight size={18}/></SmartLink></article>)}</div></section>
   <section className="principles-section"><div className="principles-intro"><span>Our standard</span><h2>Fortschritt braucht Haltung.</h2></div><div className="principle-grid">{[["Human responsibility", "KI unterstützt. Der Mensch entscheidet und verantwortet das Ergebnis."], ["Built to last", "Durchdachte Systeme und Inhalte statt kurzfristiger KI-Spielereien."], ["Knowledge in practice", "Wissenschaft, Erfahrung und Technologie werden konkret nutzbar."]].map(([title, text], i) => <article key={title}><span>0{i+1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section><FinalCta/></main>;
 }
