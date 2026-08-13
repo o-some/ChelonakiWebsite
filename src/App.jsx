@@ -51,7 +51,12 @@ const finderGoals = [
 
 const languageOptions = [
   ["de", "Deutsch", "DE"], ["en", "English", "EN"], ["el", "Ελληνικά", "ΕΛ"], ["fr", "Français", "FR"], ["es", "Español", "ES"],
+  ["tr", "Türkçe", "TR"], ["pl", "Polski", "PL"], ["nl", "Nederlands", "NL"], ["it", "Italiano", "IT"], ["pt", "Português", "PT"], ["ar", "العربية", "AR"],
 ];
+const languageUi = {
+  de: ["Sprache", "Sprache auswählen"], en: ["Language", "Choose language"], el: ["Γλώσσα", "Επιλογή γλώσσας"], fr: ["Langue", "Choisir la langue"], es: ["Idioma", "Elegir idioma"],
+  tr: ["Dil", "Dil seçin"], pl: ["Język", "Wybierz język"], nl: ["Taal", "Kies taal"], it: ["Lingua", "Scegli la lingua"], pt: ["Idioma", "Escolher idioma"], ar: ["اللغة", "اختر اللغة"],
+};
 const translatedTextNodes = new WeakMap();
 const translatedAttributeNodes = new WeakMap();
 
@@ -75,13 +80,15 @@ function LanguagePicker({ mobile = false }) {
     window.location.reload();
   };
   const current = languageOptions.find(([code]) => code === language) || languageOptions[0];
-  return <div ref={pickerRef} className={`language-picker notranslate ${mobile ? "is-mobile" : ""} ${open ? "is-open" : ""}`} translate="no"><button type="button" className="language-trigger" onClick={() => setOpen(!open)} aria-haspopup="listbox" aria-expanded={open} aria-label={`Sprache: ${current[1]}`}><GlobeHemisphereWest size={17}/><strong>{current[2]}</strong><CaretDown size={12}/></button>{open && <div className="language-options" role="listbox" aria-label="Sprache auswählen">{languageOptions.map(([code, name, short]) => <button type="button" role="option" aria-selected={language === code} className={language === code ? "is-active" : ""} onClick={() => changeLanguage(code)} key={code}><span>{name}</span><small>{short}</small>{language === code && <Check size={14}/>}</button>)}</div>}</div>;
+  const [languageLabel, chooseLabel] = languageUi[language] || languageUi.de;
+  return <div ref={pickerRef} className={`language-picker notranslate ${mobile ? "is-mobile" : ""} ${open ? "is-open" : ""}`} translate="no"><button type="button" className="language-trigger" onClick={() => setOpen(!open)} aria-haspopup="listbox" aria-expanded={open} aria-label={`${languageLabel}: ${current[1]}`}><GlobeHemisphereWest size={17}/><strong>{current[2]}</strong><CaretDown size={12}/></button>{open && <div className="language-options" role="listbox" aria-label={chooseLabel}>{languageOptions.map(([code, name, short]) => <button type="button" role="option" aria-selected={language === code} className={language === code ? "is-active" : ""} onClick={() => changeLanguage(code)} key={code}><span dir={code === "ar" ? "rtl" : "ltr"}>{name}</span><small>{short}</small>{language === code && <Check size={14}/>}</button>)}</div>}</div>;
 }
 
 function LocalTranslator({ path }) {
   useLayoutEffect(() => {
     const language = getSavedLanguage();
     document.documentElement.lang = language;
+    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
     if (language === "de") return undefined;
     const dictionary = translations[language] || {};
     const entries = Object.entries(dictionary).filter(([key, value]) => key !== value && key.length > 2).sort((a, b) => b[0].length - a[0].length);

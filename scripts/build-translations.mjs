@@ -28,11 +28,24 @@ for (const file of sourceFiles) {
 }
 
 const originals = [...values].sort((a, b) => b.length - a.length);
-const languages = ["en", "el", "fr", "es"];
+const languages = ["en", "el", "fr", "es", "tr", "pl", "nl", "it", "pt", "ar"];
 const dictionaries = {};
 const sentinel = "__CHELONAKI_SPLIT_7F3A__";
+let existingDictionaries = {};
+try {
+  existingDictionaries = (await import(`../src/translations.generated.js?cache=${Date.now()}`)).default || {};
+} catch {}
 
 async function translateBatch(items, language) {
+  if (language === "ar") {
+    return Promise.all(items.map(async (item) => {
+      const params = new URLSearchParams({ client: "gtx", sl: "de", tl: language, dt: "t", q: item });
+      const response = await fetch(`https://translate.googleapis.com/translate_a/single?${params}`);
+      if (!response.ok) throw new Error(`Translation failed: ${response.status}`);
+      const data = await response.json();
+      return data[0].map((part) => part[0]).join("").trim();
+    }));
+  }
   const params = new URLSearchParams({ client: "gtx", sl: "de", tl: language, dt: "t", q: items.join(`\n${sentinel}\n`) });
   const response = await fetch(`https://translate.googleapis.com/translate_a/single?${params}`);
   if (!response.ok) throw new Error(`Translation failed: ${response.status}`);
@@ -43,13 +56,15 @@ async function translateBatch(items, language) {
 }
 
 for (const language of languages) {
-  const dictionary = {};
-  for (let index = 0; index < originals.length; index += 18) {
-    const batch = originals.slice(index, index + 18);
+  const dictionary = { ...(existingDictionaries[language] || {}) };
+  const missing = originals.filter((original) => !Object.hasOwn(dictionary, original));
+  for (let index = 0; index < missing.length; index += 18) {
+    const batch = missing.slice(index, index + 18);
     const translated = await translateBatch(batch, language);
     batch.forEach((original, offset) => { dictionary[original] = translated[offset] || original; });
   }
   dictionaries[language] = dictionary;
+  console.log(`${language}: ${missing.length ? `${missing.length} neue Texte übersetzt` : "vorhandene Übersetzungen übernommen"}`);
 }
 
 const terminology = {
@@ -100,11 +115,83 @@ const terminology = {
     "KI-GESTÜTZTES INNOVATIONSSTUDIO": "ESTUDIO DE INNOVACIÓN IMPULSADO POR IA",
     "Demowelten": "Mundos Demo",
     "Über uns": "Sobre nosotros"
+  },
+  tr: {
+    "Web, Apps & Publikationen": "Web, Uygulamalar & Yayınlar",
+    "Medien & KI": "Medya & YZ",
+    "KI-Beratung & Weiterbildung": "YZ Danışmanlığı & Eğitim",
+    "KI Content & Social Media": "YZ İçerik & Sosyal Medya",
+    "KI Ads für Meta & Google": "Meta & Google için YZ Reklamları",
+    "KI-Telefonassistenten": "YZ Telefon Asistanları",
+    "KI-Antworten für Social Media": "Sosyal Medya için YZ Yanıtları",
+    "KI-GESTÜTZTES INNOVATIONSSTUDIO": "YZ DESTEKLİ İNOVASYON STÜDYOSU",
+    "Demowelten": "Demo Dünyaları",
+    "Über uns": "Hakkımızda"
+  },
+  pl: {
+    "Web, Apps & Publikationen": "Web, Aplikacje i Publikacje",
+    "Medien & KI": "Media i AI",
+    "KI-Beratung & Weiterbildung": "Doradztwo i Szkolenia AI",
+    "KI Content & Social Media": "Treści AI & Social Media",
+    "KI Ads für Meta & Google": "Reklamy AI dla Meta i Google",
+    "KI-Telefonassistenten": "Telefoniczni Asystenci AI",
+    "KI-Antworten für Social Media": "Odpowiedzi AI w Social Media",
+    "KI-GESTÜTZTES INNOVATIONSSTUDIO": "STUDIO INNOWACJI WSPIERANE PRZEZ AI",
+    "Demowelten": "Strefy Demo",
+    "Über uns": "O nas"
+  },
+  nl: {
+    "Web, Apps & Publikationen": "Web, Apps & Publicaties",
+    "Medien & KI": "Media & AI",
+    "KI-Beratung & Weiterbildung": "AI-advies & Training",
+    "KI Content & Social Media": "AI-content & Social Media",
+    "KI Ads für Meta & Google": "AI-advertenties voor Meta & Google",
+    "KI-Telefonassistenten": "AI-telefoonassistenten",
+    "KI-Antworten für Social Media": "AI-antwoorden voor Social Media",
+    "KI-GESTÜTZTES INNOVATIONSSTUDIO": "AI-GEDREVEN INNOVATIESTUDIO",
+    "Demowelten": "Demo’s",
+    "Über uns": "Over ons"
+  },
+  it: {
+    "Web, Apps & Publikationen": "Web, App & Pubblicazioni",
+    "Medien & KI": "Media & IA",
+    "KI-Beratung & Weiterbildung": "Consulenza & Formazione IA",
+    "KI Content & Social Media": "Contenuti IA & Social Media",
+    "KI Ads für Meta & Google": "Annunci IA per Meta & Google",
+    "KI-Telefonassistenten": "Assistenti Telefonici IA",
+    "KI-Antworten für Social Media": "Risposte IA per i Social Media",
+    "KI-GESTÜTZTES INNOVATIONSSTUDIO": "STUDIO DI INNOVAZIONE BASATO SULL’IA",
+    "Demowelten": "Mondi Demo",
+    "Über uns": "Chi siamo"
+  },
+  pt: {
+    "Web, Apps & Publikationen": "Web, Apps e Publicações",
+    "Medien & KI": "Media & IA",
+    "KI-Beratung & Weiterbildung": "Consultoria & Formação em IA",
+    "KI Content & Social Media": "Conteúdo com IA & Redes Sociais",
+    "KI Ads für Meta & Google": "Anúncios com IA para Meta e Google",
+    "KI-Telefonassistenten": "Assistentes Telefónicos com IA",
+    "KI-Antworten für Social Media": "Respostas com IA para Redes Sociais",
+    "KI-GESTÜTZTES INNOVATIONSSTUDIO": "ESTÚDIO DE INOVAÇÃO COM IA",
+    "Demowelten": "Demonstrações",
+    "Über uns": "Sobre nós"
+  },
+  ar: {
+    "Web, Apps & Publikationen": "الويب والتطبيقات والنشر",
+    "Medien & KI": "الإعلام والذكاء الاصطناعي",
+    "KI-Beratung & Weiterbildung": "استشارات وتدريب الذكاء الاصطناعي",
+    "KI Content & Social Media": "محتوى ذكي ووسائل التواصل",
+    "KI Ads für Meta & Google": "إعلانات ذكية لـ Meta وGoogle",
+    "KI-Telefonassistenten": "مساعدون هاتفيون بالذكاء الاصطناعي",
+    "KI-Antworten für Social Media": "ردود ذكية لوسائل التواصل",
+    "KI-GESTÜTZTES INNOVATIONSSTUDIO": "استوديو ابتكار مدعوم بالذكاء الاصطناعي",
+    "Demowelten": "نماذج تجريبية",
+    "Über uns": "من نحن"
   }
 };
 
 for (const language of languages) {
-  const abbreviation = { el: "ΤΝ", fr: "IA", es: "IA" }[language];
+  const abbreviation = { el: "ΤΝ", fr: "IA", es: "IA", tr: "YZ", it: "IA", pt: "IA", ar: "الذكاء الاصطناعي" }[language];
   if (abbreviation) {
     for (const [source, translated] of Object.entries(dictionaries[language])) {
       dictionaries[language][source] = translated.replace(/\bAI\b/g, abbreviation);
