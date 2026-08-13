@@ -2477,7 +2477,7 @@ img {
 .nav-group { position: relative; }
 .nav-group > a { display: block; }
 .nav-panel { position: absolute; top: 72px; left: 50%; width: 270px; padding: 14px; background: rgba(251,248,241,.99); border: 1px solid var(--line-dark); box-shadow: 0 22px 55px rgba(7,29,49,.14); opacity: 0; visibility: hidden; transform: translate(-50%,8px); transition: 180ms var(--ease-out); }
-.nav-group:hover .nav-panel, .nav-group:focus-within .nav-panel { opacity: 1; visibility: visible; transform: translate(-50%,0); }
+.nav-group.is-open .nav-panel { opacity: 1; visibility: visible; transform: translate(-50%,0); }
 .desktop-nav .nav-panel a { display: flex; align-items: center; justify-content: space-between; padding: 13px 12px; font-size: 10px; letter-spacing: .06em; text-transform: none; }
 .desktop-nav .nav-panel a::after { display: none; }
 .desktop-nav .nav-panel .nav-overview { margin-bottom: 6px; color: var(--gold); border-bottom: 1px solid var(--line-dark); text-transform: uppercase; letter-spacing: .12em; }
@@ -2672,12 +2672,6 @@ img {
     top: 82px;
     width: 350px;
     padding: 18px;
-  }
-  .desktop-nav .nav-group.is-dismissed .nav-panel {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(-8px);
   }
   .desktop-nav .nav-panel a {
     min-height: 48px;
