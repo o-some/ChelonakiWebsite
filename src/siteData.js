@@ -28,7 +28,7 @@ export const navigation = [
     ],
   },
   { label: "Originals", href: "/originals", items: [["Unsere eigenen Apps", "/originals/apps"], ["Unsere eigenen Bücher", "/originals/buecher"]] },
-  { label: "Demowelten", href: "/demowelten", items: [] },
+  { label: "Designbeispiele", href: "/demowelten", items: [] },
   { label: "Über uns", href: "/ueber-uns", items: [] },
 ];
 
@@ -82,7 +82,7 @@ export const worlds = [
     image: "/assets/service-consulting-v2.webp",
   },
   { number: "04", eyebrow: "Persönlich entwickelt & geschrieben", title: "Originals", text: "Apps, die Eleftherios selbst entwickelt, und Bücher, die er selbst geschrieben hat.", detail: "Eigene App-Entwicklung · eigene Bücher", href: "/originals", cta: "Originals entdecken", tone: "originals", image: "/assets/service-books-v2.webp" },
-  { number: "05", eyebrow: "Erleben statt nur lesen", title: "Demowelten", text: "Demos, Prototypen und Experimente, die Ideen vor einer Entscheidung greifbar machen.", detail: "Demos · Prototypen · Experimente", href: "/demowelten", cta: "Demowelten öffnen", tone: "digital", image: "/assets/service-apps-v2.webp" },
+  { number: "05", eyebrow: "Ansehen · auswählen · individualisieren", title: "Designbeispiele", text: "Kuratierte Stilrichtungen für Websites, Apps, Inhalte und Publikationen. Wählen Sie eine Designwelt als Vorlage – wir passen sie an Ihre Marke und Ihr Projekt an.", detail: "Designrichtungen · Vorlagen · Inspiration", href: "/demowelten", cta: "Beispiele ansehen", tone: "digital", image: "/assets/design-apps.png" },
   { number: "06", eyebrow: "Herkunft & Haltung", title: "Über uns", text: "Die Familiengeschichte, Kompetenz und Werte hinter Chelonaki.", detail: "Eleftherios · Familie · Qualität", href: "/ueber-uns", cta: "Geschichte kennenlernen", tone: "expertise", image: "/assets/chelonaki-wall-medallion.webp" },
 ];
 
