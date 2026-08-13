@@ -412,6 +412,7 @@ img {
 }
 
 .hero-scene {
+  --hero-medallion-size: clamp(96px, 8.8vw, 142px);
   position: absolute;
   z-index: 1;
   top: 86px;
@@ -420,6 +421,24 @@ img {
   height: calc(100% - 86px);
   overflow: hidden;
   animation: hero-world-in 850ms var(--ease-out) both;
+}
+
+.hero-scene::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 11%;
+  right: 8.5%;
+  bottom: 15%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(135, 89, 26, 0.56) 18%,
+    rgba(135, 89, 26, 0.56) 82%,
+    transparent
+  );
+  pointer-events: none;
 }
 
 .hero-scene::before {
@@ -443,9 +462,9 @@ img {
 .hero-medallion {
   position: absolute;
   z-index: 4;
-  top: 44%;
-  right: 14%;
-  width: clamp(88px, 8.2vw, 132px);
+  top: 45%;
+  right: calc(8.5% - var(--hero-medallion-size) / 2);
+  width: var(--hero-medallion-size);
   aspect-ratio: 1;
   margin: 0;
   overflow: hidden;
@@ -565,74 +584,6 @@ img {
 .text-link-light {
   color: var(--gold-soft);
   border-color: rgba(209, 180, 117, 0.6);
-}
-
-.hero-folios {
-  position: absolute;
-  z-index: 5;
-  top: 28%;
-  left: 54%;
-  width: min(28vw, 430px);
-  height: 290px;
-  pointer-events: none;
-}
-
-.hero-folio {
-  position: absolute;
-  width: 46%;
-  min-height: 146px;
-  padding: 20px 17px;
-  color: var(--ink);
-  border: 1px solid rgba(7, 29, 49, 0.2);
-  background: rgba(247, 241, 231, 0.82);
-  box-shadow: 12px 28px 64px rgba(43, 31, 20, 0.12);
-  backdrop-filter: blur(7px);
-  transform-origin: center bottom;
-}
-
-.hero-folio span {
-  display: block;
-  margin-bottom: 48px;
-  color: var(--gold);
-  font-size: 8px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.hero-folio strong {
-  display: block;
-  max-width: 15ch;
-  font-family: var(--serif);
-  font-size: 17px;
-  line-height: 1.06;
-  font-weight: 500;
-}
-
-.hero-folio-one {
-  top: 48px;
-  left: 0;
-  animation: folio-arrive 620ms 240ms var(--ease-out) both;
-}
-
-.hero-folio-two {
-  top: 18px;
-  left: 27%;
-  background: rgba(232, 218, 196, 0.84);
-  animation: folio-arrive 620ms 300ms var(--ease-out) both;
-}
-
-.hero-folio-three {
-  top: 0;
-  left: 56%;
-  color: var(--paper-bright);
-  border-color: rgba(209, 180, 117, 0.38);
-  background: rgba(7, 29, 49, 0.88);
-  animation: folio-arrive 620ms 360ms var(--ease-out) both;
-}
-
-.hero-folio-three span {
-  color: var(--gold-soft);
 }
 
 .hero-capability-band {
@@ -1753,19 +1704,6 @@ img {
   }
 }
 
-@keyframes folio-arrive {
-  from {
-    opacity: 0;
-    filter: blur(3px);
-    transform: translateY(18px) rotateY(-3deg);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0) rotateY(0);
-  }
-}
-
 @keyframes medallion-arrive {
   from {
     opacity: 0;
@@ -1907,20 +1845,6 @@ img {
     width: 67vw;
   }
 
-  .hero-folios {
-    left: 51%;
-    width: 34vw;
-  }
-
-  .hero-folio {
-    min-height: 132px;
-    padding: 16px 13px;
-  }
-
-  .hero-folio span {
-    margin-bottom: 38px;
-  }
-
   .capability-entry {
     grid-template-columns: 50px minmax(190px, 0.72fr) minmax(250px, 1fr);
   }
@@ -1966,12 +1890,6 @@ img {
   .hero-copy > p {
     max-width: 355px;
     font-size: 12px;
-  }
-
-  .hero-folios {
-    top: 29%;
-    left: 50%;
-    width: 36vw;
   }
 
   .hero-capability-band {
@@ -2142,6 +2060,7 @@ img {
   }
 
   .hero-scene {
+    --hero-medallion-size: 92px;
     position: relative;
     z-index: 2;
     order: 2;
@@ -2161,41 +2080,13 @@ img {
   }
 
   .hero-medallion {
-    top: 33%;
-    right: 5%;
-    width: 86px;
-  }
-
-  .hero-folios {
-    position: relative;
-    z-index: 5;
-    order: 3;
-    top: auto;
-    bottom: auto;
-    left: auto;
-    width: calc(100% - 40px);
-    height: 210px;
-    margin: -250px 20px 18px;
-  }
-
-  .hero-folio {
-    width: 43%;
-    min-height: 118px;
-    padding: 13px 11px;
-  }
-
-  .hero-folio span {
-    margin-bottom: 28px;
-    font-size: 7px;
-  }
-
-  .hero-folio strong {
-    font-size: 14px;
+    top: 39%;
+    right: calc(7% - var(--hero-medallion-size) / 2);
   }
 
   .hero-capability-band {
     position: relative;
-    order: 4;
+    order: 3;
     min-height: 0;
     grid-template-columns: 1fr;
     gap: 36px;

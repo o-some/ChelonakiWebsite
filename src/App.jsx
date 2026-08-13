@@ -562,21 +562,6 @@ export function App() {
             </div>
           </div>
 
-          <div className="hero-folios" aria-label="Chelonakis Arbeitsweise">
-            <div className="hero-folio hero-folio-one">
-              <span>Klarheit</span>
-              <strong>Klar sehen, was zählt.</strong>
-            </div>
-            <div className="hero-folio hero-folio-two">
-              <span>System</span>
-              <strong>Ideen tragfähig ordnen.</strong>
-            </div>
-            <div className="hero-folio hero-folio-three">
-              <span>Wirkung</span>
-              <strong>Wert schaffen, der bleibt.</strong>
-            </div>
-          </div>
-
           <div className="hero-capability-band">
             <div className="hero-band-intro">
               <p>
