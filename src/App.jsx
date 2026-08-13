@@ -291,6 +291,7 @@ function WebDesignPreview({ entry, compact = false }) {
 function LabPage() {
   const [saved, setSaved] = useState(() => { try { return JSON.parse(localStorage.getItem("chelonaki-lab") || "[]"); } catch { return []; } });
   const [category, setCategory] = useState(null);
+  const [bookCategory, setBookCategory] = useState("Alle");
   const [visible, setVisible] = useState(8);
   const [detail, setDetail] = useState(null);
   const [zoomImage, setZoomImage] = useState(null);
@@ -304,10 +305,14 @@ function LabPage() {
     ["Apps", "App-Designs", "Navigation, Dashboards und digitale Produktoberflächen"],
     ["Content", "Content-Designs", "Social Media, Karussells, Kurzvideos und Anzeigen"],
   ];
-  const filtered = category ? labEntries.filter((entry) => entry.category === category) : [];
+  const bookCategories = ["Alle", "Kochbuch", "Kinderbuch", "Fitness", "Gesundheit", "Ernährung", "Heilkunde", "Esoterik"];
+  const categoryEntries = category ? labEntries.filter((entry) => entry.category === category) : [];
+  const entryBookCategory = (entry) => entry.bookCategory || entry.area?.split(" · ")[0] || "Sonstige";
+  const filtered = category === "Bücher" && bookCategory !== "Alle" ? categoryEntries.filter((entry) => entryBookCategory(entry) === bookCategory) : categoryEntries;
   const shown = filtered.slice(0, visible);
   const chooseCategory = (next) => {
     setCategory(next);
+    setBookCategory("Alle");
     setVisible(8);
     requestAnimationFrame(() => requestAnimationFrame(() => galleryRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })));
   };
@@ -332,7 +337,9 @@ function LabPage() {
     <section className="lab-grid-section" id="lab-demos"><header><span>Kuratierte Designvorlagen</span><h2>Welchen Bereich möchten Sie gestalten?</h2><p>Öffnen Sie eine Kategorie, um die verfügbaren Designrichtungen zu sehen. Jede Vorlage dient als Ausgangspunkt und wird für Ihr Projekt individuell angepasst.</p></header>
       <div className="design-category-grid">{categories.map(([value, label, description]) => <button type="button" className={category === value ? "is-active" : ""} aria-pressed={category === value} onClick={() => chooseCategory(value)} key={value}><span>{label}</span><p>{description}</p><small>{labEntries.filter((entry) => entry.category === value).length} {labEntries.filter((entry) => entry.category === value).length === 1 ? "Vorlage" : "Vorlagen"}</small><ArrowRight size={19}/></button>)}</div>
       {category && <div className="lab-gallery" ref={galleryRef}><div className="lab-gallery-head"><div><span>Ausgewählter Bereich</span><h3>{categories.find(([value]) => value === category)?.[1]}</h3></div><button type="button" onClick={() => setCategory(null)}>Andere Kategorie wählen</button></div>
+      {category === "Bücher" && <div className="book-category-filter" aria-label="Buchkategorie auswählen"><div><span>Buchkategorie</span><p>Filtern Sie die Designvorlagen nach dem Thema Ihres Buchprojekts.</p></div><div>{bookCategories.map((item) => { const count = item === "Alle" ? categoryEntries.length : categoryEntries.filter((entry) => entryBookCategory(entry) === item).length; return <button type="button" className={bookCategory === item ? "is-active" : ""} aria-pressed={bookCategory === item} onClick={() => { setBookCategory(item); setVisible(8); }} key={item}><span>{item}</span><small>{count}</small></button>; })}</div></div>}
       <div className="lab-results-head"><span>{shown.length} von {filtered.length} Vorlagen sichtbar</span><small>Neue Vorlagen können laufend ergänzt werden.</small></div>
+      {category === "Bücher" && filtered.length === 0 && <div className="book-category-empty"><span>{bookCategory}</span><h3>Für diese Kategorie werden gerade neue Designvorlagen vorbereitet.</h3><p>Die Filterstruktur ist bereits angelegt. Weitere Buchdesigns können später ohne Umbau ergänzt und automatisch hier einsortiert werden.</p><button type="button" onClick={() => setBookCategory("Alle")}>Alle Buchdesigns ansehen <ArrowRight size={17}/></button></div>}
       <div className="lab-grid">{shown.map((entry) => <article key={entry.title}><button className={`lab-image-button ${entry.webTheme ? "is-web-demo" : ""}`} type="button" onClick={() => setDetail(entry)} aria-label={`Details zu ${entry.title} öffnen`}>{entry.webTheme ? <WebDesignPreview entry={entry} compact/> : <img src={entry.image} alt={entry.category === "Bücher" ? `Mehrseitige Buchdesignvorlage ${entry.title}` : ""} loading="lazy" width="1536" height="1024"/>}<span>{entry.webTheme ? "Interaktiv öffnen" : "Design ansehen"} <ArrowUpRight size={16}/></span></button><div className="lab-card-meta"><span>{entry.status}</span><small>{entry.area}</small></div><h3>{entry.title}</h3><p>{entry.text}</p><div><button type="button" className="lab-detail-link" onClick={() => setDetail(entry)}>{entry.webTheme ? "Demo öffnen" : "Mehr erfahren"} <ArrowUpRight size={17}/></button><button type="button" aria-pressed={saved.includes(entry.title)} onClick={() => toggle(entry.title)}>{saved.includes(entry.title) ? "Ausgewählt" : "Als Vorlage merken"}</button></div></article>)}</div>
       {visible < filtered.length && <div className="lab-load-more"><button type="button" onClick={() => setVisible((value) => value + 6)}>Weitere Designs anzeigen <ArrowRight size={17}/></button><span>Noch {filtered.length - visible} verfügbar</span></div>}</div>}
     </section>
