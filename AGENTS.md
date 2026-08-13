@@ -12,8 +12,9 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 - The selected visual target is the combined light “Ivory Villa” direction with the monumental classical column and editorial discipline of the dark “Hellenic Editorial” direction.
 - Preserve the authentic Chelonaki turtle logo. The visual system uses warm ivory/limewash, deep Aegean navy, restrained antique gold, serif editorial typography, and subtle Greek architectural references.
-- Position Chelonaki as a selective, human-led AI studio spanning AI strategy and apps, brand and web, content and growth, plus a future nutrition and venture vertical rooted in the founder's nutritional-science background.
+- Structure Chelonaki around three concrete worlds: Chelonaki Digital (websites and Shopify, books, social content systems, telephone assistants, Meta/Google ads, apps and automations), Chelonaki Expertise (AI consulting and nutrition consulting), and Chelonaki Originals (own specialist books, nutrition apps and games).
 - Avoid AI clichés and “AI slop”: no neon brains, glowing orbs, fake code, particle fields, generic glass cards, invented client logos, fake awards, fake metrics, buzzword-heavy copy, scroll hijacking, or excessive motion.
+- Copy must name real deliverables, limits, approvals and credentials. Avoid vague agency phrases such as “echter Wert”, “Wirkungsfelder”, “Ideen, die bleiben”, “mit Substanz” and interchangeable attitude-first slogans when a concrete statement is possible.
 - Motion should be architectural and restrained: clipped text reveals, a vertical image mask, a compacting navigation, a traced gold rule, and very shallow parallax. Support `prefers-reduced-motion`.
 - Keep the hero's three large architectural material planes, but do not place the former three labeled folio cards ("Klarheit", "System", "Wirkung") or any replacement text cards over them. Let that scene remain quiet, spacious and primarily visual.
 - The complete site must include a legally planned German footer and accessible legal-information views. Missing real company details must remain visibly marked placeholders, never invented facts.

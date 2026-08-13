@@ -12,54 +12,46 @@ import {
 const capabilities = [
   {
     number: "01",
-    title: "AI & Apps",
-    summary: "KI verstehen, priorisieren und als nützliches System in den Alltag bringen.",
+    title: "Chelonaki Digital",
+    summary: "Websites, Bücher, Content, Telefon, Ads und Apps.",
     details:
-      "Wir trennen Möglichkeiten von Moden. Aus einer sinnvollen Einsatzidee entsteht ein belastbarer Prototyp, der Menschen Arbeit abnimmt und Entscheidungen verbessert.",
-    tags: ["AI Strategy", "Custom Apps", "Automation"],
+      "Chelonaki entwickelt Shopify-Websites, produziert Bücher, baut Content- und Ads-Workflows, richtet Telefonassistenten ein und entwickelt Apps. Kritische Schritte bleiben prüfbar und werden nicht ungefragt automatisiert.",
+    tags: ["Shopify-Websites", "Buchproduktion", "Social Automation", "Telefonassistenten", "Meta & Google Ads", "Apps & Automationen"],
   },
   {
     number: "02",
-    title: "Brand & Web",
-    summary: "Identität, Website und digitale Präsenz aus einer klaren Idee entwickeln.",
+    title: "Chelonaki Expertise",
+    summary: "KI-Consulting und Ernährungsberatung aus erster Hand.",
     details:
-      "Positionierung, Sprache, Gestaltung und Website werden als eine zusammenhängende Architektur entwickelt. So entsteht eine Marke, die nicht auf Lautstärke angewiesen ist.",
-    tags: ["Positioning", "Identity", "Webdesign"],
+      "Eleftherios Samouladas berät Unternehmen beim sinnvollen Einsatz von KI und Menschen bei Ernährungsfragen. Die Ernährungsberatung kann je nach persönlicher Voraussetzung teilweise über Krankenkassen bezuschusst werden.",
+    tags: ["KI-Strategie", "Prozessanalyse", "Ernährungsberatung", "Lebensmittel & Qualität"],
   },
   {
     number: "03",
-    title: "Content & Growth",
-    summary: "Eine echte Markenstimme in wiederholbare Inhalte und Kampagnen übersetzen.",
+    title: "Chelonaki Originals",
+    summary: "Eigene Fachbücher, Ernährungsapps und Spiele.",
     details:
-      "KI beschleunigt Recherche, Produktion und Distribution. Die Haltung bleibt menschlich. Daraus wachsen Content- und Marketing-Systeme, die konsistent und trotzdem lebendig sind.",
-    tags: ["Social Content", "Campaigns", "Editorial"],
-  },
-  {
-    number: "04",
-    title: "Nutrition & Ventures",
-    summary: "Ernährungswissenschaft in glaubwürdige Produkte und neue Ventures überführen.",
-    details:
-      "Hier treffen ernährungswissenschaftliche Ausbildung, Markenaufbau und Produktdenken aufeinander. Die Basis für Food-, Health- und eigene Produktkonzepte mit Substanz.",
-    tags: ["Nutrition Science", "Food Concepts", "Ventures"],
+      "Hier entstehen eigene Bücher für Erwachsene und Kinder, darunter verständliche Angebote zu Diabetes, Phenylketonurie und hereditärer Fructoseintoleranz, sowie eigene Ernährungsapps und Spiele.",
+    tags: ["Fachbücher", "Kinderbücher", "Stoffwechselerkrankungen", "Ernährungsapps", "Spiele"],
   },
 ];
 
 const method = [
   {
-    title: "Verstehen",
-    body: "Geschäft, Zielgruppe, Marke und vorhandene Systeme werden präzise eingeordnet.",
+    title: "Auftrag klären",
+    body: "Ziel, Nutzer, vorhandene Systeme und klare Grenzen werden gemeinsam festgelegt.",
   },
   {
-    title: "Entscheiden",
-    body: "Wir wählen die wenigen Hebel, die echten Nutzen oder belastbaren Lerngewinn versprechen.",
+    title: "Prototyp zeigen",
+    body: "Sie sehen früh eine funktionierende Seite, einen Ablauf oder ein echtes Buchkapitel.",
   },
   {
-    title: "Bauen",
-    body: "Strategie, Design, Technologie und Inhalt entstehen in kurzen sichtbaren Zyklen.",
+    title: "Prüfen & absichern",
+    body: "Mobile Nutzung, Datenflüsse, Rechte, Fehlerfälle und kritische Freigaben werden geprüft.",
   },
   {
-    title: "Verankern",
-    body: "Dokumentation und Übergabe sorgen dafür, dass die Lösung im Unternehmen weiterlebt.",
+    title: "Übergeben",
+    body: "Sie erhalten Dokumentation, Einweisung und einen klaren Plan für die nächsten Schritte.",
   },
 ];
 
@@ -320,16 +312,16 @@ function MobileMenu({ open, onClose }) {
         </div>
         <nav aria-label="Mobile Navigation">
           <a href="#expertise" onClick={onClose}>
-            Expertise
+            Grundsätze
           </a>
           <a href="#work" onClick={onClose}>
-            Arbeitsfelder
+            Leistungen
           </a>
           <a href="#studio" onClick={onClose}>
             Studio
           </a>
           <a href="#process" onClick={onClose}>
-            Prozess
+            Ablauf
           </a>
         </nav>
         <a className="button button-gold" href="#contact" onClick={onClose}>
@@ -491,10 +483,10 @@ export function App() {
       <header className={`site-header ${headerSolid ? "is-solid" : ""}`}>
         <Brand />
         <nav className="desktop-nav" aria-label="Hauptnavigation">
-          <a href="#expertise">Expertise</a>
-          <a href="#work">Arbeitsfelder</a>
+          <a href="#expertise">Grundsätze</a>
+          <a href="#work">Leistungen</a>
           <a href="#studio">Studio</a>
-          <a href="#process">Prozess</a>
+          <a href="#process">Ablauf</a>
         </nav>
         <a className="button button-navy header-cta" href="#contact">
           Projekt besprechen
@@ -536,19 +528,20 @@ export function App() {
 
           <div className="hero-copy">
             <h1 id="hero-title">
-              Wir
+              Websites.
               <br />
-              übersetzen KI
+              Bücher. Apps.
               <br />
-              in echten Wert.
+              Automationen.
             </h1>
             <div className="hero-rule" aria-hidden="true">
               <i />
             </div>
             <p>
-              Chelonaki ist aus einer persönlichen Überzeugung entstanden:
-              Technologie wird wertvoll, wenn sie Menschen klarer entscheiden,
-              mutiger gestalten und gesünder leben lässt.
+              Chelonaki entwickelt Websites und Shopify-Shops, produziert Bücher,
+              automatisiert Content und Kampagnen, richtet Telefonassistenten ein
+              und baut Apps – KI-gestützt, menschlich geprüft und für den echten
+              Betrieb gedacht.
             </p>
             <div className="hero-actions">
               <a className="button button-navy" href="#contact">
@@ -556,7 +549,7 @@ export function App() {
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
               <a className="text-link" href="#expertise">
-                Expertise ansehen
+                Arbeitsweise ansehen
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
             </div>
@@ -565,11 +558,11 @@ export function App() {
           <div className="hero-capability-band">
             <div className="hero-band-intro">
               <p>
-                Eine Firma.
+                Drei Bereiche.
                 <br />
-                <em>Vier Wirkungsfelder.</em>
+                <em>Klar getrennt.</em>
               </p>
-              <span>Strategie, Gestaltung und Systeme aus einer Hand.</span>
+              <span>Digital. Expertise. Originals.</span>
             </div>
             <nav className="hero-band-grid" aria-label="Direkt zu den Arbeitsfeldern">
               {capabilities.map((item) => (
@@ -586,14 +579,14 @@ export function App() {
         <section className="architecture" id="expertise" aria-labelledby="architecture-title">
           <div className="architecture-copy">
             <span className="section-mark" aria-hidden="true" />
-            <h2 id="architecture-title">Intelligenz braucht Architektur.</h2>
+            <h2 id="architecture-title">KI ist das Werkzeug. Verantwortung bleibt menschlich.</h2>
             <p>
-              Ich beginne nicht mit Tools, sondern mit dem Menschen, der am Ende
-              besser arbeiten, entscheiden oder leben soll. Erst dann bekommt
-              Technologie ihren Platz.
+              Keine ungeprüften Veröffentlichungen, keine offenen Schnittstellen
+              und kein Black-Box-Autopilot. Wir planen Rollen, Tests, Freigaben und
+              Datenschutz dort ein, wo Fehler echten Schaden verursachen könnten.
             </p>
             <a className="text-link text-link-light" href="#capabilities">
-              Unser Ansatz
+              Die drei Bereiche
               <ArrowRight size={18} aria-hidden="true" />
             </a>
           </div>
@@ -609,15 +602,12 @@ export function App() {
 
         <section className="capabilities-section" id="capabilities" aria-labelledby="capabilities-title">
           <div className="capabilities-heading" data-reveal>
-            <h2 id="capabilities-title">Vier Wege. Eine Haltung.</h2>
+            <h2 id="capabilities-title">Was Chelonaki konkret anbietet.</h2>
             <p>
-              Jeder Weg beginnt mit einer anderen Frage. Alle folgen derselben
-              Überzeugung: Klarheit vor Tempo, Charakter vor Lautstärke und Nutzen
-              vor Neuheit.
+              Keine vage „KI-Lösung für alles“. Leistungen, Beratung und eigene
+              Produkte sind klar getrennt, damit sofort verständlich ist, was Sie
+              beauftragen oder nutzen können.
             </p>
-            <blockquote>
-              „Nicht mehr KI. Mehr Urteilskraft in dem, was wir mit ihr bauen.“
-            </blockquote>
           </div>
           <div className="capability-index">
             {capabilities.map((item) => (
@@ -642,10 +632,11 @@ export function App() {
 
         <section className="work-section" id="work" aria-labelledby="work-title">
           <header className="work-heading" data-reveal="copy">
-            <h2 id="work-title">Was daraus entstehen kann.</h2>
+            <h2 id="work-title">Drei typische Startpunkte.</h2>
             <p>
-              Keine künstlichen Fallstudien. Drei konkrete Arbeitsräume, in denen
-              Chelonaki Systeme, Marken und Ventures aufbauen kann.
+              Ein Auftrag muss nicht als riesiges Transformationsprojekt beginnen.
+              Diese drei Einstiege führen schnell zu einem Ergebnis, das Sie prüfen
+              und weiterentwickeln können.
             </p>
           </header>
 
@@ -660,16 +651,17 @@ export function App() {
               />
             </figure>
             <div>
-              <h3>Digitale Systeme, die im Alltag bestehen.</h3>
+              <span>Website & Shopify</span>
+              <h3>Vom Angebot bis zum funktionierenden Shop.</h3>
               <p>
-                Wir priorisieren den Nutzen, bauen den passenden Prototyp und
-                übersetzen die Erkenntnisse in ein belastbares Produkt- oder
-                Automationssystem.
+                Positionierung, Seitenstruktur, Texte, Design und technische
+                Umsetzung entstehen in einem Prozess – auf Wunsch inklusive
+                Shopify, Automationen und sauberer Übergabe.
               </p>
               <ul>
-                <li>KI-Strategie und Use-Case-Auswahl</li>
-                <li>Prototyping und individuelle Anwendungen</li>
-                <li>Automationen und interne Werkzeuge</li>
+                <li>Landingpages und Unternehmensseiten</li>
+                <li>Shopify-Shops und Produktseiten</li>
+                <li>Designsystem, mobile Prüfung und Übergabe</li>
               </ul>
             </div>
           </article>
@@ -686,20 +678,23 @@ export function App() {
                 />
               </figure>
               <div>
-                <h3>Markenauftritte, die nicht austauschbar klingen.</h3>
+                <span>Buchproduktion</span>
+                <h3>Aus Fachwissen wird ein druckfertiges Buch.</h3>
                 <p>
-                  Positionierung, Webdesign und KI-gestützte Content-Systeme werden
-                  gemeinsam entwickelt.
+                  Interview, Gliederung, Ghostwriting, Recherche, Lektorat, Layout
+                  und Vorbereitung für Print, E-Book oder KDP.
                 </p>
               </div>
             </article>
 
             <article className="work-nutrition" data-reveal="image">
               <div>
-                <h3>Neue Produktwelten mit wissenschaftlicher Substanz.</h3>
+                <span>KI im Betrieb</span>
+                <h3>Content, Anrufe und Kampagnen mit klarer Kontrolle.</h3>
                 <p>
-                  Ernährungskompetenz, Markenaufbau und digitale Entwicklung treffen
-                  aufeinander, bevor ein späteres Food-Angebot entsteht.
+                  Social-Media-Produktion, Telefonassistenz, Meta- und Google-Ads
+                  sowie interne Apps werden so aufgebaut, dass Entwürfe und
+                  kritische Aktionen vor der Ausführung freigegeben werden können.
                 </p>
               </div>
               <figure>
@@ -717,10 +712,10 @@ export function App() {
 
         <section className="process-section" id="process" aria-labelledby="process-title">
           <div className="process-intro" data-reveal="copy">
-            <h2 id="process-title">Erst Klarheit. Dann Geschwindigkeit.</h2>
+            <h2 id="process-title">So läuft ein Projekt ab.</h2>
             <p>
-              Der Prozess bleibt bewusst kompakt. Jede Entscheidung muss sich am
-              tatsächlichen Problem und an der späteren Nutzung messen lassen.
+              Sie sehen früh einen funktionierenden Stand. Erst nach Ihrem Feedback
+              wird ausgebaut, geprüft und sauber übergeben.
             </p>
           </div>
           <ol className="method-rail">
@@ -745,25 +740,26 @@ export function App() {
           </figure>
           <div className="studio-copy" data-reveal="copy">
             <h2 id="studio-title">
-              Ich baue Chelonaki
+              Eleftherios Samouladas.
               <br />
-              für Ideen, die bleiben.
+              Gründer von Chelonaki.
             </h2>
             <p>
-              Ich komme aus der Ernährungswissenschaft. Dort habe ich gelernt, dass
-              gute Entscheidungen Kontext, Evidenz und Verantwortung brauchen. Genau
-              so behandle ich KI: nicht als Show, sondern als Werkzeug, das eine
-              menschliche Idee präziser und wirksamer macht.
+              Gelernter Koch, studierter Ernährungswissenschaftler, zertifizierter
+              Qualitätsmanagementbeauftragter und fachkundig im Lebensmittelrecht.
+              Als Mietkoch habe ich in mehr als 500 Küchen in ganz Deutschland
+              gearbeitet – vom Schnitzelbetrieb bis zum Sternerestaurant.
             </p>
             <p>
-              Deshalb bleiben Strategie, kreative Richtung und technische
-              Entscheidungen nah beieinander. Für Spezialdisziplinen entsteht das
-              passende Team um die Aufgabe, nicht um eine Agenturstruktur.
+              Chelonaki verbindet diese Praxiserfahrung mit Produktentwicklung,
+              Lebensmittelproduktion, Unterricht, Digitalisierung und Markenaufbau.
+              Bei jedem Projekt bleibt klar, wer entscheidet und wer die Qualität
+              verantwortet.
             </p>
             <div className="studio-principles">
-              <span>Menschlich geführt</span>
-              <span>Datensparsam gedacht</span>
-              <span>Langfristig gestaltet</span>
+              <span>500+ Küchen erlebt</span>
+              <span>Ernährungswissenschaft</span>
+              <span>Qualitätsmanagement</span>
             </div>
           </div>
         </section>
@@ -771,17 +767,17 @@ export function App() {
         <section className="contact-section" id="contact" aria-labelledby="contact-title">
           <div className="contact-copy" data-reveal="copy">
             <span className="section-mark" aria-hidden="true" />
-            <h2 id="contact-title">Erzählen Sie mir, was besser werden soll.</h2>
+            <h2 id="contact-title">Was möchten Sie konkret bauen?</h2>
             <p>
-              Keine fertige Lösung nötig. Beschreiben Sie den Ausgangspunkt, die
-              Ambition oder auch nur das Problem. Sie erhalten eine ehrliche
-              Einschätzung, ob und wie Chelonaki helfen kann.
+              Wählen Sie den passenden Bereich und beschreiben Sie kurz den
+              Ausgangspunkt. Sie erhalten eine direkte Einschätzung, welcher erste
+              Schritt sinnvoll ist.
             </p>
             <div className="contact-promise">
               <LockKey size={22} aria-hidden="true" />
               <span>
-                <strong>Direkter Austausch</strong>
-                Vertraulich, ohne Sales-Show und ohne automatisierte Bewertung.
+                <strong>Antwort von Eleftherios</strong>
+                Vertraulich und ohne automatische Bewertung Ihrer Anfrage.
               </span>
             </div>
           </div>
@@ -858,11 +854,14 @@ export function App() {
                       <option value="" disabled>
                         Bitte wählen
                       </option>
-                      <option>AI Strategy und Consulting</option>
-                      <option>Apps und digitale Produkte</option>
-                      <option>Brand und Website</option>
-                      <option>Content und Marketing</option>
-                      <option>Nutrition und Ventures</option>
+                      <option>Website oder Shopify-Shop</option>
+                      <option>Buch oder Publishing</option>
+                      <option>Social Content und Automatisierung</option>
+                      <option>Telefonassistent</option>
+                      <option>Meta- oder Google-Ads</option>
+                      <option>App oder Unternehmensautomation</option>
+                      <option>KI-Consulting</option>
+                      <option>Ernährungsberatung</option>
                       <option>Noch offen</option>
                     </select>
                     {fieldError("focus")}
@@ -924,17 +923,17 @@ export function App() {
           <div className="footer-brand">
             <Brand inverse />
             <p>
-              AI, digitale Produkte und Marken mit Substanz.
+              Websites, Bücher, Automationen und Beratung.
               <br />
-              The future needs roots.
+              Gegründet von Eleftherios Samouladas.
             </p>
           </div>
           <div className="footer-navigation">
             <div>
               <span>Entdecken</span>
-              <a href="#expertise">Expertise</a>
-              <a href="#work">Arbeitsfelder</a>
-              <a href="#process">Prozess</a>
+              <a href="#expertise">Grundsätze</a>
+              <a href="#work">Leistungen</a>
+              <a href="#process">Ablauf</a>
               <a href="#studio">Studio</a>
             </div>
             <div>
@@ -964,7 +963,7 @@ export function App() {
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Chelonaki</span>
-          <span>Independent AI Studio, Germany</span>
+          <span>AI Studio aus Deutschland</span>
           <a href="#top">
             Nach oben
             <ArrowUpRight size={16} aria-hidden="true" />

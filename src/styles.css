@@ -640,7 +640,7 @@ img {
 
 .hero-band-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   align-self: stretch;
   border-top: 1px solid rgba(209, 180, 117, 0.48);
 }
