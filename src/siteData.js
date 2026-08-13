@@ -297,12 +297,12 @@ services["/medien-ai/chelonaki-reply"] = {
   solution: ["Drei klar unterschiedliche Antwortvorschläge", "Tonarten wie kurz, herzlich, professionell oder vertriebsorientiert", "Eigene Markenbegriffe und No-Go-Aussagen", "Bearbeiten und kopieren vor dem Senden", "Keine unbeaufsichtigten Nachrichten im MVP"],
   steps: ["Kanal und Gesprächskontext wählen", "Ziel und gewünschte Tonalität festlegen", "Drei Vorschläge erzeugen", "Prüfen, bearbeiten und selbst versenden"],
   pricing: [
-    { name: "Reply Starter", price: "kostenlos", meta: "begrenzte Antworten · 1 Tonprofil · zum Kennenlernen" },
+    { name: "Reply Starter", price: "5 €/Monat", meta: "begrenzte Antworten · 1 persönliches Tonprofil" },
     { name: "Reply Core", price: "19 €/Monat", meta: "bei jährlicher Zahlung · mehr Antworten · eigene Tonalität", featured: true },
     { name: "Reply Pro", price: "89 €/Monat", meta: "bei jährlicher Zahlung · Teams · Markenprofile · Priorität" },
     { name: "Reply Enterprise", price: "auf Anfrage", meta: "individuelle Limits · Rollen · Datenschutz- und Integrationsrahmen" },
   ],
-  note: "Die Tariflogik orientiert sich an Replits Staffelung aus kostenlosem Einstieg, Core, Pro und individueller Enterprise-Lösung. Monatliche Zahlung, Nutzungslimits, Integrationen und mögliche Fremdkosten werden vor dem öffentlichen Produktstart final festgelegt. Preise für Unternehmen netto zzgl. USt.",
+  note: "Der Einstieg beginnt bei 5 € pro Monat. Monatliche Zahlung, Nutzungslimits, Integrationen und mögliche Fremdkosten werden vor dem öffentlichen Produktstart final festgelegt. Preise für Unternehmen netto zzgl. USt.",
   cta: "Zugang vormerken", bookingCta: "Reply-Tarif auswählen", inquiryCta: "Chelonaki Reply testen",
   insight: { label: "Mensch bleibt am Steuer", title: "Schneller antworten, ohne Kontrolle abzugeben.", text: "Reply schlägt Formulierungen vor, trifft aber keine autonome Kommunikationsentscheidung. Im MVP prüfen, bearbeiten und versenden Sie jede Nachricht selbst.", points: ["Kein automatisches Senden", "Vorschläge bleiben editierbar", "Markenstimme als Leitplanke", "Transparente Entwicklungsstufe"] },
 };
