@@ -1526,9 +1526,13 @@ function ProjectReadiness({ data }) {
 }
 
 function Pricing({ data }) {
-  const [selected, setSelected] = useState(null);
+  const featuredTier = data.pricing.find((tier) => tier.featured) || null;
+  const [selected, setSelected] = useState(featuredTier);
   const [comparisonOpen, setComparisonOpen] = useState(false);
   const tabsRef = useRef(null);
+  useEffect(() => {
+    setSelected(featuredTier);
+  }, [data, featuredTier]);
   const commonFeatures = data.commonFeatures || [
     "Schriftlich definierter Leistungsumfang",
   ];
