@@ -3524,8 +3524,6 @@ const chatSuggestions = [
 function ChatAssistant({ path, open, setOpen, compact, setCompact }) {
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
-  const [scrollHidden, setScrollHidden] = useState(false);
   const [messages, setMessages] = useState([
     {
       role: "assistant",
@@ -3534,13 +3532,6 @@ function ChatAssistant({ path, open, setOpen, compact, setCompact }) {
     },
   ]);
   const logRef = useRef(null);
-  useEffect(() => {
-    const wasDismissed =
-      localStorage.getItem("chelonaki-chat-launcher-dismissed") === "1";
-    setDismissed(wasDismissed);
-    if (wasDismissed) setCompact(true);
-  }, []);
-
   useEffect(() => {
     if (open)
       window.setTimeout(
@@ -3552,20 +3543,7 @@ function ChatAssistant({ path, open, setOpen, compact, setCompact }) {
         40,
       );
   }, [messages, open, busy]);
-  useEffect(() => {
-    let previous = window.scrollY;
-    const onScroll = () => {
-      if (window.innerWidth > 767 || open) return setScrollHidden(false);
-      const current = window.scrollY;
-      setScrollHidden(current > previous && current > 180);
-      previous = current;
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [open]);
   const dismissLauncher = () => {
-    localStorage.setItem("chelonaki-chat-launcher-dismissed", "1");
-    setDismissed(true);
     setCompact(true);
   };
   const closeToHeader = () => {
@@ -3614,7 +3592,7 @@ function ChatAssistant({ path, open, setOpen, compact, setCompact }) {
 
   return (
     <aside
-      className={`chat-assistant ${open ? "is-open" : ""} ${compact && !open ? "is-compact" : ""} ${dismissed && !open ? "is-dismissed" : ""} ${scrollHidden && !open ? "is-scroll-hidden" : ""}`}
+      className={`chat-assistant ${open ? "is-open" : ""} ${compact && !open ? "is-compact" : ""}`}
       aria-label="Chelonaki Assistent"
     >
       {open && (
