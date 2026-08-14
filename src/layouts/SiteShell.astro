@@ -15,9 +15,18 @@ import "@fontsource/noto-naskh-arabic/500.css";
 import "@fontsource/noto-naskh-arabic/600.css";
 import { App } from "../App.jsx";
 import { services } from "../siteData.js";
+import generatedTranslations from "../translations.generated.js";
+import translationPatches from "../translations.patches.js";
+import { enabledLocales, getLocale, localizePath } from "../locales.js";
 import "../styles.css";
 
-const { route = "/" } = Astro.props;
+const { route = "/", locale = "de" } = Astro.props;
+const localeConfig = getLocale(locale);
+const dictionary = {
+  ...(generatedTranslations[locale] || {}),
+  ...(translationPatches[locale] || {}),
+};
+const translate = (value: string) => dictionary[value] || value;
 const routeNames = {
   "/": "KI-gestütztes Innovationsstudio",
   "/web-apps-publikationen": "Web, Apps & Publikationen",
@@ -31,18 +40,22 @@ const routeNames = {
   "/kontakt": "Kontakt",
 };
 const pageName = services[route]?.title || routeNames[route] || "Chelonaki Studio";
-const title = route === "/" ? "Chelonaki | Aus Ideen werden funktionierende Systeme" : `${pageName} | Chelonaki`;
+const title = route === "/" ? `Chelonaki | ${translate("Aus Ideen werden funktionierende Systeme")}` : `${translate(pageName)} | Chelonaki`;
 const description = services[route]?.intro || "Chelonaki entwickelt Websites, Apps, Bücher, KI-Content und tragfähige digitale Systeme – klar geplant, menschlich geprüft und verständlich übergeben.";
+const localizedDescription = translate(description);
+const siteOrigin = "https://chelonaki-ai-studio.o-some.chatgpt.site";
+const canonical = `${siteOrigin}${localizePath(route, locale)}`;
+const localeCodes = enabledLocales.map(({ code, htmlLang, direction, defaultForCountries }) => ({ code, htmlLang, direction, defaultForCountries }));
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang={localeConfig.htmlLang} dir={localeConfig.direction} data-locale={locale} data-font-group={localeConfig.fontGroup}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content={description}
+      content={localizedDescription}
     />
     <meta name="theme-color" content="#f4ecdf" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -50,13 +63,56 @@ const description = services[route]?.intro || "Chelonaki entwickelt Websites, Ap
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chelonaki" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={localizedDescription} />
+    <meta property="og:locale" content={localeConfig.htmlLang.replace("-", "_")} />
+    <link rel="canonical" href={canonical} />
+    {
+      enabledLocales.map((item) => (
+        <link
+          rel="alternate"
+          hreflang={item.htmlLang}
+          href={`${siteOrigin}${localizePath(route, item.code)}`}
+        />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={`${siteOrigin}${localizePath(route, "de")}`} />
     <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline define:vars={{ localeCodes }}>
+      (() => {
+        const pathCode = location.pathname.split("/").filter(Boolean)[0]?.toLowerCase();
+        const active = localeCodes.find((item) => item.code === pathCode);
+        if (active) {
+          document.documentElement.lang = active.htmlLang;
+          document.documentElement.dir = active.direction;
+          return;
+        }
+        let stored = null;
+        try {
+          stored = localStorage.getItem("chelonaki-preferred-language");
+        } catch {}
+        const candidates = [stored, ...(navigator.languages || []), navigator.language]
+          .filter(Boolean)
+          .map((value) => String(value).toLowerCase().split("-")[0]);
+        const browserSelection = candidates.find((code) => localeCodes.some((item) => item.code === code));
+        const country = document.querySelector('meta[name="chelonaki-country"]')?.content?.toUpperCase();
+        const isCrawler = /bot|crawler|spider|slurp|bingpreview|google-inspectiontool/i.test(navigator.userAgent || "");
+        const countrySelection = !isCrawler && country && !["CH", "BE", "CA"].includes(country)
+          ? localeCodes.find((item) => item.defaultForCountries.includes(country))?.code
+          : null;
+        const selected = browserSelection || countrySelection || "de";
+        const source = browserSelection ? (stored ? "stored" : "browser") : countrySelection ? "country" : "default";
+        try {
+          sessionStorage.setItem("chelonaki-auto-language-decision", JSON.stringify({ language: selected, source, browserLanguage: navigator.language || null }));
+        } catch {}
+        const suffix = location.pathname === "/" ? "" : location.pathname;
+        location.replace(`/${selected}${suffix}${location.search}${location.hash}`);
+      })();
+    </script>
     <title>{title}</title>
   </head>
   <body>
     <div id="root">
-      <App initialPath={route} client:load />
+      <App initialPath={route} initialLocale={locale} client:load />
     </div>
   </body>
 </html>

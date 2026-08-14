@@ -19,6 +19,20 @@ import {
 import { hubData, navigation, services, worlds } from "./siteData.js";
 import generatedTranslations from "./translations.generated.js";
 import translationPatches from "./translations.patches.js";
+import {
+  enabledLocales,
+  getLanguageFromUrl,
+  getLocale,
+  localizePath,
+  normalizeLanguageCode,
+  resolvePreferredLanguage,
+  stripLanguageFromPath,
+} from "./locales.js";
+import {
+  getAnalyticsConsent,
+  setAnalyticsConsent,
+  trackEvent,
+} from "./analytics.js";
 
 const translations = Object.fromEntries(
   Object.entries(generatedTranslations).map(([language, dictionary]) => [
@@ -73,9 +87,9 @@ const legalViews = {
     content: (
       <>
         <p className="legal-lead">
-          Diese Vorschau setzt keine optionalen Analyse- oder Marketing-Cookies
-          ein. Reale Datenflüsse und Anbieter müssen vor Veröffentlichung
-          ergänzt und geprüft werden.
+          Optionale, anonyme Nutzungsstatistiken werden ausschließlich nach
+          Ihrer Einwilligung erfasst. Es werden dabei keine vollständige
+          IP-Adresse, kein exakter Standort und keine Formulardaten gespeichert.
         </p>
         <h3>Verantwortlicher</h3>
         <p>
@@ -93,6 +107,14 @@ const legalViews = {
           bereitgestellt. Beim Sprachwechsel werden keine Inhalte an einen
           externen Übersetzungsdienst übermittelt. Die deutsche Fassung bleibt
           die inhaltliche Ausgangsversion.
+        </p>
+        <h3>Anonyme Nutzungsstatistik</h3>
+        <p>
+          Nach Ihrer Einwilligung erfassen wir Seitenaufrufe, den groben
+          Ländercode des ausliefernden Netzknotens, die angezeigte Sprache, den
+          Gerätetyp sowie ausgewählte Interaktionen wie Paket-, Kontakt- und
+          Sprachwahl. Die Statistik dient der Verbesserung der Website und kann
+          jederzeit in den Datenschutz-Einstellungen deaktiviert werden.
         </p>
         <h3>Kontaktaufnahme</h3>
         <p>
@@ -114,8 +136,8 @@ const legalViews = {
     content: (
       <>
         <p className="legal-lead">
-          Aktuell sind keine optionalen Cookies oder Tracking-Dienste
-          eingebunden.
+          Sie entscheiden, ob anonyme Nutzungsstatistiken erfasst werden. Die
+          Website funktioniert auch ohne diese Einwilligung vollständig.
         </p>
         <div className="settings-row">
           <div>
@@ -126,12 +148,30 @@ const legalViews = {
             <Check size={16} /> Aktiv
           </span>
         </div>
-        <div className="settings-row is-muted">
+        <div className="settings-row">
           <div>
-            <strong>Analyse und Marketing</strong>
-            <p>Nicht eingebunden.</p>
+            <strong>Anonyme Nutzungsstatistik</strong>
+            <p>
+              Seite, Sprache, grobes Land, Gerätetyp und ausgewählte Aktionen.
+            </p>
           </div>
-          <span>Inaktiv</span>
+          <span>Optional</span>
+        </div>
+        <div className="legal-consent-actions">
+          <button
+            className="button button-outline"
+            type="button"
+            onClick={() => setAnalyticsConsent("denied")}
+          >
+            Nur notwendig
+          </button>
+          <button
+            className="button button-gold"
+            type="button"
+            onClick={() => setAnalyticsConsent("granted")}
+          >
+            Anonyme Statistik erlauben
+          </button>
         </div>
       </>
     ),
@@ -493,20 +533,11 @@ const finderGoals = [
   ],
 ];
 
-const languageOptions = [
-  ["de", "Deutsch", "DE"],
-  ["en", "English", "EN"],
-  ["el", "Ελληνικά", "ΕΛ"],
-  ["fr", "Français", "FR"],
-  ["es", "Español", "ES"],
-  ["tr", "Türkçe", "TR"],
-  ["pl", "Polski", "PL"],
-  ["nl", "Nederlands", "NL"],
-  ["it", "Italiano", "IT"],
-  ["pt", "Português", "PT"],
-  ["ru", "Русский", "RU"],
-  ["ar", "العربية", "AR"],
-];
+const languageOptions = enabledLocales.map((locale) => [
+  locale.code,
+  locale.nativeLabel,
+  locale.code.toUpperCase(),
+]);
 const languageUi = {
   de: ["Sprache", "Sprache auswählen"],
   en: ["Language", "Choose language"],
@@ -526,15 +557,37 @@ const translatedAttributeNodes = new WeakMap();
 
 function getSavedLanguage() {
   if (typeof window === "undefined") return "de";
-  const saved = window.localStorage.getItem("chelonaki-language");
-  return languageOptions.some(([code]) => code === saved) ? saved : "de";
+  try {
+    const saved =
+      window.localStorage.getItem("chelonaki-preferred-language") ||
+      window.localStorage.getItem("chelonaki-language");
+    return normalizeLanguageCode(saved);
+  } catch {
+    return null;
+  }
+}
+
+function getCurrentLanguage() {
+  if (typeof window === "undefined") return "de";
+  const urlLanguage = getLanguageFromUrl(window.location.pathname);
+  const country = document
+    .querySelector('meta[name="chelonaki-country"]')
+    ?.getAttribute("content");
+  return resolvePreferredLanguage({
+    urlLanguage,
+    storedLanguage: getSavedLanguage(),
+    browserLanguages: navigator.languages?.length
+      ? navigator.languages
+      : [navigator.language],
+    country,
+  });
 }
 
 function LanguagePicker({ mobile = false }) {
   const [language, setLanguage] = useState("de");
   const [open, setOpen] = useState(false);
   const pickerRef = useRef(null);
-  useEffect(() => setLanguage(getSavedLanguage()), []);
+  useEffect(() => setLanguage(getCurrentLanguage().language), []);
   useEffect(() => {
     const close = (event) => {
       if (!pickerRef.current?.contains(event.target)) setOpen(false);
@@ -543,9 +596,28 @@ function LanguagePicker({ mobile = false }) {
     return () => document.removeEventListener("pointerdown", close);
   }, []);
   const changeLanguage = (next) => {
-    window.localStorage.setItem("chelonaki-language", next);
+    const language = normalizeLanguageCode(next);
+    if (!language) return;
+    const previousLanguage = getCurrentLanguage().language;
+    try {
+      window.localStorage.setItem("chelonaki-preferred-language", language);
+      window.localStorage.removeItem("chelonaki-language");
+    } catch {}
+    window.dispatchEvent(
+      new CustomEvent("chelonaki:language", {
+        detail: { language, source: "manual" },
+      }),
+    );
+    trackEvent("language_changed", {
+      previousLanguage,
+      manualLanguage: language,
+      selectedLanguage: language,
+      selectionSource: "manual",
+    });
     setLanguage(next);
-    window.location.reload();
+    const url = new URL(window.location.href);
+    url.pathname = localizePath(url.pathname, language);
+    window.location.assign(url);
   };
   const current =
     languageOptions.find(([code]) => code === language) || languageOptions[0];
@@ -596,9 +668,10 @@ function LanguagePicker({ mobile = false }) {
 
 function LocalTranslator({ path }) {
   useLayoutEffect(() => {
-    const language = getSavedLanguage();
-    document.documentElement.lang = language;
-    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+    const { language } = getCurrentLanguage();
+    const locale = getLocale(language);
+    document.documentElement.lang = locale.htmlLang;
+    document.documentElement.dir = locale.direction;
     if (language === "de") return undefined;
     const dictionary = translations[language] || {};
     const entries = Object.entries(dictionary)
@@ -679,15 +752,26 @@ function LocalTranslator({ path }) {
 
 function SmartLink({ href, children, className = "", onNavigate, ...props }) {
   const internal = href?.startsWith("/");
+  const localizedHref =
+    internal && typeof window !== "undefined"
+      ? (() => {
+          const target = new URL(href, window.location.origin);
+          const language =
+            getLanguageFromUrl(window.location.pathname) ||
+            getCurrentLanguage().language;
+          target.pathname = localizePath(target.pathname, language);
+          return `${target.pathname}${target.search}${target.hash}`;
+        })()
+      : href;
   return (
     <a
-      href={href}
+      href={localizedHref}
       className={className}
       {...props}
       onClick={(event) => {
         if (internal && !event.metaKey && !event.ctrlKey && !event.shiftKey) {
           event.preventDefault();
-          window.history.pushState({}, "", href);
+          window.history.pushState({}, "", localizedHref);
           window.dispatchEvent(new PopStateEvent("popstate"));
           window.scrollTo({ top: 0, behavior: "instant" });
           onNavigate?.();
@@ -1579,6 +1663,10 @@ function Pricing({ data }) {
   ];
   const choose = (tier) => {
     setSelected(tier);
+    trackEvent("package_selected", {
+      packageName: tier.name,
+      service: data.title,
+    });
     setComparisonOpen(true);
   };
   const designCategory = data.title.includes("Website")
@@ -3338,7 +3426,7 @@ function ContactPage() {
               </button>
             </div>
           ) : (
-            <form noValidate onSubmit={submit}>
+            <form className="contact-form" noValidate onSubmit={submit}>
               <div className="field-pair">
                 <label>
                   <span>Name *</span>
@@ -3768,6 +3856,189 @@ function NotFound() {
   );
 }
 
+const consentUi = {
+  de: [
+    "Datenschutzfreundliche Statistik",
+    "Helfen Sie uns mit anonymen Seiten-, Länder- und Sprachdaten. Keine vollständige IP, kein exakter Standort und keine Formulardaten.",
+    "Nur notwendig",
+    "Anonyme Statistik erlauben",
+  ],
+  en: [
+    "Privacy-friendly analytics",
+    "Help us with anonymous page, country and language data. No full IP, exact location or form content.",
+    "Necessary only",
+    "Allow anonymous analytics",
+  ],
+  el: [
+    "Στατιστικά με σεβασμό στην ιδιωτικότητα",
+    "Βοηθήστε μας με ανώνυμα δεδομένα σελίδας, χώρας και γλώσσας. Χωρίς πλήρη IP, ακριβή τοποθεσία ή δεδομένα φόρμας.",
+    "Μόνο απαραίτητα",
+    "Αποδοχή ανώνυμων στατιστικών",
+  ],
+  fr: [
+    "Statistiques respectueuses de la vie privée",
+    "Aidez-nous avec des données anonymes sur les pages, pays et langues. Aucune IP complète, localisation précise ou donnée de formulaire.",
+    "Nécessaire uniquement",
+    "Autoriser les statistiques anonymes",
+  ],
+  es: [
+    "Estadísticas respetuosas con la privacidad",
+    "Ayúdenos con datos anónimos de páginas, países e idiomas. Sin IP completa, ubicación exacta ni datos de formularios.",
+    "Solo necesarias",
+    "Permitir estadísticas anónimas",
+  ],
+  tr: [
+    "Gizlilik dostu istatistikler",
+    "Anonim sayfa, ülke ve dil verileriyle bize yardımcı olun. Tam IP, kesin konum veya form içeriği yoktur.",
+    "Yalnızca gerekli",
+    "Anonim istatistiklere izin ver",
+  ],
+  pl: [
+    "Statystyki z poszanowaniem prywatności",
+    "Pomóż nam anonimowymi danymi o stronach, krajach i językach. Bez pełnego IP, dokładnej lokalizacji i danych formularzy.",
+    "Tylko niezbędne",
+    "Zezwól na anonimowe statystyki",
+  ],
+  nl: [
+    "Privacyvriendelijke statistieken",
+    "Help ons met anonieme pagina-, land- en taalgegevens. Geen volledig IP-adres, exacte locatie of formulierinhoud.",
+    "Alleen noodzakelijk",
+    "Anonieme statistieken toestaan",
+  ],
+  it: [
+    "Statistiche rispettose della privacy",
+    "Aiutateci con dati anonimi su pagine, paesi e lingue. Nessun IP completo, posizione esatta o contenuto dei moduli.",
+    "Solo necessari",
+    "Consenti statistiche anonime",
+  ],
+  pt: [
+    "Estatísticas respeitadoras da privacidade",
+    "Ajude-nos com dados anónimos de páginas, países e idiomas. Sem IP completo, localização exata ou conteúdo de formulários.",
+    "Apenas necessários",
+    "Permitir estatísticas anónimas",
+  ],
+  ru: [
+    "Статистика с уважением к конфиденциальности",
+    "Помогите нам анонимными данными о страницах, странах и языках. Без полного IP, точного местоположения и данных форм.",
+    "Только необходимые",
+    "Разрешить анонимную статистику",
+  ],
+  ar: [
+    "إحصاءات تحترم الخصوصية",
+    "ساعدنا ببيانات مجهولة عن الصفحات والبلدان واللغات. لا عنوان IP كامل ولا موقع دقيق ولا محتوى نماذج.",
+    "الضروري فقط",
+    "السماح بالإحصاءات المجهولة",
+  ],
+};
+
+function ConsentBanner() {
+  const [consent, setConsent] = useState("unknown");
+  const language =
+    typeof document === "undefined"
+      ? "de"
+      : document.documentElement.dataset.locale || "de";
+  const [title, text, deny, allow] = consentUi[language] || consentUi.en;
+  useEffect(() => setConsent(getAnalyticsConsent()), []);
+  if (consent !== "unknown") return null;
+  const decide = (value) => {
+    setAnalyticsConsent(value);
+    setConsent(value);
+    if (value === "granted") {
+      let automaticDecision = null;
+      try {
+        automaticDecision = JSON.parse(
+          sessionStorage.getItem("chelonaki-auto-language-decision"),
+        );
+      } catch {}
+      trackEvent("language_auto_selected", {
+        browserLanguage:
+          automaticDecision?.browserLanguage || navigator.language || null,
+        selectedLanguage:
+          automaticDecision?.language ||
+          document.documentElement.dataset.locale ||
+          "de",
+        selectionSource:
+          automaticDecision?.source ||
+          document.documentElement.dataset.localeSource ||
+          "default",
+      });
+      trackEvent("page_view");
+    }
+  };
+  return (
+    <aside className="consent-banner" aria-label={title}>
+      <div>
+        <strong>{title}</strong>
+        <p>{text}</p>
+      </div>
+      <div>
+        <button type="button" onClick={() => decide("denied")}>
+          {deny}
+        </button>
+        <button
+          className="button button-gold"
+          type="button"
+          onClick={() => decide("granted")}
+        >
+          {allow}
+        </button>
+      </div>
+    </aside>
+  );
+}
+
+function AnalyticsController({ path }) {
+  useEffect(() => {
+    let automaticDecision = null;
+    try {
+      automaticDecision = JSON.parse(
+        sessionStorage.getItem("chelonaki-auto-language-decision"),
+      );
+    } catch {}
+    const source =
+      automaticDecision?.source ||
+      document.documentElement.dataset.localeSource;
+    if (source && !["url", "stored", "manual"].includes(source)) {
+      trackEvent("language_auto_selected", {
+        browserLanguage: automaticDecision?.browserLanguage || null,
+        selectedLanguage:
+          automaticDecision?.language ||
+          document.documentElement.dataset.locale,
+        selectionSource: source,
+      });
+    }
+  }, []);
+  useEffect(() => {
+    trackEvent("page_view");
+  }, [path]);
+  useEffect(() => {
+    const onLanguage = (event) =>
+      trackEvent("language_manually_selected", {
+        manualLanguage: event.detail?.language,
+        selectedLanguage: event.detail?.language,
+        selectionSource: "manual",
+      });
+    const onClick = (event) => {
+      const link = event.target.closest("a[href]");
+      if (link?.getAttribute("href")?.includes("/kontakt"))
+        trackEvent("contact_started");
+    };
+    const onSubmit = (event) => {
+      if (event.target.closest(".contact-form"))
+        trackEvent("contact_submitted");
+    };
+    window.addEventListener("chelonaki:language", onLanguage);
+    document.addEventListener("click", onClick);
+    document.addEventListener("submit", onSubmit);
+    return () => {
+      window.removeEventListener("chelonaki:language", onLanguage);
+      document.removeEventListener("click", onClick);
+      document.removeEventListener("submit", onSubmit);
+    };
+  }, []);
+  return null;
+}
+
 function RouteView({ path }) {
   const redirects = {
     "/digital": "/web-apps-publikationen",
@@ -3844,11 +4115,13 @@ function RouteView({ path }) {
   return <NotFound />;
 }
 
-export function App({ initialPath = "/" }) {
+export function App({ initialPath = "/", initialLocale = "de" }) {
   const [path, setPath] = useState(() =>
     typeof window === "undefined"
       ? initialPath
-      : window.location.pathname.replace(/\/$/, "") || "/",
+      : stripLanguageFromPath(
+          window.location.pathname.replace(/\/$/, "") || "/",
+        ),
   );
   const [menu, setMenu] = useState(false);
   const [legal, setLegal] = useState(null);
@@ -3856,10 +4129,31 @@ export function App({ initialPath = "/" }) {
   const [chatCompact, setChatCompact] = useState(false);
   useEffect(() => {
     const update = () =>
-      setPath(window.location.pathname.replace(/\/$/, "") || "/");
+      setPath(
+        stripLanguageFromPath(
+          window.location.pathname.replace(/\/$/, "") || "/",
+        ),
+      );
     window.addEventListener("popstate", update);
     return () => window.removeEventListener("popstate", update);
   }, []);
+  useLayoutEffect(() => {
+    const decision = getCurrentLanguage();
+    const locale = getLocale(decision.language || initialLocale);
+    document.documentElement.lang = locale.htmlLang;
+    document.documentElement.dir = locale.direction;
+    document.documentElement.dataset.locale = locale.code;
+    document.documentElement.dataset.localeSource = decision.source;
+    document.documentElement.dataset.fontGroup = locale.fontGroup;
+    if (!getLanguageFromUrl(window.location.pathname)) {
+      const url = new URL(window.location.href);
+      url.pathname = localizePath(url.pathname, locale.code);
+      window.history.replaceState({}, "", url);
+    }
+    window.dispatchEvent(
+      new CustomEvent("chelonaki:language-resolved", { detail: decision }),
+    );
+  }, [initialLocale]);
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [path]);
@@ -3945,6 +4239,7 @@ export function App({ initialPath = "/" }) {
   return (
     <>
       <LocalTranslator path={path} />
+      <AnalyticsController path={path} />
       <a className="skip-link" href="#main">
         Zum Inhalt
       </a>
@@ -3978,6 +4273,7 @@ export function App({ initialPath = "/" }) {
         setCompact={setChatCompact}
       />
       <LegalDialog viewKey={legal} onClose={() => setLegal(null)} />
+      <ConsentBanner />
     </>
   );
 }
