@@ -1696,8 +1696,8 @@ function Pricing({ data }) {
     </>
   );
   return (
-    <section className="pricing-section" id="pakete">
-      <header>
+    <section className="pricing-section">
+      <header id="pakete">
         <span>Paketpreise für Unternehmen</span>
         <h2>
           Ein klarer Einstieg.
@@ -2191,13 +2191,23 @@ function LabPage() {
   }, []);
   useEffect(() => {
     if (!category || !carriedPackage) return;
+    const scrollToGallery = () => {
+      const target = document.querySelector(".lab-gallery");
+      if (!target) return;
+      const headerOffset = window.innerWidth <= 760 ? 82 : 104;
+      window.scrollTo({
+        top: window.scrollY + target.getBoundingClientRect().top - headerOffset,
+        behavior: "instant",
+      });
+    };
     const frame = requestAnimationFrame(() =>
-      requestAnimationFrame(() => {
-        const target = document.querySelector(".lab-gallery");
-        target?.scrollIntoView({ behavior: "instant", block: "start" });
-      }),
+      requestAnimationFrame(scrollToGallery),
     );
-    return () => cancelAnimationFrame(frame);
+    const settledScroll = window.setTimeout(scrollToGallery, 320);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.clearTimeout(settledScroll);
+    };
   }, [category, carriedPackage]);
   const bookCategories = [
     "Alle",

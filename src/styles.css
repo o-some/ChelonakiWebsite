@@ -2717,7 +2717,7 @@ nav > * {
   z-index: 2;
 }
 
-.pricing-section {
+#pakete {
   scroll-margin-top: 112px;
 }
 
@@ -2730,7 +2730,7 @@ nav > * {
     transform: translateY(-6px) !important;
   }
 
-  .pricing-section,
+  #pakete,
   .lab-gallery {
     scroll-margin-top: 92px;
   }
@@ -7555,6 +7555,15 @@ html[lang="ar"] .audience-label {
   outline: 2px solid rgba(159, 111, 40, 0.88);
   outline-offset: -2px;
   box-shadow: inset 0 4px rgba(159, 111, 40, 0.88);
+  transform: translateY(-16px) !important;
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 760px) {
+  .pricing-grid article.is-selected {
+    transform: translateY(-8px) !important;
+  }
 }
 
 /* Chelonaki KI-Assistent */
