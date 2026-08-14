@@ -1,0 +1,73 @@
+.glass-ivory {
+  background: var(--color-ivory);
+  border: 1px solid var(--glass-ivory-border);
+  box-shadow: var(--shadow-glass), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.glass-navy {
+  background: var(--color-navy-deep);
+  border: 1px solid var(--glass-navy-border);
+  box-shadow: 0 18px 50px rgba(4, 20, 34, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-ivory {
+    background: var(--glass-ivory-bg);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  }
+
+  .glass-navy {
+    background: var(--glass-navy-bg);
+    backdrop-filter: blur(16px) saturate(108%);
+    -webkit-backdrop-filter: blur(16px) saturate(108%);
+  }
+}
+
+.button {
+  min-height: 48px;
+  padding: 0.9rem 1.4rem;
+  border-radius: var(--radius-md);
+  transition: transform var(--duration-fast) var(--ease-premium), box-shadow var(--duration-fast) var(--ease-premium), border-color var(--duration-fast) var(--ease-premium), background-color var(--duration-fast) ease;
+}
+
+.button-navy,
+.button-primary {
+  border: 1px solid rgba(205, 174, 114, 0.55);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 45%), var(--color-navy-deep);
+  color: #fff;
+  box-shadow: var(--shadow-button), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.button-navy:hover,
+.button-primary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(205, 174, 114, 0.88);
+  box-shadow: 0 12px 26px rgba(8, 34, 56, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.button:active { transform: translateY(0); }
+.button:focus-visible { outline: 3px solid rgba(205, 174, 114, 0.58); outline-offset: 3px; }
+.button:disabled,
+.button[aria-disabled="true"] { opacity: 0.52; cursor: not-allowed; transform: none; box-shadow: none; }
+
+.button-gold {
+  border: 1px solid #b8873c;
+  background: linear-gradient(180deg, rgba(255,255,255,.16), transparent 55%), var(--color-champagne);
+  color: var(--color-navy-deep);
+  box-shadow: 0 8px 20px rgba(100, 65, 17, 0.14);
+}
+
+.button-outline,
+.button-outline-light {
+  border-radius: var(--radius-md);
+}
+
+:where(p, li) { text-wrap: pretty; }
+:where(h1, h2, h3) { text-wrap: balance; }
+
+input,
+select,
+textarea {
+  border-radius: var(--radius-sm) !important;
+}

@@ -19,6 +19,9 @@ import translationPatches from "../translations.patches.js";
 import { enabledLocales, getLocale, localizePath } from "../locales.js";
 import { buildStructuredData, getPageContent, isLegacyRoute, routeNames, siteOrigin } from "../seoData.js";
 import "../styles.css";
+import "../styles/tokens.css";
+import "../styles/architectural-glass.css";
+import "../styles/motion.css";
 
 const { route = "/", locale = "de" } = Astro.props;
 const localeConfig = getLocale(locale);
