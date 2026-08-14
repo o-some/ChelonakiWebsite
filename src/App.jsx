@@ -1234,7 +1234,11 @@ function ServicePage({ data }) {
           <div className="page-hero-actions">
             <SmartLink
               className="button button-gold"
-              href={`/kontakt?bereich=${encodeURIComponent(data.bookingCta || data.cta)}`}
+              href={
+                data.bookingCta
+                  ? "#pakete"
+                  : `/kontakt?bereich=${encodeURIComponent(data.cta)}`
+              }
             >
               {data.bookingCta || data.cta}
               <ArrowRight size={18} />
@@ -1692,7 +1696,7 @@ function Pricing({ data }) {
     </>
   );
   return (
-    <section className="pricing-section">
+    <section className="pricing-section" id="pakete">
       <header>
         <span>Paketpreise für Unternehmen</span>
         <h2>
@@ -2189,10 +2193,7 @@ function LabPage() {
     if (!category || !carriedPackage) return;
     const frame = requestAnimationFrame(() =>
       requestAnimationFrame(() => {
-        const target =
-          category === "Bücher"
-            ? document.querySelector(".book-category-filter")
-            : document.querySelector(".lab-results-head");
+        const target = document.querySelector(".lab-gallery");
         target?.scrollIntoView({ behavior: "instant", block: "start" });
       }),
     );
