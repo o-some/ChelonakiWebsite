@@ -374,6 +374,102 @@ textarea {
   .finder-result { border-radius: var(--radius-lg); }
 }
 
+/* Batch 6 — service pages, examples, story and closing areas */
+.page-hero,
+.service-hero,
+.original-hero,
+.product-hero,
+.lab-hero,
+.story-page-hero,
+.quality-hero {
+  background: linear-gradient(118deg, var(--color-ivory), var(--color-cream));
+}
+.page-hero figure,
+.service-hero figure,
+.original-hero > figure,
+.product-hero > figure,
+.lab-hero-side figure {
+  overflow: hidden;
+  border-radius: var(--radius-panel) 0 0 var(--radius-panel);
+  box-shadow: -18px 20px 48px rgba(8,34,56,.1);
+}
+.page-hero figure img,
+.service-hero figure img,
+.original-hero figure img,
+.product-hero figure img,
+.lab-hero figure img { filter: saturate(.82) contrast(.98) sepia(.025); }
+
+.service-hero-copy,
+.original-hero-copy,
+.product-hero > div,
+.lab-hero > div:first-child { max-width: 72ch; }
+.service-hero h1,
+.original-hero h1,
+.product-hero h1,
+.lab-hero h1,
+.story-page-hero h1,
+.quality-hero h1 { color: var(--color-ink); }
+
+.service-index,
+.deliverables-section,
+.process-section,
+.technology-section,
+.platform-section,
+.readiness-section,
+.lab-grid-section,
+.lab-how,
+.story-article,
+.quality-grid { background-color: var(--color-ivory); }
+.service-index-card { border-color: rgba(8,34,56,.15); }
+.service-index-card:nth-child(even) { background: rgba(239,229,214,.48); }
+.service-index-card figure { border-radius: var(--radius-md); }
+
+.lab-gallery,
+.lab-transfer,
+.enterprise-section,
+.final-cta {
+  border-color: rgba(205,174,114,.28);
+  background: var(--color-navy-deep);
+}
+.lab-grid article { border-color: rgba(8,34,56,.15); background: rgba(247,241,231,.78); }
+.lab-image-button,
+.web-demo-browser { border-radius: var(--radius-sm); overflow: hidden; }
+.design-detail-backdrop { background: rgba(3,16,28,.72); backdrop-filter: blur(10px); }
+
+.final-cta { position: relative; overflow: hidden; }
+.final-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(118deg, rgba(205,174,114,.08), transparent 38%), radial-gradient(circle at 85% 15%, rgba(255,255,255,.06), transparent 28%);
+}
+.final-cta > * { position: relative; }
+
+.site-footer {
+  color: rgba(247,241,231,.84);
+  background: var(--color-navy-deep);
+  border-top: 1px solid rgba(205,174,114,.3);
+}
+.site-footer a { transition: color var(--duration-fast) ease, opacity var(--duration-fast) ease; }
+.site-footer a:hover { color: var(--color-champagne); }
+.footer-main { border-color: rgba(205,174,114,.2); }
+.footer-bottom { color: rgba(247,241,231,.62); }
+
+.not-found {
+  min-height: 72vh;
+  color: var(--color-ink);
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,.62), transparent 34%), var(--color-cream);
+}
+
+@media (max-width: 900px) {
+  .page-hero figure,
+  .service-hero figure,
+  .original-hero > figure,
+  .product-hero > figure,
+  .lab-hero-side figure { border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); }
+}
+
 @media (max-width: 520px) {
   .home-hero .hero-copy { padding-top: 118px; }
   .home-hero .hero-copy h1 { font-size: clamp(2.75rem, 14vw, 4rem); }
