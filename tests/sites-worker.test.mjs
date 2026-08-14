@@ -180,6 +180,55 @@ test("Astro emits the application shell and canonical direct routes", async () =
   );
 });
 
+test("SEO and GEO output exposes canonical, crawler and structured-data signals", async () => {
+  const canonical = await readFile(
+    new URL(
+      "../dist/client/de/web-apps-publikationen/websites-erstellen-lassen/index.html",
+      import.meta.url,
+    ),
+    "utf8",
+  );
+  const legacy = await readFile(
+    new URL(
+      "../dist/client/de/digital/websites-erstellen-lassen/index.html",
+      import.meta.url,
+    ),
+    "utf8",
+  );
+  const sitemap = await readFile(
+    new URL("../dist/client/sitemap.xml", import.meta.url),
+    "utf8",
+  );
+  const robots = await readFile(
+    new URL("../dist/client/robots.txt", import.meta.url),
+    "utf8",
+  );
+  const llms = await readFile(
+    new URL("../dist/client/llms.txt", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(canonical, /application\/ld\+json/);
+  assert.match(canonical, /"@type":"Organization"/);
+  assert.match(canonical, /"@type":"Service"/);
+  assert.match(canonical, /"@type":"FAQPage"/);
+  assert.match(canonical, /index,follow,max-image-preview:large/);
+  assert.match(canonical, /property="og:image"/);
+  assert.match(legacy, /name="robots" content="noindex,follow"/);
+  assert.match(
+    legacy,
+    /rel="canonical" href="https:\/\/chelonaki-ai-studio\.o-some\.chatgpt\.site\/de\/web-apps-publikationen\/websites-erstellen-lassen"/,
+  );
+  assert.doesNotMatch(sitemap, /\/digital\//);
+  assert.match(sitemap, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
+  assert.match(robots, /User-agent: OAI-SearchBot[\s\S]*Allow: \//);
+  assert.match(
+    robots,
+    /Sitemap: https:\/\/chelonaki-ai-studio\.o-some\.chatgpt\.site\/sitemap\.xml/,
+  );
+  assert.match(llms, /## Kernleistungen/);
+});
+
 test("language decisions follow URL, stored, browser, country and default priority", () => {
   assert.deepEqual(
     resolvePreferredLanguage({

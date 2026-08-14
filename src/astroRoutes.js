@@ -1,7 +1,8 @@
 import { services } from "./siteData.js";
 import { enabledLocales } from "./locales.js";
+import { legacyRouteMap } from "./seoData.js";
 
-const canonicalRoutes = [
+export const canonicalRoutes = [
   "/web-apps-publikationen",
   "/medien-ai",
   "/ki-beratung-weiterbildung",
@@ -16,7 +17,7 @@ const canonicalRoutes = [
   "/qualitaet",
   "/ueber-uns",
   "/kontakt",
-  ...Object.keys(services),
+  ...Object.keys(services).filter((route) => !legacyRouteMap[route]),
 ];
 
 const legacyRoutes = [

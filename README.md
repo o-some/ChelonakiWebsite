@@ -33,3 +33,9 @@ npm run test:sites
 ```
 
 Die Worker-Tests prüfen Sicherheitsheader, Routing, Sprachprioritäten, Locale-Aliase, generierte Sprachrouten und die Analytics-API.
+
+## SEO und KI-Suchsysteme
+
+Jede kanonische Sprachroute enthält eigene Titel, Beschreibungen, Canonicals, `hreflang`, Open-Graph-/Twitter-Metadaten und JSON-LD. Die strukturierten Daten beschreiben Organisation, Website, Webseite, Breadcrumbs und – soweit auf der Seite sichtbar – Leistungen, Angebote und FAQs. Alte Alias-Routen werden weiterhin ausgeliefert, aber mit `noindex,follow` und Canonical auf ihr aktuelles Ziel aus dem Suchindex herausgehalten.
+
+`public/robots.txt` erlaubt klassische und relevante KI-Suchcrawler und verweist auf die XML-Sitemap. `public/llms.txt` und `public/llms-full.txt` stellen einen knappen beziehungsweise ausführlichen, maschinenlesbaren Unternehmens- und Leistungskontext bereit. Diese Dateien unterstützen die Auffindbarkeit und korrekte Einordnung, garantieren aber keine Platzierung oder Nennung durch Suchmaschinen oder KI-Systeme.

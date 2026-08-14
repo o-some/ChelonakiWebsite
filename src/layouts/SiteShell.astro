@@ -14,10 +14,10 @@ import "@fontsource/noto-naskh-arabic/400.css";
 import "@fontsource/noto-naskh-arabic/500.css";
 import "@fontsource/noto-naskh-arabic/600.css";
 import { App } from "../App.jsx";
-import { services } from "../siteData.js";
 import generatedTranslations from "../translations.generated.js";
 import translationPatches from "../translations.patches.js";
 import { enabledLocales, getLocale, localizePath } from "../locales.js";
+import { buildStructuredData, getPageContent, isLegacyRoute, routeNames, siteOrigin } from "../seoData.js";
 import "../styles.css";
 
 const { route = "/", locale = "de" } = Astro.props;
@@ -27,24 +27,19 @@ const dictionary = {
   ...(translationPatches[locale] || {}),
 };
 const translate = (value: string) => dictionary[value] || value;
-const routeNames = {
-  "/": "KI-gestütztes Innovationsstudio",
-  "/web-apps-publikationen": "Web, Apps & Publikationen",
-  "/medien-ai": "Medien & KI",
-  "/ki-beratung-weiterbildung": "KI-Beratung & Weiterbildung",
-  "/originals": "Eigene Apps & Bücher",
-  "/demowelten": "Designbeispiele",
-  "/paketfinder": "Paketfinder",
-  "/qualitaet": "Qualitätsrahmen",
-  "/ueber-uns": "Über uns",
-  "/kontakt": "Kontakt",
-};
-const pageName = services[route]?.title || routeNames[route] || "Chelonaki Studio";
+const page = getPageContent(route);
+const pageName = page.name || routeNames[page.canonicalRoute] || "Chelonaki Studio";
 const title = route === "/" ? `Chelonaki | ${translate("Aus Ideen werden funktionierende Systeme")}` : `${translate(pageName)} | Chelonaki`;
-const description = services[route]?.intro || "Chelonaki entwickelt Websites, Apps, Bücher, KI-Content und tragfähige digitale Systeme – klar geplant, menschlich geprüft und verständlich übergeben.";
+const description = page.description;
 const localizedDescription = translate(description);
-const siteOrigin = "https://chelonaki-ai-studio.o-some.chatgpt.site";
-const canonical = `${siteOrigin}${localizePath(route, locale)}`;
+const metaDescription = localizedDescription.length > 160
+  ? `${localizedDescription.slice(0, 157).replace(/\s+\S*$/, "")}…`
+  : localizedDescription;
+const canonical = `${siteOrigin}${localizePath(page.canonicalRoute, locale)}`;
+const socialImagePath = page.service?.image || "/assets/service-funnel-editorial.webp";
+const socialImage = `${siteOrigin}${socialImagePath}`;
+const structuredData = buildStructuredData({ route, locale, localeConfig, translate, canonical, title, description: localizedDescription });
+const legacy = isLegacyRoute(route);
 const localeCodes = enabledLocales.map(({ code, htmlLang, direction, defaultForCountries }) => ({ code, htmlLang, direction, defaultForCountries }));
 ---
 
@@ -55,28 +50,44 @@ const localeCodes = enabledLocales.map(({ code, htmlLang, direction, defaultForC
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content={localizedDescription}
+      content={metaDescription}
     />
+    <meta name="author" content="Chelonaki · Eleftherios Samouladas" />
+    <meta name="robots" content={legacy ? "noindex,follow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"} />
+    <meta name="googlebot" content={legacy ? "noindex,follow" : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"} />
     <meta name="theme-color" content="#f4ecdf" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chelonaki" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={localizedDescription} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:locale" content={localeConfig.htmlLang.replace("-", "_")} />
+    {enabledLocales.filter((item) => item.code !== locale).map((item) => <meta property="og:locale:alternate" content={item.htmlLang.replace("-", "_")} />)}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1536" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content={translate(page.service?.imageAlt || pageName)} />
     <link rel="canonical" href={canonical} />
     {
       enabledLocales.map((item) => (
         <link
           rel="alternate"
           hreflang={item.htmlLang}
-          href={`${siteOrigin}${localizePath(route, item.code)}`}
+          href={`${siteOrigin}${localizePath(page.canonicalRoute, item.code)}`}
         />
       ))
     }
-    <link rel="alternate" hreflang="x-default" href={`${siteOrigin}${localizePath(route, "de")}`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteOrigin}${localizePath(page.canonicalRoute, "de")}`} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={socialImage} />
+    <link rel="icon" type="image/png" href="/assets/chelonaki-turtle-mark.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     <script is:inline define:vars={{ localeCodes }}>
       (() => {
         const pathCode = location.pathname.split("/").filter(Boolean)[0]?.toLowerCase();

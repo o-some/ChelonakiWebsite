@@ -1,0 +1,19 @@
+{
+  "name": "Chelonaki AI Studio",
+  "short_name": "Chelonaki",
+  "description": "Websites, Apps, Bücher, KI-Content, KI-Beratung und digitale Systeme.",
+  "lang": "de",
+  "start_url": "/de",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4ecdf",
+  "theme_color": "#f4ecdf",
+  "icons": [
+    {
+      "src": "/assets/chelonaki-turtle-mark.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
