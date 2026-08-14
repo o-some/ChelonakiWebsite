@@ -2607,7 +2607,10 @@ nav > * {
 .pricing-section h2 { margin: 17px 0 0; font-family: var(--serif); font-size: clamp(48px,5vw,76px); line-height: 1; font-weight: 500; }
 .pricing-grid { max-width: var(--content); display: grid; grid-template-columns: repeat(auto-fit,minmax(245px,1fr)); margin: auto; align-items: stretch; }
 .pricing-grid.is-single { grid-template-columns: minmax(300px,620px); }
-.pricing-grid article { position: relative; min-height: 330px; display: flex; flex-direction: column; padding: 42px; border: 1px solid var(--line-dark); border-right: 0; background: var(--paper-bright); }
+.pricing-grid article { position: relative; isolation:isolate; min-height: 330px; display: flex; flex-direction: column; padding: 42px; border: 1px solid var(--line-dark); border-right: 0; background: var(--paper-bright); cursor:pointer; transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease; }
+.pricing-grid article:hover { border-color:var(--gold); box-shadow:0 18px 42px rgba(7,29,49,.12); }
+.pricing-grid article:has(>button:focus-visible) { outline:3px solid var(--gold-soft); outline-offset:3px; }
+.pricing-grid article > button:focus-visible { outline:none; }
 .pricing-grid article:last-child { border-right: 1px solid var(--line-dark); }
 .pricing-grid article.featured { color: var(--paper-bright); background: var(--ink); transform: translateY(-14px); box-shadow: 0 24px 55px rgba(7,29,49,.16); }
 .pricing-grid b { position: absolute; top: 0; right: 0; padding: 9px 12px; color: var(--ink); background: var(--gold-soft); font-size: 8px; letter-spacing: .13em; text-transform: uppercase; }
@@ -2622,6 +2625,8 @@ nav > * {
 .pricing-grid .featured .pricing-features svg { color:var(--gold-soft); }
 .pricing-grid a { display: flex; justify-content: space-between; margin-top: auto; padding-top: 22px; color: var(--gold); border-top: 1px solid currentColor; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
 .pricing-grid button { display:flex; justify-content:space-between; width:100%; margin-top:auto; padding:22px 0 0; color:var(--gold); border:0; border-top:1px solid currentColor; background:none; cursor:pointer; font-size:10px; letter-spacing:.12em; text-transform:uppercase; font-weight:700; }
+.pricing-grid article > button::before { content:""; position:absolute; z-index:1; inset:0; }
+.pricing-grid article > button > * { position:relative; z-index:2; }
 .pricing-grid article.is-selected { outline:2px solid var(--gold); outline-offset:-2px; }
 .package-comparison { max-width:var(--content); margin:64px auto 0; padding:clamp(28px,4vw,56px); color:var(--paper-bright); background:var(--ink); scroll-margin-top:100px; outline:none; }
 .package-comparison > header { margin:0 0 34px; }
@@ -2662,6 +2667,14 @@ nav > * {
 .package-focus h4 { max-width:100%; margin:22px 0 10px; font-family:var(--serif); font-size:clamp(34px,3.2vw,44px); line-height:1; font-weight:500; overflow-wrap:anywhere; }
 .package-focus > strong { color:var(--gold-soft); font-family:var(--serif); font-size:32px; font-weight:500; }
 .package-focus > b { display:block; width:max-content; margin-top:13px; padding:7px 9px; color:var(--ink); background:var(--gold-soft); font-size:8px; letter-spacing:.12em; text-transform:uppercase; }
+.package-duration { display:grid; gap:5px; margin-top:24px; padding:17px 18px; border:1px solid rgba(209,180,117,.42); background:rgba(209,180,117,.08); }
+.package-duration > span { color:var(--gold-soft); font-size:8px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+.package-duration > strong { color:var(--paper-bright); font-family:var(--serif); font-size:24px; font-weight:500; }
+.package-duration > small { color:var(--copy-on-dark); font-size:9px; line-height:1.5; }
+.package-alternatives .package-duration { margin-top:18px; border-color:rgba(135,89,26,.25); background:rgba(209,180,117,.12); }
+.package-alternatives .package-duration > span { color:var(--gold); }
+.package-alternatives .package-duration > strong { color:var(--ink); }
+.package-alternatives .package-duration > small { color:var(--copy-muted); }
 .package-inclusion-group { margin-top:30px; }
 .package-inclusion-group > p { margin:0 0 13px; color:var(--copy-on-dark); font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
 .package-inclusion-group.is-extra > p { color:var(--gold-soft); }

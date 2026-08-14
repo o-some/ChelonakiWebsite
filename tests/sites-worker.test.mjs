@@ -3,6 +3,7 @@ import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 import worker from "../worker/index.js";
 import translations from "../src/translations.generated.js";
+import { services } from "../src/siteData.js";
 
 test("serves existing static assets without a fallback", async () => {
   const calls = [];
@@ -114,6 +115,16 @@ test("all supported languages contain complete, localized dictionaries", () => {
   assert.equal(translations.tr["Medien & KI"], "Medya & YZ");
   assert.equal(translations.ru["Medien & KI"], "Медиа и ИИ");
   assert.match(translations.ar["Medien & KI"], /الذكاء الاصطناعي/);
+});
+
+test("every price package exposes a delivery or setup timeframe", () => {
+  for (const [path, service] of Object.entries(services)) {
+    for (const tier of service.pricing || []) assert.ok(tier.duration?.trim(), `${path}: ${tier.name} has no duration`);
+  }
+  const books = services["/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting"].pricing;
+  assert.deepEqual(books.slice(0, 4).map((tier) => tier.duration), ["ca. 2–4 Wochen", "ca. 3–6 Wochen", "ca. 4–8 Wochen", "ca. 6–8 Wochen"]);
+  const apps = services["/web-apps-publikationen/apps-entwickeln-lassen"].pricing;
+  assert.deepEqual(apps.slice(0, 3).map((tier) => tier.duration), ["ca. 4–6 Wochen", "ca. 6–10 Wochen", "ca. 8–12 Wochen"]);
 });
 
 test("the guided assistant has no external AI transport or secret dependency", async () => {

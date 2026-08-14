@@ -173,10 +173,10 @@ export const services = {
     solution: ["Unternehmenswebsites und Shopify-Shops", "Landingpages und Conversion-Struktur", "Responsive Umsetzung und Basis-SEO", "Formulare, Newsletter, Termine und Integrationen"],
     steps: ["Ziel und Designrichtung festlegen", "Struktur und Inhalte entwickeln", "Shopify responsiv umsetzen", "Prüfen, freigeben und übergeben"],
     pricing: [
-      { name: "Website Starter", price: "1.000 €", meta: "bis 5 Seiten · 2 Korrekturrunden" },
-      { name: "Website Business", price: "1.750 €", meta: "bis 10 Seiten · Branding · Tracking-Grundsetup" },
-      { name: "Website Pro", price: "2.500 €", meta: "bis 15 Seiten · Conversion · Blog · Newsletter", featured: true },
-      { name: "Website Individual", price: "ab 2.900 €", meta: "individuelle UX/UI und Funktionen" },
+      { name: "Website Starter", price: "1.000 €", duration: "ca. 3–6 Wochen", meta: "bis 5 Seiten · 2 Korrekturrunden" },
+      { name: "Website Business", price: "1.750 €", duration: "ca. 4–8 Wochen", meta: "bis 10 Seiten · Branding · Tracking-Grundsetup" },
+      { name: "Website Pro", price: "2.500 €", duration: "nach Absprache", meta: "bis 15 Seiten · Conversion · Blog · Newsletter", featured: true },
+      { name: "Website Individual", price: "ab 2.900 €", duration: "nach Absprache", meta: "individuelle UX/UI und Funktionen" },
     ],
     note: `${b2bNote} Shopify-Tarife, kostenpflichtige Apps und weitere Fremdkosten sind nicht enthalten.`,
     cta: "Website-Projekt besprechen",
@@ -197,9 +197,9 @@ export const services = {
     solution: ["KI-Videos und Karussells", "Marken-, Themen- und Stilkonzept", "Captions, Redaktionsplanung und Veröffentlichung", "Reporting und laufende Optimierung"],
     steps: ["Marke und Themen schärfen", "Produktionssystem definieren", "Freigabezyklus einrichten", "Veröffentlichen und optimieren"],
     pricing: [
-      { name: "Content Basic", price: "500 €/Monat", meta: "20 KI-Videos · 40 Karussells à 5 Slides" },
-      { name: "Content Business", price: "750 €/Monat", meta: "30 KI-Videos · 60 Karussells à 5 Slides", featured: true },
-      { name: "Content Pro", price: "1.250 €/Monat", meta: "60 KI-Videos · 120 Karussells à 5 Slides" },
+      { name: "Content Basic", price: "500 €/Monat", duration: "Start ca. 1–3 Wochen", meta: "20 KI-Videos · 40 Karussells à 5 Slides" },
+      { name: "Content Business", price: "750 €/Monat", duration: "Start ca. 1–3 Wochen", meta: "30 KI-Videos · 60 Karussells à 5 Slides", featured: true },
+      { name: "Content Pro", price: "1.250 €/Monat", duration: "Start nach Absprache", meta: "60 KI-Videos · 120 Karussells à 5 Slides" },
     ],
     note: `${b2bNote} Drehs, Darsteller, Studios, Sonderlizenzen und externe Produktionskosten sind nicht enthalten.`,
     cta: "Content-System anfragen",
@@ -214,9 +214,9 @@ export const services = {
     solution: ["Eingehende Anrufe im vereinbarten Fair-Use-Rahmen", "FAQ, Nachrichten und Gesprächszusammenfassungen", "Termin- und Leadlogik", "CRM-, Shopify- oder API-Anbindung im Pro-Paket"],
     steps: ["Zweck und erlaubte Gesprächslogik klären", "Wissen und Eskalationen definieren", "Testgespräche und Freigabe", "Sicher starten und nachschärfen"],
     pricing: [
-      { name: "Basic", price: "ab 69 €/Monat", meta: "828 € pro Jahr bei jährlicher Vorauszahlung" },
-      { name: "Business", price: "ab 129 €/Monat", meta: "Termine · Leads · individuelle Logik", featured: true },
-      { name: "Pro", price: "ab 219 €/Monat", meta: "Integrationen · mehrere Rufnummern · Workflows" },
+      { name: "Basic", price: "ab 69 €/Monat", duration: "Einrichtung ca. 1–2 Wochen", meta: "828 € pro Jahr bei jährlicher Vorauszahlung" },
+      { name: "Business", price: "ab 129 €/Monat", duration: "Einrichtung ca. 2–4 Wochen", meta: "Termine · Leads · individuelle Logik", featured: true },
+      { name: "Pro", price: "ab 219 €/Monat", duration: "Einrichtung nach Absprache", meta: "Integrationen · mehrere Rufnummern · Workflows" },
     ],
     note: `${b2bNote} Monatlich kündbar ab 99 €/Monat zuzüglich 149 € Einrichtung. Ab drei Monaten Mindestlaufzeit entfällt die Einrichtungspauschale. Ausgehende Anrufe werden ab 0,12–0,19 €/Minute berechnet und erfolgen nur im rechtlich zulässigen Rahmen.`,
     cta: "Telefonassistent konfigurieren",
@@ -231,9 +231,9 @@ export const services = {
     solution: ["Strategie und Zielgruppenanalyse", "Anzeigentexte, Bild- und Video-Creatives", "A/B-Tests, Remarketing und Tracking", "Budgetüberwachung, Reporting und Optimierung"],
     steps: ["Angebot und Ziel definieren", "Kampagne und Creatives bauen", "Tracking prüfen", "Testen und laufend optimieren"],
     pricing: [
-      { name: "Ads Basic", price: "500 €/Monat", meta: "1 Plattform · bis 3 Kampagnen" },
-      { name: "Ads Business", price: "750 €/Monat", meta: "2 Plattformen · bis 6 Kampagnen", featured: true },
-      { name: "Ads Pro", price: "1.250 €/Monat", meta: "bis 3 Plattformen · Funnel und Strategie-Call" },
+      { name: "Ads Basic", price: "500 €/Monat", duration: "Start ca. 1–3 Wochen", meta: "1 Plattform · bis 3 Kampagnen" },
+      { name: "Ads Business", price: "750 €/Monat", duration: "Start ca. 1–3 Wochen", meta: "2 Plattformen · bis 6 Kampagnen", featured: true },
+      { name: "Ads Pro", price: "1.250 €/Monat", duration: "Start nach Absprache", meta: "bis 3 Plattformen · Funnel und Strategie-Call" },
     ],
     note: `${b2bNote} Das Werbebudget und externe Tools sind nicht enthalten und werden direkt vom Kunden getragen.`,
     cta: "Werbekampagne besprechen",
@@ -248,11 +248,11 @@ export const services = {
     solution: ["iOS und Android aus gemeinsamer Codebasis", "Login, Datenbanken, Rollen und Adminbereiche", "Zahlungen, Push, APIs und KI-Funktionen", "Dokumentierte Architektur, Tests und Übergabe"],
     steps: ["Idee und Kernfunktionen prüfen", "Discovery, Nutzerwege und Daten festlegen", "UX/UI und Prototyp abstimmen", "Modular entwickeln, testen und übergeben"],
     pricing: [
-      { name: "App Starter", price: "ab 2.500 €", meta: "5–8 Screens · iOS & Android · einfache API" },
-      { name: "App MVP", price: "ab 4.900 €", meta: "Login · Datenbank · Admin · Push", featured: true },
-      { name: "App Advanced", price: "ab 7.900 €", meta: "Rollen · Zahlungen · mehrere Schnittstellen" },
-      { name: "App Pro", price: "ab 12.900 €", meta: "KI · Automationen · umfangreiches Backend" },
-      { name: "Custom / Enterprise", price: "ab 20.000 €", meta: "individuelle Infrastruktur und Sicherheitsrahmen" },
+      { name: "App Starter", price: "ab 2.500 €", duration: "ca. 4–6 Wochen", meta: "5–8 Screens · iOS & Android · einfache API" },
+      { name: "App MVP", price: "ab 4.900 €", duration: "ca. 6–10 Wochen", meta: "Login · Datenbank · Admin · Push", featured: true },
+      { name: "App Advanced", price: "ab 7.900 €", duration: "ca. 8–12 Wochen", meta: "Rollen · Zahlungen · mehrere Schnittstellen" },
+      { name: "App Pro", price: "ab 12.900 €", duration: "nach Absprache", meta: "KI · Automationen · umfangreiches Backend" },
+      { name: "Custom / Enterprise", price: "ab 20.000 €", duration: "individuell nach Absprache", meta: "individuelle Infrastruktur und Sicherheitsrahmen" },
     ],
     note: `${b2bNote} iOS und Android sind bei mobilen Standardpaketen aus gemeinsamer Codebasis vorgesehen. Web-App, Entwicklerkonten, Hosting, Datenbanken, Zahlungsanbieter sowie KI- und API-Dienste werden je nach Umfang separat ausgewiesen.`,
     cta: "Kostenlose Ersteinschätzung anfragen",
@@ -274,11 +274,11 @@ export const services = {
     solution: ["KI-Strategie und Prozessanalyse", "Automatisierung wiederkehrender Aufgaben", "Werkzeugauswahl und eigene Assistenten", "Schulungen, Datenschutz und verantwortungsvoller Einsatz"],
     steps: ["Ist-Zustand verstehen", "Anwendungsfälle priorisieren", "Roadmap und Prototyp entwickeln", "Team befähigen und Einführung begleiten"],
     pricing: [
-      { name: "Strategieberatung", price: "ab 149 €/Std.", meta: "fokussierte Einzelberatung" },
-      { name: "KI-Schulung", price: "1.290 €", meta: "1 Tag · verständlich und praxisnah" },
-      { name: "KI-Consulting", price: "1.490 €", meta: "1 Tag · Prozesse und Umsetzung" },
-      { name: "KI-Intensivworkshop", price: "2.290 €", meta: "2 Tage · Analyse · Übungen · Fahrplan", featured: true },
-      { name: "KI-Transformations-Sprint", price: "ab 3.990 €", meta: "Strategie, Prioritäten und Umsetzungsplan" },
+      { name: "Strategieberatung", price: "ab 149 €/Std.", duration: "Termin nach Absprache", meta: "fokussierte Einzelberatung" },
+      { name: "KI-Schulung", price: "1.290 €", duration: "1 Schulungstag", meta: "1 Tag · verständlich und praxisnah" },
+      { name: "KI-Consulting", price: "1.490 €", duration: "1 Consulting-Tag", meta: "1 Tag · Prozesse und Umsetzung" },
+      { name: "KI-Intensivworkshop", price: "2.290 €", duration: "2 Workshoptage", meta: "2 Tage · Analyse · Übungen · Fahrplan", featured: true },
+      { name: "KI-Transformations-Sprint", price: "ab 3.990 €", duration: "Zeitraum nach Absprache", meta: "Strategie, Prioritäten und Umsetzungsplan" },
     ],
     note: b2bNote,
     cta: "KI-Erstgespräch buchen",
@@ -293,11 +293,11 @@ export const services = {
     solution: ["Buchkonzept, Positionierung und Kapitelstruktur", "Ghostwriting, Recherche und Quellen", "Cover, Buchsatz, Layout und Bildentwicklung", "Veröffentlichungsfertige PDF- und E-Book-Dateien"],
     steps: ["Idee und Material prüfen", "Konzept und Inhaltsverzeichnis freigeben", "Kapitelweise produzieren", "Lektorat, Layout und finale Freigabe"],
     pricing: [
-      { name: "Kinderbuch", price: "ab 500 €", meta: "klar begrenzter Einstieg bis 24 Seiten", standalone: true },
-      { name: "Book Starter", price: "ab 1.000 €", meta: "bis ca. 80 Seiten · Basisdesign · Cover", resetInheritance: true },
-      { name: "Authority Book", price: "3.000 €", meta: "ca. 80–150 Seiten · Konzept · Ghostwriting · Layout", featured: true },
-      { name: "Premium Research Book", price: "6.000 €", meta: "Recherche · Quellen · Lektorat · hochwertiges Design" },
-      { name: "Individuelles Buchprojekt", price: "auf Anfrage", meta: "Fachbücher, Sonderformate und größere Umfänge" },
+      { name: "Kinderbuch", price: "ab 500 €", duration: "ca. 2–4 Wochen", meta: "klar begrenzter Einstieg bis 24 Seiten", standalone: true },
+      { name: "Book Starter", price: "ab 1.000 €", duration: "ca. 3–6 Wochen", meta: "bis ca. 80 Seiten · Basisdesign · Cover", resetInheritance: true },
+      { name: "Authority Book", price: "3.000 €", duration: "ca. 4–8 Wochen", meta: "ca. 80–150 Seiten · Konzept · Ghostwriting · Layout", featured: true },
+      { name: "Premium Research Book", price: "6.000 €", duration: "ca. 6–8 Wochen", meta: "Recherche · Quellen · Lektorat · hochwertiges Design" },
+      { name: "Individuelles Buchprojekt", price: "auf Anfrage", duration: "ab ca. 6–8 Wochen", meta: "Fachbücher, Sonderformate und größere Umfänge" },
     ],
     note: `${b2bNote} Druck, ISBN, Plattformgebühren, Sonderlizenzen und nicht ausdrücklich genannte Fremdleistungen sind nicht enthalten.`,
     cta: "Buchprojekt anfragen",
@@ -312,7 +312,7 @@ services["/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting"] = serv
 services["/medien-ai/social-media"] = services["/digital/social-media-content"];
 services["/medien-ai/ads"] = services["/digital/ki-werbung-meta-google"];
 services["/medien-ai/ki-telefon"] = services["/digital/ki-telefonassistenten"];
-services["/medien-ai/automatisierungen"] = { ...services["/digital/apps-software"], nonCumulative: true, title: "KI-Automatisierungen für wiederkehrende Abläufe.", intro: "Wir verbinden Formulare, E-Mail, CRM, Shopify und interne Werkzeuge zu kontrollierten Workflows mit klaren Freigaben.", problem: "Manuelle Übergaben, doppelte Datenpflege und verstreute Werkzeuge kosten Zeit und erzeugen Fehler.", solution: ["Prozessaufnahme und Automations-Check", "Trigger, Aktionen und menschliche Freigaben", "API-, CRM-, Shopify- und Formular-Verbindungen", "Tests, Fehlerwege, Dokumentation und Übergabe"], pricing: [{ name: "Automations-Check", price: "ab 149 €", meta: "Prozess prüfen · Potenzial und Risiken einordnen", featured: true }, { name: "Individueller Workflow", price: "auf Anfrage", meta: "Umfang nach Systemen, Daten und Schnittstellen" }], bookingCta: "Automatisierungsweg auswählen" };
+services["/medien-ai/automatisierungen"] = { ...services["/digital/apps-software"], nonCumulative: true, title: "KI-Automatisierungen für wiederkehrende Abläufe.", intro: "Wir verbinden Formulare, E-Mail, CRM, Shopify und interne Werkzeuge zu kontrollierten Workflows mit klaren Freigaben.", problem: "Manuelle Übergaben, doppelte Datenpflege und verstreute Werkzeuge kosten Zeit und erzeugen Fehler.", solution: ["Prozessaufnahme und Automations-Check", "Trigger, Aktionen und menschliche Freigaben", "API-, CRM-, Shopify- und Formular-Verbindungen", "Tests, Fehlerwege, Dokumentation und Übergabe"], pricing: [{ name: "Automations-Check", price: "ab 149 €", duration: "Auswertung ca. 3–5 Werktage", meta: "Prozess prüfen · Potenzial und Risiken einordnen", featured: true }, { name: "Individueller Workflow", price: "auf Anfrage", duration: "nach Absprache", meta: "Umfang nach Systemen, Daten und Schnittstellen" }], bookingCta: "Automatisierungsweg auswählen" };
 services["/medien-ai/chelonaki-reply"] = {
   area: "Medien & KI", label: "Für Selbstständige, Teams & Marken", title: "Drei passende Antworten. Sie wählen die richtige.",
   image: "/assets/service-content-v2.webp", imageAlt: "Warmer Kommunikationsarbeitsplatz mit Smartphone und sorgfältig geplanten Inhaltsvarianten",
@@ -321,16 +321,16 @@ services["/medien-ai/chelonaki-reply"] = {
   solution: ["Drei klar unterschiedliche Antwortvorschläge", "Tonarten wie kurz, herzlich, professionell oder vertriebsorientiert", "Eigene Markenbegriffe und No-Go-Aussagen", "Bearbeiten und kopieren vor dem Senden", "Keine unbeaufsichtigten Nachrichten im MVP"],
   steps: ["Kanal und Gesprächskontext wählen", "Ziel und gewünschte Tonalität festlegen", "Drei Vorschläge erzeugen", "Prüfen, bearbeiten und selbst versenden"],
   pricing: [
-    { name: "Reply Starter", price: "5 €/Monat", meta: "begrenzte Antworten · 1 persönliches Tonprofil" },
-    { name: "Reply Core", price: "19 €/Monat", meta: "bei jährlicher Zahlung · mehr Antworten · eigene Tonalität", featured: true },
-    { name: "Reply Pro", price: "89 €/Monat", meta: "bei jährlicher Zahlung · Teams · Markenprofile · Priorität" },
-    { name: "Reply Enterprise", price: "auf Anfrage", meta: "individuelle Limits · Rollen · Datenschutz- und Integrationsrahmen" },
+    { name: "Reply Starter", price: "5 €/Monat", duration: "Zugang nach Freigabe", meta: "begrenzte Antworten · 1 persönliches Tonprofil" },
+    { name: "Reply Core", price: "19 €/Monat", duration: "Zugang nach Freigabe", meta: "bei jährlicher Zahlung · mehr Antworten · eigene Tonalität", featured: true },
+    { name: "Reply Pro", price: "89 €/Monat", duration: "Einrichtung nach Absprache", meta: "bei jährlicher Zahlung · Teams · Markenprofile · Priorität" },
+    { name: "Reply Enterprise", price: "auf Anfrage", duration: "individuell nach Absprache", meta: "individuelle Limits · Rollen · Datenschutz- und Integrationsrahmen" },
   ],
   note: "Der Einstieg beginnt bei 5 € pro Monat. Monatliche Zahlung, Nutzungslimits, Integrationen und mögliche Fremdkosten werden vor dem öffentlichen Produktstart final festgelegt. Preise für Unternehmen netto zzgl. USt.",
   cta: "Zugang vormerken", bookingCta: "Reply-Tarif auswählen", inquiryCta: "Chelonaki Reply testen",
   insight: { label: "Mensch bleibt am Steuer", title: "Schneller antworten, ohne Kontrolle abzugeben.", text: "Reply schlägt Formulierungen vor, trifft aber keine autonome Kommunikationsentscheidung. Im MVP prüfen, bearbeiten und versenden Sie jede Nachricht selbst.", points: ["Kein automatisches Senden", "Vorschläge bleiben editierbar", "Markenstimme als Leitplanke", "Transparente Entwicklungsstufe"] },
 };
-services["/ki-beratung-weiterbildung/ki-beratung-unternehmen"] = { ...services["/expertise/ki-schulungen-consulting"], area: "KI-Beratung & Weiterbildung", title: "KI-Beratung für Unternehmen – vom Potenzial zur klaren Roadmap.", intro: "Wir analysieren Prozesse, bewerten sinnvolle KI-Anwendungsfälle und entwickeln einen realistischen Umsetzungsplan für Ihr Unternehmen.", problem: "Viele Unternehmen testen einzelne KI-Werkzeuge, ohne Prioritäten, Verantwortlichkeiten und einen belastbaren Einführungsplan festzulegen.", solution: ["Prozess- und Potenzialanalyse", "Priorisierte KI-Anwendungsfälle", "Werkzeug-, Daten- und Risikobewertung", "Roadmap mit nächsten Umsetzungsschritten"], pricing: [{ name: "Strategieberatung", price: "ab 149 €/Std.", meta: "fokussierte Fragestellung und Handlungsempfehlung" }, { name: "KI-Consulting-Tag", price: "1.490 €", meta: "Prozessanalyse · Priorisierung · Umsetzungsplan", featured: true }, { name: "KI-Transformations-Sprint", price: "ab 3.990 €", meta: "vertiefte Analyse · Roadmap · Umsetzungsbegleitung" }], bookingCta: "Beratungsformat auswählen", cta: "KI-Beratung anfragen", inquiryCta: "Unternehmensberatung besprechen" };
-services["/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter"] = { ...services["/expertise/ki-schulungen-consulting"], area: "KI-Beratung & Weiterbildung", title: "KI-Schulungen & Workshops für Mitarbeiter.", image: "/assets/service-training-v2.webp", imageAlt: "Kleine praxisnahe KI-Schulung mit engagierten Teilnehmern in einem warmen Arbeitsraum", intro: "Wir befähigen Teams, KI in ihren konkreten Arbeitsabläufen sicher, effizient und verantwortungsvoll einzusetzen.", problem: "Allgemeine Tool-Vorträge verändern den Arbeitsalltag nicht. Mitarbeiter brauchen verständliche Übungen, klare Regeln und Beispiele aus ihren eigenen Aufgaben.", solution: ["Praxisnahe KI-Grundlagen", "Übungen mit realen Arbeitsabläufen", "Prompting, Qualitätskontrolle und Datenschutz", "Gemeinsam entwickelte Vorlagen und Workflows"], pricing: [{ name: "KI-Schulung", price: "1.290 €", meta: "1 Tag · Grundlagen · Übungen · Transfer" }, { name: "KI-Intensivworkshop", price: "2.290 €", meta: "2 Tage · Prozesse · Übungen · gemeinsamer Fahrplan", featured: true }, { name: "Individuelles Teamprogramm", price: "auf Anfrage", meta: "mehrere Teams · Module · begleiteter Praxistransfer" }], bookingCta: "Mitarbeiterformat auswählen", cta: "Mitarbeiterschulung anfragen", inquiryCta: "Schulung für Ihr Team planen" };
+services["/ki-beratung-weiterbildung/ki-beratung-unternehmen"] = { ...services["/expertise/ki-schulungen-consulting"], area: "KI-Beratung & Weiterbildung", title: "KI-Beratung für Unternehmen – vom Potenzial zur klaren Roadmap.", intro: "Wir analysieren Prozesse, bewerten sinnvolle KI-Anwendungsfälle und entwickeln einen realistischen Umsetzungsplan für Ihr Unternehmen.", problem: "Viele Unternehmen testen einzelne KI-Werkzeuge, ohne Prioritäten, Verantwortlichkeiten und einen belastbaren Einführungsplan festzulegen.", solution: ["Prozess- und Potenzialanalyse", "Priorisierte KI-Anwendungsfälle", "Werkzeug-, Daten- und Risikobewertung", "Roadmap mit nächsten Umsetzungsschritten"], pricing: [{ name: "Strategieberatung", price: "ab 149 €/Std.", duration: "Termin nach Absprache", meta: "fokussierte Fragestellung und Handlungsempfehlung" }, { name: "KI-Consulting-Tag", price: "1.490 €", duration: "1 Consulting-Tag", meta: "Prozessanalyse · Priorisierung · Umsetzungsplan", featured: true }, { name: "KI-Transformations-Sprint", price: "ab 3.990 €", duration: "Zeitraum nach Absprache", meta: "vertiefte Analyse · Roadmap · Umsetzungsbegleitung" }], bookingCta: "Beratungsformat auswählen", cta: "KI-Beratung anfragen", inquiryCta: "Unternehmensberatung besprechen" };
+services["/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter"] = { ...services["/expertise/ki-schulungen-consulting"], area: "KI-Beratung & Weiterbildung", title: "KI-Schulungen & Workshops für Mitarbeiter.", image: "/assets/service-training-v2.webp", imageAlt: "Kleine praxisnahe KI-Schulung mit engagierten Teilnehmern in einem warmen Arbeitsraum", intro: "Wir befähigen Teams, KI in ihren konkreten Arbeitsabläufen sicher, effizient und verantwortungsvoll einzusetzen.", problem: "Allgemeine Tool-Vorträge verändern den Arbeitsalltag nicht. Mitarbeiter brauchen verständliche Übungen, klare Regeln und Beispiele aus ihren eigenen Aufgaben.", solution: ["Praxisnahe KI-Grundlagen", "Übungen mit realen Arbeitsabläufen", "Prompting, Qualitätskontrolle und Datenschutz", "Gemeinsam entwickelte Vorlagen und Workflows"], pricing: [{ name: "KI-Schulung", price: "1.290 €", duration: "1 Schulungstag", meta: "1 Tag · Grundlagen · Übungen · Transfer" }, { name: "KI-Intensivworkshop", price: "2.290 €", duration: "2 Workshoptage", meta: "2 Tage · Prozesse · Übungen · gemeinsamer Fahrplan", featured: true }, { name: "Individuelles Teamprogramm", price: "auf Anfrage", duration: "Zeitraum nach Absprache", meta: "mehrere Teams · Module · begleiteter Praxistransfer" }], bookingCta: "Mitarbeiterformat auswählen", cta: "Mitarbeiterschulung anfragen", inquiryCta: "Schulung für Ihr Team planen" };
 
 export { b2bNote };

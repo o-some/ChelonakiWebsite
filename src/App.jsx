@@ -234,7 +234,7 @@ function Pricing({ data }) {
     if (data.nonCumulative || index < 1 || tier.resetInheritance || data.pricing[index - 1]?.standalone) return null;
     return data.pricing[index - 1];
   };
-  const cardFeatures = (tier) => [...commonFeatures, ...(inheritedFrom(tier) ? [`Alle Leistungen aus ${inheritedFrom(tier).name}`] : []), ...ownFeatures(tier), ...premiumFeatures(tier)];
+  const cardFeatures = (tier) => [`Voraussichtliche Dauer: ${tier.duration || "nach Absprache"}`, ...commonFeatures, ...(inheritedFrom(tier) ? [`Alle Leistungen aus ${inheritedFrom(tier).name}`] : []), ...ownFeatures(tier), ...premiumFeatures(tier)];
   const choose = (tier) => { setSelected(tier); setComparisonOpen(true); };
   useEffect(() => {
     if (!comparisonOpen) return undefined;
@@ -261,6 +261,7 @@ function Pricing({ data }) {
     return () => cancelAnimationFrame(frame);
   }, [comparisonOpen, selected]);
   const packageDetails = (tier, size = 16) => <>
+    <div className="package-duration"><span>Voraussichtliche Dauer</span><strong>{tier.duration || "nach Absprache"}</strong><small>ab vollständigem Briefing, Materialeingang und Projektfreigabe</small></div>
     <div className="package-inclusion-group"><p>In jedem Paket enthalten</p><ul>{commonFeatures.map((item) => <li key={item}><Check size={size}/>{item}</li>)}</ul></div>
     {inheritedFrom(tier) && <div className="package-inherited"><Check size={size}/><span><strong>Alles aus {inheritedFrom(tier).name}</strong><small>Alle Leistungen der vorherigen Stufe sind enthalten. Höhere Mengen und Limits ersetzen die kleineren Werte.</small></span></div>}
     <div className="package-inclusion-group is-extra"><p>{inheritedFrom(tier) ? "Zusätzlich in dieser Stufe" : "Paketumfang"}</p><ul>{ownFeatures(tier).map((item) => <li key={item}><Check size={size}/>{item}</li>)}</ul></div>
