@@ -2725,6 +2725,37 @@ nav > * {
   scroll-margin-top: 120px;
 }
 
+/* Präzise Proportionen für Hero-Medaillon und Designauswahl. */
+.home-hero .hero-scene {
+  --hero-medallion-size: clamp(126px, 10vw, 174px);
+}
+
+.home-hero .hero-medallion {
+  border-color: rgba(102, 66, 20, 0.34);
+  background: #ded1bc;
+}
+
+.home-hero .hero-medallion::after {
+  inset: 5px;
+}
+
+.home-hero .hero-medallion img {
+  object-position: 50% 54%;
+  transform: scale(1.2);
+}
+
+.design-detail {
+  grid-template-columns: minmax(0, 1.35fr) minmax(410px, 0.75fr);
+}
+
+.design-detail-copy {
+  padding-inline: clamp(36px, 3.5vw, 52px);
+}
+
+.design-package-choice select {
+  min-width: 292px;
+}
+
 @media (max-width: 760px) {
   .pricing-grid article.is-selected {
     transform: translateY(-6px) !important;
@@ -7563,6 +7594,23 @@ html[lang="ar"] .audience-label {
 @media (max-width: 760px) {
   .pricing-grid article.is-selected {
     transform: translateY(-8px) !important;
+  }
+
+  .home-hero .hero-medallion {
+    display: block;
+    top: 50%;
+    right: 6%;
+    width: 112px;
+  }
+
+  .home-hero .hero-medallion img {
+    object-position: 50% 54%;
+    transform: scale(1.18);
+  }
+
+  .design-package-choice select {
+    width: 100%;
+    min-width: 0;
   }
 }
 

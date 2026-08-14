@@ -972,19 +972,16 @@ function HomePage() {
         <div className="hero-copy">
           <span className="hero-kicker">KI-GESTÜTZTES INNOVATIONSSTUDIO</span>
           <h1 id="hero-title">
-            Aus Ihrer Idee
+            Ihre Idee.
             <br />
-            wird ein System,
-            <br />
-            <em>das funktioniert.</em>
+            <em>Unsere kreative Umsetzung.</em>
           </h1>
           <div className="hero-rule">
             <i />
           </div>
           <p>
-            Wir entwickeln Websites, Apps, Bücher, Content und intelligente
-            Automatisierungen – von der klaren Strategie bis zum nutzbaren
-            Ergebnis.
+            Wir übersetzen Ihre Vision in Websites, Apps, Bücher und digitale
+            Produkte, die funktionieren.
           </p>
           <div className="hero-actions">
             <SmartLink className="button button-navy" href="/paketfinder">
