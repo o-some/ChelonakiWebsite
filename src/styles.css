@@ -2640,6 +2640,80 @@ nav > * {
   }
 }
 
+/* Ruhiges, beige-transparentes Chatfenster mit reduziertem Schließen-Symbol. */
+.chat-panel {
+  color: #183246;
+  border-color: rgba(151, 105, 39, 0.34);
+  background: rgba(246, 239, 227, 0.93);
+  box-shadow: 0 26px 70px rgba(36, 37, 35, 0.22);
+  backdrop-filter: blur(22px) saturate(0.88);
+}
+.chat-head {
+  border-bottom-color: rgba(151, 105, 39, 0.22);
+  background: rgba(232, 219, 198, 0.88);
+}
+.chat-head strong {
+  color: #183246;
+}
+.chat-head small {
+  color: rgba(24, 50, 70, 0.64);
+}
+.chat-head .chat-minimize {
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: #745426;
+  background: transparent;
+}
+.chat-head .chat-minimize:hover,
+.chat-head .chat-minimize:focus-visible {
+  color: #183246;
+  background: rgba(151, 105, 39, 0.1);
+}
+.chat-log {
+  background: rgba(255, 253, 248, 0.22);
+}
+.chat-message p {
+  color: #183246;
+  background: rgba(255, 253, 248, 0.9);
+  box-shadow: 0 5px 16px rgba(44, 48, 48, 0.05);
+}
+.chat-message.is-user p {
+  color: #183246;
+  background: #e8d8bd;
+}
+.chat-message > span {
+  color: #183246;
+  background: #ddc494;
+}
+.chat-suggestions button {
+  color: #294253;
+  border-color: rgba(151, 105, 39, 0.26);
+  background: rgba(255, 253, 248, 0.46);
+}
+.chat-suggestions button:hover {
+  color: #183246;
+  border-color: rgba(151, 105, 39, 0.56);
+  background: rgba(232, 216, 189, 0.58);
+}
+.chat-compose {
+  border-color: rgba(151, 105, 39, 0.3);
+  background: rgba(255, 253, 248, 0.9);
+}
+.chat-panel > footer {
+  color: rgba(24, 50, 70, 0.58);
+}
+
+/* Die Auswahl bleibt ausschließlich an ihrer ursprünglichen Preiskarte. */
+.pricing-grid article.is-selected {
+  outline: 2px solid rgba(159, 111, 40, 0.88);
+  outline-offset: -2px;
+  box-shadow: inset 0 4px rgba(159, 111, 40, 0.88);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -7352,6 +7426,78 @@ html[lang="ar"] .audience-label {
   }
 }
 
+/* Finale Chat- und Paketauswahl-Overrides. */
+.chat-panel {
+  color: #183246;
+  border-color: rgba(151, 105, 39, 0.34);
+  background: rgba(246, 239, 227, 0.93);
+  box-shadow: 0 26px 70px rgba(36, 37, 35, 0.22);
+  backdrop-filter: blur(22px) saturate(0.88);
+}
+.chat-head {
+  border-bottom-color: rgba(151, 105, 39, 0.22);
+  background: rgba(232, 219, 198, 0.88);
+}
+.chat-head strong {
+  color: #183246;
+}
+.chat-head small {
+  color: rgba(24, 50, 70, 0.64);
+}
+.chat-head .chat-minimize {
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: #745426;
+  background: transparent;
+}
+.chat-head .chat-minimize:hover,
+.chat-head .chat-minimize:focus-visible {
+  color: #183246;
+  background: rgba(151, 105, 39, 0.1);
+}
+.chat-log {
+  background: rgba(255, 253, 248, 0.22);
+}
+.chat-message p {
+  color: #183246;
+  background: rgba(255, 253, 248, 0.9);
+  box-shadow: 0 5px 16px rgba(44, 48, 48, 0.05);
+}
+.chat-message.is-user p {
+  color: #183246;
+  background: #e8d8bd;
+}
+.chat-message > span {
+  color: #183246;
+  background: #ddc494;
+}
+.chat-suggestions button {
+  color: #294253;
+  border-color: rgba(151, 105, 39, 0.26);
+  background: rgba(255, 253, 248, 0.46);
+}
+.chat-suggestions button:hover {
+  color: #183246;
+  border-color: rgba(151, 105, 39, 0.56);
+  background: rgba(232, 216, 189, 0.58);
+}
+.chat-compose {
+  border-color: rgba(151, 105, 39, 0.3);
+  background: rgba(255, 253, 248, 0.9);
+}
+.chat-panel > footer {
+  color: rgba(24, 50, 70, 0.58);
+}
+.pricing-grid article.is-selected {
+  outline: 2px solid rgba(159, 111, 40, 0.88);
+  outline-offset: -2px;
+  box-shadow: inset 0 4px rgba(159, 111, 40, 0.88);
+}
+
 /* Chelonaki KI-Assistent */
 .sr-only {
   position: absolute !important;
@@ -8818,4 +8964,70 @@ html[dir="rtl"]
     padding: 0;
     transform: translateY(-50%);
   }
+}
+
+.chat-panel {
+  color: #183246;
+  border-color: rgba(151, 105, 39, 0.34);
+  background: rgba(246, 239, 227, 0.93);
+  box-shadow: 0 26px 70px rgba(36, 37, 35, 0.22);
+  backdrop-filter: blur(22px) saturate(0.88);
+}
+.chat-head {
+  border-bottom-color: rgba(151, 105, 39, 0.22);
+  background: rgba(232, 219, 198, 0.88);
+}
+.chat-head strong {
+  color: #183246;
+}
+.chat-head small {
+  color: rgba(24, 50, 70, 0.64);
+}
+.chat-head .chat-minimize {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: #745426;
+  background: transparent;
+}
+.chat-head .chat-minimize:hover,
+.chat-head .chat-minimize:focus-visible {
+  color: #183246;
+  background: transparent;
+  transform: scale(1.08);
+}
+.chat-log {
+  background: rgba(255, 253, 248, 0.22);
+}
+.chat-message p {
+  color: #183246;
+  background: rgba(255, 253, 248, 0.9);
+}
+.chat-message.is-user p {
+  color: #183246;
+  background: #e8d8bd;
+}
+.chat-message > span {
+  color: #183246;
+  background: #ddc494;
+}
+.chat-suggestions button {
+  color: #294253;
+  border-color: rgba(151, 105, 39, 0.26);
+  background: rgba(255, 253, 248, 0.46);
+}
+.chat-compose {
+  border-color: rgba(151, 105, 39, 0.3);
+  background: rgba(255, 253, 248, 0.9);
+}
+.chat-panel > footer {
+  color: rgba(24, 50, 70, 0.58);
+}
+.pricing-grid article.is-selected {
+  outline: 2px solid rgba(159, 111, 40, 0.88);
+  outline-offset: -2px;
+  box-shadow: inset 0 4px rgba(159, 111, 40, 0.88);
 }

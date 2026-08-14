@@ -1740,20 +1740,6 @@ function Pricing({ data }) {
           </article>
         ))}
       </div>
-      {selected && !comparisonOpen && (
-        <aside className="package-selection-dock" aria-live="polite">
-          <div>
-            <small>Ausgewählt</small>
-            <strong>{selected.name}</strong>
-            <span>{selected.price}</span>
-          </div>
-          <button type="button" onClick={() => setComparisonOpen(true)}>
-            <span className="dock-full">Vergleich öffnen</span>
-            <span className="dock-short">Vergleich</span>
-            <ArrowUpRight size={16} />
-          </button>
-        </aside>
-      )}
       {selected && comparisonOpen && (
         <div
           className="package-modal-backdrop"
@@ -2186,7 +2172,17 @@ function LabPage() {
     }
     if (incomingPackage) {
       setCarriedPackage(incomingPackage);
-      if (incomingCategory === "Bücher") setBookPackage(incomingPackage);
+      if (incomingCategory === "Bücher") {
+        const bookPackageLabels = {
+          Kinderbuch: "Kinderbuch · ab 500 €",
+          "Book Starter": "Book Starter · ab 1.000 €",
+          "Authority Book": "Authority Book · 3.000 €",
+          "Premium Research Book": "Premium Research Book · 6.000 €",
+          "Individuelles Buchprojekt":
+            "Individuelles Buchprojekt · auf Anfrage",
+        };
+        setBookPackage(bookPackageLabels[incomingPackage] || incomingPackage);
+      }
     }
   }, []);
   const bookCategories = [
@@ -2571,6 +2567,7 @@ function LabPage() {
                       value={bookPackage}
                       onChange={(event) => setBookPackage(event.target.value)}
                     >
+                      <option>Kinderbuch · ab 500 €</option>
                       <option>Book Starter · ab 1.000 €</option>
                       <option>Authority Book · 3.000 €</option>
                       <option>Premium Research Book · 6.000 €</option>
