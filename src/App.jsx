@@ -2185,6 +2185,19 @@ function LabPage() {
       }
     }
   }, []);
+  useEffect(() => {
+    if (!category || !carriedPackage) return;
+    const frame = requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        const target =
+          category === "Bücher"
+            ? document.querySelector(".book-category-filter")
+            : document.querySelector(".lab-results-head");
+        target?.scrollIntoView({ behavior: "instant", block: "start" });
+      }),
+    );
+    return () => cancelAnimationFrame(frame);
+  }, [category, carriedPackage]);
   const bookCategories = [
     "Alle",
     "Kochbuch",
