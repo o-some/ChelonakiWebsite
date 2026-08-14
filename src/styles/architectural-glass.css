@@ -190,3 +190,92 @@ textarea {
   .hero-actions .text-link { min-height: 48px; }
   .brand-seal { width: 50px; height: 50px; }
 }
+
+/* Batch 3 — service navigation and home entry cards */
+.home-proof {
+  position: relative;
+  z-index: 2;
+  color: rgba(247, 241, 231, 0.86);
+  background: var(--glass-navy-bg);
+  border-top: 1px solid var(--glass-navy-border);
+  border-bottom: 1px solid rgba(205, 174, 114, 0.2);
+  backdrop-filter: blur(15px) saturate(108%);
+  -webkit-backdrop-filter: blur(15px) saturate(108%);
+}
+.home-proof span + span { border-inline-start-color: rgba(205, 174, 114, 0.22); }
+
+.worlds-section,
+.principles-section { background: var(--color-ivory); }
+.worlds-section { padding-block: var(--section-space); }
+.worlds-heading { max-width: var(--content-max); }
+.worlds-heading h2 { color: var(--color-ink); }
+.worlds-heading h2 em { color: var(--color-bronze); }
+
+.world-grid {
+  border-top-color: rgba(148, 96, 29, 0.32);
+  border-bottom-color: rgba(8, 34, 56, 0.16);
+}
+.world-card {
+  position: relative;
+  border-color: rgba(8, 34, 56, 0.15);
+  transition: transform var(--duration-normal) var(--ease-premium), background-color var(--duration-fast) ease, box-shadow var(--duration-normal) var(--ease-premium), border-color var(--duration-fast) ease;
+}
+.world-card:hover,
+.world-card:focus-visible {
+  z-index: 2;
+  transform: translateY(-6px);
+  border-color: rgba(205, 174, 114, 0.62);
+  box-shadow: 0 20px 46px rgba(8, 34, 56, 0.11);
+}
+.world-card:focus-visible { outline: 3px solid rgba(205, 174, 114, 0.62); outline-offset: -3px; }
+.world-card figure { overflow: hidden; }
+.world-card figure img {
+  filter: saturate(0.82) contrast(0.98) sepia(0.035);
+  transition: transform var(--duration-slow) var(--ease-premium), filter var(--duration-normal) ease;
+}
+.world-card:hover figure img { transform: scale(1.018); filter: saturate(0.9) contrast(1); }
+.world-card h3 { min-height: 2.2em; }
+.world-card p { max-width: 62ch; color: var(--color-text-muted); }
+.world-card small { color: var(--color-bronze); }
+.world-link { margin-top: auto; color: var(--color-bronze); }
+
+.world-card.is-dark,
+.world-card.dark,
+.world-card.navy {
+  color: var(--color-ivory);
+  background: var(--color-navy-deep);
+  border-color: var(--glass-navy-border);
+}
+.world-card.is-dark p,
+.world-card.dark p,
+.world-card.navy p { color: rgba(247, 241, 231, 0.76); }
+
+.principle-grid article {
+  border-color: rgba(148, 96, 29, 0.24);
+}
+.principle-grid article:hover { background: rgba(239, 229, 214, 0.42); }
+
+.service-index-card,
+.lab-grid article,
+.design-category-grid > * {
+  transition: transform var(--duration-normal) var(--ease-premium), box-shadow var(--duration-normal) var(--ease-premium), border-color var(--duration-fast) ease;
+}
+.service-index-card:hover,
+.service-index-card:focus-visible,
+.lab-grid article:hover,
+.design-category-grid > *:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 900px) {
+  .home-proof {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+  .home-proof span { flex: 0 0 auto; min-height: 58px; scroll-snap-align: start; }
+  .world-card:hover,
+  .world-card:focus-visible { transform: translateY(-3px); }
+}
