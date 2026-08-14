@@ -265,6 +265,115 @@ textarea {
   .package-selection-dock { right: 12px; width: calc(100vw - 24px); bottom: max(12px, env(safe-area-inset-bottom)); }
 }
 
+/* Batch 5 — forms, dialogs and assistant */
+.contact-panel,
+.contact-form,
+.finder-panel,
+.finder-result {
+  border: 1px solid rgba(255,255,255,.66);
+  border-radius: var(--radius-panel);
+  background: rgba(247,241,231,.94);
+  box-shadow: var(--shadow-glass), inset 0 1px 0 rgba(255,255,255,.72);
+}
+.contact-panel input,
+.contact-panel select,
+.contact-panel textarea,
+.contact-form input,
+.contact-form select,
+.contact-form textarea,
+.chat-compose textarea {
+  min-height: 48px;
+  color: var(--color-ink);
+  border: 1px solid rgba(8,34,56,.28);
+  background: rgba(255,255,255,.68);
+  box-shadow: inset 0 1px 2px rgba(8,34,56,.035);
+}
+.contact-panel textarea,
+.contact-form textarea { min-height: 132px; }
+.contact-panel input:focus,
+.contact-panel select:focus,
+.contact-panel textarea:focus,
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus,
+.chat-compose textarea:focus {
+  outline: 3px solid rgba(205,174,114,.38);
+  outline-offset: 2px;
+  border-color: var(--color-bronze);
+}
+.field-error { color: #8f3029; font-weight: 650; }
+.contact-panel [aria-invalid="true"],
+.contact-form [aria-invalid="true"] { border-color: #9c3d35; box-shadow: 0 0 0 3px rgba(156,61,53,.12); }
+
+.legal-shell,
+.design-detail-copy,
+.design-detail-image {
+  border-radius: var(--radius-panel);
+}
+.legal-shell {
+  border: 1px solid rgba(205,174,114,.45);
+  background: rgba(247,241,231,.97);
+  box-shadow: 0 32px 90px rgba(3,16,28,.3), inset 0 1px 0 rgba(255,255,255,.72);
+}
+.legal-shell header button,
+.design-detail-close,
+.design-zoom-controls button {
+  border-radius: var(--radius-sm);
+  transition: background-color var(--duration-fast) ease, transform var(--duration-fast) var(--ease-premium), border-color var(--duration-fast) ease;
+}
+.legal-shell header button:hover,
+.design-detail-close:hover { background: rgba(8,34,56,.07); border-color: rgba(148,96,29,.45); }
+
+.chat-assistant { --chat-accent: var(--color-bronze); }
+.chat-panel {
+  overflow: hidden;
+  border: 1px solid rgba(205,174,114,.44);
+  border-radius: var(--radius-panel);
+  background: rgba(247,241,231,.95);
+  box-shadow: 0 24px 62px rgba(8,34,56,.2), inset 0 1px 0 rgba(255,255,255,.7);
+  backdrop-filter: blur(18px) saturate(108%);
+  -webkit-backdrop-filter: blur(18px) saturate(108%);
+}
+.chat-head {
+  color: var(--color-ivory);
+  background: rgba(6,27,45,.96);
+  border-bottom-color: rgba(205,174,114,.28);
+}
+.chat-head button { border-radius: var(--radius-sm); }
+.chat-head button:hover { background: rgba(255,255,255,.08); }
+.chat-log { background: linear-gradient(180deg, rgba(239,229,214,.72), rgba(247,241,231,.94)); }
+.chat-message p { border-radius: var(--radius-md); }
+.chat-message.is-user p { background: var(--color-navy); color: #fff; }
+.chat-suggestions button {
+  min-height: 44px;
+  border-radius: var(--radius-sm);
+  border-color: rgba(148,96,29,.35);
+}
+.chat-compose { background: rgba(247,241,231,.98); }
+.chat-compose button { border-radius: var(--radius-sm); }
+
+.chat-launcher-shell {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(205,174,114,.48);
+  background: rgba(247,241,231,.88);
+  box-shadow: 0 14px 34px rgba(8,34,56,.13), inset 0 1px 0 rgba(255,255,255,.75);
+  backdrop-filter: blur(16px) saturate(108%);
+  -webkit-backdrop-filter: blur(16px) saturate(108%);
+}
+.chat-launcher { color: var(--color-navy); }
+.chat-launcher-dismiss { color: var(--color-navy); border-radius: 50%; }
+.chat-launcher-dismiss:hover,
+.chat-launcher-dismiss:focus-visible { background: rgba(8,34,56,.07); }
+
+@media (max-width: 600px) {
+  .chat-panel { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+  .chat-launcher-shell { border-radius: var(--radius-md); }
+  .contact-panel,
+  .contact-form,
+  .finder-panel,
+  .finder-result { border-radius: var(--radius-lg); }
+}
+
 @media (max-width: 520px) {
   .home-hero .hero-copy { padding-top: 118px; }
   .home-hero .hero-copy h1 { font-size: clamp(2.75rem, 14vw, 4rem); }
