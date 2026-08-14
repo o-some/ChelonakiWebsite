@@ -17,7 +17,15 @@ import {
   X,
 } from "@phosphor-icons/react";
 import { hubData, navigation, services, worlds } from "./siteData.js";
-import translations from "./translations.generated.js";
+import generatedTranslations from "./translations.generated.js";
+import translationPatches from "./translations.patches.js";
+
+const translations = Object.fromEntries(
+  Object.entries(generatedTranslations).map(([language, dictionary]) => [
+    language,
+    { ...dictionary, ...(translationPatches[language] || {}) },
+  ]),
+);
 
 const legalViews = {
   impressum: {
@@ -960,14 +968,6 @@ function HomePage() {
             width="1536"
             height="1024"
           />
-          <figure className="hero-medallion">
-            <img
-              src="/assets/chelonaki-wall-medallion.webp"
-              alt=""
-              width="1200"
-              height="1500"
-            />
-          </figure>
         </div>
         <div className="hero-copy">
           <span className="hero-kicker">KI-GESTÜTZTES INNOVATIONSSTUDIO</span>
@@ -2858,7 +2858,7 @@ function FinderResult({ selected, scope, audience, timing, onReset }) {
           <ArrowRight size={18} />
         </SmartLink>
         <button
-          className="text-link text-link-light"
+          className="button button-outline-light"
           type="button"
           onClick={onReset}
         >

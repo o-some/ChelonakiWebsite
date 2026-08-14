@@ -71,6 +71,9 @@ a {
 
 button {
   border: 0;
+  color: inherit;
+  background: transparent;
+  appearance: none;
 }
 
 img {
@@ -302,6 +305,12 @@ nav > * {
 .button-gold {
   color: var(--ink);
   background: var(--gold-soft);
+}
+
+.button-outline-light {
+  color: var(--paper-bright);
+  border-color: rgba(209, 180, 117, 0.68);
+  background: rgba(251, 248, 241, 0.04);
 }
 
 .header-cta {
@@ -697,6 +706,7 @@ nav > * {
   gap: 26px;
   padding: 12px 0;
   color: var(--gold);
+  background: transparent;
   border-bottom: 1px solid rgba(155, 107, 36, 0.7);
   cursor: pointer;
   font-size: 10px;
@@ -2062,6 +2072,12 @@ nav > * {
 
   .button-gold:hover {
     background: #dfc991;
+  }
+
+  .button-outline-light:hover {
+    color: var(--ink);
+    border-color: var(--gold-soft);
+    background: var(--gold-soft);
   }
 
   .text-link:hover {
