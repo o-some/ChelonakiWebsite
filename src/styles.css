@@ -2984,6 +2984,11 @@ nav > * {
   padding: 34px clamp(26px, 3vw, 48px) 40px;
   border-right: 1px solid var(--line-dark);
   background: #f4eee5;
+  cursor: pointer;
+  transition:
+    background-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms var(--ease-out);
 }
 .world-card:nth-child(3n) {
   border-right: 0;
@@ -6807,6 +6812,27 @@ html[lang="ar"] .audience-label {
   .world-link:hover {
     color: var(--gold);
   }
+  .world-card:hover {
+    z-index: 1;
+    transform: translateY(-4px);
+    box-shadow: 0 18px 42px rgba(7, 29, 49, 0.1);
+  }
+  .world-card:hover .world-link {
+    color: var(--ink);
+  }
+  .world-card.originals:hover .world-link {
+    color: var(--paper-bright);
+  }
+}
+
+.world-card:focus-visible {
+  position: relative;
+  z-index: 2;
+}
+
+.world-card:focus-visible .world-link svg,
+.world-card:hover .world-link svg {
+  transform: translateX(4px);
 }
 
 @media (max-width: 1080px) {

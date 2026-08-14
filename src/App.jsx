@@ -1018,10 +1018,12 @@ function HomePage() {
         </header>
         <div className="world-grid">
           {worlds.map((world) => (
-            <article
+            <SmartLink
               className={`world-card ${world.tone}`}
+              href={world.href}
               key={world.title}
               data-reveal
+              aria-label={`${world.title} – ${world.cta}`}
             >
               <div className="world-number">{world.number}</div>
               <figure>
@@ -1040,11 +1042,11 @@ function HomePage() {
               <h3>{world.title}</h3>
               <p>{world.text}</p>
               <small>{world.detail}</small>
-              <SmartLink className="world-link" href={world.href}>
+              <span className="world-link" aria-hidden="true">
                 {world.cta}
                 <ArrowRight size={18} />
-              </SmartLink>
-            </article>
+              </span>
+            </SmartLink>
           ))}
         </div>
       </section>
