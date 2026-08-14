@@ -8707,3 +8707,36 @@ html[dir="rtl"]
   background: #0e3953;
   box-shadow: none;
 }
+
+/* Helle Chelonaki-Variante des kompakten Chat-Einstiegs. */
+.chat-launcher-shell {
+  border-color: rgba(168, 119, 43, 0.58);
+  background: rgba(250, 246, 238, 0.98);
+  box-shadow: 0 18px 44px rgba(34, 39, 43, 0.18);
+  backdrop-filter: blur(14px);
+}
+.chat-launcher {
+  color: #082a40;
+  background: #faf6ee;
+}
+.chat-launcher strong {
+  color: #082a40;
+  text-shadow: none;
+}
+.chat-launcher > svg {
+  color: #9f6f28;
+}
+.chat-launcher > span {
+  border: 1px solid rgba(168, 119, 43, 0.28);
+  background: #fffdf8;
+}
+.chat-launcher-dismiss {
+  border-top-color: rgba(168, 119, 43, 0.28);
+  color: #082a40;
+  background: #efe3cf;
+}
+.chat-launcher-dismiss:hover,
+.chat-launcher-dismiss:focus-visible {
+  color: #fffdf7;
+  background: #9f6f28;
+}
