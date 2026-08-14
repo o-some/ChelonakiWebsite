@@ -3630,8 +3630,7 @@ function ChatAssistant({ path, open, setOpen, compact, setCompact }) {
               onClick={closeToHeader}
               aria-label="Chat minimieren"
             >
-              <span>Minimieren</span>
-              <CaretDown size={18} />
+              <X size={18} />
             </button>
           </header>
           <div className="chat-log" ref={logRef} aria-live="polite">
@@ -3727,8 +3726,7 @@ function ChatAssistant({ path, open, setOpen, compact, setCompact }) {
             onClick={dismissLauncher}
             aria-label="Chat zum Schildkröten-Symbol minimieren"
           >
-            <span>Minimieren</span>
-            <CaretDown size={15} />
+            <X size={15} />
           </button>
         )}
       </div>
