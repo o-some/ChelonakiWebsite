@@ -1,6 +1,6 @@
 import { hubData, services } from "./siteData.js";
 
-export const siteOrigin = "https://chelonaki-ai-studio.o-some.chatgpt.site";
+export const siteOrigin = "https://chelonaki.eu";
 export const brandName = "Chelonaki";
 
 export const legacyRouteMap = {
@@ -66,6 +66,12 @@ export const routeNames = {
   "/qualitaet": "Qualitätsrahmen",
   "/ueber-uns": "Über Chelonaki",
   "/kontakt": "Kontakt",
+  "/impressum": "Impressum",
+  "/datenschutz": "Datenschutzerklärung",
+  "/datenschutzeinstellungen": "Datenschutz-Einstellungen",
+  "/agb": "Allgemeine Geschäftsbedingungen",
+  "/widerruf": "Widerrufsbelehrung",
+  "/barrierefreiheit": "Barrierefreiheit",
   "/web-apps-publikationen/websites-erstellen-lassen":
     "Websites erstellen lassen",
   "/web-apps-publikationen/apps-entwickeln-lassen": "Apps entwickeln lassen",

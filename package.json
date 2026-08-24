@@ -8,7 +8,9 @@
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/prepare-sites-build.mjs",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check:astro": "ASTRO_TELEMETRY_DISABLED=1 astro check",
-    "test:sites": "node --test tests/sites-worker.test.mjs"
+    "test:sites": "node --test tests/sites-worker.test.mjs",
+    "test:compliance": "node --test tests/compliance.test.mjs",
+    "check:release": "npm run check:astro && npm run test:sites && npm run test:compliance && npm run build"
   },
   "dependencies": {
     "@astrojs/react": "^6.0.2",

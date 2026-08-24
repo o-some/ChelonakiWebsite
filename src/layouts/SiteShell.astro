@@ -99,6 +99,11 @@ const unmappedCountryFallback = enabledLocales.some(({ code }) => code === "en")
           document.documentElement.dir = active.direction;
           return;
         }
+        if (localeCodes.length === 1) {
+          const suffix = location.pathname === "/" ? "" : location.pathname;
+          location.replace(`/${localeCodes[0].code}${suffix}${location.search}${location.hash}`);
+          return;
+        }
         let stored = null;
         try {
           stored = localStorage.getItem("chelonaki-preferred-language");

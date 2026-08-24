@@ -45,9 +45,18 @@ npm run build
 
 Der veröffentlichungsfertige Stand liegt anschließend in `dist/client`.
 
-## Hinweis zur Sites-spezifischen Worker-Datei
+## Produktions-Gate für Worker-Funktionen
 
 `worker/index.js`, `db/schema.ts` und `.openai/hosting.json` bleiben im Repository,
 damit der bestehende ChatGPT-Sites-Stand weiterhin reproduzierbar ist. Für das
 statische Cloudflare-Pages-Hosting wird ausschließlich `dist/client` ausgeliefert.
-Die aktuelle Website benötigt dafür keine Cloudflare-D1-Datenbank.
+Die aktuelle Website benötigt keine Cloudflare-D1-Datenbank und erfasst keine
+optionale Nutzungsstatistik.
+
+Cloudflare Pages allein führt `worker/index.js` nicht aus. Der regelbasierte
+Assistent benötigt deshalb entweder die bestehende Sites-Auslieferung oder eine
+separat konfigurierte Cloudflare-Worker-Route für `/api/chat`. Ohne diese Route
+zeigt die Oberfläche einen kontrollierten Hinweis mit den alternativen Kontakt-
+und Paketfinderwegen. Vor dem Produktionsstart müssen Domain, API-Route und die
+in `public/_headers` definierten Antwort-Header am veröffentlichten System
+geprüft werden.

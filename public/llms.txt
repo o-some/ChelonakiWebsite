@@ -6,33 +6,36 @@ Chelonaki verbindet Strategie, Design, Technologie, Ernährungswissenschaft und 
 
 ## Zentrale Seiten
 
-- [Startseite](https://chelonaki-ai-studio.o-some.chatgpt.site/de): Überblick über Chelonaki
-- [Web, Apps & Publikationen](https://chelonaki-ai-studio.o-some.chatgpt.site/de/web-apps-publikationen): Websites, Apps, Bücher und Ghostwriting
-- [Medien & KI](https://chelonaki-ai-studio.o-some.chatgpt.site/de/medien-ai): Social Media, Ads, KI-Telefon und Antwortvorschläge
-- [KI-Beratung & Weiterbildung](https://chelonaki-ai-studio.o-some.chatgpt.site/de/ki-beratung-weiterbildung): Beratung, Mitarbeiterschulungen und Video Academy
-- [Designbeispiele](https://chelonaki-ai-studio.o-some.chatgpt.site/de/demowelten): auswählbare Designrichtungen
-- [Paketfinder](https://chelonaki-ai-studio.o-some.chatgpt.site/de/paketfinder): unverbindliche Orientierung zum passenden Einstieg
-- [Qualitätsrahmen](https://chelonaki-ai-studio.o-some.chatgpt.site/de/qualitaet): Freigaben, Grenzen und Qualitätskontrolle
-- [Über Chelonaki](https://chelonaki-ai-studio.o-some.chatgpt.site/de/ueber-uns): Gründer, Erfahrung, Haltung und technische Kompetenz
-- [Kontakt](https://chelonaki-ai-studio.o-some.chatgpt.site/de/kontakt): Projektanfrage
+- [Startseite](https://chelonaki.eu/de): Überblick über Chelonaki
+- [Web, Apps & Publikationen](https://chelonaki.eu/de/web-apps-publikationen): Websites, Apps, Bücher und Ghostwriting
+- [Medien & KI](https://chelonaki.eu/de/medien-ai): Social Media, Ads, KI-Telefon und Antwortvorschläge
+- [KI-Beratung & Weiterbildung](https://chelonaki.eu/de/ki-beratung-weiterbildung): Beratung, Mitarbeiterschulungen und Video Academy
+- [Designbeispiele](https://chelonaki.eu/de/demowelten): auswählbare Designrichtungen
+- [Paketfinder](https://chelonaki.eu/de/paketfinder): unverbindliche Orientierung zum passenden Einstieg
+- [Qualitätsrahmen](https://chelonaki.eu/de/qualitaet): Freigaben, Grenzen und Qualitätskontrolle
+- [Über Chelonaki](https://chelonaki.eu/de/ueber-uns): Gründer, Erfahrung, Haltung und technische Kompetenz
+- [Kontakt](https://chelonaki.eu/de/kontakt): Projektanfrage
+- [Impressum](https://chelonaki.eu/de/impressum): Anbieter- und Kontaktangaben
+- [Datenschutz](https://chelonaki.eu/de/datenschutz): Datenverarbeitung und Betroffenenrechte
+- [Barrierefreiheit](https://chelonaki.eu/de/barrierefreiheit): Maßnahmen und Feedbackkanal
 
 ## Kernleistungen
 
-- [Shopify-Websites erstellen lassen](https://chelonaki-ai-studio.o-some.chatgpt.site/de/web-apps-publikationen/websites-erstellen-lassen)
-- [Apps entwickeln lassen](https://chelonaki-ai-studio.o-some.chatgpt.site/de/web-apps-publikationen/apps-entwickeln-lassen)
-- [Buchproduktion und Ghostwriting](https://chelonaki-ai-studio.o-some.chatgpt.site/de/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting)
-- [KI-Content und Social Media](https://chelonaki-ai-studio.o-some.chatgpt.site/de/medien-ai/social-media)
-- [Meta- und Google-Ads](https://chelonaki-ai-studio.o-some.chatgpt.site/de/medien-ai/ads)
-- [KI-Telefonassistenten](https://chelonaki-ai-studio.o-some.chatgpt.site/de/medien-ai/ki-telefon)
-- [KI-Beratung für Unternehmen](https://chelonaki-ai-studio.o-some.chatgpt.site/de/ki-beratung-weiterbildung/ki-beratung-unternehmen)
-- [KI-Schulungen und Workshops](https://chelonaki-ai-studio.o-some.chatgpt.site/de/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter)
+- [Shopify-Websites erstellen lassen](https://chelonaki.eu/de/web-apps-publikationen/websites-erstellen-lassen)
+- [Apps entwickeln lassen](https://chelonaki.eu/de/web-apps-publikationen/apps-entwickeln-lassen)
+- [Buchproduktion und Ghostwriting](https://chelonaki.eu/de/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting)
+- [KI-Content und Social Media](https://chelonaki.eu/de/medien-ai/social-media)
+- [Meta- und Google-Ads](https://chelonaki.eu/de/medien-ai/ads)
+- [KI-Telefonassistenten](https://chelonaki.eu/de/medien-ai/ki-telefon)
+- [KI-Beratung für Unternehmen](https://chelonaki.eu/de/ki-beratung-weiterbildung/ki-beratung-unternehmen)
+- [KI-Schulungen und Workshops](https://chelonaki.eu/de/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter)
 
 ## Sprachen und Aktualität
 
-Die Website bietet eigenständige URLs in Deutsch, Englisch, Griechisch, Französisch, Spanisch, Türkisch, Polnisch, Niederländisch, Italienisch, Portugiesisch, Russisch und Arabisch. Für verbindliche Preise, Verfügbarkeit und Leistungszusagen ist die jeweilige Leistungsseite beziehungsweise ein persönliches Angebot maßgeblich.
+Derzeit ist ausschließlich die vollständig geprüfte deutsche Fassung veröffentlicht. Weitere Sprachen werden erst nach vollständiger Übersetzung sowie inhaltlicher, rechtlicher und muttersprachlicher Prüfung aktiviert. Für verbindliche Preise, Verfügbarkeit und Leistungszusagen ist die jeweilige Leistungsseite beziehungsweise ein persönliches Angebot maßgeblich.
 
 ## Weitere maschinenlesbare Quellen
 
-- [Vollständiger Chelonaki-Kontext](https://chelonaki-ai-studio.o-some.chatgpt.site/llms-full.txt)
-- [XML-Sitemap](https://chelonaki-ai-studio.o-some.chatgpt.site/sitemap.xml)
-- [Crawler-Regeln](https://chelonaki-ai-studio.o-some.chatgpt.site/robots.txt)
+- [Vollständiger Chelonaki-Kontext](https://chelonaki.eu/llms-full.txt)
+- [XML-Sitemap](https://chelonaki.eu/sitemap.xml)
+- [Crawler-Regeln](https://chelonaki.eu/robots.txt)

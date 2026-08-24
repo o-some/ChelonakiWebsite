@@ -25,5 +25,5 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://chelonaki-ai-studio.o-some.chatgpt.site/sitemap.xml
-Host: chelonaki-ai-studio.o-some.chatgpt.site
+Sitemap: https://chelonaki.eu/sitemap.xml
+Host: chelonaki.eu

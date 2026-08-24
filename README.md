@@ -1,6 +1,6 @@
 # Chelonaki AI Studio
 
-Astro-/React-Website mit statisch erzeugten Sprachrouten und einem Sites-Edge-Worker für Länder-Fallback und einwilligungsgebundene, anonyme Nutzungsstatistiken.
+Astro-/React-Website mit statisch erzeugten Sprachrouten und einem Sites-Edge-Worker für sichere Auslieferung und den regelbasierten Chelonaki-Assistenten.
 
 ## Sprache
 
@@ -12,27 +12,25 @@ Die zentrale Registrierung liegt in `src/locales.js`. Die Auswahl erfolgt strikt
 4. grober Ländercode des Edge-Netzwerks
 5. Deutsch
 
-Aktive Sprachen erhalten eigene, direkt aufrufbare URLs (`/de`, `/en`, `/el` usw.), `lang`/`dir`, Canonical- und `hreflang`-Metadaten sowie Einträge in `/sitemap.xml`. Schweiz, Belgien und Kanada werden wegen ihrer Mehrsprachigkeit nicht per Land festgelegt. Eine neue Sprache wird zunächst mit `enabled: false` registriert und erst nach vollständiger Übersetzung und Prüfung aktiviert.
+Aktive Sprachen erhalten eigene, direkt aufrufbare URLs, `lang`/`dir`, Canonical- und `hreflang`-Metadaten sowie Einträge in `/sitemap.xml`. Derzeit ist ausschließlich Deutsch freigegeben. Eine weitere Sprache wird zunächst mit `enabled: false` registriert und erst nach vollständiger inhaltlicher, rechtlicher und muttersprachlicher Prüfung aktiviert.
 
-## Geolocation und Datenschutz
+## Datenschutz
 
-Der Worker liest ausschließlich den groben ISO-Ländercode aus der Hosting-Umgebung und injiziert ihn als Meta-Angabe in HTML. Browser-Geolocation wird nicht verwendet. Vollständige IP-Adressen, exakte Standorte und Formulardaten werden nicht in der Analyse-Datenbank gespeichert.
+Browser-Geolocation, optionale Nutzungsstatistik, Marketing-Cookies und Werbe-Tracker sind nicht aktiv. Das Kontaktformular öffnet ausschließlich lokal eine vorausgefüllte E-Mail.
 
-Das Frontend sendet Analyseereignisse erst nach ausdrücklicher Einwilligung. Erfasst werden können Seitenaufruf, automatische oder manuelle Sprachwahl, Paketwahl und der Beginn bzw. Abschluss einer Kontaktanfrage. Die Einstellung kann im Cookie-/Datenschutzdialog geändert werden.
-
-## Datenhaltung
-
-Sites bindet D1 als `DB`. Das Schema liegt in `.openai/drizzle/0000_analytics.sql` und `db/schema.ts`. Der Worker validiert Ereignisnamen, akzeptiert nur Same-Origin-JSON und leitet das Land ausschließlich serverseitig ab.
+Die vorhandene Analytics-API ist nicht an eine D1-Datenbank gebunden und wird vom Frontend nicht aufgerufen. Eine spätere Aktivierung erfordert eine neue Datenschutz-, Consent- und Deployment-Prüfung.
 
 ## Entwicklung
 
 ```sh
 npm run check:astro
+npm run test:compliance
 npm run build
 npm run test:sites
+npm run check:release
 ```
 
-Die Worker-Tests prüfen Sicherheitsheader, Routing, Sprachprioritäten, Locale-Aliase, generierte Sprachrouten und die Analytics-API.
+Die Worker-Tests prüfen Sicherheitsheader, Routing, Sprachprioritäten, Locale-Aliase, generierte Sprachrouten und die inaktive Analytics-API.
 
 ## SEO und KI-Suchsysteme
 

@@ -17,6 +17,12 @@ export const canonicalRoutes = [
   "/qualitaet",
   "/ueber-uns",
   "/kontakt",
+  "/impressum",
+  "/datenschutz",
+  "/datenschutzeinstellungen",
+  "/agb",
+  "/widerruf",
+  "/barrierefreiheit",
   ...Object.keys(services).filter((route) => !legacyRouteMap[route]),
 ];
 

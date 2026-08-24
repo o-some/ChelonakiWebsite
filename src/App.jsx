@@ -28,11 +28,6 @@ import {
   resolvePreferredLanguage,
   stripLanguageFromPath,
 } from "./locales.js";
-import {
-  getAnalyticsConsent,
-  setAnalyticsConsent,
-  trackEvent,
-} from "./analytics.js";
 
 const translations = Object.fromEntries(
   Object.entries(generatedTranslations).map(([language, dictionary]) => [
@@ -130,35 +125,28 @@ const legalViews = {
         </p>
         <h3>Sprachversionen</h3>
         <p>
-          Die angebotenen Sprachfassungen werden direkt von der Website
-          bereitgestellt. Beim Sprachwechsel werden keine Inhalte an einen
-          externen Übersetzungsdienst übermittelt. Die deutsche Fassung bleibt
-          die inhaltliche Ausgangsversion.
+          Derzeit ist ausschließlich die geprüfte deutsche Fassung
+          veröffentlicht. Weitere Sprachfassungen werden erst nach
+          vollständiger inhaltlicher, rechtlicher und muttersprachlicher
+          Prüfung freigeschaltet. Inhalte werden nicht an einen externen
+          Übersetzungsdienst übermittelt.
         </p>
         <h3>Speicherungen auf Ihrem Gerät</h3>
         <p>
-          Die gewählte Sprache, Ihre Datenschutzentscheidung und auf Wunsch
-          gemerkte Designbeispiele werden im lokalen Speicher Ihres Browsers
-          abgelegt. Die automatische Sprachentscheidung wird nur für die
-          aktuelle Sitzung gespeichert. Diese Angaben bleiben auf Ihrem Gerät
-          und können über die Browser-Einstellungen gelöscht werden. Die
-          Speicherung dient der von Ihnen gewünschten Bedienung der Website;
+          Auf Wunsch gemerkte Designbeispiele werden im lokalen Speicher Ihres
+          Browsers abgelegt. Diese Angaben bleiben auf Ihrem Gerät und können
+          über die Browser-Einstellungen gelöscht werden. Die Speicherung dient
+          ausschließlich der von Ihnen gewünschten Bedienung der Website;
           Rechtsgrundlagen sind § 25 Abs. 2 Nr. 2 TDDDG und Art. 6 Abs. 1 lit. f
-          DSGVO. Die Entscheidung über optionale Statistik wird zur Umsetzung
-          Ihrer Einwilligung oder Ablehnung gespeichert.
+          DSGVO.
         </p>
-        <h3>Anonyme Nutzungsstatistik</h3>
+        <h3>Keine optionale Nutzungsstatistik</h3>
         <p>
-          Nur nach Ihrer Einwilligung erfassen wir Seitenaufrufe, den groben
-          Ländercode, die angezeigte Sprache, die Gerätekategorie sowie
-          ausgewählte Interaktionen wie Paket-, Kontakt- und Sprachwahl. Die
-          Anwendung speichert dabei keine vollständige IP-Adresse, keinen
-          exakten Standort und keine Inhalte aus Kontaktfeldern. Statistikdaten
-          werden nach 180 Tagen gelöscht. Rechtsgrundlagen sind Ihre
-          Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und, soweit Informationen
-          auf Ihrem Gerät gespeichert oder ausgelesen werden, § 25 Abs. 1
-          TDDDG. Sie können die Einwilligung jederzeit mit Wirkung für die
-          Zukunft in den Datenschutz-Einstellungen widerrufen.
+          Chelonaki setzt derzeit keine optionale Nutzungsstatistik, keine
+          Marketing-Cookies und keine Werbe-Tracker ein. Sollte sich dies
+          ändern, werden diese Hinweise vor der Aktivierung angepasst und
+          einwilligungspflichtige Funktionen bis zu einer wirksamen
+          Einwilligung blockiert.
         </p>
         <h3>Chelonaki Assistent</h3>
         <p>
@@ -204,44 +192,25 @@ const legalViews = {
     content: (
       <>
         <p className="legal-lead">
-          Diese Website verwendet keine Marketing- oder Werbe-Cookies. Sie
-          entscheiden, ob eine anonyme Nutzungsstatistik erfasst werden darf.
-          Die Website funktioniert auch ohne diese Einwilligung.
+          Diese Website verwendet derzeit keine optionale Nutzungsstatistik,
+          keine Marketing-Cookies und keine Werbe-Tracker.
         </p>
         <div className="settings-row">
           <div>
             <strong>Erforderliche Einstellungen</strong>
-            <p>Sprache und Datenschutzentscheidung auf diesem Gerät.</p>
+            <p>
+              Auf Wunsch gemerkte Designbeispiele bleiben ausschließlich in
+              Ihrem Browser.
+            </p>
           </div>
           <span>
             <Check size={16} /> Aktiv
           </span>
         </div>
-        <div className="settings-row">
-          <div>
-            <strong>Anonyme Nutzungsstatistik</strong>
-            <p>
-              Seite, Sprache, grobes Land, Gerätetyp und ausgewählte Aktionen.
-            </p>
-          </div>
-          <span>Optional</span>
-        </div>
-        <div className="legal-consent-actions">
-          <button
-            className="button button-outline"
-            type="button"
-            onClick={() => setAnalyticsConsent("denied")}
-          >
-            Nur notwendig
-          </button>
-          <button
-            className="button button-gold"
-            type="button"
-            onClick={() => setAnalyticsConsent("granted")}
-          >
-            Anonyme Statistik erlauben
-          </button>
-        </div>
+        <p>
+          Weil keine optionalen Dienste aktiv sind, ist keine Auswahl oder
+          Einwilligung erforderlich.
+        </p>
       </>
     ),
   },
@@ -487,6 +456,18 @@ const legalViews = {
     ),
   },
 };
+
+const legalRoutes = {
+  "/impressum": "impressum",
+  "/datenschutz": "datenschutz",
+  "/datenschutzeinstellungen": "cookies",
+  "/agb": "agb",
+  "/widerruf": "widerruf",
+  "/barrierefreiheit": "barrierefreiheit",
+};
+const legalPaths = Object.fromEntries(
+  Object.entries(legalRoutes).map(([path, key]) => [key, path]),
+);
 
 const labEntries = [
   {
@@ -835,7 +816,6 @@ function LanguagePicker({ mobile = false }) {
   const changeLanguage = (next) => {
     const language = normalizeLanguageCode(next);
     if (!language) return;
-    const previousLanguage = getCurrentLanguage().language;
     try {
       window.localStorage.setItem("chelonaki-preferred-language", language);
       window.localStorage.removeItem("chelonaki-language");
@@ -845,12 +825,6 @@ function LanguagePicker({ mobile = false }) {
         detail: { language, source: "manual" },
       }),
     );
-    trackEvent("language_changed", {
-      previousLanguage,
-      manualLanguage: language,
-      selectedLanguage: language,
-      selectionSource: "manual",
-    });
     setLanguage(next);
     const url = new URL(window.location.href);
     url.pathname = localizePath(url.pathname, language);
@@ -859,6 +833,7 @@ function LanguagePicker({ mobile = false }) {
   const current =
     languageOptions.find(([code]) => code === language) || languageOptions[0];
   const [languageLabel, chooseLabel] = languageUi[language] || languageUi.de;
+  if (languageOptions.length < 2) return null;
   return (
     <div
       ref={pickerRef}
@@ -1150,6 +1125,7 @@ function MobileMenu({ open, onClose, path, onOpenChat }) {
     <dialog
       ref={ref}
       className="mobile-menu"
+      aria-label="Hauptmenü"
       onClose={onClose}
       onCancel={(e) => {
         e.preventDefault();
@@ -1216,20 +1192,22 @@ function MobileMenu({ open, onClose, path, onOpenChat }) {
             Qualität
           </SmartLink>
         </nav>
-        <button
-          className="mobile-chat-entry"
-          type="button"
-          onClick={onOpenChat}
-        >
-          <span>
-            <img src="/assets/chelonaki-turtle-transparent.png" alt="" />
-          </span>
-          <span>
-            <small>Fragen zu Leistungen und Preisen</small>
-            <strong>Chelonaki Assistent öffnen</strong>
-          </span>
-          <ChatCircleDots size={22} />
-        </button>
+        {onOpenChat && (
+          <button
+            className="mobile-chat-entry"
+            type="button"
+            onClick={onOpenChat}
+          >
+            <span>
+              <img src="/assets/chelonaki-turtle-transparent.png" alt="" />
+            </span>
+            <span>
+              <small>Fragen zu Leistungen und Preisen</small>
+              <strong>Chelonaki Assistent öffnen</strong>
+            </span>
+            <ChatCircleDots size={22} />
+          </button>
+        )}
         <SmartLink
           className="button button-gold"
           href="/paketfinder"
@@ -1242,40 +1220,22 @@ function MobileMenu({ open, onClose, path, onOpenChat }) {
   );
 }
 
-function LegalDialog({ viewKey, onClose }) {
-  const ref = useRef(null);
-  const view = viewKey ? legalViews[viewKey] : null;
-  useEffect(() => {
-    if (!ref.current) return;
-    if (view && !ref.current.open) ref.current.showModal();
-    if (!view && ref.current.open) ref.current.close();
-  }, [view]);
+function LegalPage({ viewKey }) {
+  const view = legalViews[viewKey];
   return (
-    <dialog
-      className="legal-dialog"
-      ref={ref}
-      onClose={onClose}
-      onClick={(e) => {
-        if (e.target === ref.current) onClose();
-      }}
-    >
-      {view && (
-        <div className="legal-shell">
-          <header>
-            <div>
-              <span>{view.label}</span>
-              <h2>{view.title}</h2>
-            </div>
-            <button type="button" onClick={onClose} aria-label="Schließen">
-              <X size={24} />
-            </button>
-          </header>
-          <div className="legal-content notranslate" lang="de">
-            {view.content}
+    <main id="main" className="legal-page">
+      <article className="legal-shell">
+        <header>
+          <div>
+            <span>{view.label}</span>
+            <h1>{view.title}</h1>
           </div>
+        </header>
+        <div className="legal-content notranslate" lang="de">
+          {view.content}
         </div>
-      )}
-    </dialog>
+      </article>
+    </main>
   );
 }
 
@@ -1902,10 +1862,6 @@ function Pricing({ data }) {
   ];
   const choose = (tier) => {
     setSelected(tier);
-    trackEvent("package_selected", {
-      packageName: tier.name,
-      service: data.title,
-    });
     setComparisonOpen(true);
   };
   const designCategory = data.title.includes("Website")
@@ -3608,7 +3564,13 @@ function AboutPage() {
 
 function ContactPage() {
   const [errors, setErrors] = useState({});
+  const formRef = useRef(null);
   const privacyId = useId();
+  const nameErrorId = useId();
+  const emailErrorId = useId();
+  const focusErrorId = useId();
+  const messageErrorId = useId();
+  const privacyErrorId = useId();
   const query =
     typeof window === "undefined"
       ? ""
@@ -3641,6 +3603,15 @@ function ContactPage() {
       .join("\n");
     window.location.href = `mailto:info@chelonaki.eu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
+  useEffect(() => {
+    if (!Object.keys(errors).length) return;
+    const frame = window.requestAnimationFrame(() => {
+      const field = formRef.current?.querySelector('[aria-invalid="true"]');
+      field?.focus({ preventScroll: true });
+      field?.scrollIntoView({ block: "center" });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [errors]);
   return (
     <main id="main">
       <section className="contact-page">
@@ -3663,17 +3634,32 @@ function ContactPage() {
           </div>
         </div>
         <div className="contact-panel">
-          <form className="contact-form" noValidate onSubmit={submit}>
+          <form
+            ref={formRef}
+            className="contact-form"
+            noValidate
+            onSubmit={submit}
+          >
+              {Object.keys(errors).length > 0 && (
+                <div className="form-global-error" role="alert">
+                  Bitte prüfen Sie die markierten Pflichtfelder. Der Fokus
+                  springt zum ersten Feld mit einem Fehler.
+                </div>
+              )}
               <div className="field-pair">
                 <label>
                   <span>Name *</span>
                   <input
                     name="name"
                     autoComplete="name"
-                    aria-invalid={errors.name}
+                    required
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby={errors.name ? nameErrorId : undefined}
                   />
                   {errors.name && (
-                    <small className="field-error">Bitte Namen eingeben.</small>
+                    <small className="field-error" id={nameErrorId}>
+                      Bitte Namen eingeben.
+                    </small>
                   )}
                 </label>
                 <label>
@@ -3682,10 +3668,14 @@ function ContactPage() {
                     name="email"
                     type="email"
                     autoComplete="email"
-                    aria-invalid={errors.email}
+                    required
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? emailErrorId : undefined}
                   />
                   {errors.email && (
-                    <small className="field-error">Bitte E-Mail prüfen.</small>
+                    <small className="field-error" id={emailErrorId}>
+                      Bitte E-Mail prüfen.
+                    </small>
                   )}
                 </label>
               </div>
@@ -3699,7 +3689,9 @@ function ContactPage() {
                   <select
                     name="focus"
                     defaultValue={query}
-                    aria-invalid={errors.focus}
+                    required
+                    aria-invalid={Boolean(errors.focus)}
+                    aria-describedby={errors.focus ? focusErrorId : undefined}
                   >
                     <option value="" disabled>
                       Bitte wählen
@@ -3713,7 +3705,9 @@ function ContactPage() {
                     {query && <option>{query}</option>}
                   </select>
                   {errors.focus && (
-                    <small className="field-error">Bitte Bereich wählen.</small>
+                    <small className="field-error" id={focusErrorId}>
+                      Bitte Bereich wählen.
+                    </small>
                   )}
                 </label>
               </div>
@@ -3744,28 +3738,41 @@ function ContactPage() {
                 <textarea
                   name="message"
                   rows="5"
-                  aria-invalid={errors.message}
+                  required
+                  aria-invalid={Boolean(errors.message)}
+                  aria-describedby={
+                    errors.message ? messageErrorId : undefined
+                  }
                 />
                 {errors.message && (
-                  <small className="field-error">
+                  <small className="field-error" id={messageErrorId}>
                     Bitte mindestens 20 Zeichen schreiben.
                   </small>
                 )}
               </label>
-              <label className="privacy-field" htmlFor={privacyId}>
+              <div className="privacy-field">
                 <input
                   id={privacyId}
                   type="checkbox"
                   name="privacy"
-                  aria-invalid={errors.privacy}
+                  required
+                  aria-invalid={Boolean(errors.privacy)}
+                  aria-describedby={
+                    errors.privacy ? privacyErrorId : undefined
+                  }
                 />
                 <span>
-                  Ich habe die Datenschutzhinweise zur Bearbeitung meiner
-                  Anfrage zur Kenntnis genommen. *
+                  <label htmlFor={privacyId}>Ich habe die </label>
+                  <SmartLink href="/datenschutz">Datenschutzhinweise</SmartLink>
+                  <label htmlFor={privacyId}>
+                    {" "}zur Bearbeitung meiner Anfrage zur Kenntnis genommen. *
+                  </label>
                 </span>
-              </label>
+              </div>
               {errors.privacy && (
-                <small className="field-error">Bitte bestätigen.</small>
+                <small className="field-error" id={privacyErrorId}>
+                  Bitte bestätigen.
+                </small>
               )}
               <button
                 className="button button-gold submit-button"
@@ -3796,7 +3803,7 @@ function FinalCta({ label = "Projekt besprechen" }) {
   );
 }
 
-function Footer({ openLegal }) {
+function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-main">
@@ -3839,9 +3846,9 @@ function Footer({ openLegal }) {
         <span>© {new Date().getFullYear()} Chelonaki</span>
         <div>
           {Object.entries(legalViews).map(([key, view]) => (
-            <button key={key} type="button" onClick={() => openLegal(key)}>
+            <SmartLink key={key} href={legalPaths[key]}>
               {view.title}
-            </button>
+            </SmartLink>
           ))}
         </div>
         <a href="#top">
@@ -3914,7 +3921,7 @@ function ChatAssistant({
         }),
       });
       const data = await response.json().catch(() => ({}));
-      if (!response.ok)
+      if (!response.ok || typeof data.answer !== "string" || !data.answer.trim())
         throw new Error(
           data.error || "Der Assistent ist gerade nicht erreichbar.",
         );
@@ -3954,7 +3961,7 @@ function ChatAssistant({
             <span>
               <strong id="chat-title">Chelonaki Assistent</strong>
               <small>
-                <i /> Online · datensparsame Orientierung
+                <i /> Regelbasiert · datensparsame Orientierung
               </small>
             </span>
             <button
@@ -4099,189 +4106,6 @@ function NotFound() {
   );
 }
 
-const consentUi = {
-  de: [
-    "Datenschutzfreundliche Statistik",
-    "Helfen Sie uns mit anonymen Seiten-, Länder- und Sprachdaten. Keine vollständige IP, kein exakter Standort und keine Formulardaten.",
-    "Nur notwendig",
-    "Anonyme Statistik erlauben",
-  ],
-  en: [
-    "Privacy-friendly analytics",
-    "Help us with anonymous page, country and language data. No full IP, exact location or form content.",
-    "Necessary only",
-    "Allow anonymous analytics",
-  ],
-  el: [
-    "Στατιστικά με σεβασμό στην ιδιωτικότητα",
-    "Βοηθήστε μας με ανώνυμα δεδομένα σελίδας, χώρας και γλώσσας. Χωρίς πλήρη IP, ακριβή τοποθεσία ή δεδομένα φόρμας.",
-    "Μόνο απαραίτητα",
-    "Αποδοχή ανώνυμων στατιστικών",
-  ],
-  fr: [
-    "Statistiques respectueuses de la vie privée",
-    "Aidez-nous avec des données anonymes sur les pages, pays et langues. Aucune IP complète, localisation précise ou donnée de formulaire.",
-    "Nécessaire uniquement",
-    "Autoriser les statistiques anonymes",
-  ],
-  es: [
-    "Estadísticas respetuosas con la privacidad",
-    "Ayúdenos con datos anónimos de páginas, países e idiomas. Sin IP completa, ubicación exacta ni datos de formularios.",
-    "Solo necesarias",
-    "Permitir estadísticas anónimas",
-  ],
-  tr: [
-    "Gizlilik dostu istatistikler",
-    "Anonim sayfa, ülke ve dil verileriyle bize yardımcı olun. Tam IP, kesin konum veya form içeriği yoktur.",
-    "Yalnızca gerekli",
-    "Anonim istatistiklere izin ver",
-  ],
-  pl: [
-    "Statystyki z poszanowaniem prywatności",
-    "Pomóż nam anonimowymi danymi o stronach, krajach i językach. Bez pełnego IP, dokładnej lokalizacji i danych formularzy.",
-    "Tylko niezbędne",
-    "Zezwól na anonimowe statystyki",
-  ],
-  nl: [
-    "Privacyvriendelijke statistieken",
-    "Help ons met anonieme pagina-, land- en taalgegevens. Geen volledig IP-adres, exacte locatie of formulierinhoud.",
-    "Alleen noodzakelijk",
-    "Anonieme statistieken toestaan",
-  ],
-  it: [
-    "Statistiche rispettose della privacy",
-    "Aiutateci con dati anonimi su pagine, paesi e lingue. Nessun IP completo, posizione esatta o contenuto dei moduli.",
-    "Solo necessari",
-    "Consenti statistiche anonime",
-  ],
-  pt: [
-    "Estatísticas respeitadoras da privacidade",
-    "Ajude-nos com dados anónimos de páginas, países e idiomas. Sem IP completo, localização exata ou conteúdo de formulários.",
-    "Apenas necessários",
-    "Permitir estatísticas anónimas",
-  ],
-  ru: [
-    "Статистика с уважением к конфиденциальности",
-    "Помогите нам анонимными данными о страницах, странах и языках. Без полного IP, точного местоположения и данных форм.",
-    "Только необходимые",
-    "Разрешить анонимную статистику",
-  ],
-  ar: [
-    "إحصاءات تحترم الخصوصية",
-    "ساعدنا ببيانات مجهولة عن الصفحات والبلدان واللغات. لا عنوان IP كامل ولا موقع دقيق ولا محتوى نماذج.",
-    "الضروري فقط",
-    "السماح بالإحصاءات المجهولة",
-  ],
-};
-
-function ConsentBanner() {
-  const [consent, setConsent] = useState("unknown");
-  const language =
-    typeof document === "undefined"
-      ? "de"
-      : document.documentElement.dataset.locale || "de";
-  const [title, text, deny, allow] = consentUi[language] || consentUi.en;
-  useEffect(() => setConsent(getAnalyticsConsent()), []);
-  if (consent !== "unknown") return null;
-  const decide = (value) => {
-    setAnalyticsConsent(value);
-    setConsent(value);
-    if (value === "granted") {
-      let automaticDecision = null;
-      try {
-        automaticDecision = JSON.parse(
-          sessionStorage.getItem("chelonaki-auto-language-decision"),
-        );
-      } catch {}
-      trackEvent("language_auto_selected", {
-        browserLanguage:
-          automaticDecision?.browserLanguage || navigator.language || null,
-        selectedLanguage:
-          automaticDecision?.language ||
-          document.documentElement.dataset.locale ||
-          "de",
-        selectionSource:
-          automaticDecision?.source ||
-          document.documentElement.dataset.localeSource ||
-          "default",
-      });
-      trackEvent("page_view");
-    }
-  };
-  return (
-    <aside className="consent-banner" aria-label={title}>
-      <div>
-        <strong>{title}</strong>
-        <p>{text}</p>
-      </div>
-      <div>
-        <button type="button" onClick={() => decide("denied")}>
-          {deny}
-        </button>
-        <button
-          className="button button-gold"
-          type="button"
-          onClick={() => decide("granted")}
-        >
-          {allow}
-        </button>
-      </div>
-    </aside>
-  );
-}
-
-function AnalyticsController({ path }) {
-  useEffect(() => {
-    let automaticDecision = null;
-    try {
-      automaticDecision = JSON.parse(
-        sessionStorage.getItem("chelonaki-auto-language-decision"),
-      );
-    } catch {}
-    const source =
-      automaticDecision?.source ||
-      document.documentElement.dataset.localeSource;
-    if (source && !["url", "stored", "manual"].includes(source)) {
-      trackEvent("language_auto_selected", {
-        browserLanguage: automaticDecision?.browserLanguage || null,
-        selectedLanguage:
-          automaticDecision?.language ||
-          document.documentElement.dataset.locale,
-        selectionSource: source,
-      });
-    }
-  }, []);
-  useEffect(() => {
-    trackEvent("page_view");
-  }, [path]);
-  useEffect(() => {
-    const onLanguage = (event) =>
-      trackEvent("language_manually_selected", {
-        manualLanguage: event.detail?.language,
-        selectedLanguage: event.detail?.language,
-        selectionSource: "manual",
-      });
-    const onClick = (event) => {
-      const link = event.target.closest("a[href]");
-      if (link?.getAttribute("href")?.includes("/kontakt"))
-        trackEvent("contact_started");
-    };
-    const onSubmit = (event) => {
-      if (event.target.closest(".contact-form"))
-        trackEvent("contact_submitted");
-    };
-    window.addEventListener("chelonaki:language", onLanguage);
-    document.addEventListener("click", onClick);
-    document.addEventListener("submit", onSubmit);
-    return () => {
-      window.removeEventListener("chelonaki:language", onLanguage);
-      document.removeEventListener("click", onClick);
-      document.removeEventListener("submit", onSubmit);
-    };
-  }, []);
-  return null;
-}
-
 function RouteView({ path }) {
   const redirects = {
     "/digital": "/web-apps-publikationen",
@@ -4355,6 +4179,7 @@ function RouteView({ path }) {
     return <OriginalDetail type={path.split("/").pop()} />;
   if (path === "/ueber-uns") return <AboutPage />;
   if (path === "/kontakt") return <ContactPage />;
+  if (legalRoutes[path]) return <LegalPage viewKey={legalRoutes[path]} />;
   return <NotFound />;
 }
 
@@ -4367,10 +4192,15 @@ export function App({ initialPath = "/", initialLocale = "de" }) {
         ),
   );
   const [menu, setMenu] = useState(false);
-  const [legal, setLegal] = useState(null);
   const [chat, setChat] = useState(false);
   const [chatCompact, setChatCompact] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
+  const chatAllowed = path !== "/kontakt" && !legalRoutes[path];
+  useEffect(() => {
+    if (chatAllowed) return;
+    setChat(false);
+    setChatCompact(false);
+  }, [chatAllowed]);
   useEffect(() => {
     const update = () =>
       setPath(
@@ -4422,6 +4252,12 @@ export function App({ initialPath = "/", initialLocale = "de" }) {
       "/qualitaet": "Qualitätsrahmen",
       "/ueber-uns": "Über uns",
       "/kontakt": "Kontakt",
+      "/impressum": "Impressum",
+      "/datenschutz": "Datenschutzerklärung",
+      "/datenschutzeinstellungen": "Datenschutz-Einstellungen",
+      "/agb": "Allgemeine Geschäftsbedingungen",
+      "/widerruf": "Widerrufsbelehrung",
+      "/barrierefreiheit": "Barrierefreiheit",
     };
     const name =
       services[path]?.title || routeNames[path] || "Chelonaki Studio";
@@ -4492,7 +4328,6 @@ export function App({ initialPath = "/", initialLocale = "de" }) {
   return (
     <>
       <LocalTranslator path={path} />
-      <AnalyticsController path={path} />
       <a className="skip-link" href="#main">
         Zum Inhalt
       </a>
@@ -4500,7 +4335,7 @@ export function App({ initialPath = "/", initialLocale = "de" }) {
       <Header
         path={path}
         openMenu={() => setMenu(true)}
-        chatCompact={chatCompact}
+        chatCompact={chatAllowed && chatCompact}
         chatOpen={chat}
         onOpenChat={() => {
           setChatCompact(false);
@@ -4511,23 +4346,27 @@ export function App({ initialPath = "/", initialLocale = "de" }) {
         open={menu}
         path={path}
         onClose={() => setMenu(false)}
-        onOpenChat={() => {
-          setMenu(false);
-          setChat(true);
-        }}
+        onOpenChat={
+          chatAllowed
+            ? () => {
+                setMenu(false);
+                setChat(true);
+              }
+            : null
+        }
       />
       <RouteView path={path} />
-      <Footer openLegal={setLegal} />
-      <ChatAssistant
-        path={path}
-        open={chat}
-        setOpen={setChat}
-        compact={chatCompact}
-        setCompact={setChatCompact}
-        footerVisible={footerVisible}
-      />
-      <LegalDialog viewKey={legal} onClose={() => setLegal(null)} />
-      <ConsentBanner />
+      <Footer />
+      {chatAllowed && (
+        <ChatAssistant
+          path={path}
+          open={chat}
+          setOpen={setChat}
+          compact={chatCompact}
+          setCompact={setChatCompact}
+          footerVisible={footerVisible}
+        />
+      )}
     </>
   );
 }
