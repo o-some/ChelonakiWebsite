@@ -2443,6 +2443,13 @@ function LabPage() {
     : [];
   const entryBookCategory = (entry) =>
     entry.bookCategory || entry.area?.split(" · ")[0] || "Sonstige";
+  const isChildrenBookDesign =
+    detail?.category === "Bücher" &&
+    entryBookCategory(detail) === "Kinderbuch & Familie";
+  const selectableBookPackage =
+    !isChildrenBookDesign && bookPackage === "Kinderbuch · ab 500 €"
+      ? "Book Starter · ab 1.000 €"
+      : bookPackage;
   const filtered =
     category === "Bücher" && bookCategory !== "Alle"
       ? categoryEntries.filter(
@@ -2807,10 +2814,12 @@ function LabPage() {
                     <label htmlFor="book-package">Gewünschter Buchumfang</label>
                     <select
                       id="book-package"
-                      value={bookPackage}
+                      value={selectableBookPackage}
                       onChange={(event) => setBookPackage(event.target.value)}
                     >
-                      <option>Kinderbuch · ab 500 €</option>
+                      <option disabled={!isChildrenBookDesign}>
+                        Kinderbuch · ab 500 €
+                      </option>
                       <option>Book Starter · ab 1.000 €</option>
                       <option>Authority Book · 3.000 €</option>
                       <option>Premium Research Book · 6.000 €</option>
@@ -2825,7 +2834,7 @@ function LabPage() {
                   </div>
                   <SmartLink
                     className="button button-gold"
-                    href={`/kontakt?bereich=${encodeURIComponent(`${detail.title} · ${bookPackage}`)}`}
+                    href={`/kontakt?bereich=${encodeURIComponent(`${detail.title} · ${selectableBookPackage}`)}`}
                   >
                     Design & Paket anfragen <ArrowRight size={18} />
                   </SmartLink>
