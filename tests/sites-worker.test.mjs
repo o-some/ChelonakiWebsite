@@ -370,6 +370,25 @@ test("analytics deletes events after the disclosed 180-day retention period", as
   );
 });
 
+test("public legal copy is customer-ready and its footer links stay reachable", async () => {
+  const app = await readFile(new URL("../src/App.jsx", import.meta.url), "utf8");
+  const styles = await readFile(
+    new URL("../src/styles.css", import.meta.url),
+    "utf8",
+  );
+  for (const internalText of [
+    "[VOLLSTÄNDIGER NAME ODER FIRMA]",
+    "ChatGPT Sites",
+    "vor der Freischaltung",
+    "gesondert geprüft",
+  ])
+    assert.ok(!app.includes(internalText), internalText);
+  assert.match(app, /Cloudflare, Inc\./);
+  assert.match(app, /Muster-Widerrufsformular/);
+  assert.match(app, /Barriere melden/);
+  assert.match(styles, /\.chat-assistant\.is-footer-hidden\s*{[^}]*pointer-events:\s*none/s);
+});
+
 test("all supported languages contain complete, localized dictionaries", () => {
   const languages = [
     "en",

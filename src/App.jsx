@@ -68,13 +68,12 @@ const legalViews = {
           <br />
           E-Mail: <a href="mailto:info@chelonaki.eu">info@chelonaki.eu</a>
         </p>
-        <h3>Rechtsform und Register</h3>
+        <h3>Rechtsform</h3>
+        <p>Einzelunternehmen</p>
+        <h3>Verbraucherstreitbeilegung</h3>
         <p>
-          Einzelunternehmen
-          <br />
-          Kein Registereintrag
-          <br />
-          Keine Umsatzsteuer-Identifikationsnummer vorhanden
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
+          vor einer Verbraucherschlichtungsstelle teilzunehmen.
         </p>
       </>
     ),
@@ -104,25 +103,30 @@ const legalViews = {
         </p>
         <h3>Hosting und technische Bereitstellung</h3>
         <p>
-          Die derzeit veröffentlichte Website wird über ChatGPT Sites durch
-          OpenAI Ireland Ltd, 1st Floor, The Liffey Trust Centre, 117–126
-          Sheriff Street Upper, Dublin 1, D01 YC43, Irland, gehostet. OpenAI
-          verarbeitet die für Hosting, Wartung, Sicherheit und Support
-          erforderlichen Daten als Auftragsverarbeiter. Dabei können
-          insbesondere IP-Adresse, Zeitpunkt und Ziel des Abrufs, Geräte- und
-          Browserangaben sowie technische Protokoll- und Sicherheitsdaten
-          verarbeitet werden.
+          Diese Website wird über die Infrastruktur von Cloudflare, Inc., 101
+          Townsend Street, San Francisco, CA 94107, USA, bereitgestellt.
+          Cloudflare erbringt insbesondere Hosting-, Auslieferungs-,
+          Sicherheits- und Netzwerkdienste. Beim Aufruf verarbeitet Cloudflare
+          technisch erforderliche Verbindungsdaten, insbesondere IP-Adresse,
+          aufgerufene Adresse, Zeitpunkt, Browser- und Geräteinformationen sowie
+          Sicherheits- und Protokolldaten.
         </p>
         <p>
           Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes
           Interesse liegt in der sicheren, stabilen und missbrauchsgeschützten
-          Bereitstellung der Website. Daten werden nur so lange verarbeitet,
-          wie dies für Betrieb, Sicherheit, Fehlerbehebung und die Erfüllung
-          gesetzlicher Pflichten erforderlich ist. OpenAI kann
-          Unterauftragsverarbeiter einsetzen. Übermittlungen außerhalb des EWR
-          erfolgen nach dem anwendbaren Auftragsverarbeitungsvertrag auf
-          Grundlage eines Angemessenheitsbeschlusses oder der
-          EU-Standardvertragsklauseln.
+          Bereitstellung der Website. Cloudflare verarbeitet Daten in unserem
+          Auftrag auf Grundlage eines Auftragsverarbeitungsvertrags. Soweit
+          Daten außerhalb des Europäischen Wirtschaftsraums verarbeitet
+          werden, stützt Cloudflare die Übermittlung insbesondere auf den
+          EU-US-Datenschutzrahmen und die EU-Standardvertragsklauseln. Technische
+          Daten werden gelöscht oder anonymisiert, sobald sie für Betrieb,
+          Sicherheit und Fehlerbehebung nicht mehr erforderlich sind und keine
+          gesetzlichen Aufbewahrungspflichten entgegenstehen. Weitere
+          Informationen enthält die{" "}
+          <a href="https://www.cloudflare.com/privacypolicy/">
+            Datenschutzerklärung von Cloudflare
+          </a>
+          .
         </p>
         <h3>Sprachversionen</h3>
         <p>
@@ -166,44 +170,19 @@ const legalViews = {
           Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Bitte übermitteln Sie
           dort keine sensiblen oder vertraulichen Daten.
         </p>
-        <h3>Kontaktformular, E-Mail und Telefon</h3>
+        <h3>Kontakt per Formular, E-Mail und Telefon</h3>
         <p>
-          Das sichtbare Kontaktformular ist derzeit eine Vorschau und überträgt
-          keine eingegebenen Formulardaten. Wenn Sie uns per E-Mail oder Telefon
-          kontaktieren, verarbeiten wir Ihre Angaben zur Bearbeitung der
-          Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei
-          vorvertraglichen oder vertraglichen Anliegen, sonst Art. 6 Abs. 1 lit.
-          f DSGVO. Anfragedaten werden grundsätzlich spätestens sechs Monate
-          nach Abschluss der Bearbeitung gelöscht, soweit keine gesetzlichen
+          Das Kontaktformular erstellt ausschließlich auf Ihrem Gerät eine
+          vorausgefüllte E-Mail und öffnet Ihr E-Mail-Programm. Die eingegebenen
+          Formulardaten werden nicht an den Server dieser Website übermittelt.
+          Erst wenn Sie die E-Mail absenden oder uns telefonisch kontaktieren,
+          verarbeiten wir Ihre Angaben zur Bearbeitung der Anfrage.
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglichen
+          oder vertraglichen Anliegen, sonst Art. 6 Abs. 1 lit. f DSGVO.
+          Anfragedaten werden grundsätzlich spätestens sechs Monate nach
+          Abschluss der Bearbeitung gelöscht, soweit keine gesetzlichen
           Aufbewahrungspflichten oder die Geltendmachung, Ausübung oder
           Verteidigung von Rechtsansprüchen eine längere Speicherung erfordern.
-        </p>
-        <h3>Externe Inhalte</h3>
-        <p>
-          Die Website lädt derzeit keine externen Schriftarten, Karten, Videos,
-          Social-Media-Plugins oder Werbepixel. Sollte sich dies ändern, werden
-          diese Hinweise vor der Aktivierung angepasst und eine erforderliche
-          Einwilligung eingeholt.
-        </p>
-        <h3>Geplanter Dienstleistungs-Webshop</h3>
-        <p>
-          Der Webshop ist noch nicht aktiviert und verarbeitet derzeit keine
-          Bestell- oder Zahlungsdaten. Nach seiner Aktivierung werden für
-          Bestellung und Vertragserfüllung insbesondere Name, Kontaktdaten,
-          Rechnungsangaben, gewählte Leistung, Buchungs- oder Terminangaben,
-          Bestellstatus und Zahlungsstatus verarbeitet. Pflichtfelder werden im
-          Bestellprozess gekennzeichnet; ohne die erforderlichen Angaben kann
-          die Bestellung nicht bearbeitet werden. Rechtsgrundlage ist Art. 6
-          Abs. 1 lit. b DSGVO, für gesetzlich vorgeschriebene Aufbewahrung Art.
-          6 Abs. 1 lit. c DSGVO.
-        </p>
-        <p>
-          Shopplattform, Zahlungsdienstleister, Empfänger, mögliche
-          Drittlandübermittlungen und konkrete Löschfristen werden hier vor der
-          Freischaltung entsprechend der tatsächlich gewählten Dienste ergänzt.
-          Zahlungsdaten werden nur im für die gewählte Zahlungsart
-          erforderlichen Umfang an den jeweiligen Zahlungsdienstleister
-          übermittelt.
         </p>
         <h3>Ihre Rechte</h3>
         <p>
@@ -216,33 +195,23 @@ const legalViews = {
           Datenschutz und Informationsfreiheit, Postfach 3163, 65021 Wiesbaden,
           E-Mail: poststelle@datenschutz.hessen.de, zuständig.
         </p>
-        <h3>Automatisierte Entscheidungen</h3>
-        <p>
-          Eine automatisierte Entscheidungsfindung einschließlich Profiling im
-          Sinne von Art. 22 DSGVO findet nicht statt.
-        </p>
-        <p className="legal-note">
-          Wird die Website auf eine andere Hostingplattform umgezogen oder das
-          Kontaktformular, ein Newsletter, ein Shop oder ein externer Dienst
-          aktiviert, muss diese Datenschutzerklärung vorab an den tatsächlichen
-          Datenfluss angepasst werden.
-        </p>
       </>
     ),
   },
   cookies: {
     label: "Datenschutz-Einstellungen",
-    title: "Cookies",
+    title: "Datenschutz-Einstellungen",
     content: (
       <>
         <p className="legal-lead">
-          Sie entscheiden, ob anonyme Nutzungsstatistiken erfasst werden. Die
-          Website funktioniert auch ohne diese Einwilligung vollständig.
+          Diese Website verwendet keine Marketing- oder Werbe-Cookies. Sie
+          entscheiden, ob eine anonyme Nutzungsstatistik erfasst werden darf.
+          Die Website funktioniert auch ohne diese Einwilligung.
         </p>
         <div className="settings-row">
           <div>
-            <strong>Technisch notwendiger Betrieb</strong>
-            <p>Erforderlich für die sichere Auslieferung.</p>
+            <strong>Erforderliche Einstellungen</strong>
+            <p>Sprache und Datenschutzentscheidung auf diesem Gerät.</p>
           </div>
           <span>
             <Check size={16} /> Aktiv
@@ -282,19 +251,16 @@ const legalViews = {
     content: (
       <>
         <p className="legal-lead">
-          Diese AGB gelten für individuell vereinbarte und künftig über den
-          Chelonaki Webshop buchbare Dienstleistungen und digitale Angebote.
-          Der Webshop ist derzeit noch nicht aktiviert und nimmt noch keine
-          zahlungspflichtigen Bestellungen an.
+          Diese AGB gelten für Verträge über Dienstleistungen, Werkleistungen
+          und digitale Leistungen von Chelonaki.
         </p>
         <h3>1. Anbieter und Geltungsbereich</h3>
         <p>
           Vertragspartner ist Eleftherios Samouladas, handelnd unter Chelonaki,
           Zeppelinstraße 7, 68519 Viernheim. Diese AGB gelten für
-          Dienstleistungen, Projektleistungen, digitale Inhalte und digitale
-          Dienste, die individuell oder nach Aktivierung des Webshops angeboten
-          werden. Sie gelten gegenüber Unternehmern und Verbrauchern, soweit im
-          individuellen Angebot nichts Abweichendes vereinbart wird.
+          Dienstleistungen, Werkleistungen, digitale Inhalte und digitale
+          Dienste. Sie gelten gegenüber Unternehmern und Verbrauchern, soweit
+          im individuellen Angebot nichts Abweichendes vereinbart wird.
           Individuelle Vereinbarungen und die konkrete Leistungsbeschreibung
           gehen diesen AGB vor.
         </p>
@@ -302,27 +268,16 @@ const legalViews = {
         <p>
           Darstellungen, Paketfinder, Preise und Kontaktmöglichkeiten auf der
           Website sind unverbindliche Informationen und kein bindendes Angebot.
-          Ein Vertrag kommt erst durch ein individuelles Angebot von Chelonaki
-          und dessen Annahme durch den Kunden oder durch eine ausdrückliche
-          Auftragsbestätigung zustande.
+          Ein Vertrag kommt durch ein individuelles Angebot von Chelonaki und
+          dessen Annahme durch den Kunden oder durch eine ausdrückliche
+          Auftragsbestätigung zustande. Eine über die Website vorbereitete oder
+          per E-Mail übermittelte Anfrage ist noch keine Bestellung und
+          verpflichtet den Kunden nicht zum Vertragsschluss.
         </p>
         <p>
-          Nach Aktivierung des Webshops können ausgewählte Leistungen über den
-          Warenkorb gebucht werden. Die Produktdarstellung ist eine Einladung
-          zur Abgabe einer Bestellung. Vor dem Absenden kann der Kunde seine
-          Angaben und die ausgewählten Leistungen prüfen und korrigieren. Mit
-          Betätigung der eindeutig als zahlungspflichtig gekennzeichneten
-          Bestellschaltfläche gibt der Kunde ein verbindliches Angebot ab. Der
-          Eingang wird unverzüglich elektronisch bestätigt. Diese
-          Eingangsbestätigung ist nur dann bereits die Vertragsannahme, wenn sie
-          ausdrücklich als Auftragsbestätigung bezeichnet ist; andernfalls
-          kommt der Vertrag durch gesonderte Annahme oder Bereitstellung der
-          gebuchten Leistung zustande.
-        </p>
-        <p>
-          Die Vertragssprache ist Deutsch. Die Vertragsbestätigung mit den
-          maßgeblichen Bestelldaten, AGB und Verbraucherinformationen wird auf
-          einem dauerhaften Datenträger, in der Regel per E-Mail, bereitgestellt.
+          Die Vertragssprache ist Deutsch. Angebot, Vertragsbedingungen und
+          Verbraucherinformationen werden dem Kunden in Textform, in der Regel
+          per E-Mail, zur Verfügung gestellt.
         </p>
         <h3>3. Leistungsumfang und Änderungen</h3>
         <p>
@@ -330,14 +285,6 @@ const legalViews = {
           sich aus dem jeweiligen Angebot oder der Leistungsbeschreibung.
           Änderungs- und Zusatzwünsche werden vor ihrer Umsetzung hinsichtlich
           Mehrkosten und Terminfolgen abgestimmt.
-        </p>
-        <p>
-          Im Webshop werden vor der Bestellung die wesentlichen Eigenschaften,
-          Voraussetzungen, Leistungs- oder Bereitstellungszeit, Zielgruppe,
-          Laufzeit, Kündigungsbedingungen und gegebenenfalls Funktionalität,
-          Kompatibilität und Interoperabilität des jeweiligen Angebots
-          ausgewiesen. Diese produktspezifischen Angaben sind Bestandteil des
-          Vertrags.
         </p>
         <h3>4. Mitwirkung des Kunden</h3>
         <p>
@@ -350,33 +297,20 @@ const legalViews = {
         </p>
         <h3>5. Preise und Zahlung</h3>
         <p>
-          Maßgeblich sind die Preise und Zahlungsabschnitte im individuellen
-          Angebot. Als netto gekennzeichnete Websitepreise richten sich an
-          Unternehmer; Verbraucher erhalten vor Vertragsschluss ein Angebot mit
-          dem zu zahlenden Gesamtpreis einschließlich anwendbarer Steuern und
-          Abgaben. Im Webshop werden akzeptierte Zahlungsmittel und mögliche
-          Zusatzkosten spätestens zu Beginn des Bestellvorgangs angezeigt.
+          Maßgeblich sind die Preise und Zahlungsbedingungen im individuellen
+          Angebot. Als netto gekennzeichnete Websitepreise richten sich
+          ausschließlich an Unternehmer. Verbraucher erhalten vor
+          Vertragsschluss den zu zahlenden Gesamtpreis einschließlich
+          anwendbarer Steuern und Abgaben.
           Fremdkosten, Lizenzen, Plattformtarife, Werbebudgets, Druck- oder
           Versandkosten sind nur enthalten, wenn dies ausdrücklich vereinbart
-          und vor der Bestellung ausgewiesen wurde.
+          und vor Vertragsschluss ausgewiesen wurde.
         </p>
         <p>
-          Fälligkeit, Abschlagszahlungen und Zahlungsplan ergeben sich aus der
-          jeweiligen Leistungsbeschreibung, der Bestellübersicht oder dem
-          individuellen Angebot. Ein bestimmter Zahlungsdienstleister wird erst
-          mit dessen tatsächlicher Einbindung benannt.
+          Fälligkeit, Abschlagszahlungen und Zahlungsplan ergeben sich aus dem
+          individuellen Angebot und der Rechnung.
         </p>
-        <h3>6. Buchungen und Termine</h3>
-        <p>
-          Ein im Webshop gewählter Termin wird erst mit Vertragsannahme
-          verbindlich. Voraussetzungen, Umbuchungs- und Stornobedingungen werden
-          bei der jeweiligen buchbaren Leistung vor der Bestellung angezeigt.
-          Soweit der Kunde einen Leistungsbeginn vor Ablauf einer gesetzlichen
-          Widerrufsfrist wünscht, wird dieser Wunsch einschließlich der
-          erforderlichen Kenntnisbestätigung gesondert und nicht durch ein
-          vorangekreuztes Feld abgefragt.
-        </p>
-        <h3>7. Termine, Übergabe und Abnahme</h3>
+        <h3>6. Termine, Übergabe und Abnahme</h3>
         <p>
           Termine setzen die rechtzeitige Mitwirkung und Freigabe des Kunden
           voraus. Soweit eine Abnahme gesetzlich oder vertraglich vorgesehen
@@ -384,7 +318,7 @@ const legalViews = {
           und konkrete Mängel mitteilen. Unwesentliche Abweichungen hindern die
           Abnahme nicht.
         </p>
-        <h3>8. Digitale Inhalte und Zugänge</h3>
+        <h3>7. Digitale Inhalte und Zugänge</h3>
         <p>
           Digitale Inhalte, Downloads, Kurse oder Zugänge werden in der in der
           Produktbeschreibung genannten Form und Dauer bereitgestellt.
@@ -392,7 +326,7 @@ const legalViews = {
           vereinbarten Umfang weitergegeben werden. Gesetzliche Rechte bei
           digitalen Produkten bleiben unberührt.
         </p>
-        <h3>9. Nutzungsrechte und Drittleistungen</h3>
+        <h3>8. Nutzungsrechte und Drittleistungen</h3>
         <p>
           Der vereinbarte Nutzungsumfang ergibt sich aus dem Angebot. Soweit
           nichts anderes vereinbart ist, werden Nutzungsrechte an finalen,
@@ -402,30 +336,31 @@ const legalViews = {
           bei ihrem jeweiligen Rechteinhaber. Für Schriften, Bilder, Software
           und andere Drittinhalte gelten zusätzlich deren Lizenzbedingungen.
         </p>
-        <h3>10. Mängel und Haftung</h3>
+        <h3>9. Mängel und Haftung</h3>
         <p>
-          Es gelten die gesetzlichen Mängelrechte und Haftungsregeln. Eine
-          Garantie für bestimmte wirtschaftliche Ergebnisse, Reichweiten,
-          Platzierungen oder Genehmigungen besteht nur, wenn sie ausdrücklich
-          schriftlich zugesagt wurde.
+          Es gelten die gesetzlichen Mängelrechte und Haftungsregeln. Bestimmte
+          wirtschaftliche Ergebnisse, Reichweiten, Platzierungen oder
+          Genehmigungen sind nur geschuldet, wenn dies ausdrücklich vereinbart
+          wurde.
         </p>
-        <h3>11. Laufzeit und Beendigung</h3>
+        <h3>10. Laufzeit und Beendigung</h3>
         <p>
           Laufzeit und Kündigung richten sich nach dem individuellen Vertrag.
           Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt
-          unberührt. Bis zur Beendigung vertragsgemäß erbrachte Leistungen sind
-          zu vergüten.
+          unberührt.
         </p>
-        <h3>12. Verbraucher und Widerruf</h3>
+        <h3>11. Verbraucher und Widerruf</h3>
         <p>
           Verbrauchern stehen die zwingenden gesetzlichen Rechte zu. Besteht bei
           einem Fernabsatzvertrag ein Widerrufsrecht, wird hierüber vor
           Vertragsschluss gesondert belehrt. Die Informationen unter
           „Widerruf“ gelten nur für Verträge, bei denen ein gesetzliches
-          Widerrufsrecht tatsächlich besteht. Bei einem online geschlossenen
-          Vertrag wird eine gesetzlich erforderliche elektronische
-          Widerrufsfunktion während der Widerrufsfrist leicht zugänglich
-          bereitgestellt.
+          Widerrufsrecht tatsächlich besteht.
+        </p>
+        <h3>12. Verbraucherstreitbeilegung</h3>
+        <p>
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
+          vor einer Verbraucherschlichtungsstelle teilzunehmen.
         </p>
         <h3>13. Schlussbestimmungen</h3>
         <p>
@@ -437,15 +372,14 @@ const legalViews = {
     ),
   },
   widerruf: {
-    label: "Hinweise für Verbraucher",
-    title: "Widerruf",
+    label: "Für Verbraucher",
+    title: "Widerrufsbelehrung",
     content: (
       <>
         <p className="legal-lead">
-          Diese Belehrung gilt für Verbraucher, wenn ein Vertrag über eine
-          Dienstleistung oder einen nicht auf einem körperlichen Datenträger
-          bereitgestellten digitalen Inhalt im Fernabsatz geschlossen wird und
-          kein gesetzlicher Ausschluss greift.
+          Diese Belehrung gilt für Verbraucher bei Fernabsatzverträgen über
+          Dienstleistungen und über digitale Inhalte, die nicht auf einem
+          körperlichen Datenträger bereitgestellt werden.
         </p>
         <h3>Widerrufsrecht</h3>
         <p>
@@ -455,12 +389,13 @@ const legalViews = {
         </p>
         <p>
           Um Ihr Widerrufsrecht auszuüben, müssen Sie uns – Eleftherios
-          Samouladas, Chelonaki, Zeppelinstraße 7, 68519 Viernheim, Telefon +49
-          171 2997495, E-Mail info@chelonaki.eu – mittels einer eindeutigen
-          Erklärung über Ihren Entschluss informieren. Sie können dafür das
-          unten stehende Muster-Widerrufsformular verwenden; dies ist nicht
-          vorgeschrieben. Zur Wahrung der Frist reicht es aus, dass Sie die
-          Erklärung vor Ablauf der Widerrufsfrist absenden.
+          Samouladas, handelnd unter Chelonaki, Zeppelinstraße 7, 68519
+          Viernheim, Telefon +49 171 2997495, E-Mail info@chelonaki.eu – mittels
+          einer eindeutigen Erklärung, zum Beispiel durch einen mit der Post
+          versandten Brief oder eine E-Mail, über Ihren Entschluss informieren.
+          Sie können dafür das unten stehende Muster-Widerrufsformular
+          verwenden; dies ist nicht vorgeschrieben. Zur Wahrung der Frist reicht
+          es aus, dass Sie die Erklärung vor Ablauf der Widerrufsfrist absenden.
         </p>
         <h3>Folgen des Widerrufs</h3>
         <p>
@@ -469,72 +404,84 @@ const legalViews = {
           spätestens binnen vierzehn Tagen ab Eingang des Widerrufs. Für die
           Rückzahlung verwenden wir dasselbe Zahlungsmittel wie bei der
           ursprünglichen Zahlung, sofern nicht ausdrücklich etwas anderes
-          vereinbart wurde. Dafür werden keine Entgelte berechnet.
+          vereinbart wurde; in keinem Fall werden Ihnen wegen dieser Rückzahlung
+          Entgelte berechnet.
         </p>
         <p>
           Haben Sie verlangt, dass eine Dienstleistung während der
-          Widerrufsfrist beginnen soll, ist ein angemessener Betrag für den bis
-          zum Widerruf bereits erbrachten Anteil zu zahlen, sofern die
-          gesetzlichen Voraussetzungen dafür erfüllt sind.
+          Widerrufsfrist beginnen soll, haben Sie uns einen angemessenen Betrag
+          zu zahlen. Dieser entspricht dem Anteil der bis zu Ihrer Mitteilung
+          über den Widerruf bereits erbrachten Leistungen am Gesamtumfang der
+          vertraglich vorgesehenen Leistungen.
         </p>
         <h3>Vorzeitiges Erlöschen</h3>
         <p>
           Bei einer entgeltlichen Dienstleistung erlischt das Widerrufsrecht mit
-          vollständiger Erbringung nur, wenn Sie vor Beginn ausdrücklich dem
-          vorzeitigen Leistungsbeginn zugestimmt und bestätigt haben, dass Sie
-          vom Erlöschen bei vollständiger Vertragserfüllung wissen. Bei
+          vollständiger Erbringung nur, wenn Sie vor Beginn der Leistung
+          ausdrücklich zugestimmt haben, dass wir vor Ablauf der Widerrufsfrist
+          mit der Leistung beginnen, und Sie bestätigt haben, dass Sie bei
+          vollständiger Vertragserfüllung Ihr Widerrufsrecht verlieren. Bei
           entgeltlichen digitalen Inhalten, die nicht auf einem körperlichen
-          Datenträger bereitgestellt werden, kann das Widerrufsrecht mit Beginn
-          der Ausführung erlöschen, wenn die gesetzlich erforderliche Zustimmung,
-          Kenntnisbestätigung und Vertragsbestätigung vorliegen.
-        </p>
-        <h3>Elektronische Widerrufsfunktion</h3>
-        <p>
-          Nach Aktivierung des Webshops wird für online geschlossene Verträge,
-          bei denen ein gesetzliches Widerrufsrecht besteht, während der
-          Widerrufsfrist eine ständig verfügbare und hervorgehoben platzierte
-          Funktion „Vertrag widerrufen“ bereitgestellt. Nach Eingabe der zur
-          Vertragsidentifikation erforderlichen Angaben kann der Widerruf über
-          „Widerruf bestätigen“ abgesendet werden. Der Eingang wird
-          unverzüglich mit Datum, Uhrzeit und Inhalt auf einem dauerhaften
-          Datenträger bestätigt.
+          Datenträger bereitgestellt werden, erlischt das Widerrufsrecht mit
+          Beginn der Vertragserfüllung, wenn Sie zuvor ausdrücklich zugestimmt
+          haben, dass wir vor Ablauf der Widerrufsfrist beginnen, Ihre Kenntnis
+          vom Verlust des Widerrufsrechts bestätigt haben und Ihnen eine
+          Vertragsbestätigung zur Verfügung gestellt wurde.
         </p>
         <h3>Muster-Widerrufsformular</h3>
         <p>
-          An Eleftherios Samouladas, Chelonaki, Zeppelinstraße 7, 68519
-          Viernheim, E-Mail info@chelonaki.eu:
+          An Eleftherios Samouladas, handelnd unter Chelonaki, Zeppelinstraße 7,
+          68519 Viernheim, E-Mail info@chelonaki.eu:
         </p>
         <p>
-          Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über die
-          folgende Dienstleistung oder den folgenden digitalen Inhalt:
-          ____________________. Vertrag geschlossen am: ____________________.
-          Name des Verbrauchers: ____________________. Anschrift des
-          Verbrauchers: ____________________. Datum: ____________________.
-          Unterschrift des Verbrauchers (nur bei Mitteilung auf Papier):
-          ____________________.
+          Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen
+          Vertrag über die Erbringung der folgenden Dienstleistung oder über den
+          die Bereitstellung des folgenden digitalen Inhalts:
+          <br />
+          ______________________________________________
+          <br />
+          Vertrag geschlossen am: ______________________
+          <br />
+          Name des/der Verbraucher(s): __________________
+          <br />
+          Anschrift des/der Verbraucher(s): _____________
+          <br />
+          Datum: _______________________________________
+          <br />
+          Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier):
+          ______________________________________________
+          <br />
+          (*) Unzutreffendes streichen.
         </p>
       </>
     ),
   },
   barrierefreiheit: {
-    label: "Zugängliche Gestaltung",
+    label: "Stand: 24. August 2026",
     title: "Barrierefreiheit",
     content: (
       <>
         <p className="legal-lead">
-          Chelonaki soll unabhängig von Gerät und Eingabemethode gut nutzbar
-          sein.
+          Wir möchten, dass diese Website unabhängig von persönlichen
+          Fähigkeiten, Gerät und Eingabemethode gut zugänglich ist.
         </p>
+        <h3>Umgesetzte Maßnahmen</h3>
         <ul>
-          <li>Semantische Struktur und Tastaturbedienung</li>
-          <li>Sichtbare Fokuszustände und große Bedienflächen</li>
-          <li>Kontrastreiche Gestaltung und Bildalternativen</li>
-          <li>Reduzierte Bewegung bei Systemeinstellung</li>
-          <li>Responsive Darstellung ohne horizontales Scrollen</li>
+          <li>Semantische Überschriften, Landmarks und Sprunglink zum Inhalt</li>
+          <li>Bedienung der Navigation und Dialoge mit der Tastatur</li>
+          <li>Sichtbare Fokusmarkierungen und ausreichend große Bedienelemente</li>
+          <li>Textalternativen für inhaltlich relevante Bilder</li>
+          <li>Reduzierte Animation bei aktivierter Systemeinstellung</li>
+          <li>Responsive Darstellung und vergrößerbare Texte</li>
         </ul>
-        <p className="legal-note">
-          Die konkrete BFSG-Anwendbarkeit wird vor einem B2C-Onlineshop
-          gesondert geprüft.
+        <h3>Barriere melden</h3>
+        <p>
+          Wenn Sie Inhalte nicht erreichen oder bedienen können, schreiben Sie
+          bitte an <a href="mailto:info@chelonaki.eu">info@chelonaki.eu</a> oder
+          rufen Sie uns unter <a href="tel:+491712997495">+49 171 2997495</a>{" "}
+          an. Nennen Sie möglichst die betroffene Seite und die verwendete
+          Technik. Wir prüfen die Meldung und bieten auf Wunsch eine
+          zugängliche Alternative an.
         </p>
       </>
     ),
@@ -3660,7 +3607,6 @@ function AboutPage() {
 }
 
 function ContactPage() {
-  const [state, setState] = useState("idle");
   const [errors, setErrors] = useState({});
   const privacyId = useId();
   const query =
@@ -3678,7 +3624,22 @@ function ContactPage() {
     if ((data.get("message") || "").trim().length < 20) next.message = true;
     if (!data.get("privacy")) next.privacy = true;
     setErrors(next);
-    if (!Object.keys(next).length) setTimeout(() => setState("success"), 500);
+    if (Object.keys(next).length) return;
+    const subject = `Projektanfrage: ${data.get("focus")}`;
+    const body = [
+      `Name: ${data.get("name")}`,
+      `E-Mail: ${data.get("email")}`,
+      data.get("company") && `Unternehmen/Projekt: ${data.get("company")}`,
+      `Gewünschte Leistung: ${data.get("focus")}`,
+      `Budgetrahmen: ${data.get("budget") || "Noch offen"}`,
+      `Gewünschter Start: ${data.get("start") || "Noch offen"}`,
+      "",
+      "Ziel und Ausgangslage:",
+      data.get("message"),
+    ]
+      .filter((line) => line !== false && line !== null && line !== undefined)
+      .join("\n");
+    window.location.href = `mailto:info@chelonaki.eu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
   return (
     <main id="main">
@@ -3697,28 +3658,12 @@ function ContactPage() {
             <LockKey size={22} />
             <span>
               <strong>Qualifizierte Anfrage</strong>Eine Anfrage ist noch keine
-              Auftragsannahme. Diese Vorschau versendet noch keine Daten.
+              Auftragsannahme. Das Formular öffnet Ihr E-Mail-Programm.
             </span>
           </div>
         </div>
         <div className="contact-panel">
-          {state === "success" ? (
-            <div className="form-result">
-              <Check size={36} />
-              <h2>Die Anfrage ist vorbereitet.</h2>
-              <p>
-                Der sichere Versand wird nach Ergänzung der finalen
-                Unternehmens- und Datenschutzangaben angebunden.
-              </p>
-              <button
-                className="text-link text-link-light"
-                onClick={() => setState("idle")}
-              >
-                Neue Anfrage <ArrowRight size={18} />
-              </button>
-            </div>
-          ) : (
-            <form className="contact-form" noValidate onSubmit={submit}>
+          <form className="contact-form" noValidate onSubmit={submit}>
               <div className="field-pair">
                 <label>
                   <span>Name *</span>
@@ -3826,10 +3771,9 @@ function ContactPage() {
                 className="button button-gold submit-button"
                 type="submit"
               >
-                Anfrage vorbereiten <ArrowUpRight size={18} />
+                E-Mail-Anfrage öffnen <ArrowUpRight size={18} />
               </button>
-            </form>
-          )}
+          </form>
         </div>
       </section>
     </main>
@@ -3915,7 +3859,14 @@ const chatSuggestions = [
   "Zeig mir passende Designbeispiele.",
 ];
 
-function ChatAssistant({ path, open, setOpen, compact, setCompact }) {
+function ChatAssistant({
+  path,
+  open,
+  setOpen,
+  compact,
+  setCompact,
+  footerVisible,
+}) {
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [messages, setMessages] = useState([
@@ -3986,7 +3937,7 @@ function ChatAssistant({ path, open, setOpen, compact, setCompact }) {
 
   return (
     <aside
-      className={`chat-assistant ${open ? "is-open" : ""} ${compact && !open ? "is-compact" : ""}`}
+      className={`chat-assistant ${open ? "is-open" : ""} ${compact && !open ? "is-compact" : ""} ${footerVisible && !open ? "is-footer-hidden" : ""}`}
       aria-label="Chelonaki Assistent"
     >
       {open && (
@@ -4419,6 +4370,7 @@ export function App({ initialPath = "/", initialLocale = "de" }) {
   const [legal, setLegal] = useState(null);
   const [chat, setChat] = useState(false);
   const [chatCompact, setChatCompact] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
   useEffect(() => {
     const update = () =>
       setPath(
@@ -4448,6 +4400,15 @@ export function App({ initialPath = "/", initialLocale = "de" }) {
   }, [initialLocale]);
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [path]);
+  useEffect(() => {
+    const footer = document.querySelector(".site-footer");
+    if (!footer || !("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(([entry]) =>
+      setFooterVisible(entry.isIntersecting),
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
   }, [path]);
   useEffect(() => {
     const routeNames = {
@@ -4563,6 +4524,7 @@ export function App({ initialPath = "/", initialLocale = "de" }) {
         setOpen={setChat}
         compact={chatCompact}
         setCompact={setChatCompact}
+        footerVisible={footerVisible}
       />
       <LegalDialog viewKey={legal} onClose={() => setLegal(null)} />
       <ConsentBanner />
