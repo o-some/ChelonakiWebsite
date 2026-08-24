@@ -57,7 +57,7 @@ export const worlds = [
     href: "/web-apps-publikationen",
     cta: "Bereich entdecken",
     tone: "digital",
-    image: "/assets/service-websites-liquid-glass-v3.webp",
+    image: "/assets/home-web-liquid-glass-v1.webp",
   },
   {
     number: "02",
@@ -68,7 +68,7 @@ export const worlds = [
     href: "/medien-ai",
     cta: "Bereich entdecken",
     tone: "expertise",
-    image: "/assets/service-content-liquid-glass-v3.webp",
+    image: "/assets/home-media-liquid-glass-v1.webp",
   },
   {
     number: "03",
@@ -79,11 +79,11 @@ export const worlds = [
     href: "/ki-beratung-weiterbildung",
     cta: "Bereich entdecken",
     tone: "expertise",
-    image: "/assets/service-consulting-liquid-glass-v3.webp",
+    image: "/assets/home-advice-liquid-glass-v1.webp",
   },
-  { number: "04", eyebrow: "Persönlich entwickelt & geschrieben", title: "Originals", text: "Apps, die Eleftherios selbst entwickelt, und Bücher, die er selbst geschrieben hat.", detail: "Eigene App-Entwicklung · eigene Bücher", href: "/originals", cta: "Originals entdecken", tone: "originals", image: "/assets/service-books-v2.webp" },
-  { number: "05", eyebrow: "Ansehen · auswählen · individualisieren", title: "Designbeispiele", text: "Kuratierte Stilrichtungen für Websites, Apps, Inhalte und Publikationen. Wählen Sie eine Designwelt als Vorlage – wir passen sie an Ihre Marke und Ihr Projekt an.", detail: "Designrichtungen · Vorlagen · Inspiration", href: "/demowelten", cta: "Beispiele ansehen", tone: "digital", image: "/assets/design-apps.png" },
-  { number: "06", eyebrow: "Herkunft & Haltung", title: "Über uns", text: "Die Familiengeschichte, Kompetenz und Werte hinter Chelonaki.", detail: "Eleftherios · Familie · Qualität", href: "/ueber-uns", cta: "Geschichte kennenlernen", tone: "expertise", image: "/assets/chelonaki-wall-medallion.webp" },
+  { number: "04", eyebrow: "Persönlich entwickelt & geschrieben", title: "Originals", text: "Apps, die Eleftherios selbst entwickelt, und Bücher, die er selbst geschrieben hat.", detail: "Eigene App-Entwicklung · eigene Bücher", href: "/originals", cta: "Originals entdecken", tone: "originals", image: "/assets/home-originals-liquid-glass-v1.webp" },
+  { number: "05", eyebrow: "Ansehen · auswählen · individualisieren", title: "Designbeispiele", text: "Kuratierte Stilrichtungen für Websites, Apps, Inhalte und Publikationen. Wählen Sie eine Designwelt als Vorlage – wir passen sie an Ihre Marke und Ihr Projekt an.", detail: "Designrichtungen · Vorlagen · Inspiration", href: "/demowelten", cta: "Beispiele ansehen", tone: "digital", image: "/assets/home-design-liquid-glass-v1.webp" },
+  { number: "06", eyebrow: "Herkunft & Haltung", title: "Über uns", text: "Die Familiengeschichte, Kompetenz und Werte hinter Chelonaki.", detail: "Eleftherios · Familie · Qualität", href: "/ueber-uns", cta: "Geschichte kennenlernen", tone: "expertise", image: "/assets/home-about-liquid-glass-v1.webp" },
 ];
 
 export const hubData = {
