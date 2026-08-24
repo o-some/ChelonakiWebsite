@@ -12,6 +12,10 @@ const shared = {
     "Your package selection is retained for the design request.",
     "This package will be submitted with your design selection.",
     "Minimize chat to the turtle icon",
+    "€1,950",
+    "€2,950",
+    "€4,500",
+    "from €4,500 net",
   ],
   el: [
     "Άνοιγμα chatbot",
@@ -26,6 +30,10 @@ const shared = {
     "Η επιλογή πακέτου διατηρείται για το αίτημα σχεδιασμού.",
     "Αυτό το πακέτο θα υποβληθεί μαζί με την επιλογή σχεδίου σας.",
     "Ελαχιστοποίηση στο εικονίδιο χελώνας",
+    "1.950 €",
+    "2.950 €",
+    "4.500 €",
+    "από 4.500 € καθαρά",
   ],
   fr: [
     "Ouvrir le chatbot",
@@ -40,6 +48,10 @@ const shared = {
     "Votre choix de forfait est conservé pour la demande de design.",
     "Ce forfait sera transmis avec votre choix de design.",
     "Réduire vers l’icône tortue",
+    "1 950 €",
+    "2 950 €",
+    "4 500 €",
+    "à partir de 4 500 € net",
   ],
   es: [
     "Abrir el chatbot",
@@ -54,6 +66,10 @@ const shared = {
     "Su selección de paquete se conserva para la solicitud de diseño.",
     "Este paquete se enviará junto con su selección de diseño.",
     "Minimizar al icono de la tortuga",
+    "1.950 €",
+    "2.950 €",
+    "4.500 €",
+    "desde 4.500 € netos",
   ],
   tr: [
     "Sohbet botunu aç",
@@ -68,6 +84,10 @@ const shared = {
     "Paket seçiminiz tasarım talebi için saklanır.",
     "Bu paket tasarım seçiminizle birlikte talebe aktarılır.",
     "Kaplumbağa simgesine küçült",
+    "1.950 €",
+    "2.950 €",
+    "4.500 €",
+    "net 4.500 €'dan başlayan fiyatlarla",
   ],
   pl: [
     "Otwórz chatbota",
@@ -82,6 +102,10 @@ const shared = {
     "Wybór pakietu zostanie zachowany dla zapytania projektowego.",
     "Ten pakiet zostanie przesłany wraz z wyborem projektu.",
     "Zminimalizuj do ikony żółwia",
+    "1950 €",
+    "2950 €",
+    "4500 €",
+    "od 4500 € netto",
   ],
   nl: [
     "Chatbot openen",
@@ -96,6 +120,10 @@ const shared = {
     "Uw pakketkeuze blijft bewaard voor de ontwerpaanvraag.",
     "Dit pakket wordt samen met uw ontwerpkeuze ingediend.",
     "Minimaliseren naar het schildpadpictogram",
+    "€ 1.950",
+    "€ 2.950",
+    "€ 4.500",
+    "vanaf € 4.500,- netto",
   ],
   it: [
     "Apri il chatbot",
@@ -110,6 +138,10 @@ const shared = {
     "La scelta del pacchetto resta salvata per la richiesta di design.",
     "Questo pacchetto verrà inviato insieme alla scelta del design.",
     "Riduci all’icona della tartaruga",
+    "1.950 €",
+    "2.950 €",
+    "4.500 €",
+    "da 4.500 € netti",
   ],
   pt: [
     "Abrir o chatbot",
@@ -124,6 +156,10 @@ const shared = {
     "A sua seleção de pacote fica guardada para o pedido de design.",
     "Este pacote será enviado juntamente com a sua escolha de design.",
     "Minimizar para o ícone da tartaruga",
+    "1.950 €",
+    "2.950 €",
+    "4.500 €",
+    "a partir de 4.500 € líquidos",
   ],
   ru: [
     "Открыть чат-бот",
@@ -138,6 +174,10 @@ const shared = {
     "Выбор пакета сохраняется для запроса на дизайн.",
     "Этот пакет будет отправлен вместе с выбранным дизайном.",
     "Свернуть до значка черепахи",
+    "1950 евро",
+    "2950 евро",
+    "4500 евро",
+    "от 4500 евро нетто",
   ],
   ar: [
     "فتح روبوت الدردشة",
@@ -152,6 +192,10 @@ const shared = {
     "يتم الاحتفاظ باختيار الباقة لطلب التصميم.",
     "سيتم إرسال هذه الباقة مع اختيار التصميم.",
     "التصغير إلى أيقونة السلحفاة",
+    "1950 يورو",
+    "2950 يورو",
+    "4500 يورو",
+    "من 4500 يورو صافي",
   ],
 };
 
@@ -168,6 +212,10 @@ const keys = [
   "Ihre Paketauswahl bleibt für die Designanfrage gespeichert.",
   "Dieses Paket wird zusammen mit Ihrer Designauswahl an die Anfrage übergeben.",
   "Chat zum Schildkröten-Symbol minimieren",
+  "1.950 €",
+  "2.950 €",
+  "4.500 €",
+  "ab 4.500 € netto",
 ];
 
 export default Object.fromEntries(

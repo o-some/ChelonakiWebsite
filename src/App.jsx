@@ -665,7 +665,7 @@ const finderGoals = [
     "website",
     "Website oder Shop",
     "Website Pro",
-    "ab 2.500 € netto",
+    "ab 4.500 € netto",
     "ca. 4–8 Wochen",
     "/web-apps-publikationen/websites-erstellen-lassen",
   ],
