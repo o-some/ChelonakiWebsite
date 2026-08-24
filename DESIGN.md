@@ -2,16 +2,16 @@
 name: Chelonaki AI Studio
 description: A sanctuary ledger for human-led AI, brands and ventures.
 colors:
-  midnight-ink: "#071d31"
-  deep-navy: "#102a43"
-  raised-navy: "#163650"
-  mineral-ivory: "#f1eadf"
-  bright-paper: "#fbf8f1"
-  limestone: "#cfc3b0"
-  antique-gold: "#87591a"
-  soft-gold: "#d1b475"
-  copy-on-dark: "#d4d8da"
-  muted-copy: "#59636b"
+  aegean-blue: "#285a85"
+  deep-aegean: "#1a3955"
+  light-aegean: "#336ea1"
+  mineral-ivory: "#f0e0d6"
+  bright-paper: "#fffaf0"
+  limestone: "#dcccbf"
+  antique-gold: "#7d5625"
+  soft-gold: "#f8ebc9"
+  copy-on-dark: "#f0e0d6"
+  muted-copy: "#4a5f70"
   error: "#b44a3f"
 typography:
   display:
@@ -54,7 +54,7 @@ spacing:
   xl: "86px"
 components:
   button-primary:
-    backgroundColor: "{colors.midnight-ink}"
+    backgroundColor: "{colors.aegean-blue}"
     textColor: "{colors.bright-paper}"
     typography: "{typography.label}"
     rounded: "{rounded.none}"
@@ -62,13 +62,13 @@ components:
     height: "48px"
   button-accent:
     backgroundColor: "{colors.soft-gold}"
-    textColor: "{colors.midnight-ink}"
+    textColor: "{colors.deep-aegean}"
     typography: "{typography.label}"
     rounded: "{rounded.none}"
     padding: "14px 24px"
     height: "48px"
   input:
-    backgroundColor: "{colors.raised-navy}"
+    backgroundColor: "{colors.light-aegean}"
     textColor: "{colors.bright-paper}"
     typography: "{typography.body}"
     rounded: "{rounded.none}"
@@ -82,38 +82,40 @@ components:
 
 **Creative North Star: “The Sanctuary Ledger”**
 
-Chelonaki presents technology through the visual language of architecture, material culture and disciplined editorial publishing. The system is quiet, precise and tactile: warm mineral paper opens the experience, monumental stone carries the focal imagery, and midnight navy gives later chapters weight.
+Chelonaki presents technology through the visual language of architecture, material culture and disciplined editorial publishing. The system is quiet, precise and tactile: warm mineral paper opens the experience, monumental stone carries the focal imagery, and Aegean blue gives later chapters weight.
 
 The composition favors asymmetric grids, visible rules and controlled scale changes over generic cards or glowing AI imagery. Motion is slow and architectural in the story, crisp and nearly invisible in the interface. The hero assembles as one material scene, while buttons, links and the menu respond within 110–280ms.
 
 **Key Characteristics:**
 
 - Monumental serif typography with restrained sans-serif utility text
-- Mineral ivory, midnight navy and deliberately scarce antique gold
+- Mineral ivory, logo-derived Aegean blue and deliberately scarce antique gold
 - Square-edged controls, hairline rules and large spatial intervals
 - Real raster material imagery and a bronze wall medallion instead of simulated stone or AI gradients
 - Physical folio leaves, ruled chapters and sculpted thresholds instead of repeated card grids
 
 ## Colors
 
-The palette moves between mineral paper and deep navy, with gold used as a precise marker rather than a wash.
+The palette moves between mineral paper and Aegean blue, with deeper Aegean shades used only where contrast requires them and gold used as a precise marker rather than a wash.
 
 ### Primary
 
-- **Midnight Ink** (`#071d31`): primary dark surface, navigation actions and core text.
-- **Mineral Ivory** (`#f1eadf`): opening surface and warm editorial background.
+- **Aegean Blue** (`#285a85`): primary colored surface, navigation actions and core brand blue.
+- **Deep Aegean** (`#1a3955`): contrast shade for text and protected overlays, never a separate navy family.
+- **Light Aegean** (`#336ea1`): logo-derived accent and raised surface.
+- **Mineral Ivory** (`#f0e0d6`): opening surface and warm editorial background.
 
 ### Secondary
 
-- **Antique Gold** (`#87591a`): accessible small text and rules on light surfaces.
-- **Soft Gold** (`#d1b475`): accents, focus indicators and action surfaces on navy.
+- **Antique Gold** (`#7d5625`): accessible small text and rules on light surfaces.
+- **Soft Gold** (`#f8ebc9`): champagne-gold accents, focus indicators and action surfaces on Aegean blue.
 
 ### Neutral
 
-- **Bright Paper** (`#fbf8f1`): high-contrast text and legal reading surfaces.
-- **Limestone** (`#cfc3b0`): material-neutral reference.
-- **Copy on Dark** (`#d4d8da`): secondary copy on navy.
-- **Muted Copy** (`#59636b`): secondary copy on light surfaces.
+- **Bright Paper** (`#fffaf0`): high-contrast text and legal reading surfaces.
+- **Limestone** (`#dcccbf`): material-neutral reference.
+- **Copy on Dark** (`#f0e0d6`): secondary copy on Aegean blue.
+- **Muted Copy** (`#4a5f70`): Aegean-tinted secondary copy on light surfaces.
 
 **The Scarce Gold Rule.** Gold marks hierarchy, actions and measurement lines; it never becomes a decorative background field.
 
@@ -136,7 +138,7 @@ The palette moves between mineral paper and deep navy, with gold used as a preci
 
 ## Layout
 
-The desktop hero is one architectural stage: editorial statement left, arch and Ionic column right, three physical strategy leaves in depth and a compact four-field band at the base. A shallow limestone curve cuts into the navy band. Content uses a fluid gutter of `clamp(24px, 5.4vw, 86px)` and a 1440px content ceiling.
+The desktop hero is one architectural stage: editorial statement left, arch and Ionic column right, three physical strategy leaves in depth and a compact four-field band at the base. A shallow limestone curve cuts into the Aegean band. Content uses a fluid gutter of `clamp(24px, 5.4vw, 86px)` and a 1440px content ceiling.
 
 At 1050px wide chapter grids simplify. At 880px the navigation becomes a dialog menu. At 767px the hero becomes a deliberate sequence of statement, architecture, folios and service band without horizontal overflow.
 
@@ -160,8 +162,8 @@ Controls, fields, ledgers and image frames use square corners. Hairline borders 
 ### Buttons
 
 - **Shape:** square (`0px`) with a 48px minimum height.
-- **Primary:** midnight ink on bright paper context, 14px by 24px padding.
-- **Accent:** soft gold with midnight text on dark contexts.
+- **Primary:** Aegean blue on bright paper context, 14px by 24px padding.
+- **Accent:** soft gold with deep-Aegean text on colored contexts.
 - **Hover / Focus:** subtle two-pixel lift, tonal color change and a visible soft-gold focus ring.
 
 ### Cards / Containers
@@ -170,13 +172,13 @@ The system does not use generic cards. Work areas are composed as image-and-copy
 
 ### Inputs / Fields
 
-- **Style:** square, translucent navy fill and a restrained light border.
+- **Style:** square, translucent Aegean fill and a restrained ivory border.
 - **Focus:** soft-gold border with a three-pixel translucent focus ring.
 - **Error:** warm red border plus a specific text instruction.
 
 ### Navigation
 
-Desktop navigation uses small tracked labels and transform-driven gold underlines. Below 880px it becomes a full-height navy drawer with large serif links, a single gold action and a faster exit than entrance.
+Desktop navigation uses small tracked labels and transform-driven gold underlines. Below 880px it becomes a full-height Aegean drawer with large serif links, a single gold action and a faster exit than entrance.
 
 ### Interaction Motion
 
@@ -195,13 +197,13 @@ On wide screens the studio thesis remains fixed while each capability chapter mo
 
 ### Studio Medallion
 
-The turtle mark is rendered as a tactile bronze-and-navy relief inset into warm limestone. A cropped medallion anchors the hero wall, while the full limestone portrait returns in the founder chapter.
+The turtle mark is rendered as a tactile bronze-and-Aegean relief inset into warm limestone. A cropped medallion anchors the hero wall, while the full limestone portrait returns in the founder chapter.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** preserve the statement, arch, full column, folios and navy threshold as the first-screen memory.
+- **Do** preserve the statement, arch, full column, folios and Aegean threshold as the first-screen memory.
 - **Do** use real architectural or material imagery with intentional crops.
 - **Do** keep the bronze turtle medallion as a high-value physical brand object.
 - **Do** reserve gold for functional emphasis and measurement-like detail.

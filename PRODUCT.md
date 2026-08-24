@@ -46,7 +46,7 @@ Constraints and open decisions:
 
 - Name: Chelonaki.
 - Preserve the existing turtle/column logo assets.
-- Binding visual references: Greek style, old-money restraint, dark navy, gold, white and ivory.
+- Binding visual references: Greek style, old-money restraint, logo-derived Aegean blue, gold and ivory. Dark surfaces must remain within the Aegean ramp rather than introducing a separate navy palette.
 - The user explicitly prefers a light opening composition and a strong architectural column.
 - The work should feel premium and distinctive while showing as few recognisable AI-design clichés as possible.
 - The brand may use the phrase “The future needs roots.”

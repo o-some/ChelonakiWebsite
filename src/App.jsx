@@ -1081,7 +1081,7 @@ function Header({ openMenu, path, chatCompact, chatOpen, onOpenChat }) {
       </nav>
       <div className="header-actions">
         <SmartLink
-          className="button button-navy header-cta"
+          className="button button-aegean header-cta"
           href="/paketfinder"
         >
           Passende Lösung finden <ArrowRight size={18} />
@@ -1267,7 +1267,7 @@ function HomePage() {
             Produkte, die funktionieren.
           </p>
           <div className="hero-actions">
-            <SmartLink className="button button-navy" href="/paketfinder">
+            <SmartLink className="button button-aegean" href="/paketfinder">
               Passende Lösung finden <ArrowRight size={18} />
             </SmartLink>
             <a className="text-link" href="#worlds">
@@ -1489,7 +1489,7 @@ function HubDecision({ data }) {
             </span>
           </li>
         </ol>
-        <SmartLink className="button button-navy" href="/paketfinder">
+        <SmartLink className="button button-aegean" href="/paketfinder">
           Unverbindliche Empfehlung erhalten <ArrowRight size={18} />
         </SmartLink>
       </div>

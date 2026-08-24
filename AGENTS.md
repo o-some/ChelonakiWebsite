@@ -18,7 +18,7 @@ Build app UI in `src/`.
 ## Durable Chelonaki design decisions
 
 - The selected visual target is the combined light “Ivory Villa” direction with the monumental classical column and editorial discipline of the dark “Hellenic Editorial” direction.
-- Preserve the authentic Chelonaki turtle logo. The visual system uses warm ivory/limewash, deep Aegean navy, restrained antique gold, serif editorial typography, and subtle Greek architectural references.
+- Preserve the authentic Chelonaki turtle logo. The visual system uses logo-derived Aegean blue (`#336EA1`) with deeper Aegean shades for contrast, warm ivory/limewash and restrained antique gold; do not introduce a separate navy palette.
 - Structure Chelonaki around three concrete worlds: Chelonaki Digital (websites and Shopify, client book production and ghostwriting, social content systems, telephone assistants, Meta/Google ads, apps and software), Chelonaki Expertise (AI training and consulting, Academy and nutrition consulting), and Chelonaki Originals (own specialist books, nutrition apps and further digital products).
 - Name the client-facing book service "Buchproduktion & Ghostwriting" and position it under Digital. Make the result explicit: concept, writing, research, design and publication-ready files.
 - Remove "Spiele & Lernwelten" from Originals without a replacement category until the user decides on a new name or direction.
@@ -40,5 +40,5 @@ Build app UI in `src/`.
 - Keep the hero's three large architectural material planes, but do not place the former three labeled folio cards ("Klarheit", "System", "Wirkung") or any replacement text cards over them. Let that scene remain quiet, spacious and primarily visual.
 - The complete site must include a legally planned German footer and accessible legal-information views. Missing real company details must remain visibly marked placeholders, never invented facts.
 - Treat every commercial service page as a complete, calm sales journey: problem, desired outcome, concrete deliverables, quality controls, process, prerequisites, pricing comparison, objection handling and several context-appropriate next actions. Add useful decision information instead of generic marketing filler.
-- Use purposeful premium editorial imagery throughout longer sales journeys to provide visual rhythm, while preserving the ivory, Aegean navy, antique gold and Greek architectural identity.
+- Use purposeful premium editorial imagery throughout longer sales journeys to provide visual rhythm, while preserving the ivory, Aegean blue, antique gold and Greek architectural identity.
 - Keep the production dependency tree free of known audit findings where compatible fixes exist, and preserve restrictive response security headers in the Sites worker.
