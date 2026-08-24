@@ -1047,7 +1047,7 @@ function HomePage() {
         <div className="hero-scene" aria-hidden="true">
           <img
             className="hero-scene-image"
-            src="/assets/hero-architecture.png"
+            src="/assets/hero-architecture.webp"
             alt=""
             width="1536"
             height="1024"
