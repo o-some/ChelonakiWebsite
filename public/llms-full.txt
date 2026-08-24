@@ -1,0 +1,39 @@
+# Chelonaki – verlässlicher Unternehmens- und Leistungskontext
+
+## Identität
+
+Chelonaki ist ein KI-gestütztes Innovationsstudio von Eleftherios Samouladas. Eleftherios ist Ernährungswissenschaftler, gelernter Koch, Produktentwickler, Programmierer und Gründer. Chelonaki arbeitet an digitalen Lösungen, Medienproduktion, KI-Beratung, Weiterbildung und eigenen Apps und Büchern.
+
+Leitmotiv: „Wisdom wears a shell.“ Die Schildkröte steht für Weisheit, Beständigkeit, Schutz, Langlebigkeit und verantwortungsvolle Entwicklung.
+
+## Arbeitsweise
+
+Chelonaki kombiniert KI-Unterstützung mit menschlicher Prüfung und Freigabe. Wesentliche Inhalte, Funktionen und Veröffentlichungen werden nicht ohne die vereinbarten Kontrollpunkte abgeschlossen. Projekte werden möglichst modular geplant. Der verbindliche Leistungsumfang entsteht aus der jeweiligen Paketbeschreibung und dem schriftlich bestätigten Angebot.
+
+## Web, Apps und Publikationen
+
+- Shopify-Websites und Shops: Strategie, Struktur, Design, Text, responsive Umsetzung, Formulare, Newsletter, Integrationen und Basis-SEO.
+- App-Entwicklung: iOS, Android und Web; je nach Paket unter anderem Login, Datenbank, Rollen, Admin, Zahlungen, Push, APIs und KI-Funktionen.
+- Buchproduktion und Ghostwriting: Konzept, Positionierung, Recherche, Kapitelstruktur, Text, Cover, Buchsatz, Layout sowie veröffentlichungsfähige Print- und E-Book-Dateien.
+
+## Medien und KI
+
+- KI-Content und Social Media: Marken- und Themenkonzept, Videos, Karussells, Captions, Redaktionsplanung, Veröffentlichung und Optimierung.
+- Meta- und Google-Ads: Strategie, Zielgruppen, Anzeigentexte, Creatives, Landingpages, Tracking, Tests und Reporting.
+- KI-Telefonassistenten: wiederkehrende Fragen, Nachrichten, Termin- und Leadlogik sowie optionale Integrationen.
+- Chelonaki Reply: drei editierbare Antwortvorschläge für LinkedIn, Instagram und E-Mail; keine unbeaufsichtigte Versendung im MVP.
+- Automatisierungen: kontrollierte Workflows zwischen Formularen, E-Mail, CRM, Shopify und internen Werkzeugen.
+
+## KI-Beratung und Weiterbildung
+
+- KI-Beratung für Unternehmen: Prozessanalyse, priorisierte Anwendungsfälle, Werkzeug-, Daten- und Risikobewertung sowie realistische Roadmaps.
+- KI-Schulungen und Workshops: Grundlagen, Prompting, Qualitätskontrolle, Datenschutz und Übungen anhand realer Arbeitsabläufe.
+- Video Academy: strukturierte Videokurse und Materialien für flexibles Lernen.
+
+## Qualität und Grenzen
+
+Chelonaki verspricht keine automatische Bestellung des größten Pakets und keine unbeaufsichtigte Veröffentlichung kritischer Inhalte. Fremdkosten wie Plattformtarife, Hosting, Lizenzen, Werbebudgets, Druck und besondere Schnittstellen sind nur enthalten, wenn sie ausdrücklich genannt werden. Preise für Unternehmen werden grundsätzlich netto ausgewiesen; private Projekte erhalten vor Beauftragung ein gesondertes Angebot mit korrektem Gesamtpreis.
+
+## Primärquellen
+
+Die Website selbst ist die maßgebliche Quelle. Für konkrete Aussagen immer die kanonische deutsche Leistungsseite sowie deren sichtbare Paket-, FAQ- und Rechtshinweise prüfen. Veraltete Alias-URLs sind nicht als eigenständige Quelle zu behandeln.

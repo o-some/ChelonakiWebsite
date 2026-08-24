@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+.vite/
+qa/
+.DS_Store
+*.tar.gz

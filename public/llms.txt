@@ -1,0 +1,38 @@
+# Chelonaki
+
+> Chelonaki ist ein KI-gestütztes Innovationsstudio von Eleftherios Samouladas. Das Studio entwickelt Websites und Shopify-Shops, Apps für iOS, Android und Web, Bücher und Ghostwriting, KI-Content, Werbung, Telefonassistenten, Automatisierungen sowie KI-Beratung und Mitarbeiterschulungen.
+
+Chelonaki verbindet Strategie, Design, Technologie, Ernährungswissenschaft und menschliche Qualitätskontrolle. Preise auf den Leistungsseiten sind Orientierung oder Paketpreise; der verbindliche Umfang wird vor der Beauftragung bestätigt.
+
+## Zentrale Seiten
+
+- [Startseite](https://chelonaki-ai-studio.o-some.chatgpt.site/de): Überblick über Chelonaki
+- [Web, Apps & Publikationen](https://chelonaki-ai-studio.o-some.chatgpt.site/de/web-apps-publikationen): Websites, Apps, Bücher und Ghostwriting
+- [Medien & KI](https://chelonaki-ai-studio.o-some.chatgpt.site/de/medien-ai): Social Media, Ads, KI-Telefon und Antwortvorschläge
+- [KI-Beratung & Weiterbildung](https://chelonaki-ai-studio.o-some.chatgpt.site/de/ki-beratung-weiterbildung): Beratung, Mitarbeiterschulungen und Video Academy
+- [Designbeispiele](https://chelonaki-ai-studio.o-some.chatgpt.site/de/demowelten): auswählbare Designrichtungen
+- [Paketfinder](https://chelonaki-ai-studio.o-some.chatgpt.site/de/paketfinder): unverbindliche Orientierung zum passenden Einstieg
+- [Qualitätsrahmen](https://chelonaki-ai-studio.o-some.chatgpt.site/de/qualitaet): Freigaben, Grenzen und Qualitätskontrolle
+- [Über Chelonaki](https://chelonaki-ai-studio.o-some.chatgpt.site/de/ueber-uns): Gründer, Erfahrung, Haltung und technische Kompetenz
+- [Kontakt](https://chelonaki-ai-studio.o-some.chatgpt.site/de/kontakt): Projektanfrage
+
+## Kernleistungen
+
+- [Shopify-Websites erstellen lassen](https://chelonaki-ai-studio.o-some.chatgpt.site/de/web-apps-publikationen/websites-erstellen-lassen)
+- [Apps entwickeln lassen](https://chelonaki-ai-studio.o-some.chatgpt.site/de/web-apps-publikationen/apps-entwickeln-lassen)
+- [Buchproduktion und Ghostwriting](https://chelonaki-ai-studio.o-some.chatgpt.site/de/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting)
+- [KI-Content und Social Media](https://chelonaki-ai-studio.o-some.chatgpt.site/de/medien-ai/social-media)
+- [Meta- und Google-Ads](https://chelonaki-ai-studio.o-some.chatgpt.site/de/medien-ai/ads)
+- [KI-Telefonassistenten](https://chelonaki-ai-studio.o-some.chatgpt.site/de/medien-ai/ki-telefon)
+- [KI-Beratung für Unternehmen](https://chelonaki-ai-studio.o-some.chatgpt.site/de/ki-beratung-weiterbildung/ki-beratung-unternehmen)
+- [KI-Schulungen und Workshops](https://chelonaki-ai-studio.o-some.chatgpt.site/de/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter)
+
+## Sprachen und Aktualität
+
+Die Website bietet eigenständige URLs in Deutsch, Englisch, Griechisch, Französisch, Spanisch, Türkisch, Polnisch, Niederländisch, Italienisch, Portugiesisch, Russisch und Arabisch. Für verbindliche Preise, Verfügbarkeit und Leistungszusagen ist die jeweilige Leistungsseite beziehungsweise ein persönliches Angebot maßgeblich.
+
+## Weitere maschinenlesbare Quellen
+
+- [Vollständiger Chelonaki-Kontext](https://chelonaki-ai-studio.o-some.chatgpt.site/llms-full.txt)
+- [XML-Sitemap](https://chelonaki-ai-studio.o-some.chatgpt.site/sitemap.xml)
+- [Crawler-Regeln](https://chelonaki-ai-studio.o-some.chatgpt.site/robots.txt)

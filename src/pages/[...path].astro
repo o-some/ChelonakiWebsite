@@ -1,0 +1,18 @@
+---
+import SiteShell from "../layouts/SiteShell.astro";
+import { astroRoutes } from "../astroRoutes.js";
+import { getLanguageFromUrl, stripLanguageFromPath } from "../locales.js";
+
+export function getStaticPaths() {
+  return astroRoutes.map((route) => ({
+    params: { path: route.slice(1) },
+    props: { route },
+  }));
+}
+
+const { route: localizedRoute } = Astro.props;
+const locale = getLanguageFromUrl(localizedRoute) || "de";
+const route = stripLanguageFromPath(localizedRoute);
+---
+
+<SiteShell route={route} locale={locale} />
