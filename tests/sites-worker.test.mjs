@@ -97,6 +97,20 @@ test("injects the platform country into HTML before language selection", async (
   assert.equal(response.headers.get("content-length"), null);
 });
 
+test("serves the platform country to statically delivered pages", async () => {
+  const response = await worker.fetch(
+    new Request("https://example.test/api/country.js", {
+      headers: { "cf-ipcountry": "BR" },
+    }),
+    {},
+  );
+
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type"), /application\/javascript/);
+  assert.equal(response.headers.get("cache-control"), "private, no-store");
+  assert.equal(await response.text(), 'window.__CHELONAKI_COUNTRY__="BR";');
+});
+
 test("does not turn missing API or write requests into the app shell", async () => {
   for (const request of [
     new Request("https://example.test/api/missing", {

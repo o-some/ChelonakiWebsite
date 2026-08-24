@@ -11,8 +11,9 @@ export function getStaticPaths() {
 }
 
 const { route: localizedRoute } = Astro.props;
-const locale = getLanguageFromUrl(localizedRoute) || "de";
+const explicitLocale = getLanguageFromUrl(localizedRoute);
+const locale = explicitLocale || "de";
 const route = stripLanguageFromPath(localizedRoute);
 ---
 
-<SiteShell route={route} locale={locale} />
+<SiteShell route={route} locale={locale} hasExplicitLocale={Boolean(explicitLocale)} />

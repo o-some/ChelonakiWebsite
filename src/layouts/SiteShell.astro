@@ -20,7 +20,7 @@ import { ambiguousCountryCodes, defaultLocale, enabledLocales, getLocale, locali
 import { buildStructuredData, getPageContent, isLegacyRoute, routeNames, siteOrigin } from "../seoData.js";
 import "../styles.css";
 
-const { route = "/", locale = "de" } = Astro.props;
+const { route = "/", locale = "de", hasExplicitLocale = false } = Astro.props;
 const localeConfig = getLocale(locale);
 const dictionary = {
   ...(generatedTranslations[locale] || {}),
@@ -89,6 +89,7 @@ const unmappedCountryFallback = enabledLocales.some(({ code }) => code === "en")
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    {!hasExplicitLocale && <script is:inline src="/api/country.js"></script>}
     <script is:inline define:vars={{ ambiguousCountryCodes, defaultLocale, localeCodes, unmappedCountryFallback }}>
       (() => {
         const pathCode = location.pathname.split("/").filter(Boolean)[0]?.toLowerCase();
@@ -106,7 +107,7 @@ const unmappedCountryFallback = enabledLocales.some(({ code }) => code === "en")
           .filter(Boolean)
           .map((value) => String(value).toLowerCase().split("-")[0]);
         const browserSelection = candidates.find((code) => localeCodes.some((item) => item.code === code));
-        const country = document.querySelector('meta[name="chelonaki-country"]')?.content?.toUpperCase();
+        const country = (document.querySelector('meta[name="chelonaki-country"]')?.content || window.__CHELONAKI_COUNTRY__)?.toUpperCase();
         const isCrawler = /bot|crawler|spider|slurp|bingpreview|google-inspectiontool/i.test(navigator.userAgent || "");
         const countrySelection = !isCrawler && country && !ambiguousCountryCodes.includes(country)
           ? localeCodes.find((item) => item.defaultForCountries.includes(country))?.code || unmappedCountryFallback

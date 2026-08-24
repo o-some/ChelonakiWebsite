@@ -38,6 +38,16 @@ const json = (request, body, status = 200) =>
       },
     }),
   );
+const javascript = (request, body) =>
+  secure(
+    request,
+    new Response(body, {
+      headers: {
+        "Content-Type": "application/javascript; charset=utf-8",
+        "Cache-Control": "private, no-store",
+      },
+    }),
+  );
 const allowedAnalyticsEvents = new Set([
   "language_auto_selected",
   "language_manually_selected",
@@ -217,6 +227,14 @@ async function handleChat(request) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname === "/api/country.js") {
+      if (request.method !== "GET")
+        return json(request, { error: "Methode nicht erlaubt." }, 405);
+      return javascript(
+        request,
+        `window.__CHELONAKI_COUNTRY__=${JSON.stringify(requestCountry(request))};`,
+      );
+    }
     if (url.pathname === "/api/chat") {
       if (request.method !== "POST")
         return json(request, { error: "Methode nicht erlaubt." }, 405);
