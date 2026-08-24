@@ -151,7 +151,7 @@ export function buildStructuredData({
   const language = localeConfig.htmlLang;
   const logo = `${siteOrigin}/assets/chelonaki-turtle-mark.png`;
   const brandImage = `${siteOrigin}/assets/chelonaki-logo.png`;
-  const image = `${siteOrigin}${service?.image || "/assets/service-funnel-editorial.webp"}`;
+  const image = `${siteOrigin}${service?.image || "/assets/service-funnel-liquid-glass-v2.webp"}`;
   const organizationId = `${siteOrigin}/#organization`;
   const websiteId = `${siteOrigin}/#website`;
   const pageId = `${canonical}#webpage`;

@@ -33,14 +33,14 @@ export const navigation = [
 ];
 
 export const serviceImages = {
-  "/web-apps-publikationen/websites-erstellen-lassen": "/assets/service-websites-v2.webp",
+  "/web-apps-publikationen/websites-erstellen-lassen": "/assets/service-websites-liquid-glass-v3.webp",
   "/web-apps-publikationen/apps-entwickeln-lassen": "/assets/service-apps-v2.webp",
   "/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting": "/assets/service-books-v2.webp",
-  "/medien-ai/social-media": "/assets/service-content-v2.webp",
+  "/medien-ai/social-media": "/assets/service-content-liquid-glass-v3.webp",
   "/medien-ai/ads": "/assets/service-ads-v2.webp",
   "/medien-ai/ki-telefon": "/assets/service-phone-v2.webp",
-  "/medien-ai/chelonaki-reply": "/assets/service-content-v2.webp",
-  "/ki-beratung-weiterbildung/ki-beratung-unternehmen": "/assets/service-consulting-v2.webp",
+  "/medien-ai/chelonaki-reply": "/assets/service-content-liquid-glass-v3.webp",
+  "/ki-beratung-weiterbildung/ki-beratung-unternehmen": "/assets/service-consulting-liquid-glass-v3.webp",
   "/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter": "/assets/service-training-v2.webp",
   "/ki-beratung-weiterbildung/video-academy": "/assets/service-training-v2.webp",
   "/originals/apps": "/assets/project-nutrition-venture.png",
@@ -57,7 +57,7 @@ export const worlds = [
     href: "/web-apps-publikationen",
     cta: "Bereich entdecken",
     tone: "digital",
-    image: "/assets/service-websites-v2.webp",
+    image: "/assets/service-websites-liquid-glass-v3.webp",
   },
   {
     number: "02",
@@ -68,7 +68,7 @@ export const worlds = [
     href: "/medien-ai",
     cta: "Bereich entdecken",
     tone: "expertise",
-    image: "/assets/service-content-v2.webp",
+    image: "/assets/service-content-liquid-glass-v3.webp",
   },
   {
     number: "03",
@@ -79,7 +79,7 @@ export const worlds = [
     href: "/ki-beratung-weiterbildung",
     cta: "Bereich entdecken",
     tone: "expertise",
-    image: "/assets/service-consulting-v2.webp",
+    image: "/assets/service-consulting-liquid-glass-v3.webp",
   },
   { number: "04", eyebrow: "Persönlich entwickelt & geschrieben", title: "Originals", text: "Apps, die Eleftherios selbst entwickelt, und Bücher, die er selbst geschrieben hat.", detail: "Eigene App-Entwicklung · eigene Bücher", href: "/originals", cta: "Originals entdecken", tone: "originals", image: "/assets/service-books-v2.webp" },
   { number: "05", eyebrow: "Ansehen · auswählen · individualisieren", title: "Designbeispiele", text: "Kuratierte Stilrichtungen für Websites, Apps, Inhalte und Publikationen. Wählen Sie eine Designwelt als Vorlage – wir passen sie an Ihre Marke und Ihr Projekt an.", detail: "Designrichtungen · Vorlagen · Inspiration", href: "/demowelten", cta: "Beispiele ansehen", tone: "digital", image: "/assets/design-apps.png" },
@@ -146,28 +146,28 @@ hubData.web = {
   label: "Für Unternehmen",
   title: "Websites, Apps und Publikationen, die ein klares Ergebnis liefern.",
   intro: "Von der ersten Struktur bis zur veröffentlichungsfähigen Lösung verbinden wir Strategie, Gestaltung, Technik und kontrollierte KI-Unterstützung.",
-  image: "/assets/service-websites-v2.webp", cta: "Projekt anfragen",
+  image: "/assets/service-websites-liquid-glass-v3.webp", cta: "Projekt anfragen",
   cards: navigation[0].items.map(([title, href], index) => ({ title, href, image: serviceImages[href], text: ["Shopify-Websites und Shops mit klarer Nutzerführung.", "Apps für iOS, Android und Web aus einer belastbaren Basis.", "Konzept, Text, Design und veröffentlichungsfähige Buchdateien.", "Professionelles Ghostwriting mit klarer Stimme und menschlicher Freigabe."][index] })),
 };
 hubData.media = {
   label: "Für Unternehmen",
   title: "Medien und KI, die Sichtbarkeit und Kommunikation planbarer machen.",
   intro: "Content, Werbung, Telefonie und intelligente Antwortvorschläge werden als zusammenhängende Kommunikationsbausteine entwickelt – mit transparenten Grenzen und Freigaben.",
-  image: "/assets/service-content-v2.webp", cta: "Medien- oder KI-Projekt anfragen",
+  image: "/assets/service-content-liquid-glass-v3.webp", cta: "Medien- oder KI-Projekt anfragen",
   cards: navigation[1].items.map(([title, href], index) => ({ title, href, image: serviceImages[href], text: ["Planbare Inhalte in einer konsistenten Markenwelt.", "Kampagnen, Creatives, Tracking und Optimierung.", "Anfragen aufnehmen, Fragen beantworten und Termine koordinieren.", "Drei passende Antwortvorschläge für LinkedIn, Instagram und E-Mail – Sie wählen und bearbeiten."][index] })),
 };
 hubData.advice = {
   label: "Für Unternehmen",
   title: "Der passende Weg von der KI-Strategie zur sicheren Anwendung.",
   intro: "Wir beraten Entscheider, qualifizieren Mitarbeiter in realen Arbeitsabläufen und stellen Wissen über die Chelonaki Video Academy flexibel bereit.",
-  image: "/assets/service-consulting-v2.webp", cta: "Erstgespräch buchen",
+  image: "/assets/service-consulting-liquid-glass-v3.webp", cta: "Erstgespräch buchen",
   cards: navigation[2].items.map(([title, href], index) => ({ title, href, image: serviceImages[href], text: ["Geschäftsprozesse analysieren, Anwendungsfälle priorisieren und eine realistische Roadmap entwickeln.", "Mitarbeiter in praxisnahen Schulungen und Workshops für ihre konkreten Aufgaben befähigen.", "KI-Wissen flexibel über strukturierte Videokurse und Arbeitsmaterialien aufbauen."][index] })),
 };
 
 export const services = {
   "/digital/websites-erstellen-lassen": {
     area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Websites, die nicht nur gut aussehen, sondern verkaufen.",
-    image: "/assets/service-websites-v2.webp", imageAlt: "Warmer Designarbeitsplatz mit Website-Entwürfen auf Papier, Laptop und Tablet",
+    image: "/assets/service-websites-liquid-glass-v3.webp", imageAlt: "Warmer Designarbeitsplatz mit gläsernen Website-Prototypen, Laptop und Tablet",
     intro: "Wir entwickeln Shopify-Websites und Shops von der Struktur über Design und Text bis zur responsiven Umsetzung und laufenden Optimierung.",
     problem: "Viele Websites erklären zu viel, führen zu wenig und werden nach dem Launch technisch nicht weitergedacht.",
     solution: ["Unternehmenswebsites und Shopify-Shops", "Landingpages und Conversion-Struktur", "Responsive Umsetzung und Basis-SEO", "Formulare, Newsletter, Termine und Integrationen"],
@@ -191,7 +191,7 @@ export const services = {
   },
   "/digital/social-media-content": {
     area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Ein Content-System statt täglicher Improvisation.",
-    image: "/assets/service-content-v2.webp", imageAlt: "Editorialer Arbeitsplatz für Content-Planung mit Kamera, Smartphone und Storyboard",
+    image: "/assets/service-content-liquid-glass-v3.webp", imageAlt: "Editorialer Arbeitsplatz für Content-Planung mit Kamera, Smartphone und transparenten Storyboards",
     intro: "Wir planen, produzieren, prüfen und veröffentlichen Inhalte in einer eigenen Markenwelt – vollständig KI-gestützt, aber nicht ungeprüft.",
     problem: "Unregelmäßige Inhalte, wechselnde Bildsprachen und fehlende Prozesse kosten Reichweite und vor allem Zeit.",
     solution: ["KI-Videos und Karussells", "Marken-, Themen- und Stilkonzept", "Captions, Redaktionsplanung und Veröffentlichung", "Reporting und laufende Optimierung"],
@@ -268,7 +268,7 @@ export const services = {
   "/expertise/ki-schulungen-consulting": {
     nonCumulative: true,
     area: "Expertise", label: "Für Unternehmen", title: "KI-Schulungen & Consulting für konkrete Arbeitsabläufe.",
-    image: "/assets/service-consulting-v2.webp", imageAlt: "Nahbare KI-Strategieberatung an einem gemeinsamen Arbeitstisch",
+    image: "/assets/service-consulting-liquid-glass-v3.webp", imageAlt: "Nahbare KI-Strategieberatung mit transparenten Strategiekarten an einem gemeinsamen Arbeitstisch",
     intro: "Wir analysieren, wo künstliche Intelligenz Zeit spart, Qualität verbessert oder neue Angebote ermöglicht – und übersetzen das in einen konkreten Umsetzungsweg.",
     problem: "Tool-Sammlungen ohne Prioritäten führen selten zu besseren Prozessen.",
     solution: ["KI-Strategie und Prozessanalyse", "Automatisierung wiederkehrender Aufgaben", "Werkzeugauswahl und eigene Assistenten", "Schulungen, Datenschutz und verantwortungsvoller Einsatz"],
@@ -315,7 +315,7 @@ services["/medien-ai/ki-telefon"] = services["/digital/ki-telefonassistenten"];
 services["/medien-ai/automatisierungen"] = { ...services["/digital/apps-software"], nonCumulative: true, title: "KI-Automatisierungen für wiederkehrende Abläufe.", intro: "Wir verbinden Formulare, E-Mail, CRM, Shopify und interne Werkzeuge zu kontrollierten Workflows mit klaren Freigaben.", problem: "Manuelle Übergaben, doppelte Datenpflege und verstreute Werkzeuge kosten Zeit und erzeugen Fehler.", solution: ["Prozessaufnahme und Automations-Check", "Trigger, Aktionen und menschliche Freigaben", "API-, CRM-, Shopify- und Formular-Verbindungen", "Tests, Fehlerwege, Dokumentation und Übergabe"], pricing: [{ name: "Automations-Check", price: "ab 149 €", duration: "Auswertung ca. 3–5 Werktage", meta: "Prozess prüfen · Potenzial und Risiken einordnen", featured: true }, { name: "Individueller Workflow", price: "auf Anfrage", duration: "nach Absprache", meta: "Umfang nach Systemen, Daten und Schnittstellen" }], bookingCta: "Automatisierungsweg auswählen" };
 services["/medien-ai/chelonaki-reply"] = {
   area: "Medien & KI", label: "Für Selbstständige, Teams & Marken", title: "Drei passende Antworten. Sie wählen die richtige.",
-  image: "/assets/service-content-v2.webp", imageAlt: "Warmer Kommunikationsarbeitsplatz mit Smartphone und sorgfältig geplanten Inhaltsvarianten",
+  image: "/assets/service-content-liquid-glass-v3.webp", imageAlt: "Warmer Kommunikationsarbeitsplatz mit Smartphone und transparenten Inhaltsvarianten",
   intro: "Chelonaki Reply erstellt für eingehende Nachrichten drei unterscheidbare Antwortvorschläge für LinkedIn, Instagram und E-Mail – passend zu Ton, Ziel und Gesprächssituation.",
   problem: "Professionelle Nachrichten bleiben liegen, weil im Alltag Zeit, Formulierungssicherheit oder eine einheitliche Markenstimme fehlen.",
   solution: ["Drei klar unterschiedliche Antwortvorschläge", "Tonarten wie kurz, herzlich, professionell oder vertriebsorientiert", "Eigene Markenbegriffe und No-Go-Aussagen", "Bearbeiten und kopieren vor dem Senden", "Keine unbeaufsichtigten Nachrichten im MVP"],

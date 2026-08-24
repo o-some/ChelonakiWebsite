@@ -1550,8 +1550,8 @@ function HubDecision({ data }) {
     <section className="hub-decision">
       <figure>
         <img
-          src="/assets/service-funnel-editorial.webp"
-          alt="Helle griechische Architektur als Symbol für klare, tragfähige Lösungen"
+          src="/assets/service-funnel-liquid-glass-v2.webp"
+          alt="Helle griechische Architektur mit drei transparenten Glasflächen vor einem tiefblauen Portal"
           loading="lazy"
         />
       </figure>
@@ -1645,7 +1645,7 @@ function ServicePage({ data }) {
         </div>
         <figure>
           <img
-            src={data.image || "/assets/service-funnel-editorial.webp"}
+            src={data.image || "/assets/service-funnel-liquid-glass-v2.webp"}
             alt={
               data.imageAlt ||
               "Hochwertige griechisch inspirierte Architektur als Chelonaki Projektwelt"
@@ -1778,8 +1778,8 @@ function MidFunnelCta({ data }) {
     <section className="mid-funnel-cta">
       <figure>
         <img
-          src="/assets/service-funnel-editorial.webp"
-          alt="Mediterrane Architektur mit klarer räumlicher Führung"
+          src="/assets/service-funnel-liquid-glass-v2.webp"
+          alt="Mediterrane Architektur mit Säule, Rundbogen und drei schwebenden Glasflächen"
           loading="lazy"
         />
       </figure>
@@ -3278,8 +3278,8 @@ function QualityPage() {
         </div>
         <figure>
           <img
-            src="/assets/service-consulting-v2.webp"
-            alt="Gemeinsame Prüfung von Prozessen und Entscheidungen in einer nahbaren Beratungssituation"
+            src="/assets/service-consulting-liquid-glass-v3.webp"
+            alt="Gemeinsame Prozessprüfung an einem Tisch mit transparenten Strategiekarten"
             width="1536"
             height="1024"
           />
@@ -3422,12 +3422,12 @@ function OriginalAppPage({ app }) {
           <img
             src={
               reply
-                ? "/assets/service-content-v2.webp"
+                ? "/assets/service-content-liquid-glass-v3.webp"
                 : "/assets/project-nutrition-venture.png"
             }
             alt={
               reply
-                ? "Geordnete Kommunikationsplanung mit Smartphone und Inhaltskarten"
+                ? "Geordnete Kommunikationsplanung mit Smartphone und transparenten Inhaltskarten"
                 : "Ernährungs- und Produktkonzept mit Notizbuch und mediterranen Zutaten"
             }
             width="1536"

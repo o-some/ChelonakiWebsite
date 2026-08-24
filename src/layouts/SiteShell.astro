@@ -36,7 +36,7 @@ const metaDescription = localizedDescription.length > 160
   ? `${localizedDescription.slice(0, 157).replace(/\s+\S*$/, "")}…`
   : localizedDescription;
 const canonical = `${siteOrigin}${localizePath(page.canonicalRoute, locale)}`;
-const socialImagePath = page.service?.image || "/assets/service-funnel-editorial.webp";
+const socialImagePath = page.service?.image || "/assets/service-funnel-liquid-glass-v2.webp";
 const socialImage = `${siteOrigin}${socialImagePath}`;
 const structuredData = buildStructuredData({ route, locale, localeConfig, translate, canonical, title, description: localizedDescription });
 const legacy = isLegacyRoute(route);
