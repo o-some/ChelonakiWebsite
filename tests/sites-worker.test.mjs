@@ -256,14 +256,14 @@ test("SEO and GEO output exposes canonical, crawler and structured-data signals"
   assert.match(legacy, /name="robots" content="noindex,follow"/);
   assert.match(
     legacy,
-    /rel="canonical" href="https:\/\/chelonaki-ai-studio\.o-some\.chatgpt\.site\/de\/web-apps-publikationen\/websites-erstellen-lassen"/,
+    /rel="canonical" href="https:\/\/www\.chelonaki\.eu\/de\/web-apps-publikationen\/websites-erstellen-lassen"/,
   );
   assert.doesNotMatch(sitemap, /\/digital\//);
   assert.match(sitemap, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
   assert.match(robots, /User-agent: OAI-SearchBot[\s\S]*Allow: \//);
   assert.match(
     robots,
-    /Sitemap: https:\/\/chelonaki-ai-studio\.o-some\.chatgpt\.site\/sitemap\.xml/,
+    /Sitemap: https:\/\/www\.chelonaki\.eu\/sitemap\.xml/,
   );
   assert.match(llms, /## Kernleistungen/);
 });

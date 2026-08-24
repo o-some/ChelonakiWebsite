@@ -7,10 +7,10 @@ import { siteOrigin } from "../src/seoData.js";
 
 const read = (path) => readFile(new URL(path, import.meta.url), "utf8");
 
-test("only reviewed locales and the production origin are published", () => {
+test("all prepared locales and the production origin are published", () => {
   assert.deepEqual(
     enabledLocales.map(({ code }) => code),
-    ["de"],
+    ["de", "en", "el", "fr", "es", "tr", "pl", "nl", "it", "pt", "ru", "ar"],
   );
   assert.equal(siteOrigin, "https://www.chelonaki.eu");
 });
@@ -52,5 +52,5 @@ test("static hosting emits baseline security and disclosure files", async () => 
   assert.match(headers, /Strict-Transport-Security:/);
   assert.match(headers, /Permissions-Policy:/);
   assert.match(security, /Contact: mailto:info@chelonaki\.eu/);
-  assert.match(security, /Canonical: https:\/\/chelonaki\.eu\/\.well-known\/security\.txt/);
+  assert.match(security, /Canonical: https:\/\/www\.chelonaki\.eu\/\.well-known\/security\.txt/);
 });

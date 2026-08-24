@@ -12,7 +12,7 @@ Die zentrale Registrierung liegt in `src/locales.js`. Die Auswahl erfolgt strikt
 4. grober Ländercode des Edge-Netzwerks
 5. Deutsch
 
-Aktive Sprachen erhalten eigene, direkt aufrufbare URLs, `lang`/`dir`, Canonical- und `hreflang`-Metadaten sowie Einträge in `/sitemap.xml`. Derzeit ist ausschließlich Deutsch freigegeben. Eine weitere Sprache wird zunächst mit `enabled: false` registriert und erst nach vollständiger inhaltlicher, rechtlicher und muttersprachlicher Prüfung aktiviert.
+Aktive Sprachen erhalten eigene, direkt aufrufbare URLs, `lang`/`dir`, Canonical- und `hreflang`-Metadaten sowie Einträge in `/sitemap.xml`. Derzeit sind Deutsch, Englisch, Griechisch, Französisch, Spanisch, Türkisch, Polnisch, Niederländisch, Italienisch, Portugiesisch, Russisch und Arabisch freigegeben. Eine weitere Sprache wird zunächst mit `enabled: false` registriert und erst nach vollständiger Prüfung aktiviert.
 
 ## Datenschutz
 
