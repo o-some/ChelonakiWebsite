@@ -25,5 +25,5 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://chelonaki.eu/sitemap.xml
+Sitemap: https://www.chelonaki.eu/sitemap.xml
 Host: chelonaki.eu

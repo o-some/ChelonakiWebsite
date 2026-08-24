@@ -12,7 +12,7 @@ test("only reviewed locales and the production origin are published", () => {
     enabledLocales.map(({ code }) => code),
     ["de"],
   );
-  assert.equal(siteOrigin, "https://chelonaki.eu");
+  assert.equal(siteOrigin, "https://www.chelonaki.eu");
 });
 
 test("legal information has stable canonical routes", () => {

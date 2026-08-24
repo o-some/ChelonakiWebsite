@@ -6,29 +6,29 @@ Chelonaki verbindet Strategie, Design, Technologie, Ernährungswissenschaft und 
 
 ## Zentrale Seiten
 
-- [Startseite](https://chelonaki.eu/de): Überblick über Chelonaki
-- [Web, Apps & Publikationen](https://chelonaki.eu/de/web-apps-publikationen): Websites, Apps, Bücher und Ghostwriting
-- [Medien & KI](https://chelonaki.eu/de/medien-ai): Social Media, Ads, KI-Telefon und Antwortvorschläge
-- [KI-Beratung & Weiterbildung](https://chelonaki.eu/de/ki-beratung-weiterbildung): Beratung, Mitarbeiterschulungen und Video Academy
-- [Designbeispiele](https://chelonaki.eu/de/demowelten): auswählbare Designrichtungen
-- [Paketfinder](https://chelonaki.eu/de/paketfinder): unverbindliche Orientierung zum passenden Einstieg
-- [Qualitätsrahmen](https://chelonaki.eu/de/qualitaet): Freigaben, Grenzen und Qualitätskontrolle
-- [Über Chelonaki](https://chelonaki.eu/de/ueber-uns): Gründer, Erfahrung, Haltung und technische Kompetenz
-- [Kontakt](https://chelonaki.eu/de/kontakt): Projektanfrage
-- [Impressum](https://chelonaki.eu/de/impressum): Anbieter- und Kontaktangaben
-- [Datenschutz](https://chelonaki.eu/de/datenschutz): Datenverarbeitung und Betroffenenrechte
-- [Barrierefreiheit](https://chelonaki.eu/de/barrierefreiheit): Maßnahmen und Feedbackkanal
+- [Startseite](https://www.chelonaki.eu/de): Überblick über Chelonaki
+- [Web, Apps & Publikationen](https://www.chelonaki.eu/de/web-apps-publikationen): Websites, Apps, Bücher und Ghostwriting
+- [Medien & KI](https://www.chelonaki.eu/de/medien-ai): Social Media, Ads, KI-Telefon und Antwortvorschläge
+- [KI-Beratung & Weiterbildung](https://www.chelonaki.eu/de/ki-beratung-weiterbildung): Beratung, Mitarbeiterschulungen und Video Academy
+- [Designbeispiele](https://www.chelonaki.eu/de/demowelten): auswählbare Designrichtungen
+- [Paketfinder](https://www.chelonaki.eu/de/paketfinder): unverbindliche Orientierung zum passenden Einstieg
+- [Qualitätsrahmen](https://www.chelonaki.eu/de/qualitaet): Freigaben, Grenzen und Qualitätskontrolle
+- [Über Chelonaki](https://www.chelonaki.eu/de/ueber-uns): Gründer, Erfahrung, Haltung und technische Kompetenz
+- [Kontakt](https://www.chelonaki.eu/de/kontakt): Projektanfrage
+- [Impressum](https://www.chelonaki.eu/de/impressum): Anbieter- und Kontaktangaben
+- [Datenschutz](https://www.chelonaki.eu/de/datenschutz): Datenverarbeitung und Betroffenenrechte
+- [Barrierefreiheit](https://www.chelonaki.eu/de/barrierefreiheit): Maßnahmen und Feedbackkanal
 
 ## Kernleistungen
 
-- [Shopify-Websites erstellen lassen](https://chelonaki.eu/de/web-apps-publikationen/websites-erstellen-lassen)
-- [Apps entwickeln lassen](https://chelonaki.eu/de/web-apps-publikationen/apps-entwickeln-lassen)
-- [Buchproduktion und Ghostwriting](https://chelonaki.eu/de/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting)
-- [KI-Content und Social Media](https://chelonaki.eu/de/medien-ai/social-media)
-- [Meta- und Google-Ads](https://chelonaki.eu/de/medien-ai/ads)
-- [KI-Telefonassistenten](https://chelonaki.eu/de/medien-ai/ki-telefon)
-- [KI-Beratung für Unternehmen](https://chelonaki.eu/de/ki-beratung-weiterbildung/ki-beratung-unternehmen)
-- [KI-Schulungen und Workshops](https://chelonaki.eu/de/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter)
+- [Shopify-Websites erstellen lassen](https://www.chelonaki.eu/de/web-apps-publikationen/websites-erstellen-lassen)
+- [Apps entwickeln lassen](https://www.chelonaki.eu/de/web-apps-publikationen/apps-entwickeln-lassen)
+- [Buchproduktion und Ghostwriting](https://www.chelonaki.eu/de/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting)
+- [KI-Content und Social Media](https://www.chelonaki.eu/de/medien-ai/social-media)
+- [Meta- und Google-Ads](https://www.chelonaki.eu/de/medien-ai/ads)
+- [KI-Telefonassistenten](https://www.chelonaki.eu/de/medien-ai/ki-telefon)
+- [KI-Beratung für Unternehmen](https://www.chelonaki.eu/de/ki-beratung-weiterbildung/ki-beratung-unternehmen)
+- [KI-Schulungen und Workshops](https://www.chelonaki.eu/de/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter)
 
 ## Sprachen und Aktualität
 
@@ -36,6 +36,6 @@ Derzeit ist ausschließlich die vollständig geprüfte deutsche Fassung veröffe
 
 ## Weitere maschinenlesbare Quellen
 
-- [Vollständiger Chelonaki-Kontext](https://chelonaki.eu/llms-full.txt)
-- [XML-Sitemap](https://chelonaki.eu/sitemap.xml)
-- [Crawler-Regeln](https://chelonaki.eu/robots.txt)
+- [Vollständiger Chelonaki-Kontext](https://www.chelonaki.eu/llms-full.txt)
+- [XML-Sitemap](https://www.chelonaki.eu/sitemap.xml)
+- [Crawler-Regeln](https://www.chelonaki.eu/robots.txt)

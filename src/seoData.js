@@ -1,6 +1,6 @@
 import { hubData, services } from "./siteData.js";
 
-export const siteOrigin = "https://chelonaki.eu";
+export const siteOrigin = "https://www.chelonaki.eu";
 export const brandName = "Chelonaki";
 
 export const legacyRouteMap = {
