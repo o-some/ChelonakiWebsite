@@ -4135,6 +4135,10 @@ export function App({ initialPath = "/", initialLocale = "de" }) {
     setChatCompact(false);
   }, [chatAllowed]);
   useEffect(() => {
+    if (chatAllowed && window.matchMedia("(max-width: 767px)").matches)
+      setChatCompact(true);
+  }, [chatAllowed]);
+  useEffect(() => {
     const update = () =>
       setPath(
         stripLanguageFromPath(

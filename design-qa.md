@@ -112,3 +112,35 @@ Fixes:
 ## Final result
 
 passed
+
+---
+
+# QA Update: mobiler Chat-Bot im Header
+
+## Evidenz
+
+- Visuelle Vorlage: `qa/mobile-chat-header/reference-mobile-header.jpg`
+- Implementierung, geschlossen: `qa/mobile-chat-header/implementation-mobile-header.png`
+- Direkter Vergleich: `qa/mobile-chat-header/reference-vs-implementation.png`
+- Viewport: 390 × 844 CSS-Pixel bei Device-Pixel-Ratio 1
+- Quelldatei: 589 × 1280 Pixel; Implementierung: 390 × 844 Pixel
+- Normalisierung: Website-Header der Vorlage auf 390 × 64 Pixel skaliert und auf 390 × 72 Pixel aufgefüllt; Implementierungs-Header als 390 × 72 Pixel ausgeschnitten; beide nebeneinander verglichen.
+- Zustand: mobile Seite `/de/ueber-uns`, Chat zunächst geschlossen und anschließend direkt über den Header geöffnet.
+
+## Vergleich und Findings
+
+- Vollansicht: Die Chat-Schaltfläche sitzt wie in der Vorlage dauerhaft zwischen Wortmarke und Hamburger-Menü. Der übrige Seiteninhalt liegt außerhalb des angeforderten Änderungsumfangs.
+- Fokusvergleich: Position, Reihenfolge, Schildkrötenmotiv, runde Kontur und Beschriftung „Chat-Bot“ stimmen mit der Vorlage überein.
+- Typografie, Abstände, Ivory-/Navy-/Gold-Tokens und das authentische Schildkröten-Asset bleiben unverändert.
+- Der Header-Button öffnet den Chat direkt; das mobile Menü bleibt geschlossen und der untere Launcher ist im mobilen Initialzustand ausgeblendet.
+- Produktionsnahe Browserprüfung: keine Konsolenfehler.
+- Keine P0-, P1- oder P2-Abweichungen im angeforderten Header-Bereich; keine Nachbesserung erforderlich.
+
+## Implementierungscheckliste
+
+- [x] Chat-Bot beim mobilen Erstaufruf in den Header setzen.
+- [x] Unteren Launcher im mobilen Initialzustand ausblenden.
+- [x] Direktes Öffnen ohne Menü testen.
+- [x] Mobile Darstellung und Browserkonsole prüfen.
+
+final result: passed
