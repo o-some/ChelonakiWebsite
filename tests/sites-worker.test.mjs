@@ -338,6 +338,38 @@ test("analytics accepts valid anonymous event payloads without requiring identit
   });
 });
 
+test("analytics deletes events after the disclosed 180-day retention period", async () => {
+  const statements = [];
+  const DB = {
+    prepare(sql) {
+      statements.push(sql);
+      const statement = {
+        bind: () => statement,
+        run: async () => ({}),
+      };
+      return statement;
+    },
+  };
+  const response = await worker.fetch(
+    new Request("https://example.test/api/analytics", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        origin: "https://example.test",
+      },
+      body: JSON.stringify({ event: "page_view", route: "/de" }),
+    }),
+    { DB },
+  );
+
+  assert.equal(response.status, 202);
+  assert.ok(
+    statements.some((sql) =>
+      sql.includes("created_at < datetime('now', '-180 days')"),
+    ),
+  );
+});
+
 test("all supported languages contain complete, localized dictionaries", () => {
   const languages = [
     "en",

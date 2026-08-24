@@ -1,12 +1,12 @@
 # Chelonaki Website - Legal Readiness for Germany
 
-Status: planning and pre-launch review, 3 August 2026
+Status: planning and pre-launch review, 24 August 2026
 
 This is an implementation checklist, not individual legal advice. Final company details, hosting, form delivery and the actual sales model must be reviewed before publication.
 
 ## Current scope
 
-The current website is a marketing and contact site for a founder-led AI studio. It does not yet sell food, digital products or subscriptions online. The legal layer should therefore cover the actual launch state without pretending that a shop already exists.
+The current website is a marketing and contact site for a founder-led AI studio. A later webshop will allow customers to book Chelonaki services and may also provide digital products, courses or subscriptions. The legal layer must cover the actual launch state without pretending that checkout is already active, while the shop requirements remain a separate launch gate.
 
 ## Must be completed before publication
 
@@ -86,6 +86,28 @@ The marketing site will target WCAG 2.2 AA regardless of whether the BFSG applie
 
 Sources: [Section 1 BFSG](https://www.gesetze-im-internet.de/bfsg/__1.html), [Section 2 BFSG](https://www.gesetze-im-internet.de/bfsg/__2.html)
 
+## Planned service-webshop phase
+
+The planned webshop may only be activated after its real products, providers and contract flow are known. A footer AGB text cannot replace the information that must appear on the product page and immediately before a consumer places an order.
+
+Before enabling service booking or digital sales, the checkout needs at least:
+
+- a precise description of each service or digital product, including prerequisites, deliverables, limits, delivery or performance time, correction rounds and any customer cooperation
+- a clear B2B/B2C distinction; consumers must see the payable total price including applicable taxes and unavoidable charges
+- contract duration, minimum term, renewal and cancellation rules where recurring services or subscriptions are offered
+- accepted payment methods and any delivery, territorial or booking restrictions at the beginning of checkout
+- a review step that allows customers to identify and correct input errors before ordering
+- an unambiguous paid-order button such as `zahlungspflichtig bestellen`
+- immediate electronic receipt confirmation and a durable contract confirmation containing the order, AGB and consumer information
+- product-specific rules for booked appointments, rescheduling and cancellation
+- separate, unticked declarations when a consumer requests that a service begin before the withdrawal period ends
+- the required consent, acknowledgement and durable confirmation before paid digital content is supplied early and the withdrawal right can expire
+- a permanently available electronic withdrawal function during the withdrawal period, including confirmation of receipt with date, time and submitted content
+- an accessible checkout, contract confirmation and withdrawal flow
+- the final shop platform, payment provider, invoicing flow, recipients, retention periods and international transfers in the privacy policy before any real order data is collected
+
+Sources: [Section 312j BGB](https://www.gesetze-im-internet.de/bgb/__312j.html), [Section 356a BGB](https://www.gesetze-im-internet.de/bgb/__356a.html), [Section 312f BGB](https://www.gesetze-im-internet.de/bgb/__312f.html), [Article 246a Section 1 EGBGB](https://www.gesetze-im-internet.de/bgbeg/art_246a__1.html)
+
 ## Later food-commerce phase
 
 Food sales are a separate launch gate, not a paragraph added to this studio page. Before enabling checkout, the project needs at least:
@@ -117,3 +139,8 @@ The final legal copy cannot be completed without:
 - B2B-only or B2C availability at launch
 - employee count and dispute-resolution decision
 - whether a recurring editorial publication is planned
+- final shop platform and checkout domain
+- payment providers and accepted payment methods
+- which services, digital products or subscriptions can be purchased directly
+- booking, rescheduling, cancellation, delivery and performance rules for each offer type
+- whether the shop sells to consumers, businesses or both in each offer category

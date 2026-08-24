@@ -52,54 +52,77 @@ const legalViews = {
         </p>
         <h3>Anbieter</h3>
         <p>
-          <mark>[VOLLSTÄNDIGER NAME ODER FIRMA]</mark>
+          Chelonaki
           <br />
-          <mark>[RECHTSFORM]</mark>
+          Inhaber: Eleftherios Samouladas
           <br />
-          <mark>[LADUNGSFÄHIGE ANSCHRIFT]</mark>
+          Zeppelinstraße 7
+          <br />
+          68519 Viernheim
           <br />
           Deutschland
         </p>
-        <h3>Vertretung und Kontakt</h3>
+        <h3>Kontakt</h3>
         <p>
-          Vertreten durch: <mark>[VERTRETUNGSBERECHTIGTE PERSON]</mark>
+          Telefon: <a href="tel:+491712997495">+49 171 2997495</a>
           <br />
-          Telefon: <mark>[TELEFONNUMMER]</mark>
-          <br />
-          E-Mail: <mark>[E-MAIL-ADRESSE]</mark>
+          E-Mail: <a href="mailto:info@chelonaki.eu">info@chelonaki.eu</a>
         </p>
-        <h3>Register und Steuern</h3>
+        <h3>Rechtsform und Register</h3>
         <p>
-          Registergericht und Registernummer: <mark>[FALLS ZUTREFFEND]</mark>
+          Einzelunternehmen
           <br />
-          Umsatzsteuer-ID: <mark>[FALLS VORHANDEN]</mark>
-        </p>
-        <p className="legal-note">
-          Die Betreiberangaben sind vor dem öffentlichen Geschäftsstart zu
-          vervollständigen.
+          Kein Registereintrag
+          <br />
+          Keine Umsatzsteuer-Identifikationsnummer vorhanden
         </p>
       </>
     ),
   },
   datenschutz: {
-    label: "Datensparsame Vorschau",
+    label: "Stand: 24. August 2026",
     title: "Datenschutzerklärung",
     content: (
       <>
         <p className="legal-lead">
-          Optionale, anonyme Nutzungsstatistiken werden ausschließlich nach
-          Ihrer Einwilligung erfasst. Es werden dabei keine vollständige
-          IP-Adresse, kein exakter Standort und keine Formulardaten gespeichert.
+          Diese Hinweise erklären, welche personenbezogenen Daten beim Besuch
+          dieser Website und bei einer Kontaktaufnahme verarbeitet werden.
         </p>
         <h3>Verantwortlicher</h3>
         <p>
-          <mark>[NAME ODER FIRMA, ANSCHRIFT UND KONTAKTDATEN]</mark>
+          Eleftherios Samouladas, handelnd unter Chelonaki
+          <br />
+          Zeppelinstraße 7, 68519 Viernheim, Deutschland
+          <br />
+          Telefon: <a href="tel:+491712997495">+49 171 2997495</a>
+          <br />
+          E-Mail: <a href="mailto:info@chelonaki.eu">info@chelonaki.eu</a>
         </p>
-        <h3>Hosting</h3>
         <p>
-          Beim Aufruf können technisch erforderliche Verbindungsdaten
-          verarbeitet werden. Anbieter, Region, Auftragsverarbeitung und
-          Löschfrist: <mark>[ERGÄNZEN]</mark>.
+          Datenschutzanfragen können direkt an die oben genannte E-Mail-Adresse
+          gerichtet werden.
+        </p>
+        <h3>Hosting und technische Bereitstellung</h3>
+        <p>
+          Die derzeit veröffentlichte Website wird über ChatGPT Sites durch
+          OpenAI Ireland Ltd, 1st Floor, The Liffey Trust Centre, 117–126
+          Sheriff Street Upper, Dublin 1, D01 YC43, Irland, gehostet. OpenAI
+          verarbeitet die für Hosting, Wartung, Sicherheit und Support
+          erforderlichen Daten als Auftragsverarbeiter. Dabei können
+          insbesondere IP-Adresse, Zeitpunkt und Ziel des Abrufs, Geräte- und
+          Browserangaben sowie technische Protokoll- und Sicherheitsdaten
+          verarbeitet werden.
+        </p>
+        <p>
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes
+          Interesse liegt in der sicheren, stabilen und missbrauchsgeschützten
+          Bereitstellung der Website. Daten werden nur so lange verarbeitet,
+          wie dies für Betrieb, Sicherheit, Fehlerbehebung und die Erfüllung
+          gesetzlicher Pflichten erforderlich ist. OpenAI kann
+          Unterauftragsverarbeiter einsetzen. Übermittlungen außerhalb des EWR
+          erfolgen nach dem anwendbaren Auftragsverarbeitungsvertrag auf
+          Grundlage eines Angemessenheitsbeschlusses oder der
+          EU-Standardvertragsklauseln.
         </p>
         <h3>Sprachversionen</h3>
         <p>
@@ -108,24 +131,101 @@ const legalViews = {
           externen Übersetzungsdienst übermittelt. Die deutsche Fassung bleibt
           die inhaltliche Ausgangsversion.
         </p>
+        <h3>Speicherungen auf Ihrem Gerät</h3>
+        <p>
+          Die gewählte Sprache, Ihre Datenschutzentscheidung und auf Wunsch
+          gemerkte Designbeispiele werden im lokalen Speicher Ihres Browsers
+          abgelegt. Die automatische Sprachentscheidung wird nur für die
+          aktuelle Sitzung gespeichert. Diese Angaben bleiben auf Ihrem Gerät
+          und können über die Browser-Einstellungen gelöscht werden. Die
+          Speicherung dient der von Ihnen gewünschten Bedienung der Website;
+          Rechtsgrundlagen sind § 25 Abs. 2 Nr. 2 TDDDG und Art. 6 Abs. 1 lit. f
+          DSGVO. Die Entscheidung über optionale Statistik wird zur Umsetzung
+          Ihrer Einwilligung oder Ablehnung gespeichert.
+        </p>
         <h3>Anonyme Nutzungsstatistik</h3>
         <p>
-          Nach Ihrer Einwilligung erfassen wir Seitenaufrufe, den groben
-          Ländercode des ausliefernden Netzknotens, die angezeigte Sprache, den
-          Gerätetyp sowie ausgewählte Interaktionen wie Paket-, Kontakt- und
-          Sprachwahl. Die Statistik dient der Verbesserung der Website und kann
-          jederzeit in den Datenschutz-Einstellungen deaktiviert werden.
+          Nur nach Ihrer Einwilligung erfassen wir Seitenaufrufe, den groben
+          Ländercode, die angezeigte Sprache, die Gerätekategorie sowie
+          ausgewählte Interaktionen wie Paket-, Kontakt- und Sprachwahl. Die
+          Anwendung speichert dabei keine vollständige IP-Adresse, keinen
+          exakten Standort und keine Inhalte aus Kontaktfeldern. Statistikdaten
+          werden nach 180 Tagen gelöscht. Rechtsgrundlagen sind Ihre
+          Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und, soweit Informationen
+          auf Ihrem Gerät gespeichert oder ausgelesen werden, § 25 Abs. 1
+          TDDDG. Sie können die Einwilligung jederzeit mit Wirkung für die
+          Zukunft in den Datenschutz-Einstellungen widerrufen.
         </p>
-        <h3>Kontaktaufnahme</h3>
+        <h3>Chelonaki Assistent</h3>
         <p>
-          Übermittelte Angaben werden ausschließlich zur Bearbeitung der Anfrage
-          verarbeitet. Diese Vorschau versendet noch keine Formulardaten.
+          Nachrichten an den Assistenten werden an den Server dieser Website
+          übertragen, dort regelbasiert beantwortet und nicht in der
+          Anwendungsdatenbank gespeichert. Zur Missbrauchsabwehr wird die
+          anfragende IP-Adresse vorübergehend im Arbeitsspeicher für eine
+          Zugriffsbeschränkung verwendet; der Zeitraum beträgt fünf Minuten.
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Bitte übermitteln Sie
+          dort keine sensiblen oder vertraulichen Daten.
+        </p>
+        <h3>Kontaktformular, E-Mail und Telefon</h3>
+        <p>
+          Das sichtbare Kontaktformular ist derzeit eine Vorschau und überträgt
+          keine eingegebenen Formulardaten. Wenn Sie uns per E-Mail oder Telefon
+          kontaktieren, verarbeiten wir Ihre Angaben zur Bearbeitung der
+          Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei
+          vorvertraglichen oder vertraglichen Anliegen, sonst Art. 6 Abs. 1 lit.
+          f DSGVO. Anfragedaten werden grundsätzlich spätestens sechs Monate
+          nach Abschluss der Bearbeitung gelöscht, soweit keine gesetzlichen
+          Aufbewahrungspflichten oder die Geltendmachung, Ausübung oder
+          Verteidigung von Rechtsansprüchen eine längere Speicherung erfordern.
+        </p>
+        <h3>Externe Inhalte</h3>
+        <p>
+          Die Website lädt derzeit keine externen Schriftarten, Karten, Videos,
+          Social-Media-Plugins oder Werbepixel. Sollte sich dies ändern, werden
+          diese Hinweise vor der Aktivierung angepasst und eine erforderliche
+          Einwilligung eingeholt.
+        </p>
+        <h3>Geplanter Dienstleistungs-Webshop</h3>
+        <p>
+          Der Webshop ist noch nicht aktiviert und verarbeitet derzeit keine
+          Bestell- oder Zahlungsdaten. Nach seiner Aktivierung werden für
+          Bestellung und Vertragserfüllung insbesondere Name, Kontaktdaten,
+          Rechnungsangaben, gewählte Leistung, Buchungs- oder Terminangaben,
+          Bestellstatus und Zahlungsstatus verarbeitet. Pflichtfelder werden im
+          Bestellprozess gekennzeichnet; ohne die erforderlichen Angaben kann
+          die Bestellung nicht bearbeitet werden. Rechtsgrundlage ist Art. 6
+          Abs. 1 lit. b DSGVO, für gesetzlich vorgeschriebene Aufbewahrung Art.
+          6 Abs. 1 lit. c DSGVO.
+        </p>
+        <p>
+          Shopplattform, Zahlungsdienstleister, Empfänger, mögliche
+          Drittlandübermittlungen und konkrete Löschfristen werden hier vor der
+          Freischaltung entsprechend der tatsächlich gewählten Dienste ergänzt.
+          Zahlungsdaten werden nur im für die gewählte Zahlungsart
+          erforderlichen Umfang an den jeweiligen Zahlungsdienstleister
+          übermittelt.
         </p>
         <h3>Ihre Rechte</h3>
         <p>
           Nach Maßgabe der DSGVO bestehen insbesondere Rechte auf Auskunft,
           Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und
-          Widerspruch.
+          Widerspruch. Eine erteilte Einwilligung kann jederzeit mit Wirkung für
+          die Zukunft widerrufen werden. Außerdem besteht ein Beschwerderecht
+          bei einer Datenschutzaufsichtsbehörde. Für den Sitz des
+          Verantwortlichen ist insbesondere der Hessische Beauftragte für
+          Datenschutz und Informationsfreiheit, Postfach 3163, 65021 Wiesbaden,
+          E-Mail: poststelle@datenschutz.hessen.de, zuständig.
+        </p>
+        <h3>Automatisierte Entscheidungen</h3>
+        <p>
+          Eine automatisierte Entscheidungsfindung einschließlich Profiling im
+          Sinne von Art. 22 DSGVO findet nicht statt.
+        </p>
+        <p className="legal-note">
+          Wird die Website auf eine andere Hostingplattform umgezogen oder das
+          Kontaktformular, ein Newsletter, ein Shop oder ein externer Dienst
+          aktiviert, muss diese Datenschutzerklärung vorab an den tatsächlichen
+          Datenfluss angepasst werden.
         </p>
       </>
     ),
@@ -176,52 +276,242 @@ const legalViews = {
       </>
     ),
   },
+  agb: {
+    label: "Stand: 24. August 2026",
+    title: "Allgemeine Geschäftsbedingungen",
+    content: (
+      <>
+        <p className="legal-lead">
+          Diese AGB gelten für individuell vereinbarte und künftig über den
+          Chelonaki Webshop buchbare Dienstleistungen und digitale Angebote.
+          Der Webshop ist derzeit noch nicht aktiviert und nimmt noch keine
+          zahlungspflichtigen Bestellungen an.
+        </p>
+        <h3>1. Anbieter und Geltungsbereich</h3>
+        <p>
+          Vertragspartner ist Eleftherios Samouladas, handelnd unter Chelonaki,
+          Zeppelinstraße 7, 68519 Viernheim. Diese AGB gelten für
+          Dienstleistungen, Projektleistungen, digitale Inhalte und digitale
+          Dienste, die individuell oder nach Aktivierung des Webshops angeboten
+          werden. Sie gelten gegenüber Unternehmern und Verbrauchern, soweit im
+          individuellen Angebot nichts Abweichendes vereinbart wird.
+          Individuelle Vereinbarungen und die konkrete Leistungsbeschreibung
+          gehen diesen AGB vor.
+        </p>
+        <h3>2. Vertragsschluss</h3>
+        <p>
+          Darstellungen, Paketfinder, Preise und Kontaktmöglichkeiten auf der
+          Website sind unverbindliche Informationen und kein bindendes Angebot.
+          Ein Vertrag kommt erst durch ein individuelles Angebot von Chelonaki
+          und dessen Annahme durch den Kunden oder durch eine ausdrückliche
+          Auftragsbestätigung zustande.
+        </p>
+        <p>
+          Nach Aktivierung des Webshops können ausgewählte Leistungen über den
+          Warenkorb gebucht werden. Die Produktdarstellung ist eine Einladung
+          zur Abgabe einer Bestellung. Vor dem Absenden kann der Kunde seine
+          Angaben und die ausgewählten Leistungen prüfen und korrigieren. Mit
+          Betätigung der eindeutig als zahlungspflichtig gekennzeichneten
+          Bestellschaltfläche gibt der Kunde ein verbindliches Angebot ab. Der
+          Eingang wird unverzüglich elektronisch bestätigt. Diese
+          Eingangsbestätigung ist nur dann bereits die Vertragsannahme, wenn sie
+          ausdrücklich als Auftragsbestätigung bezeichnet ist; andernfalls
+          kommt der Vertrag durch gesonderte Annahme oder Bereitstellung der
+          gebuchten Leistung zustande.
+        </p>
+        <p>
+          Die Vertragssprache ist Deutsch. Die Vertragsbestätigung mit den
+          maßgeblichen Bestelldaten, AGB und Verbraucherinformationen wird auf
+          einem dauerhaften Datenträger, in der Regel per E-Mail, bereitgestellt.
+        </p>
+        <h3>3. Leistungsumfang und Änderungen</h3>
+        <p>
+          Art, Umfang, Termine, Korrekturrunden, Abnahmen und Vergütung ergeben
+          sich aus dem jeweiligen Angebot oder der Leistungsbeschreibung.
+          Änderungs- und Zusatzwünsche werden vor ihrer Umsetzung hinsichtlich
+          Mehrkosten und Terminfolgen abgestimmt.
+        </p>
+        <p>
+          Im Webshop werden vor der Bestellung die wesentlichen Eigenschaften,
+          Voraussetzungen, Leistungs- oder Bereitstellungszeit, Zielgruppe,
+          Laufzeit, Kündigungsbedingungen und gegebenenfalls Funktionalität,
+          Kompatibilität und Interoperabilität des jeweiligen Angebots
+          ausgewiesen. Diese produktspezifischen Angaben sind Bestandteil des
+          Vertrags.
+        </p>
+        <h3>4. Mitwirkung des Kunden</h3>
+        <p>
+          Der Kunde stellt vereinbarte Inhalte, Zugänge, Freigaben und
+          Ansprechpartner rechtzeitig bereit und prüft Zwischenstände innerhalb
+          der abgestimmten Fristen. Der Kunde sichert zu, dass bereitgestellte
+          Inhalte und Materialien rechtmäßig verwendet werden dürfen.
+          Verzögerungen durch fehlende Mitwirkung können vereinbarte Termine
+          entsprechend verschieben.
+        </p>
+        <h3>5. Preise und Zahlung</h3>
+        <p>
+          Maßgeblich sind die Preise und Zahlungsabschnitte im individuellen
+          Angebot. Als netto gekennzeichnete Websitepreise richten sich an
+          Unternehmer; Verbraucher erhalten vor Vertragsschluss ein Angebot mit
+          dem zu zahlenden Gesamtpreis einschließlich anwendbarer Steuern und
+          Abgaben. Im Webshop werden akzeptierte Zahlungsmittel und mögliche
+          Zusatzkosten spätestens zu Beginn des Bestellvorgangs angezeigt.
+          Fremdkosten, Lizenzen, Plattformtarife, Werbebudgets, Druck- oder
+          Versandkosten sind nur enthalten, wenn dies ausdrücklich vereinbart
+          und vor der Bestellung ausgewiesen wurde.
+        </p>
+        <p>
+          Fälligkeit, Abschlagszahlungen und Zahlungsplan ergeben sich aus der
+          jeweiligen Leistungsbeschreibung, der Bestellübersicht oder dem
+          individuellen Angebot. Ein bestimmter Zahlungsdienstleister wird erst
+          mit dessen tatsächlicher Einbindung benannt.
+        </p>
+        <h3>6. Buchungen und Termine</h3>
+        <p>
+          Ein im Webshop gewählter Termin wird erst mit Vertragsannahme
+          verbindlich. Voraussetzungen, Umbuchungs- und Stornobedingungen werden
+          bei der jeweiligen buchbaren Leistung vor der Bestellung angezeigt.
+          Soweit der Kunde einen Leistungsbeginn vor Ablauf einer gesetzlichen
+          Widerrufsfrist wünscht, wird dieser Wunsch einschließlich der
+          erforderlichen Kenntnisbestätigung gesondert und nicht durch ein
+          vorangekreuztes Feld abgefragt.
+        </p>
+        <h3>7. Termine, Übergabe und Abnahme</h3>
+        <p>
+          Termine setzen die rechtzeitige Mitwirkung und Freigabe des Kunden
+          voraus. Soweit eine Abnahme gesetzlich oder vertraglich vorgesehen
+          ist, wird der Kunde das vertragsgemäße Werk nach Bereitstellung prüfen
+          und konkrete Mängel mitteilen. Unwesentliche Abweichungen hindern die
+          Abnahme nicht.
+        </p>
+        <h3>8. Digitale Inhalte und Zugänge</h3>
+        <p>
+          Digitale Inhalte, Downloads, Kurse oder Zugänge werden in der in der
+          Produktbeschreibung genannten Form und Dauer bereitgestellt.
+          Zugangsdaten sind vor unbefugter Nutzung zu schützen und dürfen nur im
+          vereinbarten Umfang weitergegeben werden. Gesetzliche Rechte bei
+          digitalen Produkten bleiben unberührt.
+        </p>
+        <h3>9. Nutzungsrechte und Drittleistungen</h3>
+        <p>
+          Der vereinbarte Nutzungsumfang ergibt sich aus dem Angebot. Soweit
+          nichts anderes vereinbart ist, werden Nutzungsrechte an finalen,
+          vollständig bezahlten Arbeitsergebnissen im für den Vertragszweck
+          erforderlichen Umfang eingeräumt. Rechte an Entwürfen, nicht gewählten
+          Varianten, Arbeitsdateien sowie vorbestehenden Werkzeugen verbleiben
+          bei ihrem jeweiligen Rechteinhaber. Für Schriften, Bilder, Software
+          und andere Drittinhalte gelten zusätzlich deren Lizenzbedingungen.
+        </p>
+        <h3>10. Mängel und Haftung</h3>
+        <p>
+          Es gelten die gesetzlichen Mängelrechte und Haftungsregeln. Eine
+          Garantie für bestimmte wirtschaftliche Ergebnisse, Reichweiten,
+          Platzierungen oder Genehmigungen besteht nur, wenn sie ausdrücklich
+          schriftlich zugesagt wurde.
+        </p>
+        <h3>11. Laufzeit und Beendigung</h3>
+        <p>
+          Laufzeit und Kündigung richten sich nach dem individuellen Vertrag.
+          Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt
+          unberührt. Bis zur Beendigung vertragsgemäß erbrachte Leistungen sind
+          zu vergüten.
+        </p>
+        <h3>12. Verbraucher und Widerruf</h3>
+        <p>
+          Verbrauchern stehen die zwingenden gesetzlichen Rechte zu. Besteht bei
+          einem Fernabsatzvertrag ein Widerrufsrecht, wird hierüber vor
+          Vertragsschluss gesondert belehrt. Die Informationen unter
+          „Widerruf“ gelten nur für Verträge, bei denen ein gesetzliches
+          Widerrufsrecht tatsächlich besteht. Bei einem online geschlossenen
+          Vertrag wird eine gesetzlich erforderliche elektronische
+          Widerrufsfunktion während der Widerrufsfrist leicht zugänglich
+          bereitgestellt.
+        </p>
+        <h3>13. Schlussbestimmungen</h3>
+        <p>
+          Es gilt deutsches Recht. Gegenüber Verbrauchern gilt diese Rechtswahl
+          nur, soweit dadurch zwingende Schutzvorschriften des Staates ihres
+          gewöhnlichen Aufenthalts nicht entzogen werden.
+        </p>
+      </>
+    ),
+  },
   widerruf: {
     label: "Hinweise für Verbraucher",
     title: "Widerruf",
     content: (
       <>
         <p className="legal-lead">
-          Verbrauchern steht bei einem gesetzlich widerrufbaren
-          Fernabsatzvertrag grundsätzlich eine Widerrufsfrist von 14 Tagen zu.
-          Maßgeblich ist die vollständige, zum konkreten Vertrag bereitgestellte
-          Widerrufsbelehrung.
+          Diese Belehrung gilt für Verbraucher, wenn ein Vertrag über eine
+          Dienstleistung oder einen nicht auf einem körperlichen Datenträger
+          bereitgestellten digitalen Inhalt im Fernabsatz geschlossen wird und
+          kein gesetzlicher Ausschluss greift.
         </p>
-        <h3>Widerruf erklären</h3>
+        <h3>Widerrufsrecht</h3>
         <p>
-          Der Widerruf muss eindeutig gegenüber dem Anbieter erklärt werden;
-          eine Begründung ist nicht erforderlich. Zur Fristwahrung genügt die
-          rechtzeitige Absendung. Die verbindlichen Kontaktangaben werden mit
-          dem konkreten Angebot und vor einem zahlungspflichtigen
-          Vertragsschluss bereitgestellt.
+          Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen
+          diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage
+          ab dem Tag des Vertragsschlusses.
         </p>
-        <h3>Leistungsbeginn vor Fristablauf</h3>
         <p>
-          Wenn Sie ausdrücklich verlangen, dass eine kostenpflichtige
-          Dienstleistung bereits vor Ablauf der Widerrufsfrist beginnt, kann für
-          den bis zum Widerruf erbrachten Anteil ein gesetzlich vorgesehener
-          Wertersatz anfallen. Das Widerrufsrecht kann bei vollständiger
-          Leistung unter den gesetzlichen Voraussetzungen vorzeitig erlöschen.
+          Um Ihr Widerrufsrecht auszuüben, müssen Sie uns – Eleftherios
+          Samouladas, Chelonaki, Zeppelinstraße 7, 68519 Viernheim, Telefon +49
+          171 2997495, E-Mail info@chelonaki.eu – mittels einer eindeutigen
+          Erklärung über Ihren Entschluss informieren. Sie können dafür das
+          unten stehende Muster-Widerrufsformular verwenden; dies ist nicht
+          vorgeschrieben. Zur Wahrung der Frist reicht es aus, dass Sie die
+          Erklärung vor Ablauf der Widerrufsfrist absenden.
         </p>
-        <h3>Digitale Inhalte</h3>
+        <h3>Folgen des Widerrufs</h3>
         <p>
-          Für digitale Inhalte, die nicht auf einem körperlichen Datenträger
-          bereitgestellt werden, gelten besondere Voraussetzungen. Ein
-          vorzeitiges Erlöschen kommt nur nach den gesetzlich erforderlichen
-          Zustimmungen, Bestätigungen und Informationen in Betracht.
+          Wenn Sie den Vertrag widerrufen, erstatten wir alle von Ihnen im
+          Zusammenhang mit diesem Vertrag erhaltenen Zahlungen unverzüglich und
+          spätestens binnen vierzehn Tagen ab Eingang des Widerrufs. Für die
+          Rückzahlung verwenden wir dasselbe Zahlungsmittel wie bei der
+          ursprünglichen Zahlung, sofern nicht ausdrücklich etwas anderes
+          vereinbart wurde. Dafür werden keine Entgelte berechnet.
         </p>
-        <h3>Musterformulierung</h3>
         <p>
-          „Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über die
-          folgende Leistung: <mark>[LEISTUNG]</mark>. Bestellt am:{" "}
-          <mark>[DATUM]</mark>. Name und Anschrift: <mark>[ANGABEN]</mark>.
-          Datum: <mark>[DATUM]</mark>.“
+          Haben Sie verlangt, dass eine Dienstleistung während der
+          Widerrufsfrist beginnen soll, ist ein angemessener Betrag für den bis
+          zum Widerruf bereits erbrachten Anteil zu zahlen, sofern die
+          gesetzlichen Voraussetzungen dafür erfüllt sind.
         </p>
-        <p className="legal-note">
-          Diese allgemeine Information ersetzt noch keine vertragsspezifische
-          Widerrufsbelehrung. Vor der Aktivierung eines B2C-Verkaufs werden
-          Anbieteranschrift, Kontaktweg, Fristbeginn, Ausnahmen und
-          Musterformular rechtlich abschließend ergänzt.
+        <h3>Vorzeitiges Erlöschen</h3>
+        <p>
+          Bei einer entgeltlichen Dienstleistung erlischt das Widerrufsrecht mit
+          vollständiger Erbringung nur, wenn Sie vor Beginn ausdrücklich dem
+          vorzeitigen Leistungsbeginn zugestimmt und bestätigt haben, dass Sie
+          vom Erlöschen bei vollständiger Vertragserfüllung wissen. Bei
+          entgeltlichen digitalen Inhalten, die nicht auf einem körperlichen
+          Datenträger bereitgestellt werden, kann das Widerrufsrecht mit Beginn
+          der Ausführung erlöschen, wenn die gesetzlich erforderliche Zustimmung,
+          Kenntnisbestätigung und Vertragsbestätigung vorliegen.
+        </p>
+        <h3>Elektronische Widerrufsfunktion</h3>
+        <p>
+          Nach Aktivierung des Webshops wird für online geschlossene Verträge,
+          bei denen ein gesetzliches Widerrufsrecht besteht, während der
+          Widerrufsfrist eine ständig verfügbare und hervorgehoben platzierte
+          Funktion „Vertrag widerrufen“ bereitgestellt. Nach Eingabe der zur
+          Vertragsidentifikation erforderlichen Angaben kann der Widerruf über
+          „Widerruf bestätigen“ abgesendet werden. Der Eingang wird
+          unverzüglich mit Datum, Uhrzeit und Inhalt auf einem dauerhaften
+          Datenträger bestätigt.
+        </p>
+        <h3>Muster-Widerrufsformular</h3>
+        <p>
+          An Eleftherios Samouladas, Chelonaki, Zeppelinstraße 7, 68519
+          Viernheim, E-Mail info@chelonaki.eu:
+        </p>
+        <p>
+          Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über die
+          folgende Dienstleistung oder den folgenden digitalen Inhalt:
+          ____________________. Vertrag geschlossen am: ____________________.
+          Name des Verbrauchers: ____________________. Anschrift des
+          Verbrauchers: ____________________. Datum: ____________________.
+          Unterschrift des Verbrauchers (nur bei Mitteilung auf Papier):
+          ____________________.
         </p>
       </>
     ),
@@ -1033,7 +1323,9 @@ function LegalDialog({ viewKey, onClose }) {
               <X size={24} />
             </button>
           </header>
-          <div className="legal-content">{view.content}</div>
+          <div className="legal-content notranslate" lang="de">
+            {view.content}
+          </div>
         </div>
       )}
     </dialog>
