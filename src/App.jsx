@@ -1396,12 +1396,8 @@ function HubPage({ type }) {
         </div>
         <figure>
           <img
-            src={
-              type === "originals"
-                ? "/assets/originals-editorial.webp"
-                : data.image
-            }
-            alt="Chelonaki Markenwelt"
+            src={data.image}
+            alt={data.imageAlt || "Chelonaki Markenwelt"}
             width="1536"
             height="1024"
           />
@@ -1457,8 +1453,8 @@ function HubDecision({ data }) {
     <section className="hub-decision">
       <figure>
         <img
-          src="/assets/service-funnel-liquid-glass-v2.webp"
-          alt="Helle griechische Architektur mit drei transparenten Glasflächen vor einem tiefblauen Portal"
+          src={data.decisionImage || "/assets/service-funnel-liquid-glass-v2.webp"}
+          alt={data.decisionImageAlt || "Griechisch inspirierter Entscheidungsraum mit transparenten Glasflächen"}
           loading="lazy"
         />
       </figure>
@@ -1685,8 +1681,8 @@ function MidFunnelCta({ data }) {
     <section className="mid-funnel-cta">
       <figure>
         <img
-          src="/assets/service-funnel-liquid-glass-v2.webp"
-          alt="Mediterrane Architektur mit Säule, Rundbogen und drei schwebenden Glasflächen"
+          src={data.funnelImage || "/assets/service-funnel-liquid-glass-v2.webp"}
+          alt={data.funnelImageAlt || "Griechisch inspirierte Projektwelt mit schwebenden Glasflächen"}
           loading="lazy"
         />
       </figure>
@@ -2170,8 +2166,8 @@ function Credentials() {
     <section className="credentials">
       <figure>
         <img
-          src="/assets/project-nutrition-venture.png"
-          alt="Mediterrane Zutaten, Notizbuch und Produktkonzept"
+          src="/assets/chapter-architecture.webp"
+          alt="Griechisch inspirierter Wissensraum als fachliche Grundlage von Chelonaki"
         />
       </figure>
       <div>
@@ -2227,8 +2223,8 @@ function AcademyPage() {
         </div>
         <figure>
           <img
-            src="/assets/service-training-v2.webp"
-            alt="Praxisnahe KI-Schulung in einer kleinen, konzentrierten Arbeitsgruppe"
+            src="/assets/academy-hero-liquid-glass-v1.webp"
+            alt="Griechisch inspiriertes Lernatelier mit Videokurs auf Tablet und transparenten Lernkarten"
             width="1536"
             height="1024"
           />
@@ -3181,8 +3177,8 @@ function QualityPage() {
         </div>
         <figure>
           <img
-            src="/assets/service-consulting-liquid-glass-v3.webp"
-            alt="Gemeinsame Prozessprüfung an einem Tisch mit transparenten Strategiekarten"
+            src="/assets/quality-framework-liquid-glass-v1.webp"
+            alt="Messingwaage mit drei transparenten Qualitätsstandards in griechischer Architektur"
             width="1536"
             height="1024"
           />
@@ -3325,12 +3321,12 @@ function OriginalAppPage({ app }) {
           <img
             src={
               reply
-                ? "/assets/service-content-liquid-glass-v3.webp"
-                : "/assets/project-nutrition-venture.png"
+                ? "/assets/reply-product-liquid-glass-v1.webp"
+                : "/assets/project-digital-brand.png"
             }
             alt={
               reply
-                ? "Geordnete Kommunikationsplanung mit Smartphone und transparenten Inhaltskarten"
+                ? "Smartphone mit drei schwebenden Antwortkarten in einem griechisch inspirierten Studio"
                 : "Ernährungs- und Produktkonzept mit Notizbuch und mediterranen Zutaten"
             }
             width="1536"
@@ -3416,7 +3412,7 @@ function OriginalDetail({ type }) {
           <img
             src={
               type === "buecher"
-                ? "/assets/service-books-v2.webp"
+                ? "/assets/service-funnel-editorial.webp"
                 : "/assets/project-nutrition-venture.png"
             }
             alt={

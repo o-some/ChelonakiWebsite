@@ -33,18 +33,18 @@ export const navigation = [
 ];
 
 export const serviceImages = {
-  "/web-apps-publikationen/websites-erstellen-lassen": "/assets/service-websites-liquid-glass-v3.webp",
-  "/web-apps-publikationen/apps-entwickeln-lassen": "/assets/service-apps-v2.webp",
-  "/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting": "/assets/service-books-v2.webp",
-  "/medien-ai/social-media": "/assets/service-content-liquid-glass-v3.webp",
-  "/medien-ai/ads": "/assets/service-ads-v2.webp",
-  "/medien-ai/ki-telefon": "/assets/service-phone-v2.webp",
-  "/medien-ai/chelonaki-reply": "/assets/service-content-liquid-glass-v3.webp",
-  "/ki-beratung-weiterbildung/ki-beratung-unternehmen": "/assets/service-consulting-liquid-glass-v3.webp",
-  "/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter": "/assets/service-training-v2.webp",
-  "/ki-beratung-weiterbildung/video-academy": "/assets/service-training-v2.webp",
-  "/originals/apps": "/assets/project-nutrition-venture.png",
-  "/originals/buecher": "/assets/service-books-v2.webp",
+  "/web-apps-publikationen/websites-erstellen-lassen": "/assets/design-web.png",
+  "/web-apps-publikationen/apps-entwickeln-lassen": "/assets/design-apps.png",
+  "/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting": "/assets/design-books.png",
+  "/medien-ai/social-media": "/assets/design-content.png",
+  "/medien-ai/ads": "/assets/design-ads.png",
+  "/medien-ai/ki-telefon": "/assets/design-phone.png",
+  "/medien-ai/chelonaki-reply": "/assets/design-reply.png",
+  "/ki-beratung-weiterbildung/ki-beratung-unternehmen": "/assets/design-consulting.png",
+  "/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter": "/assets/design-training.png",
+  "/ki-beratung-weiterbildung/video-academy": "/assets/academy-card-liquid-glass-v1.webp",
+  "/originals/apps": "/assets/design-originals.png",
+  "/originals/buecher": "/assets/originals-editorial.webp",
 };
 
 export const worlds = [
@@ -126,7 +126,10 @@ export const hubData = {
     label: "Chelonaki Original",
     title: "Von Eleftherios entwickelt. Von Eleftherios geschrieben.",
     intro: "Originals versammelt keine Kundenprojekte: Hier zeigt Eleftherios seine selbst entwickelten Apps und seine eigenen Bücher. Jedes Produkt trägt seine fachliche und kreative Handschrift.",
-    image: "/assets/service-books-v2.webp",
+    image: "/assets/hub-originals-liquid-glass-v1.webp",
+    imageAlt: "Griechisch inspiriertes Kreativatelier mit Buch, Tablet und schwebenden Glaskarten",
+    decisionImage: "/assets/decision-originals-liquid-glass-v1.webp",
+    decisionImageAlt: "Originals-Auswahl mit Buch, App und eigenständigen Ideen in transparenten Glasebenen",
     cta: "Originals entdecken",
     cards: navigation[3].items.map(([title, href], index) => ({
       title,
@@ -146,21 +149,33 @@ hubData.web = {
   label: "Für Unternehmen",
   title: "Websites, Apps und Publikationen, die ein klares Ergebnis liefern.",
   intro: "Von der ersten Struktur bis zur veröffentlichungsfähigen Lösung verbinden wir Strategie, Gestaltung, Technik und kontrollierte KI-Unterstützung.",
-  image: "/assets/service-websites-liquid-glass-v3.webp", cta: "Projekt anfragen",
+  image: "/assets/hub-web-liquid-glass-v1.webp",
+  imageAlt: "Griechisches Digitalatelier mit Website-Entwürfen auf schwebenden Glasebenen",
+  decisionImage: "/assets/decision-web-liquid-glass-v1.webp",
+  decisionImageAlt: "Website-Entscheidungsraum mit drei transparenten Projektwegen",
+  cta: "Projekt anfragen",
   cards: navigation[0].items.map(([title, href], index) => ({ title, href, image: serviceImages[href], text: ["Shopify-Websites und Shops mit klarer Nutzerführung.", "Apps für iOS, Android und Web aus einer belastbaren Basis.", "Konzept, Text, Design und veröffentlichungsfähige Buchdateien.", "Professionelles Ghostwriting mit klarer Stimme und menschlicher Freigabe."][index] })),
 };
 hubData.media = {
   label: "Für Unternehmen",
   title: "Medien und KI, die Sichtbarkeit und Kommunikation planbarer machen.",
   intro: "Content, Werbung, Telefonie und intelligente Antwortvorschläge werden als zusammenhängende Kommunikationsbausteine entwickelt – mit transparenten Grenzen und Freigaben.",
-  image: "/assets/service-content-liquid-glass-v3.webp", cta: "Medien- oder KI-Projekt anfragen",
+  image: "/assets/hub-media-liquid-glass-v1.webp",
+  imageAlt: "Mediterranes Medienstudio mit Kamera und transparenten Storyboardflächen",
+  decisionImage: "/assets/decision-media-liquid-glass-v1.webp",
+  decisionImageAlt: "Medienplanung mit Kamera, Mikrofon und geordneten Glaskarten",
+  cta: "Medien- oder KI-Projekt anfragen",
   cards: navigation[1].items.map(([title, href], index) => ({ title, href, image: serviceImages[href], text: ["Planbare Inhalte in einer konsistenten Markenwelt.", "Kampagnen, Creatives, Tracking und Optimierung.", "Anfragen aufnehmen, Fragen beantworten und Termine koordinieren.", "Drei passende Antwortvorschläge für LinkedIn, Instagram und E-Mail – Sie wählen und bearbeiten."][index] })),
 };
 hubData.advice = {
   label: "Für Unternehmen",
   title: "Der passende Weg von der KI-Strategie zur sicheren Anwendung.",
   intro: "Wir beraten Entscheider, qualifizieren Mitarbeiter in realen Arbeitsabläufen und stellen Wissen über die Chelonaki Video Academy flexibel bereit.",
-  image: "/assets/service-consulting-liquid-glass-v3.webp", cta: "Erstgespräch buchen",
+  image: "/assets/hub-advice-liquid-glass-v1.webp",
+  imageAlt: "Griechischer Strategieraum mit Kompass und transparenten Roadmapflächen",
+  decisionImage: "/assets/decision-advice-liquid-glass-v1.webp",
+  decisionImageAlt: "Beratungsentscheidung mit Kompass und drei klaren Glasebenen",
+  cta: "Erstgespräch buchen",
   cards: navigation[2].items.map(([title, href], index) => ({ title, href, image: serviceImages[href], text: ["Geschäftsprozesse analysieren, Anwendungsfälle priorisieren und eine realistische Roadmap entwickeln.", "Mitarbeiter in praxisnahen Schulungen und Workshops für ihre konkreten Aufgaben befähigen.", "KI-Wissen flexibel über strukturierte Videokurse und Arbeitsmaterialien aufbauen."][index] })),
 };
 
@@ -168,6 +183,7 @@ export const services = {
   "/digital/websites-erstellen-lassen": {
     area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Websites, die nicht nur gut aussehen, sondern verkaufen.",
     image: "/assets/service-websites-liquid-glass-v3.webp", imageAlt: "Warmer Designarbeitsplatz mit gläsernen Website-Prototypen, Laptop und Tablet",
+    funnelImage: "/assets/funnel-websites-liquid-glass-v1.webp", funnelImageAlt: "Griechisches Website-Atelier mit Laptop und gestaffelten Glaslayouts",
     intro: "Wir entwickeln Shopify-Websites und Shops von der Struktur über Design und Text bis zur responsiven Umsetzung und laufenden Optimierung.",
     problem: "Viele Websites erklären zu viel, führen zu wenig und werden nach dem Launch technisch nicht weitergedacht.",
     solution: ["Unternehmenswebsites und Shopify-Shops", "Landingpages und Conversion-Struktur", "Responsive Umsetzung und Basis-SEO", "Formulare, Newsletter, Termine und Integrationen"],
@@ -192,6 +208,7 @@ export const services = {
   "/digital/social-media-content": {
     area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Ein Content-System statt täglicher Improvisation.",
     image: "/assets/service-content-liquid-glass-v3.webp", imageAlt: "Editorialer Arbeitsplatz für Content-Planung mit Kamera, Smartphone und transparenten Storyboards",
+    funnelImage: "/assets/funnel-content-liquid-glass-v1.webp", funnelImageAlt: "Content-Planung mit Kamera und schwebenden transparenten Storyboards",
     intro: "Wir planen, produzieren, prüfen und veröffentlichen Inhalte in einer eigenen Markenwelt – vollständig KI-gestützt, aber nicht ungeprüft.",
     problem: "Unregelmäßige Inhalte, wechselnde Bildsprachen und fehlende Prozesse kosten Reichweite und vor allem Zeit.",
     solution: ["KI-Videos und Karussells", "Marken-, Themen- und Stilkonzept", "Captions, Redaktionsplanung und Veröffentlichung", "Reporting und laufende Optimierung"],
@@ -209,6 +226,7 @@ export const services = {
   "/digital/ki-telefonassistenten": {
     area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Erreichbar bleiben, ohne jeden Anruf selbst anzunehmen.",
     image: "/assets/service-phone-v2.webp", imageAlt: "Professioneller Arbeitsplatz mit Smartphone, Notizbuch und vorbereiteter Gesprächslogik",
+    funnelImage: "/assets/funnel-phone-liquid-glass-v1.webp", funnelImageAlt: "Telefonassistenz mit Smartphone und geordneten Glaskarten für Gesprächswege",
     intro: "Der KI-Telefonassistent beantwortet wiederkehrende Fragen, nimmt Anliegen auf und koordiniert je nach Paket Termine, Leads oder Bestellungen.",
     problem: "Verpasste Anrufe bedeuten verpasste Kunden – gleichzeitig dürfen Datenschutz, Transparenz und Eskalation nicht dem Zufall überlassen werden.",
     solution: ["Eingehende Anrufe im vereinbarten Fair-Use-Rahmen", "FAQ, Nachrichten und Gesprächszusammenfassungen", "Termin- und Leadlogik", "CRM-, Shopify- oder API-Anbindung im Pro-Paket"],
@@ -226,6 +244,7 @@ export const services = {
   "/digital/ki-werbung-meta-google": {
     area: "Digital", label: "Für Unternehmen & eigene Projekte", title: "Werbung, die Angebot, Creative und Zielseite zusammen denkt.",
     image: "/assets/service-ads-v2.webp", imageAlt: "Gemeinsame Prüfung von Kampagnenmotiven, Zielseite und Ergebnissen am Arbeitstisch",
+    funnelImage: "/assets/funnel-ads-liquid-glass-v1.webp", funnelImageAlt: "Kampagnenatelier mit Zielscheibe und transparenten Anzeigenformaten",
     intro: "Chelonaki entwickelt und optimiert Meta- und Google-Kampagnen mit nachvollziehbarem Tracking und verständlichen Handlungsempfehlungen.",
     problem: "Einzelne Anzeigen ohne klare Botschaft, passende Landingpage und saubere Messung verbrennen Budget.",
     solution: ["Strategie und Zielgruppenanalyse", "Anzeigentexte, Bild- und Video-Creatives", "A/B-Tests, Remarketing und Tracking", "Budgetüberwachung, Reporting und Optimierung"],
@@ -243,6 +262,7 @@ export const services = {
   "/digital/apps-software": {
     area: "Digital", label: "Für Unternehmen, Gründer & Organisationen", title: "Aus einer Idee wird eine App, die Menschen wirklich nutzen können.",
     image: "/assets/service-apps-v2.webp", imageAlt: "App-Entwicklung mit Smartphone, Tablet, Skizzenbuch und geordneten Ablaufkarten",
+    funnelImage: "/assets/funnel-apps-liquid-glass-v1.webp", funnelImageAlt: "App-Entwicklung mit Smartphone und modularen Glasebenen",
     intro: "Wir entwickeln skalierbare Apps und digitale Produkte für iOS, Android und Web – individuell gestaltet, KI-gestützt und auf einer gemeinsamen technischen Basis.",
     problem: "Ein schneller KI-Prototyp ist noch kein belastbares Unternehmenssystem.",
     solution: ["iOS und Android aus gemeinsamer Codebasis", "Login, Datenbanken, Rollen und Adminbereiche", "Zahlungen, Push, APIs und KI-Funktionen", "Dokumentierte Architektur, Tests und Übergabe"],
@@ -269,6 +289,7 @@ export const services = {
     nonCumulative: true,
     area: "Expertise", label: "Für Unternehmen", title: "KI-Schulungen & Consulting für konkrete Arbeitsabläufe.",
     image: "/assets/service-consulting-liquid-glass-v3.webp", imageAlt: "Nahbare KI-Strategieberatung mit transparenten Strategiekarten an einem gemeinsamen Arbeitstisch",
+    funnelImage: "/assets/funnel-consulting-liquid-glass-v1.webp", funnelImageAlt: "Strategieberatung mit Kompass und transparenten Roadmapkarten",
     intro: "Wir analysieren, wo künstliche Intelligenz Zeit spart, Qualität verbessert oder neue Angebote ermöglicht – und übersetzen das in einen konkreten Umsetzungsweg.",
     problem: "Tool-Sammlungen ohne Prioritäten führen selten zu besseren Prozessen.",
     solution: ["KI-Strategie und Prozessanalyse", "Automatisierung wiederkehrender Aufgaben", "Werkzeugauswahl und eigene Assistenten", "Schulungen, Datenschutz und verantwortungsvoller Einsatz"],
@@ -288,6 +309,7 @@ export const services = {
   "/digital/buchproduktion-ghostwriting": {
     area: "Digital", label: "Für Unternehmen & eigene Buchprojekte", title: "Ihr Buch – geschrieben, gestaltet, veröffentlichungsfertig.",
     image: "/assets/service-books-v2.webp", imageAlt: "Handwerkliche Buchentwicklung mit Manuskript, Blindband, Skizzen und Messwerkzeugen",
+    funnelImage: "/assets/funnel-books-liquid-glass-v1.webp", funnelImageAlt: "Buchatelier mit Manuskript und schwebenden transparenten Kapitelseiten",
     intro: "Wir übernehmen die komplette Buchproduktion: Konzept, Recherche, Ghostwriting, Cover, Layout sowie die fertigen Dateien für Print und E-Book.",
     problem: "Fachwissen ist vorhanden, aber Struktur, Zeit, Recherche und hochwertige Umsetzung fehlen.",
     solution: ["Buchkonzept, Positionierung und Kapitelstruktur", "Ghostwriting, Recherche und Quellen", "Cover, Buchsatz, Layout und Bildentwicklung", "Veröffentlichungsfertige PDF- und E-Book-Dateien"],
@@ -312,10 +334,11 @@ services["/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting"] = serv
 services["/medien-ai/social-media"] = services["/digital/social-media-content"];
 services["/medien-ai/ads"] = services["/digital/ki-werbung-meta-google"];
 services["/medien-ai/ki-telefon"] = services["/digital/ki-telefonassistenten"];
-services["/medien-ai/automatisierungen"] = { ...services["/digital/apps-software"], nonCumulative: true, title: "KI-Automatisierungen für wiederkehrende Abläufe.", intro: "Wir verbinden Formulare, E-Mail, CRM, Shopify und interne Werkzeuge zu kontrollierten Workflows mit klaren Freigaben.", problem: "Manuelle Übergaben, doppelte Datenpflege und verstreute Werkzeuge kosten Zeit und erzeugen Fehler.", solution: ["Prozessaufnahme und Automations-Check", "Trigger, Aktionen und menschliche Freigaben", "API-, CRM-, Shopify- und Formular-Verbindungen", "Tests, Fehlerwege, Dokumentation und Übergabe"], pricing: [{ name: "Automations-Check", price: "ab 149 €", duration: "Auswertung ca. 3–5 Werktage", meta: "Prozess prüfen · Potenzial und Risiken einordnen", featured: true }, { name: "Individueller Workflow", price: "auf Anfrage", duration: "nach Absprache", meta: "Umfang nach Systemen, Daten und Schnittstellen" }], bookingCta: "Automatisierungsweg auswählen" };
+services["/medien-ai/automatisierungen"] = { ...services["/digital/apps-software"], nonCumulative: true, title: "KI-Automatisierungen für wiederkehrende Abläufe.", funnelImage: "/assets/funnel-automation-liquid-glass-v1.webp", funnelImageAlt: "Automatisierter Ablauf mit verbundenen transparenten Prozesskarten", intro: "Wir verbinden Formulare, E-Mail, CRM, Shopify und interne Werkzeuge zu kontrollierten Workflows mit klaren Freigaben.", problem: "Manuelle Übergaben, doppelte Datenpflege und verstreute Werkzeuge kosten Zeit und erzeugen Fehler.", solution: ["Prozessaufnahme und Automations-Check", "Trigger, Aktionen und menschliche Freigaben", "API-, CRM-, Shopify- und Formular-Verbindungen", "Tests, Fehlerwege, Dokumentation und Übergabe"], pricing: [{ name: "Automations-Check", price: "ab 149 €", duration: "Auswertung ca. 3–5 Werktage", meta: "Prozess prüfen · Potenzial und Risiken einordnen", featured: true }, { name: "Individueller Workflow", price: "auf Anfrage", duration: "nach Absprache", meta: "Umfang nach Systemen, Daten und Schnittstellen" }], bookingCta: "Automatisierungsweg auswählen" };
 services["/medien-ai/chelonaki-reply"] = {
   area: "Medien & KI", label: "Für Selbstständige, Teams & Marken", title: "Drei passende Antworten. Sie wählen die richtige.",
   image: "/assets/service-content-liquid-glass-v3.webp", imageAlt: "Warmer Kommunikationsarbeitsplatz mit Smartphone und transparenten Inhaltsvarianten",
+  funnelImage: "/assets/funnel-reply-liquid-glass-v1.webp", funnelImageAlt: "Kommunikationsatelier mit drei unterscheidbaren transparenten Antwortkarten",
   intro: "Chelonaki Reply erstellt für eingehende Nachrichten drei unterscheidbare Antwortvorschläge für LinkedIn, Instagram und E-Mail – passend zu Ton, Ziel und Gesprächssituation.",
   problem: "Professionelle Nachrichten bleiben liegen, weil im Alltag Zeit, Formulierungssicherheit oder eine einheitliche Markenstimme fehlen.",
   solution: ["Drei klar unterschiedliche Antwortvorschläge", "Tonarten wie kurz, herzlich, professionell oder vertriebsorientiert", "Eigene Markenbegriffe und No-Go-Aussagen", "Bearbeiten und kopieren vor dem Senden", "Keine unbeaufsichtigten Nachrichten im MVP"],
@@ -331,6 +354,6 @@ services["/medien-ai/chelonaki-reply"] = {
   insight: { label: "Mensch bleibt am Steuer", title: "Schneller antworten, ohne Kontrolle abzugeben.", text: "Reply schlägt Formulierungen vor, trifft aber keine autonome Kommunikationsentscheidung. Im MVP prüfen, bearbeiten und versenden Sie jede Nachricht selbst.", points: ["Kein automatisches Senden", "Vorschläge bleiben editierbar", "Markenstimme als Leitplanke", "Transparente Entwicklungsstufe"] },
 };
 services["/ki-beratung-weiterbildung/ki-beratung-unternehmen"] = { ...services["/expertise/ki-schulungen-consulting"], area: "KI-Beratung & Weiterbildung", title: "KI-Beratung für Unternehmen – vom Potenzial zur klaren Roadmap.", intro: "Wir analysieren Prozesse, bewerten sinnvolle KI-Anwendungsfälle und entwickeln einen realistischen Umsetzungsplan für Ihr Unternehmen.", problem: "Viele Unternehmen testen einzelne KI-Werkzeuge, ohne Prioritäten, Verantwortlichkeiten und einen belastbaren Einführungsplan festzulegen.", solution: ["Prozess- und Potenzialanalyse", "Priorisierte KI-Anwendungsfälle", "Werkzeug-, Daten- und Risikobewertung", "Roadmap mit nächsten Umsetzungsschritten"], pricing: [{ name: "Strategieberatung", price: "ab 149 €/Std.", duration: "Termin nach Absprache", meta: "fokussierte Fragestellung und Handlungsempfehlung" }, { name: "KI-Consulting-Tag", price: "1.490 €", duration: "1 Consulting-Tag", meta: "Prozessanalyse · Priorisierung · Umsetzungsplan", featured: true }, { name: "KI-Transformations-Sprint", price: "ab 3.990 €", duration: "Zeitraum nach Absprache", meta: "vertiefte Analyse · Roadmap · Umsetzungsbegleitung" }], bookingCta: "Beratungsformat auswählen", cta: "KI-Beratung anfragen", inquiryCta: "Unternehmensberatung besprechen" };
-services["/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter"] = { ...services["/expertise/ki-schulungen-consulting"], area: "KI-Beratung & Weiterbildung", title: "KI-Schulungen & Workshops für Mitarbeiter.", image: "/assets/service-training-v2.webp", imageAlt: "Kleine praxisnahe KI-Schulung mit engagierten Teilnehmern in einem warmen Arbeitsraum", intro: "Wir befähigen Teams, KI in ihren konkreten Arbeitsabläufen sicher, effizient und verantwortungsvoll einzusetzen.", problem: "Allgemeine Tool-Vorträge verändern den Arbeitsalltag nicht. Mitarbeiter brauchen verständliche Übungen, klare Regeln und Beispiele aus ihren eigenen Aufgaben.", solution: ["Praxisnahe KI-Grundlagen", "Übungen mit realen Arbeitsabläufen", "Prompting, Qualitätskontrolle und Datenschutz", "Gemeinsam entwickelte Vorlagen und Workflows"], pricing: [{ name: "KI-Schulung", price: "1.290 €", duration: "1 Schulungstag", meta: "1 Tag · Grundlagen · Übungen · Transfer" }, { name: "KI-Intensivworkshop", price: "2.290 €", duration: "2 Workshoptage", meta: "2 Tage · Prozesse · Übungen · gemeinsamer Fahrplan", featured: true }, { name: "Individuelles Teamprogramm", price: "auf Anfrage", duration: "Zeitraum nach Absprache", meta: "mehrere Teams · Module · begleiteter Praxistransfer" }], bookingCta: "Mitarbeiterformat auswählen", cta: "Mitarbeiterschulung anfragen", inquiryCta: "Schulung für Ihr Team planen" };
+services["/ki-beratung-weiterbildung/ki-schulungen-workshops-mitarbeiter"] = { ...services["/expertise/ki-schulungen-consulting"], area: "KI-Beratung & Weiterbildung", title: "KI-Schulungen & Workshops für Mitarbeiter.", image: "/assets/service-training-v2.webp", imageAlt: "Kleine praxisnahe KI-Schulung mit engagierten Teilnehmern in einem warmen Arbeitsraum", funnelImage: "/assets/funnel-training-liquid-glass-v1.webp", funnelImageAlt: "Griechisch inspiriertes Lernatelier mit Workshopkarten auf transparenten Ebenen", intro: "Wir befähigen Teams, KI in ihren konkreten Arbeitsabläufen sicher, effizient und verantwortungsvoll einzusetzen.", problem: "Allgemeine Tool-Vorträge verändern den Arbeitsalltag nicht. Mitarbeiter brauchen verständliche Übungen, klare Regeln und Beispiele aus ihren eigenen Aufgaben.", solution: ["Praxisnahe KI-Grundlagen", "Übungen mit realen Arbeitsabläufen", "Prompting, Qualitätskontrolle und Datenschutz", "Gemeinsam entwickelte Vorlagen und Workflows"], pricing: [{ name: "KI-Schulung", price: "1.290 €", duration: "1 Schulungstag", meta: "1 Tag · Grundlagen · Übungen · Transfer" }, { name: "KI-Intensivworkshop", price: "2.290 €", duration: "2 Workshoptage", meta: "2 Tage · Prozesse · Übungen · gemeinsamer Fahrplan", featured: true }, { name: "Individuelles Teamprogramm", price: "auf Anfrage", duration: "Zeitraum nach Absprache", meta: "mehrere Teams · Module · begleiteter Praxistransfer" }], bookingCta: "Mitarbeiterformat auswählen", cta: "Mitarbeiterschulung anfragen", inquiryCta: "Schulung für Ihr Team planen" };
 
 export { b2bNote };
