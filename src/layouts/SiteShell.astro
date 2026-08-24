@@ -16,7 +16,7 @@ import "@fontsource/noto-naskh-arabic/600.css";
 import { App } from "../App.jsx";
 import generatedTranslations from "../translations.generated.js";
 import translationPatches from "../translations.patches.js";
-import { enabledLocales, getLocale, localizePath } from "../locales.js";
+import { ambiguousCountryCodes, defaultLocale, enabledLocales, getLocale, localizePath } from "../locales.js";
 import { buildStructuredData, getPageContent, isLegacyRoute, routeNames, siteOrigin } from "../seoData.js";
 import "../styles.css";
 
@@ -41,6 +41,7 @@ const socialImage = `${siteOrigin}${socialImagePath}`;
 const structuredData = buildStructuredData({ route, locale, localeConfig, translate, canonical, title, description: localizedDescription });
 const legacy = isLegacyRoute(route);
 const localeCodes = enabledLocales.map(({ code, htmlLang, direction, defaultForCountries }) => ({ code, htmlLang, direction, defaultForCountries }));
+const unmappedCountryFallback = enabledLocales.some(({ code }) => code === "en") ? "en" : defaultLocale;
 ---
 
 <!doctype html>
@@ -88,7 +89,7 @@ const localeCodes = enabledLocales.map(({ code, htmlLang, direction, defaultForC
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-    <script is:inline define:vars={{ localeCodes }}>
+    <script is:inline define:vars={{ ambiguousCountryCodes, defaultLocale, localeCodes, unmappedCountryFallback }}>
       (() => {
         const pathCode = location.pathname.split("/").filter(Boolean)[0]?.toLowerCase();
         const active = localeCodes.find((item) => item.code === pathCode);
@@ -107,10 +108,10 @@ const localeCodes = enabledLocales.map(({ code, htmlLang, direction, defaultForC
         const browserSelection = candidates.find((code) => localeCodes.some((item) => item.code === code));
         const country = document.querySelector('meta[name="chelonaki-country"]')?.content?.toUpperCase();
         const isCrawler = /bot|crawler|spider|slurp|bingpreview|google-inspectiontool/i.test(navigator.userAgent || "");
-        const countrySelection = !isCrawler && country && !["CH", "BE", "CA"].includes(country)
-          ? localeCodes.find((item) => item.defaultForCountries.includes(country))?.code
+        const countrySelection = !isCrawler && country && !ambiguousCountryCodes.includes(country)
+          ? localeCodes.find((item) => item.defaultForCountries.includes(country))?.code || unmappedCountryFallback
           : null;
-        const selected = browserSelection || countrySelection || "de";
+        const selected = browserSelection || countrySelection || defaultLocale;
         const source = browserSelection ? (stored ? "stored" : "browser") : countrySelection ? "country" : "default";
         try {
           sessionStorage.setItem("chelonaki-auto-language-decision", JSON.stringify({ language: selected, source, browserLanguage: navigator.language || null }));

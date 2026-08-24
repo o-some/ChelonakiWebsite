@@ -49,11 +49,13 @@ const allowedAnalyticsEvents = new Set([
 ]);
 const clean = (value, max = 160) =>
   typeof value === "string" ? value.trim().slice(0, max) : null;
-const requestCountry = (request) =>
-  clean(
+const requestCountry = (request) => {
+  const country = clean(
     request.cf?.country || request.headers.get("cf-ipcountry"),
     2,
-  )?.toUpperCase() || null;
+  )?.toUpperCase();
+  return /^[A-Z]{2}$/.test(country || "") ? country : null;
+};
 
 async function handleAnalytics(request, env) {
   const origin = request.headers.get("origin");
@@ -119,10 +121,13 @@ async function withCountryMeta(request, response) {
     "<head>",
     `<head><meta name="chelonaki-country" content="${country}">`,
   );
+  const headers = new Headers(response.headers);
+  headers.delete("content-length");
+  headers.delete("content-encoding");
   return new Response(body, {
     status: response.status,
     statusText: response.statusText,
-    headers: response.headers,
+    headers,
   });
 }
 

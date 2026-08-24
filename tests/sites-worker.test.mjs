@@ -72,6 +72,31 @@ test("falls back to index.html for an unknown app route", async () => {
   );
 });
 
+test("injects the platform country into HTML before language selection", async () => {
+  const response = await worker.fetch(
+    new Request("https://example.test/", {
+      headers: { accept: "text/html", "cf-ipcountry": "ES" },
+    }),
+    {
+      ASSETS: {
+        fetch: async () =>
+          new Response("<!doctype html><html><head></head><body></body></html>", {
+            headers: {
+              "content-type": "text/html; charset=utf-8",
+              "content-length": "57",
+            },
+          }),
+      },
+    },
+  );
+
+  assert.match(
+    await response.text(),
+    /<meta name="chelonaki-country" content="ES">/,
+  );
+  assert.equal(response.headers.get("content-length"), null);
+});
+
 test("does not turn missing API or write requests into the app shell", async () => {
   for (const request of [
     new Request("https://example.test/api/missing", {

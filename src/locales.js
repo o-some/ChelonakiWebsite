@@ -236,6 +236,7 @@ export const localeRegistry = [
 
 export const enabledLocales = localeRegistry.filter((locale) => locale.enabled);
 export const defaultLocale = "de";
+export const ambiguousCountryCodes = ["CH", "BE", "CA"];
 export const localeByCode = Object.fromEntries(
   localeRegistry.map((locale) => [locale.code, locale]),
 );
@@ -273,7 +274,7 @@ export function localizePath(pathname, language) {
 
 export function getCountryFallbackLanguage(country) {
   const code = String(country || "").toUpperCase();
-  if (!code || ["CH", "BE", "CA"].includes(code)) return null;
+  if (!code || ambiguousCountryCodes.includes(code)) return null;
   return (
     enabledLocales.find((locale) => locale.defaultForCountries.includes(code))
       ?.code || (localeByCode.en?.enabled ? "en" : defaultLocale)
