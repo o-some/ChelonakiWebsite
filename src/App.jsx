@@ -17,6 +17,7 @@ import {
   X,
 } from "@phosphor-icons/react";
 import { hubData, navigation, services, worlds } from "./siteData.js";
+import { bookCategories, bookDesigns } from "./bookDesigns.js";
 import generatedTranslations from "./translations.generated.js";
 import translationPatches from "./translations.patches.js";
 import {
@@ -470,61 +471,7 @@ const legalPaths = Object.fromEntries(
 );
 
 const labEntries = [
-  {
-    title: "Botanical Ember",
-    status: "Buchvorlage 141",
-    category: "Bücher",
-    area: "Kochbuch · Botanisch",
-    text: "Eine helle, florale Editorialwelt mit feiner Serifentypografie, botanischen Illustrationen und ruhiger Rezeptdramaturgie.",
-    details:
-      "Besonders passend für Kochbücher, Kräuterwissen, Gartenküche, Wellness und hochwertige Food-Marken. Enthalten sind Gestaltungsrichtungen für Cover, Vorwort, Inhaltsverzeichnis, Philosophie, Zutaten, Technik, Rezepte und Autorenprofil.",
-    image: "/assets/book-designs/design-1.png",
-    href: "/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting",
-  },
-  {
-    title: "Sunset Table",
-    status: "Buchvorlage 140",
-    category: "Bücher",
-    area: "Kochbuch · Modern",
-    text: "Warme Abendstimmung, kräftige Headlines und eine moderne Bildsprache für gesellige, charakterstarke Genussbücher.",
-    details:
-      "Ideal für Barbecue, Outdoor Cooking, Gastgeberkonzepte und persönliche Kochmarken. Das System verbindet große Food-Fotografie mit klaren Zutaten-, Technik- und Storytellingseiten.",
-    image: "/assets/book-designs/design-2.png",
-    href: "/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting",
-  },
-  {
-    title: "Olive & Coal",
-    status: "Buchvorlage 139",
-    category: "Bücher",
-    area: "Kochbuch · Mediterran",
-    text: "Naturstein, Olivgrün und warme Erdtöne verbinden mediterrane Herkunft mit einem zeitlosen, hochwertigen Buchauftritt.",
-    details:
-      "Geeignet für mediterrane Küche, Familienrezepte, Produktwelten und kulinarische Herkunftsgeschichten. Die Vorlage bietet viel Raum für Zutatenkunde, Rezepte, Pairings und Persönlichkeit.",
-    image: "/assets/book-designs/design-3.png",
-    href: "/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting",
-  },
-  {
-    title: "Poolside Ritual",
-    status: "Buchvorlage 138",
-    category: "Bücher",
-    area: "Kochbuch · Editorial Pop",
-    text: "Türkis, Koralle und starke Kontraste erzeugen eine lebendige Sommerwelt, ohne die Lesbarkeit der Rezepte zu verlieren.",
-    details:
-      "Eine passende Richtung für moderne Grillbücher, Creator, Lifestyle-Marken und sommerliche Produktkampagnen. Flexible Module tragen Rezepte, Tipps, Saucen, Storys und Personenporträts.",
-    image: "/assets/book-designs/design-4.png",
-    href: "/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting",
-  },
-  {
-    title: "Nordic Firelight",
-    status: "Buchvorlage 137",
-    category: "Bücher",
-    area: "Kochbuch · Skandinavisch",
-    text: "Kühle Naturtöne, großzügiger Weißraum und zurückhaltende Goldakzente schaffen eine besonders ruhige Premiumwirkung.",
-    details:
-      "Empfohlen für nordische Küche, Fisch, Natur, Longevity und reduzierte Fachbücher. Das Layout führt elegant durch Philosophie, Zutaten, Technik, Rezepte und Autorenprofil.",
-    image: "/assets/book-designs/design-5.png",
-    href: "/web-apps-publikationen/buecher-erstellen-lassen-ghostwriting",
-  },
+  ...bookDesigns,
   {
     title: "Botanical Atelier",
     status: "Interaktive Webvorlage 03",
@@ -533,7 +480,7 @@ const labEntries = [
     text: "Eine helle, botanische Landingpage mit großzügiger Editorialtypografie, ruhigen Inhaltsblöcken und organischer Bildsprache.",
     details:
       "Aus Botanical Ember als digitale Markenwelt weitergedacht: ideal für Ernährungsberatung, Wellness, hochwertige Lebensmittel und persönliche Expertenmarken. Testen Sie Farben und Bereiche direkt in der interaktiven Ansicht.",
-    image: "/assets/book-designs/design-1.png",
+    image: "/assets/book-designs/141.webp",
     href: "/web-apps-publikationen/websites-erstellen-lassen",
     webTheme: "botanical",
     palettes: [
@@ -550,7 +497,7 @@ const labEntries = [
     text: "Mediterraner Naturstein, Olivgrün und warme Erdtöne ergeben eine charakterstarke Premium-Landingpage.",
     details:
       "Die Buchwelt Olive & Coal wird zu einer digitalen Erlebnisfläche mit Storytelling, Angeboten, Herkunft und klarer Anfrageführung. Passend für Hotels, Restaurants, Manufakturen und Genussmarken.",
-    image: "/assets/book-designs/design-3.png",
+    image: "/assets/book-designs/139.webp",
     href: "/web-apps-publikationen/websites-erstellen-lassen",
     webTheme: "olive",
     palettes: [
@@ -568,7 +515,7 @@ const labEntries = [
     text: "Eine lebendige Editorial-Landingpage mit starken Kontrasten, modularen Geschichten und klaren Call-to-Actions.",
     details:
       "Aus Poolside Ritual entsteht eine moderne Website für Creator, Events, Lifestyle-Produkte und mutige persönliche Marken. Die Farbwelten reichen von sommerlich bis elegant-dunkel.",
-    image: "/assets/book-designs/design-4.png",
+    image: "/assets/book-designs/138.webp",
     href: "/web-apps-publikationen/websites-erstellen-lassen",
     webTheme: "poolside",
     palettes: [
@@ -2491,16 +2438,6 @@ function LabPage() {
       window.clearTimeout(settledScroll);
     };
   }, [category, carriedPackage]);
-  const bookCategories = [
-    "Alle",
-    "Kochbuch",
-    "Kinderbuch",
-    "Fitness",
-    "Gesundheit",
-    "Ernährung",
-    "Heilkunde",
-    "Esoterik",
-  ];
   const categoryEntries = category
     ? labEntries.filter((entry) => entry.category === category)
     : [];

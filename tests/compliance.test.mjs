@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import test from "node:test";
 import { canonicalRoutes } from "../src/astroRoutes.js";
+import { bookCategories, bookDesigns } from "../src/bookDesigns.js";
 import { enabledLocales } from "../src/locales.js";
 import { siteOrigin } from "../src/seoData.js";
 
@@ -53,4 +54,21 @@ test("static hosting emits baseline security and disclosure files", async () => 
   assert.match(headers, /Permissions-Policy:/);
   assert.match(security, /Contact: mailto:info@chelonaki\.eu/);
   assert.match(security, /Canonical: https:\/\/www\.chelonaki\.eu\/\.well-known\/security\.txt/);
+});
+
+test("book library contains one unique asset for every catalog entry", async () => {
+  assert.equal(bookDesigns.length, 256);
+  assert.equal(new Set(bookDesigns.map(({ status }) => status)).size, 256);
+  assert.equal(new Set(bookDesigns.map(({ title }) => title)).size, 256);
+  assert.equal(new Set(bookDesigns.map(({ image }) => image)).size, 256);
+  assert.deepEqual(
+    [...new Set(bookDesigns.map(({ bookCategory }) => bookCategory))].sort(),
+    bookCategories.slice(1).sort(),
+  );
+
+  const expected = bookDesigns.map(({ image }) => image.split("/").at(-1)).sort();
+  const actual = (await readdir(new URL("../public/assets/book-designs", import.meta.url)))
+    .filter((name) => name.endsWith(".webp"))
+    .sort();
+  assert.deepEqual(actual, expected);
 });
