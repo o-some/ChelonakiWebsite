@@ -1047,10 +1047,10 @@ function HomePage() {
         <div className="hero-scene" aria-hidden="true">
           <img
             className="hero-scene-image"
-            src="/assets/hero-architecture.webp"
+            src="/assets/hero-architecture-liquid-glass-v1.webp"
             alt=""
-            width="1536"
-            height="1024"
+            width="1600"
+            height="1100"
           />
         </div>
         <div className="hero-copy">
