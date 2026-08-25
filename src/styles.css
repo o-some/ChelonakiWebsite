@@ -9167,22 +9167,6 @@ html[dir="rtl"]
   letter-spacing: 0.025em;
 }
 
-@media (min-width: 768px) {
-  .home-hero .hero-kicker,
-  .home-hero .hero-actions .button,
-  .home-hero .hero-actions .text-link,
-  .home-proof span {
-    font-size: 11.5px;
-  }
-
-  .home-hero .hero-copy > p {
-    font-size: 16.1px;
-  }
-
-  .home-hero .hero-signature {
-    font-size: 10.5px;
-  }
-}
 .chat-launcher > svg {
   display: none;
 }
@@ -9295,4 +9279,292 @@ html[dir="rtl"]
   outline: 2px solid rgba(159, 111, 40, 0.88);
   outline-offset: -2px;
   box-shadow: inset 0 4px rgba(159, 111, 40, 0.88);
+}
+/* Desktop-Lesbarkeit: kleine Textrollen sind rund 15 Prozent groesser. */
+@media (min-width: 768px) {
+
+  .brand-name small,
+  .hero-band-intro > span,
+  .footer-navigation span,
+  .footer-bottom,
+  .footer-bottom > div a,
+  .legal-shell header span,
+  .hero-signature,
+  .audience-label,
+  .worlds-heading > span,
+  .section-eyebrow,
+  .principles-intro > span,
+  .service-index header > span,
+  .process-intro > span,
+  .credentials > div > span,
+  .pricing-section header > span,
+  .simple-price-section header > span,
+  .contact-copy > span,
+  .problem-solution span,
+  .platform-section > div > span,
+  .about-foundations header > span,
+  .package-comparison article > button,
+  .package-comparison article b,
+  .package-selection-dock > button,
+  .package-tabs small,
+  .package-duration > small,
+  .package-inherited small,
+  .package-alternatives details > button,
+  .credentials li,
+  .choice-grid span,
+  .original-hero-copy > div span,
+  .story-page-hero span,
+  .final-cta > span,
+  .footer-bottom button,
+  .readiness-section > div > span,
+  .technology-section header > span,
+  .lab-grid-section header > span,
+  .lab-transfer span,
+  .product-features header > span,
+  .lab-hero > div > span,
+  .finder-page > header > span,
+  .quality-hero > div > span,
+  .product-hero > div > span,
+  .design-category-copy > small,
+  .lab-gallery-head span,
+  .lab-gallery-head > button,
+  .lab-results-head,
+  .book-category-filter > div:first-child > span,
+  .book-category-empty > span,
+  .book-category-empty button,
+  .lab-how header > span,
+  .lab-card-meta,
+  .lab-grid button,
+  .lab-load-more button,
+  .design-detail-copy > span,
+  .design-package-choice label,
+  .design-package-choice small,
+  .design-save,
+  .finder-progress small,
+  .finder-question > span,
+  .finder-result > span,
+  .finder-result dt,
+  .enterprise-section > div > span,
+  .product-pair span,
+  .chat-head .chat-minimize,
+  .chat-panel > footer,
+  .service-index-card > small,
+  .hub-decision > div > span,
+  .conversion-bridge header > span,
+  .deliverables-section > div:first-child > span,
+  .mid-funnel-cta > div > span,
+  .service-faq header > span {
+    font-size: 10.5px;
+  }
+
+  .desktop-nav a,
+  .button,
+  .text-link,
+  .capability-entry li,
+  .work-feature > div > span,
+  .work-portrait > div > span,
+  .work-nutrition > div > span,
+  .studio-principles span,
+  .form-note,
+  .footer-contact small,
+  .home-proof span,
+  .desktop-nav .nav-panel a,
+  .hero-kicker,
+  .world-card small,
+  .world-link,
+  .principle-grid span,
+  .service-hero-copy > small,
+  .method-rail li > span,
+  .pricing-grid a,
+  .pricing-grid button,
+  .package-inclusion-group > p,
+  .package-modal-actions > button,
+  .release-note strong,
+  .about-foundations article > span,
+  .footer-brand > a:not(.brand),
+  .lab-hero aside span,
+  .carried-package span,
+  .book-category-filter button span,
+  .lab-grid a,
+  .lab-load-more span,
+  .finder-back,
+  .product-features article > span,
+  .chat-head small,
+  .chat-suggestions button,
+  .hero-assurances span,
+  .hub-decision li b,
+  .conversion-bridge article b,
+  .deliverables-grid span,
+  .service-faq summary span {
+    font-size: 11.5px;
+  }
+
+  .header-chat-bot small,
+  .hero-band-grid small,
+  .pricing-grid b,
+  .package-selection-dock small,
+  .package-modal-head span,
+  .package-focus > span,
+  .package-alternatives header > span,
+  .package-focus > b,
+  .package-duration > span,
+  .book-category-filter button small,
+  .lab-image-button > span,
+  .design-detail-image > span,
+  .chat-launcher-dismiss {
+    font-size: 9.2px;
+  }
+
+  .hero-copy > p,
+  .hero-band-grid span,
+  .capability-entry p,
+  .work-feature p,
+  .work-portrait p,
+  .work-nutrition p,
+  .form-result p,
+  .legal-content p,
+  .legal-content li,
+  .settings-row strong,
+  .world-card p,
+  .principle-grid p,
+  .service-index-card p,
+  .problem-solution li,
+  .platform-section p,
+  .credentials p,
+  .choice-grid p,
+  .readiness-section p {
+    font-size: 16.1px;
+  }
+
+  .hero-band-grid strong,
+  .work-feature li,
+  .contact-panel label > span:first-child,
+  .privacy-field span,
+  .service-hero .booking-status,
+  .package-comparison article p,
+  .package-comparison small,
+  .package-comparison article ul,
+  .package-selection-dock span,
+  .package-inherited strong,
+  .package-alternatives summary small,
+  .pricing-note,
+  .simple-price-section > p {
+    font-size: 12.5px;
+  }
+
+  .architecture-copy > p,
+  .capabilities-heading p,
+  .work-heading p,
+  .process-intro p,
+  .studio-copy > p,
+  .contact-copy > p,
+  .story-teaser p,
+  .page-hero p,
+  .service-hero p,
+  .contact-page .contact-copy > p,
+  .lab-hero > div > p,
+  .finder-page > header > p,
+  .quality-hero > div > p,
+  .product-hero > div > p,
+  .section-lead {
+    font-size: 17px;
+  }
+
+  .method-rail p,
+  .contact-promise strong,
+  .platform-section li,
+  .pricing-grid p,
+  .simple-price-section h3,
+  .about-foundations p,
+  .readiness-section li,
+  .lab-how p,
+  .lab-grid p,
+  .design-detail-copy > p,
+  .design-package-choice select,
+  .quality-grid p,
+  .chat-message p,
+  .chat-compose textarea,
+  .deliverables-grid p,
+  .mid-funnel-cta li {
+    font-size: 15px;
+  }
+
+  .contact-promise span,
+  .form-global-error,
+  .footer-brand p,
+  .footer-navigation a,
+  .settings-row > span,
+  .pricing-features,
+  .package-focus li,
+  .package-alternatives li,
+  .release-note p,
+  .lab-hero aside p,
+  .design-category-copy > p,
+  .book-category-filter > div:first-child > p,
+  .book-category-empty p,
+  .technology-section article p,
+  .technology-section > small,
+  .chat-launcher strong {
+    font-size: 14px;
+  }
+
+  .field-error {
+    font-size: 12.5px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1050px) {
+
+  .desktop-nav a,
+  .header-cta {
+    font-size: 9.2px;
+  }
+
+  .hero-copy > p {
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1180px) {
+
+  .desktop-nav a {
+    font-size: 9.2px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1021px) {
+
+  .language-trigger strong {
+    font-size: 17px;
+  }
+
+  .language-options::before,
+  .language-options small {
+    font-size: 10.5px;
+  }
+
+  .language-options span {
+    font-size: 15px;
+  }
+
+  .desktop-nav .nav-panel a {
+    font-size: 16.1px;
+  }
+
+  .desktop-nav .nav-panel .nav-overview {
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1021px) and (max-width: 1280px) {
+
+  .desktop-nav a {
+    font-size: 17px;
+  }
+
+  .header-cta {
+    font-size: 10.5px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1021px) and (max-width: 1450px) {
+
+  .desktop-nav a {
+    font-size: 17px;
+  }
 }
