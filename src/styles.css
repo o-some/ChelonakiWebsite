@@ -9146,6 +9146,23 @@ html[dir="rtl"]
   font-size: 12px;
   letter-spacing: 0.025em;
 }
+
+@media (min-width: 768px) {
+  .home-hero .hero-kicker,
+  .home-hero .hero-actions .button,
+  .home-hero .hero-actions .text-link,
+  .home-proof span {
+    font-size: 11.5px;
+  }
+
+  .home-hero .hero-copy > p {
+    font-size: 16.1px;
+  }
+
+  .home-hero .hero-signature {
+    font-size: 10.5px;
+  }
+}
 .chat-launcher > svg {
   display: none;
 }
