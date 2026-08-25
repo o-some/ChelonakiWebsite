@@ -4169,6 +4169,20 @@ function RouteView({ path }) {
   return <NotFound />;
 }
 
+const revealTargets = [
+  [
+    ".worlds-heading, .principles-intro, .service-index > header, .conversion-bridge > header, .process-intro, .pricing-section > header, .service-faq > header, .lab-how > header, .lab-grid-section > header, .lab-gallery-head, .finder-page > header, .product-features > header, .technology-section > header, .about-foundations > header, .legal-shell > header",
+    "line",
+  ],
+  [".hub-decision > figure, .mid-funnel-cta > figure", "image"],
+  [
+    ".world-card, .principle-grid > article, .service-index-card, .hub-decision > div, .problem-solution > div, .platform-section > *, .conversion-bridge > div > article, .deliverables-section > div:first-child, .deliverables-grid > article, .method-rail > li, .mid-funnel-cta > div, .readiness-section > *, .pricing-grid > article, .service-faq details, .credentials > *, .choice-grid > *, .release-note, .lab-how li, .design-category-grid > button, .book-category-filter, .lab-grid > article, .lab-load-more, .lab-transfer > *, .finder-panel, .finder-question > *, .finder-result > *, .quality-grid > article, .enterprise-section > *, .product-pair > *, .product-features article, .technology-section article, .about-foundations article, .story-article > *, .contact-page > *, .final-cta > *, .legal-content > .legal-lead, .legal-content > h3",
+    "chapter",
+  ],
+];
+
+const revealSelector = revealTargets.map(([selector]) => selector).join(",");
+
 export function App({ initialPath = "/", initialLocale = "de" }) {
   const [path, setPath] = useState(() =>
     typeof window === "undefined"
@@ -4253,42 +4267,71 @@ export function App({ initialPath = "/", initialLocale = "de" }) {
       services[path]?.title || routeNames[path] || "Chelonaki Studio";
     document.title = `Chelonaki | ${name}`;
   }, [path]);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const reduce = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
-    const autoReveal = [
-      ".service-index-card",
-      ".problem-solution > div",
-      ".platform-section > *",
-      ".method-rail > li",
-      ".pricing-grid > article",
-      ".principle-grid > article",
-      ".credentials > *",
-      ".quality-grid > article",
-      ".lab-grid > article",
-      ".product-features article",
-    ];
-    document.querySelectorAll(autoReveal.join(",")).forEach((node, index) => {
-      node.dataset.reveal = "";
-      node.style.setProperty("--reveal-order", index % 6);
-    });
-    const nodes = [...document.querySelectorAll("[data-reveal]")];
+    const root = document.documentElement;
     if (reduce || !("IntersectionObserver" in window)) {
-      nodes.forEach((n) => n.classList.add("is-visible"));
+      root.classList.remove("motion-ready");
+      document
+        .querySelectorAll("[data-reveal]")
+        .forEach((node) => node.classList.add("is-visible"));
       return;
     }
-    const observer = new IntersectionObserver(
+
+    const observed = new WeakSet();
+    const revealObserver = new IntersectionObserver(
       (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
-            observer.unobserve(e.target);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
           }
         }),
-      { threshold: 0.12, rootMargin: "0px 0px -5%" },
+      { threshold: 0.08, rootMargin: "0px 0px -6%" },
     );
-    nodes.forEach((n) => observer.observe(n));
+
+    const revealType = (node) =>
+      revealTargets.find(([selector]) => node.matches(selector))?.[1] || "";
+    const prepareReveal = (scope) => {
+      const nodes = [
+        ...(scope instanceof Element && scope.matches(revealSelector)
+          ? [scope]
+          : []),
+        ...(scope.querySelectorAll?.(revealSelector) || []),
+      ];
+      nodes.forEach((node) => {
+        if (observed.has(node)) return;
+        observed.add(node);
+        if (!node.dataset.reveal || node.dataset.reveal === "true") {
+          node.dataset.reveal = revealType(node);
+        }
+        const siblings = [...(node.parentElement?.children || [])].filter(
+          (sibling) => sibling.matches(revealSelector),
+        );
+        node.style.setProperty(
+          "--reveal-order",
+          Math.min(Math.max(0, siblings.indexOf(node)), 3),
+        );
+        revealObserver.observe(node);
+      });
+    };
+
+    prepareReveal(document);
+    root.classList.add("motion-ready");
+    const contentObserver = new MutationObserver((records) =>
+      records.forEach((record) =>
+        record.addedNodes.forEach((node) => {
+          if (node instanceof Element) prepareReveal(node);
+        }),
+      ),
+    );
+    contentObserver.observe(document.querySelector("#main") || document.body, {
+      childList: true,
+      subtree: true,
+    });
+
     let frame = 0;
     const updateScroll = () => {
       cancelAnimationFrame(frame);
@@ -4310,7 +4353,9 @@ export function App({ initialPath = "/", initialLocale = "de" }) {
     updateScroll();
     window.addEventListener("scroll", updateScroll, { passive: true });
     return () => {
-      observer.disconnect();
+      root.classList.remove("motion-ready");
+      revealObserver.disconnect();
+      contentObserver.disconnect();
       window.removeEventListener("scroll", updateScroll);
       cancelAnimationFrame(frame);
     };

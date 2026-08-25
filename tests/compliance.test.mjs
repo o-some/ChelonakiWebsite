@@ -50,6 +50,17 @@ test("contact errors are programmatically associated and focusable", async () =>
   assert.match(app, /path !== "\/kontakt" && !legalRoutes\[path\]/);
 });
 
+test("scroll reveals cover dynamic content without hiding no-script pages", async () => {
+  const app = await read("../src/App.jsx");
+  const styles = await read("../src/styles.css");
+  assert.match(app, /const revealTargets = \[/);
+  assert.match(app, /new MutationObserver/);
+  assert.match(app, /contentObserver\.observe\(document\.querySelector\("#main"\)/);
+  assert.match(styles, /\.motion-ready \[data-reveal\]:not\(\.is-visible\)/);
+  assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.doesNotMatch(styles, /\.pricing-grid > article\[data-reveal\][\s\S]{0,180}opacity: 1 !important/);
+});
+
 test("static hosting emits baseline security and disclosure files", async () => {
   const headers = await read("../public/_headers");
   const security = await read("../public/.well-known/security.txt");

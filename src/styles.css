@@ -24,6 +24,8 @@
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
   --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --reveal-duration: 760ms;
+  --reveal-stagger: 65ms;
   --z-header: 40;
   --z-dialog: 100;
 }
@@ -1818,32 +1820,45 @@ nav > * {
 }
 
 [data-reveal] {
-  opacity: 0;
-  transform: translateY(18px);
+  opacity: 1;
+  transform: none;
+  filter: none;
+  clip-path: inset(0);
+}
+
+.motion-ready [data-reveal] {
   transition:
-    opacity 620ms var(--ease-out),
-    transform 620ms var(--ease-out),
-    filter 620ms var(--ease-out),
-    clip-path 720ms var(--ease-out);
-  transition-delay: calc(var(--reveal-order, 0) * 70ms);
+    opacity var(--reveal-duration) var(--ease-out),
+    transform var(--reveal-duration) var(--ease-out),
+    filter var(--reveal-duration) var(--ease-out),
+    clip-path calc(var(--reveal-duration) + 100ms) var(--ease-out);
+  transition-delay: calc(var(--reveal-order, 0) * var(--reveal-stagger));
 }
 
-[data-reveal="image"] {
-  filter: blur(4px);
-  clip-path: inset(0 0 8% 0);
-  transform: scale(0.992);
+.motion-ready [data-reveal]:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(24px);
+  clip-path: inset(0 0 4% 0);
 }
 
-[data-reveal="line"] {
-  transform: translateX(-12px);
+.motion-ready [data-reveal="image"]:not(.is-visible) {
+  opacity: 0.45;
+  filter: blur(3px);
+  clip-path: inset(0 0 10% 0);
+  transform: translateY(22px) scale(0.992);
 }
 
-[data-reveal="chapter"] {
-  opacity: 0.48;
-  transform: translateY(20px);
+.motion-ready [data-reveal="line"]:not(.is-visible) {
+  transform: translateY(14px);
+  clip-path: inset(0 0 16% 0);
 }
 
-[data-reveal].is-visible {
+.motion-ready [data-reveal="chapter"]:not(.is-visible) {
+  opacity: 0.3;
+  transform: translateY(28px);
+}
+
+.motion-ready [data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0);
   filter: blur(0);
@@ -1851,34 +1866,6 @@ nav > * {
 }
 
 @supports (animation-timeline: view()) {
-  .world-card {
-    animation: editorial-card-in linear both;
-    animation-timeline: view();
-    animation-range: entry 5% cover 38%;
-  }
-
-  .service-index-card,
-  .pricing-grid > article,
-  .lab-grid > article {
-    animation: editorial-card-in linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 32%;
-  }
-
-  .problem-solution > div:first-child,
-  .platform-section > div {
-    animation: editorial-left-in linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 38%;
-  }
-
-  .problem-solution > div:last-child,
-  .platform-section > ul {
-    animation: editorial-right-in linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 38%;
-  }
-
   .architecture-figure img {
     animation: stone-depth linear both;
     animation-timeline: view();
@@ -1895,39 +1882,6 @@ nav > * {
     animation: medallion-depth linear both;
     animation-timeline: view();
     animation-range: entry 0% exit 100%;
-  }
-}
-
-@keyframes editorial-card-in {
-  from {
-    opacity: 0.18;
-    transform: translateY(54px) scale(0.975);
-    filter: blur(3px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-}
-@keyframes editorial-left-in {
-  from {
-    opacity: 0.25;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes editorial-right-in {
-  from {
-    opacity: 0.25;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -2825,15 +2779,6 @@ nav > * {
   }
 }
 
-/* Preiskarten bleiben nach dem Schließen des Vergleichs stabil sichtbar. */
-.pricing-grid > article,
-.pricing-grid > article[data-reveal] {
-  opacity: 1 !important;
-  transform: none !important;
-  filter: none !important;
-  clip-path: none !important;
-  animation: none !important;
-}
 .book-category-filter,
 .lab-results-head {
   scroll-margin-top: 110px;
@@ -2879,6 +2824,8 @@ nav > * {
   [data-reveal] {
     opacity: 1;
     transform: none;
+    filter: none;
+    clip-path: inset(0);
   }
 }
 
@@ -4173,12 +4120,6 @@ nav > * {
   }
 }
 @media (max-width: 760px) {
-  .pricing-grid > article[data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
-    filter: none !important;
-  }
   .package-comparison > div:not(.package-comparison-actions) {
     grid-template-columns: 1fr;
   }
