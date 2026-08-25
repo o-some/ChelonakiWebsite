@@ -17,6 +17,7 @@ Build app UI in `src/`.
 
 ## Durable Chelonaki design decisions
 
+- Before creating or changing a visual pattern, inspect the existing Chelonaki pages and components for a suitable established pattern and reuse it. Do not invent a new layout or component system when the repository already contains one that fits; introduce a new pattern only when none fits or the user explicitly requests a new direction.
 - The selected visual target is the combined light “Ivory Villa” direction with the monumental classical column and editorial discipline of the dark “Hellenic Editorial” direction.
 - Preserve the authentic Chelonaki turtle logo. The visual system uses warm ivory/limewash, deep Aegean navy, restrained antique gold, serif editorial typography, and subtle Greek architectural references.
 - Tell the family-name story accurately: Georgios loved playing with turtles as a small child and received his affectionate nickname from that; when villagers later saw him with his grandsons, they said, "Da ist er ja – der Georgios mit seinen kleinen Schildkrötchen."
