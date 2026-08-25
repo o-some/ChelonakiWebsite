@@ -16,6 +16,7 @@ const shared = {
     "€2,950",
     "€4,500",
     "from €4,500 net",
+    "Even as a small child, our grandfather Georgios especially loved playing with turtles. That is how his affectionate nickname came about. When people later saw him in his village with my brother and me, the story came alive again. They said, “There he is – Georgios with his little turtles.”",
   ],
   el: [
     "Άνοιγμα chatbot",
@@ -34,6 +35,7 @@ const shared = {
     "2.950 €",
     "4.500 €",
     "από 4.500 € καθαρά",
+    "Από μικρό παιδί, ο παππούς μας ο Γεώργιος αγαπούσε ιδιαίτερα να παίζει με χελώνες. Έτσι προέκυψε το τρυφερό παρατσούκλι του. Όταν αργότερα τον είδαν στο χωριό του μαζί με τον αδελφό μου και εμένα, αυτή η ιστορία ζωντάνεψε ξανά. Έλεγαν: «Να τος – ο Γεώργιος με τα μικρά χελωνάκια του».",
   ],
   fr: [
     "Ouvrir le chatbot",
@@ -52,6 +54,7 @@ const shared = {
     "2 950 €",
     "4 500 €",
     "à partir de 4 500 € net",
+    "Dès son enfance, notre grand-père Georgios aimait particulièrement jouer avec les tortues. C’est ainsi qu’est né son surnom affectueux. Lorsque les habitants l’ont plus tard vu dans son village avec mon frère et moi, cette histoire a repris vie. Ils disaient : « Le voilà – Georgios avec ses petites tortues. »",
   ],
   es: [
     "Abrir el chatbot",
@@ -70,6 +73,7 @@ const shared = {
     "2.950 €",
     "4.500 €",
     "desde 4.500 € netos",
+    "Desde pequeño, a nuestro abuelo Georgios le encantaba jugar con tortugas. Así nació su cariñoso apodo. Cuando más tarde la gente lo vio en su pueblo con mi hermano y conmigo, aquella historia volvió a cobrar vida. Decían: «Ahí está – Georgios con sus pequeñas tortugas».",
   ],
   tr: [
     "Sohbet botunu aç",
@@ -88,6 +92,7 @@ const shared = {
     "2.950 €",
     "4.500 €",
     "net 4.500 €'dan başlayan fiyatlarla",
+    "Büyükbabamız Georgios daha küçük bir çocukken kaplumbağalarla oynamayı çok severdi. Sevgi dolu lakabı da buradan doğdu. Köy halkı onu daha sonra kardeşim ve benimle birlikte gördüğünde bu hikâye yeniden canlandı. Şöyle dediler: “İşte orada – küçük kaplumbağalarıyla Georgios.”",
   ],
   pl: [
     "Otwórz chatbota",
@@ -106,6 +111,7 @@ const shared = {
     "2950 €",
     "4500 €",
     "od 4500 € netto",
+    "Już jako małe dziecko nasz dziadek Georgios szczególnie lubił bawić się z żółwiami. Stąd wzięło się jego czułe przezwisko. Kiedy później mieszkańcy zobaczyli go w jego wiosce ze mną i moim bratem, ta historia ożyła na nowo. Mówili: „Oto on – Georgios ze swoimi małymi żółwikami”.",
   ],
   nl: [
     "Chatbot openen",
@@ -124,6 +130,7 @@ const shared = {
     "€ 2.950",
     "€ 4.500",
     "vanaf € 4.500,- netto",
+    "Als klein kind speelde onze grootvader Georgios al bijzonder graag met schildpadden. Zo ontstond zijn liefkozende bijnaam. Toen de mensen hem later in zijn dorp samen met mijn broer en mij zagen, kwam dat verhaal opnieuw tot leven. Ze zeiden: ‘Daar is hij – Georgios met zijn kleine schildpadjes.’",
   ],
   it: [
     "Apri il chatbot",
@@ -142,6 +149,7 @@ const shared = {
     "2.950 €",
     "4.500 €",
     "da 4.500 € netti",
+    "Fin da piccolo, nostro nonno Georgios amava particolarmente giocare con le tartarughe. Da lì nacque il suo affettuoso soprannome. Quando più tardi gli abitanti lo videro nel suo villaggio insieme a me e mio fratello, quella storia riprese vita. Dicevano: «Eccolo – Georgios con le sue piccole tartarughe».",
   ],
   pt: [
     "Abrir o chatbot",
@@ -160,6 +168,7 @@ const shared = {
     "2.950 €",
     "4.500 €",
     "a partir de 4.500 € líquidos",
+    "Desde pequeno, o nosso avô Georgios gostava especialmente de brincar com tartarugas. Foi assim que surgiu a sua alcunha carinhosa. Quando mais tarde as pessoas o viram na sua aldeia com o meu irmão e comigo, essa história voltou a ganhar vida. Diziam: «Lá está ele – Georgios com as suas pequenas tartarugas.»",
   ],
   ru: [
     "Открыть чат-бот",
@@ -178,6 +187,7 @@ const shared = {
     "2950 евро",
     "4500 евро",
     "от 4500 евро нетто",
+    "Ещё в детстве наш дедушка Георгиос очень любил играть с черепахами. Так появилось его ласковое прозвище. Когда позже жители деревни увидели его вместе со мной и моим братом, эта история ожила вновь. Они говорили: «Вот он – Георгиос со своими маленькими черепашками».",
   ],
   ar: [
     "فتح روبوت الدردشة",
@@ -196,6 +206,7 @@ const shared = {
     "2950 يورو",
     "4500 يورو",
     "من 4500 يورو صافي",
+    "كان جدّنا جورجيوس منذ طفولته المبكرة يحب اللعب بالسلاحف كثيرًا، ومن هنا جاء لقبه المحبب. وعندما رآه أهل قريته لاحقًا برفقة أخي وبرفقتي، عادت هذه القصة إلى الظهور من جديد. كانوا يقولون: «ها هو جورجيوس مع سلاحفه الصغيرة».",
   ],
 };
 
@@ -216,6 +227,7 @@ const keys = [
   "2.950 €",
   "4.500 €",
   "ab 4.500 € netto",
+  "Schon als kleines Kind spielte unser Großvater Georgios besonders gern mit Schildkröten. Daraus entstand sein liebevoller Spitzname. Als die Menschen ihn später gemeinsam mit meinem Bruder und mir in seinem Dorf sahen, lebte diese Geschichte wieder auf. Sie sagten: „Da ist er ja – der Georgios mit seinen kleinen Schildkrötchen.“",
 ];
 
 export default Object.fromEntries(

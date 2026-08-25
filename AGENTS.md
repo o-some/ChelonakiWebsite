@@ -19,6 +19,7 @@ Build app UI in `src/`.
 
 - The selected visual target is the combined light “Ivory Villa” direction with the monumental classical column and editorial discipline of the dark “Hellenic Editorial” direction.
 - Preserve the authentic Chelonaki turtle logo. The visual system uses warm ivory/limewash, deep Aegean navy, restrained antique gold, serif editorial typography, and subtle Greek architectural references.
+- Tell the family-name story accurately: Georgios loved playing with turtles as a small child and received his affectionate nickname from that; when villagers later saw him with his grandsons, they said, "Da ist er ja – der Georgios mit seinen kleinen Schildkrötchen."
 - Structure Chelonaki around three concrete worlds: Chelonaki Digital (websites and Shopify, client book production and ghostwriting, social content systems, telephone assistants, Meta/Google ads, apps and software), Chelonaki Expertise (AI training and consulting, Academy and nutrition consulting), and Chelonaki Originals (own specialist books, nutrition apps and further digital products).
 - Name the client-facing book service "Buchproduktion & Ghostwriting" and position it under Digital. Make the result explicit: concept, writing, research, design and publication-ready files.
 - Remove "Spiele & Lernwelten" from Originals without a replacement category until the user decides on a new name or direction.

@@ -3506,9 +3506,11 @@ function AboutPage() {
       <article className="story-article">
         <span className="section-eyebrow">Die Geschichte hinter dem Namen</span>
         <p className="story-lead">
-          Als unser Großvater Georgios gemeinsam mit meinem Bruder und mir durch
-          sein Dorf ging, sagten die Menschen liebevoll: „Da ist er ja – der
-          Georgios mit seinen kleinen Schildkröten.“
+          Schon als kleines Kind spielte unser Großvater Georgios besonders gern
+          mit Schildkröten. Daraus entstand sein liebevoller Spitzname. Als die
+          Menschen ihn später gemeinsam mit meinem Bruder und mir in seinem Dorf
+          sahen, lebte diese Geschichte wieder auf. Sie sagten: „Da ist er ja –
+          der Georgios mit seinen kleinen Schildkrötchen.“
         </p>
         <p>
           Aus diesem Spitznamen wurde unser Familienwappen. Aus dem
