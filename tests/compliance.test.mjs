@@ -2,7 +2,11 @@ import assert from "node:assert/strict";
 import { readFile, readdir } from "node:fs/promises";
 import test from "node:test";
 import { canonicalRoutes } from "../src/astroRoutes.js";
-import { bookCategories, bookDesigns } from "../src/bookDesigns.js";
+import {
+  bookCategories,
+  bookDesigns,
+  canUseBookPackage,
+} from "../src/bookDesigns.js";
 import { enabledLocales } from "../src/locales.js";
 import { siteOrigin } from "../src/seoData.js";
 
@@ -71,4 +75,19 @@ test("book library contains one unique asset for every catalog entry", async () 
     .filter((name) => name.endsWith(".webp"))
     .sort();
   assert.deepEqual(actual, expected);
+});
+
+test("children-book pricing is limited to children-book designs", () => {
+  assert.equal(
+    canUseBookPackage("Kinderbuch & Familie", "Kinderbuch · ab 500 €"),
+    true,
+  );
+  assert.equal(
+    canUseBookPackage("Fitness", "Kinderbuch · ab 500 €"),
+    false,
+  );
+  assert.equal(
+    canUseBookPackage("Fitness", "Authority Book · 3.000 €"),
+    true,
+  );
 });

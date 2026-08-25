@@ -17,7 +17,11 @@ import {
   X,
 } from "@phosphor-icons/react";
 import { hubData, navigation, services, worlds } from "./siteData.js";
-import { bookCategories, bookDesigns } from "./bookDesigns.js";
+import {
+  bookCategories,
+  bookDesigns,
+  canUseBookPackage,
+} from "./bookDesigns.js";
 import generatedTranslations from "./translations.generated.js";
 import translationPatches from "./translations.patches.js";
 import {
@@ -2443,13 +2447,11 @@ function LabPage() {
     : [];
   const entryBookCategory = (entry) =>
     entry.bookCategory || entry.area?.split(" · ")[0] || "Sonstige";
+  const detailBookCategory = entryBookCategory(detail || {});
   const isChildrenBookDesign =
     detail?.category === "Bücher" &&
-    entryBookCategory(detail) === "Kinderbuch & Familie";
-  const selectableBookPackage =
-    !isChildrenBookDesign && bookPackage === "Kinderbuch · ab 500 €"
-      ? "Book Starter · ab 1.000 €"
-      : bookPackage;
+    detailBookCategory === "Kinderbuch & Familie";
+  const canRequestBookDesign = canUseBookPackage(detailBookCategory, bookPackage);
   const filtered =
     category === "Bücher" && bookCategory !== "Alle"
       ? categoryEntries.filter(
@@ -2814,16 +2816,27 @@ function LabPage() {
                     <label htmlFor="book-package">Gewünschter Buchumfang</label>
                     <select
                       id="book-package"
-                      value={selectableBookPackage}
+                      value={bookPackage}
                       onChange={(event) => setBookPackage(event.target.value)}
                     >
-                      <option disabled={!isChildrenBookDesign}>
+                      <option
+                        value="Kinderbuch · ab 500 €"
+                        disabled={!isChildrenBookDesign}
+                      >
                         Kinderbuch · ab 500 €
                       </option>
-                      <option>Book Starter · ab 1.000 €</option>
-                      <option>Authority Book · 3.000 €</option>
-                      <option>Premium Research Book · 6.000 €</option>
-                      <option>Individuelles Buchprojekt · auf Anfrage</option>
+                      <option value="Book Starter · ab 1.000 €">
+                        Book Starter · ab 1.000 €
+                      </option>
+                      <option value="Authority Book · 3.000 €">
+                        Authority Book · 3.000 €
+                      </option>
+                      <option value="Premium Research Book · 6.000 €">
+                        Premium Research Book · 6.000 €
+                      </option>
+                      <option value="Individuelles Buchprojekt · auf Anfrage">
+                        Individuelles Buchprojekt · auf Anfrage
+                      </option>
                     </select>
                     <small>
                       Die Vorlage bestimmt die Designrichtung. Seitenzahl,
@@ -2831,13 +2844,26 @@ function LabPage() {
                       richten sich nach dem gewählten Paket und dem
                       verbindlichen Angebot.
                     </small>
+                    {!canRequestBookDesign && (
+                      <small role="alert">
+                        Das Kinderbuch-Paket ist nur für Designs aus der
+                        Kategorie Kinderbuch & Familie verfügbar. Wählen Sie
+                        für dieses Design bitte ein anderes Buchpaket.
+                      </small>
+                    )}
                   </div>
-                  <SmartLink
-                    className="button button-gold"
-                    href={`/kontakt?bereich=${encodeURIComponent(`${detail.title} · ${selectableBookPackage}`)}`}
-                  >
-                    Design & Paket anfragen <ArrowRight size={18} />
-                  </SmartLink>
+                  {canRequestBookDesign ? (
+                    <SmartLink
+                      className="button button-gold"
+                      href={`/kontakt?bereich=${encodeURIComponent(`${detail.title} · ${bookPackage}`)}`}
+                    >
+                      Design & Paket anfragen <ArrowRight size={18} />
+                    </SmartLink>
+                  ) : (
+                    <button className="button button-gold" type="button" disabled>
+                      Anderes Buchpaket wählen <ArrowRight size={18} />
+                    </button>
+                  )}
                 </>
               ) : (
                 <SmartLink

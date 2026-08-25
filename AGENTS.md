@@ -40,5 +40,6 @@ Build app UI in `src/`.
 - Keep the hero's three large architectural material planes, but do not place the former three labeled folio cards ("Klarheit", "System", "Wirkung") or any replacement text cards over them. Let that scene remain quiet, spacious and primarily visual.
 - The complete site must include a legally planned German footer and accessible legal-information views. Missing real company details must remain visibly marked placeholders, never invented facts.
 - Treat every commercial service page as a complete, calm sales journey: problem, desired outcome, concrete deliverables, quality controls, process, prerequisites, pricing comparison, objection handling and several context-appropriate next actions. Add useful decision information instead of generic marketing filler.
+- Keep every book package visible in the book-design dropdown. Only designs in "Kinderbuch & Familie" may select and request "Kinderbuch · ab 500 €"; show that option disabled for every other book category.
 - Use purposeful premium editorial imagery throughout longer sales journeys to provide visual rhythm, while preserving the ivory, Aegean navy, antique gold and Greek architectural identity.
 - Keep the production dependency tree free of known audit findings where compatible fixes exist, and preserve restrictive response security headers in the Sites worker.

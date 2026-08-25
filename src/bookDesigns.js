@@ -12,6 +12,10 @@ export const bookCategories = [
   "Natur & Abenteuer",
 ];
 
+export const canUseBookPackage = (bookCategory, bookPackage) =>
+  bookPackage !== "Kinderbuch · ab 500 €" ||
+  bookCategory === "Kinderbuch & Familie";
+
 const C = {
   koch: "Kochbuch",
   kind: "Kinderbuch & Familie",
