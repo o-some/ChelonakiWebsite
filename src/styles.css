@@ -5527,109 +5527,29 @@ html[lang="ar"] .audience-label {
 }
 .design-category-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  max-width: var(--content);
+  margin: auto;
   border-top: 1px solid var(--line-dark);
-  border-left: 1px solid var(--line-dark);
 }
-.design-category-grid > button {
-  position: relative;
-  min-width: 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  grid-template-rows: 310px;
-  grid-template-areas: "image copy";
-  overflow: hidden;
-  padding: 0;
+.design-category-card {
+  width: 100%;
   color: var(--ink);
-  border: 0;
-  border-right: 1px solid var(--line-dark);
+  font: inherit;
+  appearance: none;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
   border-bottom: 1px solid var(--line-dark);
   background: transparent;
   cursor: pointer;
   text-align: left;
-  transition:
-    color 0.25s ease,
-    background 0.25s ease;
 }
-.design-category-grid > button:nth-child(4n + 2),
-.design-category-grid > button:nth-child(4n + 3) {
-  grid-template-areas: "copy image";
+.design-category-card:nth-child(even) {
+  border-left: 1px solid var(--line-dark);
 }
-.design-category-image {
-  grid-area: image;
-  min-width: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: filter 0.25s ease;
-}
-.design-category-copy {
-  grid-area: copy;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  min-width: 0;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 32px;
-  background: var(--paper-bright);
-  transition: background 0.25s ease;
-}
-.design-category-grid > button:hover,
-.design-category-grid > button:focus-visible,
-.design-category-grid > button.is-active {
-  color: var(--paper-bright);
-  background: var(--ink);
-}
-.design-category-grid > button:hover .design-category-copy,
-.design-category-grid > button:focus-visible .design-category-copy,
-.design-category-grid > button.is-active .design-category-copy {
-  background: var(--ink);
-}
-.design-category-grid > button:hover .design-category-image,
-.design-category-grid > button:focus-visible .design-category-image,
-.design-category-grid > button.is-active .design-category-image {
-  filter: saturate(0.88) brightness(0.86);
-}
-.design-category-copy > span {
-  max-width: 100%;
-  font-family: var(--serif);
-  font-size: 35px;
-  line-height: 1;
-  overflow-wrap: anywhere;
-}
-.design-category-copy > p {
-  max-width: 300px;
-  margin: 24px 0;
-  color: var(--copy-muted);
-  font-size: 12px;
-  line-height: 1.65;
-}
-.design-category-grid > button:hover .design-category-copy > p,
-.design-category-grid > button:focus-visible .design-category-copy > p,
-.design-category-grid > button.is-active .design-category-copy > p {
-  color: var(--copy-on-dark);
-}
-.design-category-copy > small {
-  margin-top: auto;
+.design-category-card.is-active h3 {
   color: var(--gold);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.design-category-copy > svg {
-  position: absolute;
-  right: 28px;
-  bottom: 28px;
-  color: var(--gold);
-}
-@media (max-width: 1050px) {
-  .design-category-grid {
-    grid-template-columns: 1fr;
-  }
 }
 .lab-gallery {
   margin-top: 70px;
@@ -7379,24 +7299,8 @@ html[lang="ar"] .audience-label {
   .design-category-grid {
     grid-template-columns: 1fr;
   }
-  .design-category-grid > button {
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(210px, 58vw) 190px;
-    grid-template-areas:
-      "image"
-      "copy";
-  }
-  .design-category-grid > button:nth-child(4n + 2),
-  .design-category-grid > button:nth-child(4n + 3) {
-    grid-template-areas:
-      "image"
-      "copy";
-  }
-  .design-category-copy {
-    padding: 26px 24px;
-  }
-  .design-category-copy > span {
-    font-size: 32px;
+  .design-category-card:nth-child(even) {
+    border-left: 0;
   }
   .lab-gallery {
     margin-top: 55px;
@@ -9359,7 +9263,6 @@ html[dir="rtl"]
   .finder-page > header > span,
   .quality-hero > div > span,
   .product-hero > div > span,
-  .design-category-copy > small,
   .lab-gallery-head span,
   .lab-gallery-head > button,
   .lab-results-head,
@@ -9533,7 +9436,6 @@ html[dir="rtl"]
   .package-alternatives li,
   .release-note p,
   .lab-hero aside p,
-  .design-category-copy > p,
   .book-category-filter > div:first-child > p,
   .book-category-empty p,
   .technology-section article p,

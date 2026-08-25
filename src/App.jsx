@@ -2578,36 +2578,36 @@ function LabPage() {
           )}
         </header>
         <div className="design-category-grid">
-          {categories.map(([value, label, description, image]) => (
+          {categories.map(([value, label, description, image], index) => (
             <button
               type="button"
-              className={category === value ? "is-active" : ""}
+              className={`service-index-card design-category-card${category === value ? " is-active" : ""}`}
               aria-pressed={category === value}
               onClick={() => chooseCategory(value)}
               key={value}
             >
-              <img
-                className="design-category-image"
-                src={image}
-                alt=""
-                width="1536"
-                height="1024"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="design-category-copy">
-                <span>{label}</span>
-                <p>{description}</p>
-                <small>
-                  {labEntries.filter((entry) => entry.category === value)
-                    .length}{" "}
-                  {labEntries.filter((entry) => entry.category === value)
-                    .length === 1
-                    ? "Vorlage"
-                    : "Vorlagen"}
-                </small>
-                <ArrowRight size={19} />
-              </div>
+              <span>0{index + 1}</span>
+              <figure>
+                <img
+                  src={image}
+                  alt=""
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <h3>{label}</h3>
+              <p>{description}</p>
+              <small>
+                {labEntries.filter((entry) => entry.category === value).length}{" "}
+                {labEntries.filter((entry) => entry.category === value)
+                  .length === 1
+                  ? "Vorlage"
+                  : "Vorlagen"}{" "}
+                ansehen
+              </small>
+              <ArrowUpRight size={21} />
             </button>
           ))}
         </div>
