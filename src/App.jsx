@@ -2389,7 +2389,7 @@ function LabPage() {
       "Webseiten",
       "Webseitendesigns",
       "Aufbau, Bildsprache, Typografie und Nutzerführung",
-      "/assets/design-web.png",
+      "/assets/design-web-complete.webp",
     ],
     [
       "Apps",
