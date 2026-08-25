@@ -4383,7 +4383,7 @@ html[dir="rtl"] .package-alternatives li > svg {
     white-space: normal;
   }
   .desktop-nav a::after {
-    bottom: 22px;
+    bottom: 12px;
     height: 2px;
   }
   .language-picker {
@@ -8837,7 +8837,7 @@ html[lang="ar"] .audience-label {
 
   .mobile-menu nav .mobile-nav-group > div:first-child > a {
     min-width: 0;
-    padding: 17px 12px 17px 0;
+    padding: 17px 12px 22px 0;
     font-family: var(--serif);
     font-size: clamp(25px, 7vw, 31px) !important;
     font-weight: 400;
@@ -8904,7 +8904,7 @@ html[lang="ar"] .audience-label {
   }
 
   html[dir="rtl"] .mobile-menu nav .mobile-nav-group > div:first-child > a {
-    padding: 17px 0 17px 12px;
+    padding: 17px 0 22px 12px;
   }
 
   html[dir="rtl"] .mobile-subnav {
