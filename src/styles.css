@@ -5353,11 +5353,6 @@ html[lang="ar"] .audience-label {
   color: var(--paper-bright);
   background: radial-gradient(circle at 80% 24%, #244968, var(--ink) 52%);
 }
-.lab-hero.is-simple {
-  min-height: 680px;
-  grid-template-columns: minmax(0, 980px);
-  align-content: center;
-}
 .lab-hero > div > span,
 .finder-page > header > span,
 .quality-hero > div > span,
@@ -5378,6 +5373,9 @@ html[lang="ar"] .audience-label {
   font-size: clamp(62px, 7vw, 108px);
   line-height: 0.9;
   font-weight: 500;
+}
+.lab-hero h1 {
+  font-size: clamp(62px, 5.8vw, 94px);
 }
 .lab-hero > div > p,
 .finder-page > header > p,
@@ -7213,11 +7211,6 @@ html[lang="ar"] .audience-label {
   .finder-page {
     padding-left: 20px;
     padding-right: 20px;
-  }
-  .lab-hero.is-simple {
-    min-height: 0;
-    padding-top: 126px;
-    padding-bottom: 72px;
   }
   .lab-hero h1,
   .quality-hero h1,

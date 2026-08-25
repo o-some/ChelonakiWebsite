@@ -2500,7 +2500,7 @@ function LabPage() {
   }, [zoomImage]);
   return (
     <main id="main">
-      <section className="lab-hero is-simple">
+      <section className="lab-hero">
         <div>
           <span>Chelonaki Designbibliothek</span>
           <h1>
@@ -2524,6 +2524,17 @@ function LabPage() {
               Passende Leistung finden <ArrowRight size={18} />
             </SmartLink>
           </div>
+        </div>
+        <div className="lab-hero-side">
+          <figure>
+            <img
+              src="/assets/design-library-hero-v1.webp"
+              alt="Kuratiertes Designarchiv aus Glas, Messing und Elfenbeinstein"
+              width="1536"
+              height="1024"
+              fetchPriority="high"
+            />
+          </figure>
         </div>
       </section>
       <section className="lab-how">
@@ -4174,7 +4185,10 @@ const revealTargets = [
     ".worlds-heading, .principles-intro, .service-index > header, .conversion-bridge > header, .process-intro, .pricing-section > header, .service-faq > header, .lab-how > header, .lab-grid-section > header, .lab-gallery-head, .finder-page > header, .product-features > header, .technology-section > header, .about-foundations > header, .legal-shell > header",
     "line",
   ],
-  [".hub-decision > figure, .mid-funnel-cta > figure", "image"],
+  [
+    ".hub-decision > figure, .mid-funnel-cta > figure, .lab-hero-side figure",
+    "image",
+  ],
   [
     ".world-card, .principle-grid > article, .service-index-card, .hub-decision > div, .problem-solution > div, .platform-section > *, .conversion-bridge > div > article, .deliverables-section > div:first-child, .deliverables-grid > article, .method-rail > li, .mid-funnel-cta > div, .readiness-section > *, .pricing-grid > article, .service-faq details, .credentials > *, .choice-grid > *, .release-note, .lab-how li, .design-category-grid > button, .book-category-filter, .lab-grid > article, .lab-load-more, .lab-transfer > *, .finder-panel, .finder-question > *, .finder-result > *, .quality-grid > article, .enterprise-section > *, .product-pair > *, .product-features article, .technology-section article, .about-foundations article, .story-article > *, .contact-page > *, .final-cta > *, .legal-content > .legal-lead, .legal-content > h3",
     "chapter",
