@@ -2383,21 +2383,25 @@ function LabPage() {
       "Bücher",
       "Buchdesigns",
       "Cover, Inhaltsseiten, Kapitel, Rezepte und Editorialsysteme",
+      "/assets/design-books.png",
     ],
     [
       "Webseiten",
       "Webseitendesigns",
       "Aufbau, Bildsprache, Typografie und Nutzerführung",
+      "/assets/design-web.png",
     ],
     [
       "Apps",
       "App-Designs",
       "Navigation, Dashboards und digitale Produktoberflächen",
+      "/assets/design-apps.png",
     ],
     [
       "Content",
       "Content-Designs",
       "Social Media, Karussells, Kurzvideos und Anzeigen",
+      "/assets/design-content.png",
     ],
   ];
   useEffect(() => {
@@ -2574,7 +2578,7 @@ function LabPage() {
           )}
         </header>
         <div className="design-category-grid">
-          {categories.map(([value, label, description]) => (
+          {categories.map(([value, label, description, image]) => (
             <button
               type="button"
               className={category === value ? "is-active" : ""}
@@ -2582,16 +2586,28 @@ function LabPage() {
               onClick={() => chooseCategory(value)}
               key={value}
             >
-              <span>{label}</span>
-              <p>{description}</p>
-              <small>
-                {labEntries.filter((entry) => entry.category === value).length}{" "}
-                {labEntries.filter((entry) => entry.category === value)
-                  .length === 1
-                  ? "Vorlage"
-                  : "Vorlagen"}
-              </small>
-              <ArrowRight size={19} />
+              <img
+                className="design-category-image"
+                src={image}
+                alt=""
+                width="1536"
+                height="1024"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="design-category-copy">
+                <span>{label}</span>
+                <p>{description}</p>
+                <small>
+                  {labEntries.filter((entry) => entry.category === value)
+                    .length}{" "}
+                  {labEntries.filter((entry) => entry.category === value)
+                    .length === 1
+                    ? "Vorlage"
+                    : "Vorlagen"}
+                </small>
+                <ArrowRight size={19} />
+              </div>
             </button>
           ))}
         </div>
