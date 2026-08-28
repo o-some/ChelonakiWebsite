@@ -22,6 +22,7 @@ import {
   bookDesigns,
   canUseBookPackage,
 } from "./bookDesigns.js";
+import { getPromotionTimerDelay, isPromotionActive } from "./promotion.js";
 import generatedTranslations from "./translations.generated.js";
 import translationPatches from "./translations.patches.js";
 import {
@@ -966,6 +967,41 @@ function Brand({ inverse = false, compact = false }) {
         {!compact && <small>WISDOM WEARS A SHELL</small>}
       </span>
     </SmartLink>
+  );
+}
+
+function PromotionBanner() {
+  const [active, setActive] = useState(true);
+
+  useEffect(() => {
+    let timer;
+    const scheduleExpiry = () => {
+      if (!isPromotionActive()) {
+        setActive(false);
+        return;
+      }
+      timer = window.setTimeout(scheduleExpiry, getPromotionTimerDelay());
+    };
+    scheduleExpiry();
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  if (!active) return null;
+
+  return (
+    <>
+      <SmartLink
+        className="promotion-banner"
+        href="/kontakt?bereich=30+%25+Kennenlernrabatt"
+      >
+        <span>Bis zum 1. Oktober</span>
+        <strong>30 % Kennenlernrabatt</strong>
+        <span className="promotion-action">
+          Projekt anfragen <ArrowRight size={15} />
+        </span>
+      </SmartLink>
+      <div className="promotion-spacer" aria-hidden="true" />
+    </>
   );
 }
 
@@ -4381,6 +4417,7 @@ export function App({ initialPath = "/", initialLocale = "de" }) {
         Zum Inhalt
       </a>
       <div id="top" />
+      <PromotionBanner />
       <Header
         path={path}
         openMenu={() => setMenu(true)}

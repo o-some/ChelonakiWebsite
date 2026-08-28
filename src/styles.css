@@ -28,6 +28,7 @@
   --reveal-stagger: 65ms;
   --z-header: 40;
   --z-dialog: 100;
+  --promotion-height: 38px;
 }
 
 * {
@@ -166,11 +167,105 @@ nav > * {
     box-shadow 220ms var(--ease-out);
 }
 
+body:has(.promotion-banner) .site-header {
+  inset: var(--promotion-height) 0 auto;
+}
+
+.promotion-banner {
+  position: fixed;
+  z-index: calc(var(--z-header) + 1);
+  inset: 0 0 auto;
+  height: var(--promotion-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 1.8vw, 28px);
+  padding: 0 var(--gutter);
+  color: var(--paper-bright);
+  background: var(--ink);
+  border-bottom: 1px solid rgba(209, 180, 117, 0.42);
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.promotion-banner strong {
+  color: var(--gold-soft);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.promotion-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 700;
+}
+
+.promotion-action svg {
+  transition: transform 160ms var(--ease-out);
+}
+
+.promotion-banner:active .promotion-action svg {
+  transform: translateX(2px);
+}
+
+.promotion-spacer {
+  height: var(--promotion-height);
+}
+
 .site-header.is-solid {
   height: 86px;
   background: rgba(248, 244, 237, 0.97);
   border-color: var(--line-dark);
   box-shadow: 0 10px 32px rgba(7, 29, 49, 0.06);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .promotion-banner:hover .promotion-action svg {
+    transform: translateX(3px);
+  }
+}
+
+@media (min-width: 1021px) {
+  html:has(.promotion-banner) {
+    scroll-padding-top: calc(92px + var(--promotion-height));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1020px) {
+  html:has(.promotion-banner) {
+    scroll-padding-top: calc(86px + var(--promotion-height));
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --promotion-height: 44px;
+  }
+
+  html:has(.promotion-banner) {
+    scroll-padding-top: calc(72px + var(--promotion-height));
+  }
+
+  .promotion-banner {
+    justify-content: space-between;
+    gap: 8px;
+    padding-inline: 14px;
+    font-size: 9px;
+    letter-spacing: 0.045em;
+  }
+
+  .promotion-banner strong {
+    font-size: 9px;
+    letter-spacing: 0.055em;
+    text-align: center;
+  }
+
+  .promotion-action {
+    font-size: 0;
+  }
 }
 
 .brand {
